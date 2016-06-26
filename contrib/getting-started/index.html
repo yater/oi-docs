@@ -430,49 +430,43 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 </ul>
 <h2 id="fork-the-openindiana-docs-repository">Fork the OpenIndiana Docs repository</h2>
 <ul>
-<li>Open your web browser and sign into <a href="https://www.github.com">Github</a></li>
-<li>Browse to <a href="https://github.com/makruger/website-2.0">https://github.com/makruger/website-2.0</a></li>
+<li>Open your web browser to the <a href="https://github.com/OpenIndiana/oi-docs">OpenIndiana Docs GitHub Repository</a>.</li>
 <li>Click the <strong>Fork</strong> button found in the upper right hand corner of the page.<ul>
 <li>Forking creates a server side clone of the upstream repository.</li>
 </ul>
 </li>
 </ul>
 <h2 id="create-a-local-clone-of-your-fork">Create a local clone of your fork</h2>
-<pre><code class="bash">git clone https://github.com/your-user-name/website-2.0.git
+<pre><code class="bash">git clone https://github.com/YOUR-USER-NAME/oi-docs.git
 </code></pre>
 
 <h2 id="add-the-upstream-repository">Add the upstream repository</h2>
-<pre><code class="bash">cd website-2.0
-git remote add upstream https://github.com/makruger/website-2.0.git
+<pre><code class="bash">cd oi-docs
+git remote add upstream https://github.com/OpenIndiana/oi-docs.git
 </code></pre>
 
 <p>Verify things with <code>git remote -v</code></p>
 <p>You should now see:</p>
-<pre><code class="bash">remote -v
-origin    https://github.com/your-user-name/website-2.0.git(fetch)
-origin    https://github.com/your-user-name/website-2.0.git (push)
-upstream  https://github.com/makruger/website-2.0.git(fetch)
-upstream  https://github.com/makruger/website-2.0.git (push)
+<pre><code class="bash">origin  https://github.com/YOUR-USER-NAME/oi-docs.git (fetch)
+origin  https://github.com/YOUR-USER-NAME/oi-docs.git (push)
+upstream        https://github.com/OpenIndiana/oi-docs.git (fetch)
+upstream        https://github.com/OpenIndiana/oi-docs.git (push)
 </code></pre>
 
 <h2 id="sync-and-merge-changes-from-the-upstream-repository">Sync and merge changes from the upstream repository</h2>
 <p>Periodically you will want to <em>rebase</em> your local copy by bringing in changes from the upstream repository.</p>
-<pre><code class="bash">git fetch upstream
-git checkout master
-git merge upstream/master
+<pre><code class="bash">git pull upstream master
 </code></pre>
 
 <h2 id="openindiana-docs-site-structure-master-branch">OpenIndiana Docs site structure (master branch)</h2>
 <p>All site development occurs within the master branch.</p>
-<pre><code class="markdown">website-2.0/
-├── deploy.sh
+<pre><code class="markdown">oi-docs/
 ├── docs/
 ├── link_validator.py
 ├── markdownlint-rules.rb
 ├── mkdocs.yml
 ├── README.md
 ├── site/
-└── TODO.md
 </code></pre>
 
 <table>
@@ -484,12 +478,8 @@ git merge upstream/master
 </thead>
 <tbody>
 <tr>
-<td>website-2.0/</td>
+<td>oi-docs/</td>
 <td>site root folder</td>
-</tr>
-<tr>
-<td>deploy.sh</td>
-<td>site deployment script</td>
 </tr>
 <tr>
 <td>docs/</td>
@@ -643,14 +633,13 @@ Prior to submitting a PR, please consider running <code>mdspell</code> locally o
 
 <p><code>mdspell</code> will automatically crawl the entire folder structure looking for spelling mistakes.
 Alternatively you may also run <code>mdspell</code> on a specific file. Simply replace <code>"**/*.md"</code> with the path to the file.</p>
-<h2 id="enabling-spell-checking-in-vim">Enabling spell checking in <code>vim</code></h2>
+<h2 id="enabling-spell-checking-in-vim">Enabling spell checking in vim</h2>
 <p>You can invoke spell checking in your current session by inputting the command:</p>
 <p><code>:set spell spelllang=en_us</code></p>
-<p>or if you would like a more permanent solution, you can enable spell checking in you <code>.vimrc</code> by adding the line:</p>
+<p>If you would like a more permanent solution, enable spell checking in your <code>.vimrc</code> by adding the line:</p>
 <p><code>set spelllang=en_us</code></p>
-<p>to your <code>.vimrc</code></p>
 <p>Misspelled words will now be highlighted (color varies dependent on your .Xresources file)</p>
-<h3 id="keyboard-shortcuts-for-spell-checking-in-vim">Keyboard shortcuts for spell checking in <code>vim</code></h3>
+<h3 id="keyboard-shortcuts-for-spell-checking-in-vim">Keyboard shortcuts for spell checking in vim</h3>
 <ul>
 <li><code>]s</code> to find the previously misspelled word.</li>
 <li><code>[s</code> to find the next misspelled word.</li>
@@ -669,7 +658,7 @@ git push
 <ul>
 <li>Open your web browser to your forked copy of the OpenIndiana Docs repository.</li>
 </ul>
-<p>For example: <code>https://github.com/your-user-name/website-2.0</code></p>
+<p>For example: <code>https://github.com/your-user-name/oi-docs</code></p>
 <ul>
 <li>Click the button for <em>New pull request</em>.</li>
 <li>Add some notes about your change.</li>
