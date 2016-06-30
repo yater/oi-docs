@@ -487,7 +487,7 @@
         },
         {
             "location": "/misc/conduct/",
-            "text": "OpenIndiana Code of Conduct\n\n\nThis document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to the OpenIndiana community.\nIt applies to all \"collaborative space\", which is defined as community communications channels (such as mailing lists, IRC, submitted patches, commit comments, etc.).\n\n\nCore principles:\n\n\n\n\nWe are respectful and appreciative towards peoples work, time, and effort.\n\n\nWe are tolerant of the right to have opposing views.\n\n\nWe recognize our public actions determine the public perception of the project.\n\n\n\n\nCore expectations:\n\n\n\n\nParticipants must ensure their language and actions are free from personal attacks and disparaging personal remarks.\n\n\nWhen interpreting the words and actions of others, participants should always assume good intentions.\n\n\n\n\nWhat will not be tolerated:\n\n\n\n\nOpen hostility, and or abusive language.\n\n\nRepeated complaining (rehashing) of closed (decided) issues.\n\n\nParticipants who disrupt the collaborative space, or participate in a pattern of behavior which could be considered harassment.\n\n\nFilibustering - \nhttps://en.wikipedia.org/wiki/Filibuster\n\n\nFilibustering occurs when someone replies to every post in a mailing list thread.\n\n\nGives the impression there is more opposition to a new idea or concept than there really is.\n\n\nMonopolizes everyone's time, drains everyone's energy, and prevents decisions from moving forward.\n\n\n\n\n\n\n\n\nReporting violations:\n\n\n\n\nViolations of the CoC should only be reported to the maintainers via direct messages on IRC, twitter, or via E-mail and will be handled confidentially.\n\n\nNeither reporters nor reported persons will, or should be, made public.\n\n\n\n\n\n\n\n\nSources\n\n\n\n\nAdopted from the \nProject-FiFo Code of Conduct\n.\n\n\nFurther inspiration derived from the \nFreeBSD Coded of Conduct\n.",
+            "text": "OpenIndiana Code of Conduct\n\n\nThis document provides community guidelines for a safe, respectful, productive, and collaborative place for any person who is willing to contribute to the OpenIndiana community.\nIt applies to all \"collaborative space\", which is defined as community communications channels (such as mailing lists, IRC, submitted patches, commit comments, etc.).\n\n\nCore principles and expectations:\n\n\n\n\nWe are respectful and appreciative towards peoples work, time, and effort.\n\n\nWe are tolerant of the right to have opposing views.\n\n\nWe recognize our public actions determine the public perception of the project.\n\n\nParticipants must ensure their language and actions are free from personal attacks and disparaging personal remarks.\n\n\nWhen interpreting the words and actions of others, participants should always assume good intentions.\n\n\n\n\nWhat will not be tolerated:\n\n\n\n\nOpen hostility, and or abusive language.\n\n\nRepeated complaining (rehashing) of closed (decided) issues.\n\n\nParticipants who disrupt the collaborative space, or participate in a pattern of behavior which could be considered harassment.\n\n\nFilibustering - (replying with negative or opposing viewpoints to every post in a mailing list thread).\n\n\n\n\nReporting violations:\n\n\n\n\nViolations of the CoC should only be reported to the maintainers via direct messages on IRC, twitter, or via E-mail and will be handled confidentially.\n\n\nNeither reporters nor reported persons will, or should be, made public.\n\n\n\n\n\n\n\n\nSources\n\n\n\n\nAdopted from the \nProject-FiFo Code of Conduct\n.\n\n\nFurther inspiration derived from the \nFreeBSD Code of Conduct\n.",
             "title": "OpenIndiana Code of Conduct"
         },
         {
@@ -496,18 +496,13 @@
             "title": "OpenIndiana Code of Conduct"
         },
         {
-            "location": "/misc/conduct/#core-principles",
-            "text": "We are respectful and appreciative towards peoples work, time, and effort.  We are tolerant of the right to have opposing views.  We recognize our public actions determine the public perception of the project.",
-            "title": "Core principles:"
-        },
-        {
-            "location": "/misc/conduct/#core-expectations",
-            "text": "Participants must ensure their language and actions are free from personal attacks and disparaging personal remarks.  When interpreting the words and actions of others, participants should always assume good intentions.",
-            "title": "Core expectations:"
+            "location": "/misc/conduct/#core-principles-and-expectations",
+            "text": "We are respectful and appreciative towards peoples work, time, and effort.  We are tolerant of the right to have opposing views.  We recognize our public actions determine the public perception of the project.  Participants must ensure their language and actions are free from personal attacks and disparaging personal remarks.  When interpreting the words and actions of others, participants should always assume good intentions.",
+            "title": "Core principles and expectations:"
         },
         {
             "location": "/misc/conduct/#what-will-not-be-tolerated",
-            "text": "Open hostility, and or abusive language.  Repeated complaining (rehashing) of closed (decided) issues.  Participants who disrupt the collaborative space, or participate in a pattern of behavior which could be considered harassment.  Filibustering -  https://en.wikipedia.org/wiki/Filibuster  Filibustering occurs when someone replies to every post in a mailing list thread.  Gives the impression there is more opposition to a new idea or concept than there really is.  Monopolizes everyone's time, drains everyone's energy, and prevents decisions from moving forward.",
+            "text": "Open hostility, and or abusive language.  Repeated complaining (rehashing) of closed (decided) issues.  Participants who disrupt the collaborative space, or participate in a pattern of behavior which could be considered harassment.  Filibustering - (replying with negative or opposing viewpoints to every post in a mailing list thread).",
             "title": "What will not be tolerated:"
         },
         {
@@ -517,7 +512,7 @@
         },
         {
             "location": "/misc/conduct/#sources",
-            "text": "Adopted from the  Project-FiFo Code of Conduct .  Further inspiration derived from the  FreeBSD Coded of Conduct .",
+            "text": "Adopted from the  Project-FiFo Code of Conduct .  Further inspiration derived from the  FreeBSD Code of Conduct .",
             "title": "Sources"
         },
         {
