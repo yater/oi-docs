@@ -325,6 +325,12 @@
     
         <li class="main active"><a href="#system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</a></li>
         
+            <li><a href="#configuring-a-ups">Configuring a UPS</a></li>
+        
+            <li><a href="#how-does-one-perform-system-backups">How does one perform system backups?</a></li>
+        
+            <li><a href="#how-does-one-add-additional-users">How does one add additional users?</a></li>
+        
             <li><a href="#configuring-and-tuning">Configuring and Tuning</a></li>
         
             <li><a href="#illumos-boot-process">Illumos Boot Process</a></li>
@@ -334,8 +340,6 @@
             <li><a href="#zones">Zones</a></li>
         
             <li><a href="#storage">Storage</a></li>
-        
-            <li><a href="#zfs">ZFS</a></li>
         
             <li><a href="#virtualization">Virtualization</a></li>
         
@@ -374,7 +378,22 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 -->
 
 <h1 id="system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</h1>
-<p>&lt; placeholder &gt;</p>
+<p>&lt; place holder &gt;</p>
+<h3 id="configuring-a-ups">Configuring a UPS</h3>
+<ul>
+<li>NUT?</li>
+</ul>
+<h3 id="how-does-one-perform-system-backups">How does one perform system backups?</h3>
+<ul>
+<li>Time Machine</li>
+<li>ZFS exports</li>
+<li>Bacula?</li>
+</ul>
+<h3 id="how-does-one-add-additional-users">How does one add additional users?</h3>
+<ul>
+<li>Basic system administration</li>
+<li>Basic Unix commands</li>
+</ul>
 <h2 id="configuring-and-tuning">Configuring and Tuning</h2>
 <p>&lt; placeholder &gt;</p>
 <h2 id="illumos-boot-process">Illumos Boot Process</h2>
@@ -394,9 +413,55 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 </li>
 </ul>
 <h2 id="storage">Storage</h2>
-<p>&lt; placeholder &gt;</p>
-<h2 id="zfs">ZFS</h2>
-<p>&lt; placeholder &gt;</p>
+<p>&lt; Place holder for section introduction content &gt;</p>
+<h3 id="how-does-one-mount-or-import-additional-disks">How does one mount or import additional disks?</h3>
+<!--
+
+TODO:
+
+* Talk about the ZFS import command.
+* Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.
+
+-->
+
+<h4 id="commands-used">commands used</h4>
+<ul>
+<li><code>mount</code></li>
+</ul>
+<h3 id="ntfs-support-3rd-party">NTFS support - 3rd party</h3>
+<ul>
+<li><a href="http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html">http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html</a></li>
+</ul>
+<h3 id="zfs">ZFS</h3>
+<h4 id="how-does-one-mirror-their-root-zpool">How does one mirror their root zpool?</h4>
+<ul>
+<li>Adding a 2nd disk to the root pool</li>
+</ul>
+<h4 id="how-does-one-create-additional-zpools">How does one create additional zpools?</h4>
+<ul>
+<li>zpool create command<ul>
+<li>Mirrors</li>
+<li>Raidz</li>
+</ul>
+</li>
+</ul>
+<h4 id="modifying-zpool-settings-and-attributes">Modifying zpool settings and attributes</h4>
+<ul>
+<li>zpool get/set commands</li>
+</ul>
+<h4 id="modifying-zfs-file-system-settings-and-attributes">Modifying zfs file system settings and attributes</h4>
+<ul>
+<li>zfs get/set commands</li>
+</ul>
+<h4 id="how-does-one-create-additional-zfs-datasets">How does one create additional zfs datasets?</h4>
+<ul>
+<li>zfs create command</li>
+</ul>
+<h4 id="configuring-system-swap">Configuring system swap</h4>
+<ul>
+<li>zfs set command</li>
+<li>swap -l</li>
+</ul>
 <h2 id="virtualization">Virtualization</h2>
 <h3 id="virtualization-storage-server">Virtualization Storage Server</h3>
 <ul>
@@ -516,73 +581,10 @@ It can also be used for querying the contents of a repository.</p>
 <li><code>pkgrepo list -s &lt;repo_URL&gt; &lt;package_group&gt;</code></li>
 </ul>
 <h2 id="dtrace">Dtrace</h2>
+<p>&lt; Place Holder &gt;</p>
 <h2 id="configuring-networking">Configuring Networking</h2>
-<h3 id="configuring-a-ups">Configuring a UPS</h3>
-<ul>
-<li>NUT?</li>
-</ul>
-<h3 id="how-does-one-perform-system-backups">How does one perform system backups?</h3>
-<ul>
-<li>Time Machine</li>
-<li>ZFS exports</li>
-<li>Bacula?</li>
-</ul>
-<h3 id="how-does-one-add-additional-users">How does one add additional users?</h3>
-<ul>
-<li>Basic system administration</li>
-<li>Basic Unix commands</li>
-</ul>
-<h3 id="working-with-storage-and-file-systems">Working with storage and file systems</h3>
-<p>&lt; Place holder for section introduction content &gt;</p>
-<h4 id="how-does-one-mount-or-import-additional-disks">How does one mount or import additional disks?</h4>
-<!--
-
-TODO:
-
-* Talk about the ZFS import command.
-* Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.
-
--->
-
-<h4 id="commands-used">commands used</h4>
-<ul>
-<li><code>mount</code></li>
-</ul>
-<h4 id="ntfs-support-3rd-party">NTFS support - 3rd party</h4>
-<ul>
-<li><a href="http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html">http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html</a></li>
-</ul>
-<h4 id="how-does-one-mirror-their-root-zpool">How does one mirror their root zpool?</h4>
-<ul>
-<li>Adding a 2nd disk to the root pool</li>
-</ul>
-<h4 id="how-does-one-create-additional-zpools">How does one create additional zpools?</h4>
-<ul>
-<li>zpool create command<ul>
-<li>Mirrors</li>
-<li>Raidz</li>
-</ul>
-</li>
-</ul>
-<h4 id="modifying-zpool-settings-and-attributes">Modifying zpool settings and attributes</h4>
-<ul>
-<li>zpool get/set commands</li>
-</ul>
-<h4 id="modifying-zfs-file-system-settings-and-attributes">Modifying zfs file system settings and attributes</h4>
-<ul>
-<li>zfs get/set commands</li>
-</ul>
-<h4 id="how-does-one-create-additional-zfs-datasets">How does one create additional zfs datasets?</h4>
-<ul>
-<li>zfs create command</li>
-</ul>
-<h4 id="configuring-system-swap">Configuring system swap</h4>
-<ul>
-<li>zfs set command</li>
-<li>swap -l</li>
-</ul>
-<h3 id="command-line">Command Line</h3>
-<h4 id="manual-configuration-static-ip">Manual Configuration (static IP)</h4>
+<p>&lt; Place Holder &gt;</p>
+<h3 id="manual-configuration-static-ip">Manual Configuration (static IP)</h3>
 <pre><code class="bash">:~$ sudo svcadm disable physical:nwam
 </code></pre>
 
@@ -645,11 +647,12 @@ IF you cannot ping an external IP (e.g. google.com) run this command and try aga
 </code></pre>
 
 <p>credit for this section of docs go to <a href="https://www.reddit.com/user/127b">/u/127b</a></p>
-<h4 id="automatic-configuration-nwam">Automatic Configuration (NWAM)</h4>
+<h3 id="automatic-configuration-nwam">Automatic Configuration (NWAM)</h3>
 <ul>
 <li>How to use NWAM (network auto magic)</li>
 </ul>
 <h3 id="desktop-gui">Desktop GUI</h3>
+<p>&lt; Place Holder &gt;</p>
 <h4 id="manual-configuration">Manual Configuration</h4>
 <p>&lt; Place Holder &gt;</p>
 <h4 id="automatic-configuration">Automatic Configuration</h4>
