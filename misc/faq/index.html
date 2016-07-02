@@ -412,7 +412,7 @@ This melding of software from many different open-source projects is similar to 
 <h2 id="how-does-openindiana-differ-from-opensolaris">How does OpenIndiana differ from OpenSolaris?</h2>
 <p>Some of the differences between OpenIndiana and OpenSolaris can be characterized as follows:</p>
 <ul>
-<li>Sun/Oracle's proprietary OS/NET consolidation has been replaced with <a href="https://github.com/OpenIndiana/illumos-gate">illumos-gate</a>.</li>
+<li>Sun's OS/NET consolidation (closed by Oracle) has been replaced with <a href="https://github.com/OpenIndiana/illumos-gate">illumos-gate</a>.</li>
 <li>Many of the original OpenSolaris software consolidations have been reorganized into a single oi-userland consolidation.</li>
 <li>Oracle's Sun Studio has been replaced with the open source GNU GCC compiler.</li>
 <li>XVM (XEN) has been replaced with the illumos-kvm port.</li>
@@ -546,10 +546,24 @@ While every package is tested to ensure stability, caution is nevertheless warra
 <tr>
 <td>64 Bit</td>
 <td>20GB (or more)</td>
-<td>4GB (or more)</td>
+<td>2GB (or more)</td>
 </tr>
 </tbody>
 </table>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<ul>
+<li>For the best performance (and to reduce the possibility of disk swapping), allocate 4GB RAM or more.</li>
+<li>For desktops, ensure total system memory (RAM + swap) are at least 4GB or greater.</li>
+<li>The default size of the OpenIndiana swap file is 50% of installed memory.<ul>
+<li>Minimum and maximum default swap allocations are 512MB and 32GB respectively.</li>
+</ul>
+</li>
+</ul>
+</div>
+
 <h2 id="does-openindiana-support-internationalization-and-localization">Does OpenIndiana support internationalization and localization?</h2>
 <p>Yes, when installing OpenIndiana, you may choose from 47 different keyboard layouts and 22 different languages.</p>
 <h2 id="does-openindiana-provide-security-and-bug-fixes">Does OpenIndiana provide security and bug fixes?</h2>
