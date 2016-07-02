@@ -325,15 +325,9 @@
     
         <li class="main active"><a href="#system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</a></li>
         
-            <li><a href="#configuring-a-ups">Configuring a UPS</a></li>
-        
-            <li><a href="#how-does-one-perform-system-backups">How does one perform system backups?</a></li>
-        
-            <li><a href="#how-does-one-add-additional-users">How does one add additional users?</a></li>
-        
             <li><a href="#configuring-and-tuning">Configuring and Tuning</a></li>
         
-            <li><a href="#illumos-boot-process">Illumos Boot Process</a></li>
+            <li><a href="#illumos-boot-process">Illumos boot process</a></li>
         
             <li><a href="#security">Security</a></li>
         
@@ -379,29 +373,26 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 <h1 id="system-administration-draft-work-in-progress">System Administration - (Draft) - work in progress</h1>
 <p>&lt; place holder &gt;</p>
+<h2 id="configuring-and-tuning">Configuring and Tuning</h2>
+<p>&lt; place holder &gt;</p>
 <h3 id="configuring-a-ups">Configuring a UPS</h3>
 <ul>
 <li>NUT?</li>
 </ul>
-<h3 id="how-does-one-perform-system-backups">How does one perform system backups?</h3>
-<ul>
-<li>Time Machine</li>
-<li>ZFS exports</li>
-<li>Bacula?</li>
-</ul>
-<h3 id="how-does-one-add-additional-users">How does one add additional users?</h3>
-<ul>
-<li>Basic system administration</li>
-<li>Basic Unix commands</li>
-</ul>
-<h2 id="configuring-and-tuning">Configuring and Tuning</h2>
-<p>&lt; placeholder &gt;</p>
-<h2 id="illumos-boot-process">Illumos Boot Process</h2>
-<p>&lt; placeholder &gt;</p>
+<h3 id="fault-management-fma">Fault management (FMA)</h3>
+<p>&lt; place holder &gt;</p>
+<h3 id="service-management-smf">Service management (SMF)</h3>
+<p>&lt; place holder &gt;</p>
+<h3 id="systems-logging-and-monitoring">Systems logging and monitoring</h3>
+<p>&lt; place holder &gt;</p>
+<h2 id="illumos-boot-process">Illumos boot process</h2>
+<p>&lt; place holder &gt;</p>
 <h2 id="security">Security</h2>
-<p>&lt; placeholder &gt;</p>
+<p>&lt; place holder &gt;</p>
+<h3 id="role-based-access-control-rbac">Role based access control (RBAC)</h3>
+<p>&lt; place holder &gt;</p>
 <h2 id="zones">Zones</h2>
-<h3 id="zones-running-web-stuff-in-zone-development-etc">Zones - running web stuff in zone, development, etc.</h3>
+<p>DOC TEAM NOTES TO WRITE ABOUT:</p>
 <ul>
 <li>Need to mention some of the changes to zone management...e.g..<ul>
 <li>sys-unconfig gone.</li>
@@ -413,31 +404,43 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 </li>
 </ul>
 <h2 id="storage">Storage</h2>
-<p>&lt; Place holder for section introduction content &gt;</p>
-<h3 id="how-does-one-mount-or-import-additional-disks">How does one mount or import additional disks?</h3>
-<!--
-
-TODO:
-
-* Talk about the ZFS import command.
-* Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.
-
--->
-
-<h4 id="commands-used">commands used</h4>
+<p>&lt; place holder &gt;</p>
+<h3 id="mounting-file-systems">Mounting file systems</h3>
+<p>DOC TEAM NOTES TO WRITE ABOUT:</p>
 <ul>
-<li><code>mount</code></li>
+<li>Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.</li>
 </ul>
+<h3 id="configuring-openindiana-as-an-iscsi-target-server-comstar">Configuring OpenIndiana as an ISCSI Target Server -(COMSTAR)</h3>
+<p>&lt; Place holder for content &gt;</p>
 <h3 id="ntfs-support-3rd-party">NTFS support - 3rd party</h3>
 <ul>
 <li><a href="http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html">http://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html</a></li>
 </ul>
+<h3 id="system-backups">System backups</h3>
+<p>The primary backup software is <a href="https://borgbackup.readthedocs.io/en/stable/">Borg Backup</a>.
+Borg is a client/server backup solution and installed using the following command: <code>pkg install borg-34</code>.</p>
+<p>Additional options include:</p>
+<ul>
+<li>Time-Slider</li>
+<li>Rsync</li>
+<li>ZFS exports</li>
+<li>cpio</li>
+<li>tar, zip, etc.</li>
+</ul>
 <h3 id="zfs">ZFS</h3>
+<p>&lt; place holder &gt;</p>
+<h4 id="importing-zfs-disks">Importing ZFS disks</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
+<ul>
+<li>Talk about the ZFS import command.</li>
+</ul>
 <h4 id="how-does-one-mirror-their-root-zpool">How does one mirror their root zpool?</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>Adding a 2nd disk to the root pool</li>
 </ul>
 <h4 id="how-does-one-create-additional-zpools">How does one create additional zpools?</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>zpool create command<ul>
 <li>Mirrors</li>
@@ -446,23 +449,28 @@ TODO:
 </li>
 </ul>
 <h4 id="modifying-zpool-settings-and-attributes">Modifying zpool settings and attributes</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>zpool get/set commands</li>
 </ul>
 <h4 id="modifying-zfs-file-system-settings-and-attributes">Modifying zfs file system settings and attributes</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>zfs get/set commands</li>
 </ul>
 <h4 id="how-does-one-create-additional-zfs-datasets">How does one create additional zfs datasets?</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>zfs create command</li>
 </ul>
 <h4 id="configuring-system-swap">Configuring system swap</h4>
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
 <ul>
 <li>zfs set command</li>
 <li>swap -l</li>
 </ul>
 <h2 id="virtualization">Virtualization</h2>
+<p>&lt; Place holder &gt;</p>
 <h3 id="virtualization-storage-server">Virtualization Storage Server</h3>
 <ul>
 <li>Poor man's standalone ISCSI SAN linked to a 2nd machine running VMware ESXI (2 computers required)<ul>
@@ -506,28 +514,19 @@ Most older processors such as Core2duo and Core2Quad lack EPT support, and a few
 </code></pre>
 
 <h2 id="localization">Localization</h2>
-<p>&lt; placeholder &gt;</p>
+<p>&lt; place holder &gt;</p>
 <h2 id="updating-and-upgrading">Updating and Upgrading</h2>
-<p>&lt; placeholder &gt;</p>
-<!--
-### How does one keep the system updated?
-
-<!--
-
-Some notes and reference docs for writing the IPS section:
-
-* Be sure to provide walkthroughs for both IPS and BEADMIN (as they work together).
-* [Basics of Image Packaging System (IPS) - Oracle](http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-083-ips-basics-523756.html)
-* [IPS cheat sheet PDF - Oracle](http://www.oracle.com/technetwork/server-storage/solaris11/documentation/ips-one-liners-032011-337775.pdf)
-
--->
-
+<p>DOC TEAM TOPICS TO WRITE ABOUT:</p>
+<ul>
+<li>Be sure to provide walkthroughs for both IPS and BEADMIN (as they work together).</li>
+<li><a href="http://www.oracle.com/technetwork/articles/servers-storage-admin/o11-083-ips-basics-523756.html">Basics of Image Packaging System (IPS) - Oracle</a></li>
+<li><a href="http://www.oracle.com/technetwork/server-storage/solaris11/documentation/ips-one-liners-032011-337775.pdf">IPS cheat sheet PDF - Oracle</a></li>
+</ul>
+<h3 id="using-pkg-to-list-packages-currently-installed-on-the-system">Using pkg to list packages currently installed on the system</h3>
 <p>&lt; Place holder for content &gt;</p>
-<h4 id="using-pkg-to-list-packages-currently-installed-on-the-system">Using pkg to list packages currently installed on the system</h4>
+<h3 id="using-pkg-to-search-for-packages">Using pkg to search for packages</h3>
 <p>&lt; Place holder for content &gt;</p>
-<h4 id="using-pkg-to-search-for-packages">Using pkg to search for packages</h4>
-<p>&lt; Place holder for content &gt;</p>
-<h4 id="using-pkg-to-update-the-system">Using pkg to update the system</h4>
+<h3 id="using-pkg-to-update-the-system">Using pkg to update the system</h3>
 <ul>
 <li><code>pkg update -nv</code> will perform a dry run and list the changes which would have been made to the system.</li>
 <li><code>pkg update</code> will perform a normal update and print a very brief summary.</li>
@@ -565,15 +564,14 @@ Given the limited number of IPS packages currently available, this is a pretty i
 </li>
 <li>How to install flash player</li>
 </ul>
-<p>--&gt;</p>
 <p>&lt; Place Holder for Content &gt;</p>
-<h4 id="using-the-pkg-publisher-and-pkg-set-publisher-commands">Using the pkg publisher and pkg set-publisher commands</h4>
+<h3 id="using-the-pkg-publisher-and-pkg-set-publisher-commands">Using the pkg publisher and pkg set-publisher commands</h3>
 <p>The <code>pkg publisher</code> command is used to add and remove remote repositories.</p>
 <ul>
 <li><code>pkg publisher</code> - lists all the repositories configured on the system.</li>
 <li>To add a repository, use <code>pkg set-publisher -O &lt;Repository_URL&gt; &lt;Repository_Name&gt;</code></li>
 </ul>
-<h4 id="using-the-pkgrepo-command">Using the pkgrepo command</h4>
+<h3 id="using-the-pkgrepo-command">Using the pkgrepo command</h3>
 <p>The <code>pkgrepo</code> command is primarily used for creating and working with IPS repositories.
 It can also be used for querying the contents of a repository.</p>
 <ul>

@@ -882,42 +882,62 @@
         },
         {
             "location": "/handbook/common-tasks/",
-            "text": "Common Tasks - (Draft) - work in progress\n\n\n placeholder \n\n\nDesktop Applications\n\n\n placeholder \n\n\nMultimedia\n\n\nGetting OI to play Multimedia\n\n\n\n\nHow to get OI to play a DVD\n\n\nHow to get flash player installed and working.\n\n\nHow to get VLC installed and working.\n\n\nCodecs, etc.\n\n\nHow to use the hidden \ngstreamer-properties\n configuration utility.\n\n\n\n\nUsing OpenIndiana as a Media server, HTPC, etc.\n\n\n\n\nhttp://forum.kodi.tv/showthread.php?tid=44315\npage=2\n\n\nhttp://lightsandshapes.com/plex-on-smartos.html\n\n\n\n\nPrinting\n\n\n placeholder \n\n\nGraphics workstation\n\n\n Place holder for content \n\n\nDesktop Publishing system, Etc.\n\n\n Place holder for content",
+            "text": "Common Tasks - (Draft) - work in progress\n\n\n place holder \n\n\nBasic UNIX commands\n\n\n place holder \n\n\nBasic system administration\n\n\n\n\nAdding users, etc.\n\n\n\n\nDesktop applications\n\n\n place holder \n\n\nMultimedia\n\n\n place holder \n\n\nPulse Audio configuration\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nHow to use the hidden \ngstreamer-properties\n configuration utility.\n\n\nPulse Audio configuration\n\n\n\n\nMP3 and CD audio support\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nCodecs, etc.\n\n\nRythembox (audio player)\n\n\nSound Juicer (CD ripper)\n\n\n\n\nVideo support\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nHow to get OI to play a DVD\n\n\nHow to get flash player installed and working.\n\n\nHow to get VLC installed and working.\n\n\nTotem (video player)\n\n\n\n\nUsing OpenIndiana as a media server, HTPC, etc.\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nhttp://forum.kodi.tv/showthread.php?tid=44315\npage=2\n\n\nhttp://lightsandshapes.com/plex-on-smartos.html\n\n\n\n\nPrinting\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nOI uses CUPS as the primary print system.\n\n\nGNOME print manager (\nsystem-config-printer\n)\n\n\n\n\nSee the additional information about printing in contrib/topics.md\nAlso see the deprecation comments in the OSOL printing guide.\n\n\nGraphics workstation\n\n\nDOC TEAM ITEMS TO WRITE ABOUT:\n\n\n\n\nGIMP\n\n\n\n\nDesktop Publishing system, Etc.\n\n\n Place holder for content",
             "title": "Common Tasks"
         },
         {
             "location": "/handbook/common-tasks/#common-tasks-draft-work-in-progress",
-            "text": "placeholder",
+            "text": "place holder",
             "title": "Common Tasks - (Draft) - work in progress"
         },
         {
+            "location": "/handbook/common-tasks/#basic-unix-commands",
+            "text": "place holder",
+            "title": "Basic UNIX commands"
+        },
+        {
+            "location": "/handbook/common-tasks/#basic-system-administration",
+            "text": "Adding users, etc.",
+            "title": "Basic system administration"
+        },
+        {
             "location": "/handbook/common-tasks/#desktop-applications",
-            "text": "placeholder",
-            "title": "Desktop Applications"
+            "text": "place holder",
+            "title": "Desktop applications"
         },
         {
             "location": "/handbook/common-tasks/#multimedia",
-            "text": "",
+            "text": "place holder",
             "title": "Multimedia"
         },
         {
-            "location": "/handbook/common-tasks/#getting-oi-to-play-multimedia",
-            "text": "How to get OI to play a DVD  How to get flash player installed and working.  How to get VLC installed and working.  Codecs, etc.  How to use the hidden  gstreamer-properties  configuration utility.",
-            "title": "Getting OI to play Multimedia"
+            "location": "/handbook/common-tasks/#pulse-audio-configuration",
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   How to use the hidden  gstreamer-properties  configuration utility.  Pulse Audio configuration",
+            "title": "Pulse Audio configuration"
+        },
+        {
+            "location": "/handbook/common-tasks/#mp3-and-cd-audio-support",
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   Codecs, etc.  Rythembox (audio player)  Sound Juicer (CD ripper)",
+            "title": "MP3 and CD audio support"
+        },
+        {
+            "location": "/handbook/common-tasks/#video-support",
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   How to get OI to play a DVD  How to get flash player installed and working.  How to get VLC installed and working.  Totem (video player)",
+            "title": "Video support"
         },
         {
             "location": "/handbook/common-tasks/#using-openindiana-as-a-media-server-htpc-etc",
-            "text": "http://forum.kodi.tv/showthread.php?tid=44315 page=2  http://lightsandshapes.com/plex-on-smartos.html",
-            "title": "Using OpenIndiana as a Media server, HTPC, etc."
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   http://forum.kodi.tv/showthread.php?tid=44315 page=2  http://lightsandshapes.com/plex-on-smartos.html",
+            "title": "Using OpenIndiana as a media server, HTPC, etc."
         },
         {
             "location": "/handbook/common-tasks/#printing",
-            "text": "placeholder",
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   OI uses CUPS as the primary print system.  GNOME print manager ( system-config-printer )   See the additional information about printing in contrib/topics.md\nAlso see the deprecation comments in the OSOL printing guide.",
             "title": "Printing"
         },
         {
             "location": "/handbook/common-tasks/#graphics-workstation",
-            "text": "Place holder for content",
+            "text": "DOC TEAM ITEMS TO WRITE ABOUT:   GIMP",
             "title": "Graphics workstation"
         },
         {
@@ -927,7 +947,7 @@
         },
         {
             "location": "/handbook/systems-administration/",
-            "text": "System Administration - (Draft) - work in progress\n\n\n place holder \n\n\nConfiguring a UPS\n\n\n\n\nNUT?\n\n\n\n\nHow does one perform system backups?\n\n\n\n\nTime Machine\n\n\nZFS exports\n\n\nBacula?\n\n\n\n\nHow does one add additional users?\n\n\n\n\nBasic system administration\n\n\nBasic Unix commands\n\n\n\n\nConfiguring and Tuning\n\n\n placeholder \n\n\nIllumos Boot Process\n\n\n placeholder \n\n\nSecurity\n\n\n placeholder \n\n\nZones\n\n\nZones - running web stuff in zone, development, etc.\n\n\n\n\nNeed to mention some of the changes to zone management...e.g..\n\n\nsys-unconfig gone.\n\n\nsysding replaced syscfg\n\n\nnow have to have DNS, root password, etc. all configured inside the zone before being able to logon using \nzlogin -C \nzonename\n, otherwise have to do \nzlogin \nzonename\n. So a fair amount of stuff has changed there.\n\n\n\n\n\n\n\n\n\n\n\n\nStorage\n\n\n Place holder for section introduction content \n\n\nHow does one mount or import additional disks?\n\n\n\n\n\ncommands used\n\n\n\n\nmount\n\n\n\n\nNTFS support - 3rd party\n\n\n\n\nhttp://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html\n\n\n\n\nZFS\n\n\nHow does one mirror their root zpool?\n\n\n\n\nAdding a 2nd disk to the root pool\n\n\n\n\nHow does one create additional zpools?\n\n\n\n\nzpool create command\n\n\nMirrors\n\n\nRaidz\n\n\n\n\n\n\n\n\nModifying zpool settings and attributes\n\n\n\n\nzpool get/set commands\n\n\n\n\nModifying zfs file system settings and attributes\n\n\n\n\nzfs get/set commands\n\n\n\n\nHow does one create additional zfs datasets?\n\n\n\n\nzfs create command\n\n\n\n\nConfiguring system swap\n\n\n\n\nzfs set command\n\n\nswap -l\n\n\n\n\nVirtualization\n\n\nVirtualization Storage Server\n\n\n\n\nPoor man's standalone ISCSI SAN linked to a 2nd machine running VMware ESXI (2 computers required)\n\n\nA variation of this would be to run OI as an ESXI guest with local storage hardware \"passed through\" to OI and then subsequently share ZFS volumes via  ISCSI with the ESXI host itself. In this configuration, OI effectively becomes a SAN (1 computer required)\n\n\n\n\n\n\n\n\nVirtualization Server\n\n\n\n\nQemu-KVM walkthrough (Does hipster even have this package?)\n\n\nYes, KVM is the package name\n\n\n\n\n\n\n\n\nUsing VIRSH, Virt-manager, etc. (Does hipster [or any illumos distro for that matter] even have virsh or Virt-manager)\n\n\n\n\nIf not, what tools are used to manage the Joyent KVM port (VMADM perhaps?)\n\n\nVirtualbox walkthrough - ditto...is there a package available?\n\n\n\n\n\n\n\n\nillumos KVM port does not support AMD processors.\n\n\n\n\nIntel processors require EPT support.\n\n\n\n\nIn a nutshell, most modern Intel processors such as i3, i5, i7, and Xeon support EPT.\nMost older processors such as Core2duo and Core2Quad lack EPT support, and a few of them lack virtualization support at all.\n\n\nYou can check your processor for EPT support via the following link: \nhttp://ark.intel.com/Products/VirtualizationTechnology\n\n\n\n\nHipster is currently testing a new package for managing KVM instances as SMF services.\n\n\n\n\nleoric\n Testers needed! pkg://userland/system/qemu/kvmadm@0.10.3,5.11-2015.0.2.0:20160322T212709Z\n\nleoric\n jeffpc: I know, you like kvm :)\n\njeffpc\n heh\n\njeffpc\n leoric: is there documentation for it?\n\nleoric\n https://github.com/hadfl/kvmadm/blob/master/doc/kvmadm.pod\n\njeffpc\n oh, is it http://www.kvmadm.org/ ?\n\nleoric\n yes\n\njeffpc\n interesting\n\njeffpc\n I'll have to give it a try at some point\n\n\n\n\nLocalization\n\n\n placeholder \n\n\nUpdating and Upgrading\n\n\n placeholder \n\n\n\n\n\n Place holder for content \n\n\nUsing pkg to list packages currently installed on the system\n\n\n Place holder for content \n\n\nUsing pkg to search for packages\n\n\n Place holder for content \n\n\nUsing pkg to update the system\n\n\n\n\npkg update -nv\n will perform a dry run and list the changes which would have been made to the system.\n\n\npkg update\n will perform a normal update and print a very brief summary.\n\n\npkg update -v\n will perform the update and then print a summary of what was updated.\n\n\npkg history\n will provide basic details for previous uses of the pkg command.\n\n\n\n\nHow does one find and install more software?\n\n\nTips for writing this section:\n\n\n\n\nhttps://pkgsrc.joyent.com/\n\n\nhttps://pkgsrc.joyent.com/\n\n\n\n\nhttps://pkgsrc.joyent.com/install-on-illumos/\n\n\n\n\n\n\nClean up and consolidate information from website and wiki about where to find additional software.\n\n\n\n\nNeed to answer the questions - Where and how can I install more software?\n\n\nDiscuss the various package managers (PKGIN, IPS (PKG), etc.)\n\n\nDiscuss the various repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.\n\n\nWhat is SFE? How does it differ from other repos?\n\n\nAdd a page for popular available software with descriptions, etc.\n\n\nWhen they say IPS is network centric, they're not kidding;\nPackages cannot be installed locally like RPM, instead you have to setup a local network repository.\n\n\nSee: \nhttp://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg\n\n\n\n\n\n\nHow to additional repos, etc.\n\n\nHow to compile your own software.\nI think there is an existing wiki page for this.\nGiven the limited number of IPS packages currently available, this is a pretty important subject to write about.\n\n\nAlso could look here (might be outdated):\n\n\nhttp://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml\n\n\n\n\n\n\nHow to install flash player\n\n\n\n\n--\n\n\n Place Holder for Content \n\n\nUsing the pkg publisher and pkg set-publisher commands\n\n\nThe \npkg publisher\n command is used to add and remove remote repositories.\n\n\n\n\npkg publisher\n - lists all the repositories configured on the system.\n\n\nTo add a repository, use \npkg set-publisher -O \nRepository_URL\n \nRepository_Name\n\n\n\n\nUsing the pkgrepo command\n\n\nThe \npkgrepo\n command is primarily used for creating and working with IPS repositories.\nIt can also be used for querying the contents of a repository.\n\n\n\n\npkgrepo info -s \nrepo_URL\n\n\npkgrepo list -s \nrepo_URL\n \npackage_group\n\n\n\n\nDtrace\n\n\n Place Holder \n\n\nConfiguring Networking\n\n\n Place Holder \n\n\nManual Configuration (static IP)\n\n\n:~$ sudo svcadm disable physical:nwam\n\n\n\n\nDefine in your IP/hostname \n/etc/hosts\n, if not already, an entry for this host. For example:\n\n\n192.168.1.22 hostname hostname.local localhost loghost\n# Subsittude 192.168.1.22 for YOUR IP\n\n\n\n\nEnable the default physical service with \nsvcadm\n and configure the \ninterface\n:\n\n\n:~$ sudo svcadm enable physical:default\n\n\n\n\nConfigure interface with ipadm:\n\n\n:~$ sudo ipadm create-addr -T static -a local=192.168.1.22/24 bge0/v4static\n\n\n\n\nIf you do not know what the interface name is (bge0 in this case); then type in\n\n\n:~$ dladm show-link\n\n\n\n\nor:\n\n\n:~$ kstat -c net | grep net\n\n# look for hme0, bge0, e1000g0 or soemthing that resembles the driver in use.\n\n\n\n\nAdd gateway\n\n\n:~$ sudo route -p add default 192.168.1.121\n\n\n\n\nor\n\n\n:~$ sudo nano /etc/defaultrouter\n\n# Enter in your gateways IP\n\n\n\n\nSet DNS server(s)\n\n\n:~$ sudo nano /etc/resolv.conf\n# Enter in the DNS server IP(s)\nnameserver 192.168.1.121\n\n\n\n\nor\n\n\n\n:~$ sudo sh -c 'echo \nnameserver 192.168.1.121\n \n /etc/resolv.conf'\n\n\n\n\n\nRestart\n\n\n:~$ sudo reboot\n\n\n\n\n\n\n\n \nNOTE:\n\n\n\nIF you cannot ping an external IP (e.g. google.com) run this command and try again.\n\n\n\n:~$ sudo cp /etc/nsswitch.dns /etc/nsswitch.conf\n\n\n\n\ncredit for this section of docs go to \n/u/127b\n\n\nAutomatic Configuration (NWAM)\n\n\n\n\nHow to use NWAM (network auto magic)\n\n\n\n\nDesktop GUI\n\n\n Place Holder \n\n\nManual Configuration\n\n\n Place Holder \n\n\nAutomatic Configuration\n\n\n Place Holder \n\n\nTroubleshooting\n\n\n\n\nMake sure the network auto magic 'Location' setting is configured as 'Automatic' and not 'NoNet'\n\n\n\n\nClustering with Open HA Cluster\n\n\nSee old sun docs\n\n\n\n\nhttp://docs.oracle.com/cd/E19735-01/\n\n\n\n\nAlso see:\n\n\n\n\nhttp://zfs-create.blogspot.nl/",
+            "text": "System Administration - (Draft) - work in progress\n\n\n place holder \n\n\nConfiguring and Tuning\n\n\n place holder \n\n\nConfiguring a UPS\n\n\n\n\nNUT?\n\n\n\n\nFault management (FMA)\n\n\n place holder \n\n\nService management (SMF)\n\n\n place holder \n\n\nSystems logging and monitoring\n\n\n place holder \n\n\nIllumos boot process\n\n\n place holder \n\n\nSecurity\n\n\n place holder \n\n\nRole based access control (RBAC)\n\n\n place holder \n\n\nZones\n\n\nDOC TEAM NOTES TO WRITE ABOUT:\n\n\n\n\nNeed to mention some of the changes to zone management...e.g..\n\n\nsys-unconfig gone.\n\n\nsysding replaced syscfg\n\n\nnow have to have DNS, root password, etc. all configured inside the zone before being able to logon using \nzlogin -C \nzonename\n, otherwise have to do \nzlogin \nzonename\n. So a fair amount of stuff has changed there.\n\n\n\n\n\n\n\n\n\n\n\n\nStorage\n\n\n place holder \n\n\nMounting file systems\n\n\nDOC TEAM NOTES TO WRITE ABOUT:\n\n\n\n\nNeed a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.\n\n\n\n\nConfiguring OpenIndiana as an ISCSI Target Server -(COMSTAR)\n\n\n Place holder for content \n\n\nNTFS support - 3rd party\n\n\n\n\nhttp://jp-andre.pagesperso-orange.fr/openindiana-ntfs-3g.html\n\n\n\n\nSystem backups\n\n\nThe primary backup software is \nBorg Backup\n.\nBorg is a client/server backup solution and installed using the following command: \npkg install borg-34\n.\n\n\nAdditional options include:\n\n\n\n\nTime-Slider\n\n\nRsync\n\n\nZFS exports\n\n\ncpio\n\n\ntar, zip, etc.\n\n\n\n\nZFS\n\n\n place holder \n\n\nImporting ZFS disks\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nTalk about the ZFS import command.\n\n\n\n\nHow does one mirror their root zpool?\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nAdding a 2nd disk to the root pool\n\n\n\n\nHow does one create additional zpools?\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nzpool create command\n\n\nMirrors\n\n\nRaidz\n\n\n\n\n\n\n\n\nModifying zpool settings and attributes\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nzpool get/set commands\n\n\n\n\nModifying zfs file system settings and attributes\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nzfs get/set commands\n\n\n\n\nHow does one create additional zfs datasets?\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nzfs create command\n\n\n\n\nConfiguring system swap\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nzfs set command\n\n\nswap -l\n\n\n\n\nVirtualization\n\n\n Place holder \n\n\nVirtualization Storage Server\n\n\n\n\nPoor man's standalone ISCSI SAN linked to a 2nd machine running VMware ESXI (2 computers required)\n\n\nA variation of this would be to run OI as an ESXI guest with local storage hardware \"passed through\" to OI and then subsequently share ZFS volumes via  ISCSI with the ESXI host itself. In this configuration, OI effectively becomes a SAN (1 computer required)\n\n\n\n\n\n\n\n\nVirtualization Server\n\n\n\n\nQemu-KVM walkthrough (Does hipster even have this package?)\n\n\nYes, KVM is the package name\n\n\n\n\n\n\n\n\nUsing VIRSH, Virt-manager, etc. (Does hipster [or any illumos distro for that matter] even have virsh or Virt-manager)\n\n\n\n\nIf not, what tools are used to manage the Joyent KVM port (VMADM perhaps?)\n\n\nVirtualbox walkthrough - ditto...is there a package available?\n\n\n\n\n\n\n\n\nillumos KVM port does not support AMD processors.\n\n\n\n\nIntel processors require EPT support.\n\n\n\n\nIn a nutshell, most modern Intel processors such as i3, i5, i7, and Xeon support EPT.\nMost older processors such as Core2duo and Core2Quad lack EPT support, and a few of them lack virtualization support at all.\n\n\nYou can check your processor for EPT support via the following link: \nhttp://ark.intel.com/Products/VirtualizationTechnology\n\n\n\n\nHipster is currently testing a new package for managing KVM instances as SMF services.\n\n\n\n\nleoric\n Testers needed! pkg://userland/system/qemu/kvmadm@0.10.3,5.11-2015.0.2.0:20160322T212709Z\n\nleoric\n jeffpc: I know, you like kvm :)\n\njeffpc\n heh\n\njeffpc\n leoric: is there documentation for it?\n\nleoric\n https://github.com/hadfl/kvmadm/blob/master/doc/kvmadm.pod\n\njeffpc\n oh, is it http://www.kvmadm.org/ ?\n\nleoric\n yes\n\njeffpc\n interesting\n\njeffpc\n I'll have to give it a try at some point\n\n\n\n\nLocalization\n\n\n place holder \n\n\nUpdating and Upgrading\n\n\nDOC TEAM TOPICS TO WRITE ABOUT:\n\n\n\n\nBe sure to provide walkthroughs for both IPS and BEADMIN (as they work together).\n\n\nBasics of Image Packaging System (IPS) - Oracle\n\n\nIPS cheat sheet PDF - Oracle\n\n\n\n\nUsing pkg to list packages currently installed on the system\n\n\n Place holder for content \n\n\nUsing pkg to search for packages\n\n\n Place holder for content \n\n\nUsing pkg to update the system\n\n\n\n\npkg update -nv\n will perform a dry run and list the changes which would have been made to the system.\n\n\npkg update\n will perform a normal update and print a very brief summary.\n\n\npkg update -v\n will perform the update and then print a summary of what was updated.\n\n\npkg history\n will provide basic details for previous uses of the pkg command.\n\n\n\n\nHow does one find and install more software?\n\n\nTips for writing this section:\n\n\n\n\nhttps://pkgsrc.joyent.com/\n\n\nhttps://pkgsrc.joyent.com/\n\n\n\n\nhttps://pkgsrc.joyent.com/install-on-illumos/\n\n\n\n\n\n\nClean up and consolidate information from website and wiki about where to find additional software.\n\n\n\n\nNeed to answer the questions - Where and how can I install more software?\n\n\nDiscuss the various package managers (PKGIN, IPS (PKG), etc.)\n\n\nDiscuss the various repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.\n\n\nWhat is SFE? How does it differ from other repos?\n\n\nAdd a page for popular available software with descriptions, etc.\n\n\nWhen they say IPS is network centric, they're not kidding;\nPackages cannot be installed locally like RPM, instead you have to setup a local network repository.\n\n\nSee: \nhttp://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg\n\n\n\n\n\n\nHow to additional repos, etc.\n\n\nHow to compile your own software.\nI think there is an existing wiki page for this.\nGiven the limited number of IPS packages currently available, this is a pretty important subject to write about.\n\n\nAlso could look here (might be outdated):\n\n\nhttp://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml\n\n\n\n\n\n\nHow to install flash player\n\n\n\n\n Place Holder for Content \n\n\nUsing the pkg publisher and pkg set-publisher commands\n\n\nThe \npkg publisher\n command is used to add and remove remote repositories.\n\n\n\n\npkg publisher\n - lists all the repositories configured on the system.\n\n\nTo add a repository, use \npkg set-publisher -O \nRepository_URL\n \nRepository_Name\n\n\n\n\nUsing the pkgrepo command\n\n\nThe \npkgrepo\n command is primarily used for creating and working with IPS repositories.\nIt can also be used for querying the contents of a repository.\n\n\n\n\npkgrepo info -s \nrepo_URL\n\n\npkgrepo list -s \nrepo_URL\n \npackage_group\n\n\n\n\nDtrace\n\n\n Place Holder \n\n\nConfiguring Networking\n\n\n Place Holder \n\n\nManual Configuration (static IP)\n\n\n:~$ sudo svcadm disable physical:nwam\n\n\n\n\nDefine in your IP/hostname \n/etc/hosts\n, if not already, an entry for this host. For example:\n\n\n192.168.1.22 hostname hostname.local localhost loghost\n# Subsittude 192.168.1.22 for YOUR IP\n\n\n\n\nEnable the default physical service with \nsvcadm\n and configure the \ninterface\n:\n\n\n:~$ sudo svcadm enable physical:default\n\n\n\n\nConfigure interface with ipadm:\n\n\n:~$ sudo ipadm create-addr -T static -a local=192.168.1.22/24 bge0/v4static\n\n\n\n\nIf you do not know what the interface name is (bge0 in this case); then type in\n\n\n:~$ dladm show-link\n\n\n\n\nor:\n\n\n:~$ kstat -c net | grep net\n\n# look for hme0, bge0, e1000g0 or soemthing that resembles the driver in use.\n\n\n\n\nAdd gateway\n\n\n:~$ sudo route -p add default 192.168.1.121\n\n\n\n\nor\n\n\n:~$ sudo nano /etc/defaultrouter\n\n# Enter in your gateways IP\n\n\n\n\nSet DNS server(s)\n\n\n:~$ sudo nano /etc/resolv.conf\n# Enter in the DNS server IP(s)\nnameserver 192.168.1.121\n\n\n\n\nor\n\n\n\n:~$ sudo sh -c 'echo \nnameserver 192.168.1.121\n \n /etc/resolv.conf'\n\n\n\n\n\nRestart\n\n\n:~$ sudo reboot\n\n\n\n\n\n\n\n \nNOTE:\n\n\n\nIF you cannot ping an external IP (e.g. google.com) run this command and try again.\n\n\n\n:~$ sudo cp /etc/nsswitch.dns /etc/nsswitch.conf\n\n\n\n\ncredit for this section of docs go to \n/u/127b\n\n\nAutomatic Configuration (NWAM)\n\n\n\n\nHow to use NWAM (network auto magic)\n\n\n\n\nDesktop GUI\n\n\n Place Holder \n\n\nManual Configuration\n\n\n Place Holder \n\n\nAutomatic Configuration\n\n\n Place Holder \n\n\nTroubleshooting\n\n\n\n\nMake sure the network auto magic 'Location' setting is configured as 'Automatic' and not 'NoNet'\n\n\n\n\nClustering with Open HA Cluster\n\n\nSee old sun docs\n\n\n\n\nhttp://docs.oracle.com/cd/E19735-01/\n\n\n\n\nAlso see:\n\n\n\n\nhttp://zfs-create.blogspot.nl/",
             "title": "Systems Administration"
         },
         {
@@ -936,59 +956,64 @@
             "title": "System Administration - (Draft) - work in progress"
         },
         {
+            "location": "/handbook/systems-administration/#configuring-and-tuning",
+            "text": "place holder",
+            "title": "Configuring and Tuning"
+        },
+        {
             "location": "/handbook/systems-administration/#configuring-a-ups",
             "text": "NUT?",
             "title": "Configuring a UPS"
         },
         {
-            "location": "/handbook/systems-administration/#how-does-one-perform-system-backups",
-            "text": "Time Machine  ZFS exports  Bacula?",
-            "title": "How does one perform system backups?"
+            "location": "/handbook/systems-administration/#fault-management-fma",
+            "text": "place holder",
+            "title": "Fault management (FMA)"
         },
         {
-            "location": "/handbook/systems-administration/#how-does-one-add-additional-users",
-            "text": "Basic system administration  Basic Unix commands",
-            "title": "How does one add additional users?"
+            "location": "/handbook/systems-administration/#service-management-smf",
+            "text": "place holder",
+            "title": "Service management (SMF)"
         },
         {
-            "location": "/handbook/systems-administration/#configuring-and-tuning",
-            "text": "placeholder",
-            "title": "Configuring and Tuning"
+            "location": "/handbook/systems-administration/#systems-logging-and-monitoring",
+            "text": "place holder",
+            "title": "Systems logging and monitoring"
         },
         {
             "location": "/handbook/systems-administration/#illumos-boot-process",
-            "text": "placeholder",
-            "title": "Illumos Boot Process"
+            "text": "place holder",
+            "title": "Illumos boot process"
         },
         {
             "location": "/handbook/systems-administration/#security",
-            "text": "placeholder",
+            "text": "place holder",
             "title": "Security"
         },
         {
+            "location": "/handbook/systems-administration/#role-based-access-control-rbac",
+            "text": "place holder",
+            "title": "Role based access control (RBAC)"
+        },
+        {
             "location": "/handbook/systems-administration/#zones",
-            "text": "",
+            "text": "DOC TEAM NOTES TO WRITE ABOUT:   Need to mention some of the changes to zone management...e.g..  sys-unconfig gone.  sysding replaced syscfg  now have to have DNS, root password, etc. all configured inside the zone before being able to logon using  zlogin -C  zonename , otherwise have to do  zlogin  zonename . So a fair amount of stuff has changed there.",
             "title": "Zones"
         },
         {
-            "location": "/handbook/systems-administration/#zones-running-web-stuff-in-zone-development-etc",
-            "text": "Need to mention some of the changes to zone management...e.g..  sys-unconfig gone.  sysding replaced syscfg  now have to have DNS, root password, etc. all configured inside the zone before being able to logon using  zlogin -C  zonename , otherwise have to do  zlogin  zonename . So a fair amount of stuff has changed there.",
-            "title": "Zones - running web stuff in zone, development, etc."
-        },
-        {
             "location": "/handbook/systems-administration/#storage",
-            "text": "Place holder for section introduction content",
+            "text": "place holder",
             "title": "Storage"
         },
         {
-            "location": "/handbook/systems-administration/#how-does-one-mount-or-import-additional-disks",
-            "text": "",
-            "title": "How does one mount or import additional disks?"
+            "location": "/handbook/systems-administration/#mounting-file-systems",
+            "text": "DOC TEAM NOTES TO WRITE ABOUT:   Need a walkthrough of mounting options for other filesystems...NTFS, FAT, UFS, etc.",
+            "title": "Mounting file systems"
         },
         {
-            "location": "/handbook/systems-administration/#commands-used",
-            "text": "mount",
-            "title": "commands used"
+            "location": "/handbook/systems-administration/#configuring-openindiana-as-an-iscsi-target-server-comstar",
+            "text": "Place holder for content",
+            "title": "Configuring OpenIndiana as an ISCSI Target Server -(COMSTAR)"
         },
         {
             "location": "/handbook/systems-administration/#ntfs-support-3rd-party",
@@ -996,43 +1021,53 @@
             "title": "NTFS support - 3rd party"
         },
         {
+            "location": "/handbook/systems-administration/#system-backups",
+            "text": "The primary backup software is  Borg Backup .\nBorg is a client/server backup solution and installed using the following command:  pkg install borg-34 .  Additional options include:   Time-Slider  Rsync  ZFS exports  cpio  tar, zip, etc.",
+            "title": "System backups"
+        },
+        {
             "location": "/handbook/systems-administration/#zfs",
-            "text": "",
+            "text": "place holder",
             "title": "ZFS"
         },
         {
+            "location": "/handbook/systems-administration/#importing-zfs-disks",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   Talk about the ZFS import command.",
+            "title": "Importing ZFS disks"
+        },
+        {
             "location": "/handbook/systems-administration/#how-does-one-mirror-their-root-zpool",
-            "text": "Adding a 2nd disk to the root pool",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   Adding a 2nd disk to the root pool",
             "title": "How does one mirror their root zpool?"
         },
         {
             "location": "/handbook/systems-administration/#how-does-one-create-additional-zpools",
-            "text": "zpool create command  Mirrors  Raidz",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   zpool create command  Mirrors  Raidz",
             "title": "How does one create additional zpools?"
         },
         {
             "location": "/handbook/systems-administration/#modifying-zpool-settings-and-attributes",
-            "text": "zpool get/set commands",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   zpool get/set commands",
             "title": "Modifying zpool settings and attributes"
         },
         {
             "location": "/handbook/systems-administration/#modifying-zfs-file-system-settings-and-attributes",
-            "text": "zfs get/set commands",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   zfs get/set commands",
             "title": "Modifying zfs file system settings and attributes"
         },
         {
             "location": "/handbook/systems-administration/#how-does-one-create-additional-zfs-datasets",
-            "text": "zfs create command",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   zfs create command",
             "title": "How does one create additional zfs datasets?"
         },
         {
             "location": "/handbook/systems-administration/#configuring-system-swap",
-            "text": "zfs set command  swap -l",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   zfs set command  swap -l",
             "title": "Configuring system swap"
         },
         {
             "location": "/handbook/systems-administration/#virtualization",
-            "text": "",
+            "text": "Place holder",
             "title": "Virtualization"
         },
         {
@@ -1047,12 +1082,12 @@
         },
         {
             "location": "/handbook/systems-administration/#localization",
-            "text": "placeholder",
+            "text": "place holder",
             "title": "Localization"
         },
         {
             "location": "/handbook/systems-administration/#updating-and-upgrading",
-            "text": "placeholder     Place holder for content",
+            "text": "DOC TEAM TOPICS TO WRITE ABOUT:   Be sure to provide walkthroughs for both IPS and BEADMIN (as they work together).  Basics of Image Packaging System (IPS) - Oracle  IPS cheat sheet PDF - Oracle",
             "title": "Updating and Upgrading"
         },
         {
@@ -1072,7 +1107,7 @@
         },
         {
             "location": "/handbook/systems-administration/#how-does-one-find-and-install-more-software",
-            "text": "Tips for writing this section:   https://pkgsrc.joyent.com/  https://pkgsrc.joyent.com/   https://pkgsrc.joyent.com/install-on-illumos/    Clean up and consolidate information from website and wiki about where to find additional software.   Need to answer the questions - Where and how can I install more software?  Discuss the various package managers (PKGIN, IPS (PKG), etc.)  Discuss the various repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.  What is SFE? How does it differ from other repos?  Add a page for popular available software with descriptions, etc.  When they say IPS is network centric, they're not kidding;\nPackages cannot be installed locally like RPM, instead you have to setup a local network repository.  See:  http://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg    How to additional repos, etc.  How to compile your own software.\nI think there is an existing wiki page for this.\nGiven the limited number of IPS packages currently available, this is a pretty important subject to write about.  Also could look here (might be outdated):  http://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml    How to install flash player   --   Place Holder for Content",
+            "text": "Tips for writing this section:   https://pkgsrc.joyent.com/  https://pkgsrc.joyent.com/   https://pkgsrc.joyent.com/install-on-illumos/    Clean up and consolidate information from website and wiki about where to find additional software.   Need to answer the questions - Where and how can I install more software?  Discuss the various package managers (PKGIN, IPS (PKG), etc.)  Discuss the various repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.  What is SFE? How does it differ from other repos?  Add a page for popular available software with descriptions, etc.  When they say IPS is network centric, they're not kidding;\nPackages cannot be installed locally like RPM, instead you have to setup a local network repository.  See:  http://serverfault.com/questions/348139/how-to-manually-download-individual-files-from-the-openindiana-or-solaris-pkg    How to additional repos, etc.  How to compile your own software.\nI think there is an existing wiki page for this.\nGiven the limited number of IPS packages currently available, this is a pretty important subject to write about.  Also could look here (might be outdated):  http://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml    How to install flash player    Place Holder for Content",
             "title": "How does one find and install more software?"
         },
         {
@@ -1132,78 +1167,103 @@
         },
         {
             "location": "/handbook/network-communications/",
-            "text": "Network Communications - (Draft) - work in progress\n\n\nPPP\n\n\nPPPoE\n\n\nEmail\n\n\nFirewalls\n\n\nAdvanced Networking\n\n\nCrossbow\n\n\nUsing OpenIndiana as a NAS\n\n\n place holder for section introduction content \n\n\nConfiguring OpenIndiana as a CIFS (Samba) Server\n\n\nHome NAS setup steps\n\n\n\n\nGet the hardware\n\n\nAssemble the hardware\n\n\nInstall OpenIndiana\n\n\nConfigure OpenIndiana\n\n\nConfigure Windows\n\n\n\n\ncommands used\n\n\n\n\nsharemgr\n - configure and manage file sharing\n\n\nsmbadm\n - configure and manage CIFS local groups and users, and manage domain membership\n\n\nzfs\n - configures ZFS file systems\n\n\npasswd\n - change login password and password attributes\n\n\nchown\n - change file ownership\n\n\n\n\n\n\n\nStart by listing available storage pools.\n\n\n# zfs list\n\nNAME                           USED  AVAIL  REFER  MOUNTPOINT\nstorage                        498K   899G    19K  /storage\n\n\n\n\n\nCreate your ZFS dataset to be shared via CIFS/SMB.\n\n\n# zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup\n\n\n\n\n\nStart the CIFS service.\n\n\n# svcadm enable -r smb/server\n\n\n\n\nJoin the CIFS server to a workgroup.\n\n\n# smbadm join -w WORKGROUP\n\n\n\n\nConfigure PAM authentication for the CIFS service.\n\n\n# echo \nother password required pam_smb_passwd.so.1 nowarn\n \n /etc/pam.conf\n\n\n\n\nReset the password for the local user accounts which will be used for remotely accessing the CIFS/SMB share.\n\n\n# passwd \nuser_account\n\n\n\n\n\nSet the share name to be used for the CIFS/SMB share.\n\n\n# zfs set sharesmb=name=backup storage/backup\n\n\n\n\nChange the ownership of ZFS dataset to the user account which will be used for remotely accessing the CIFS/SMB share.\n\n\n# chown -R \nuser_account\n /storage/backup\n\n\n\n\nVerify everything is all set to go.\n\n\n# sharemgr show -vp\n\ndefault nfs=()\nsmb smb=()\n        * /var/smb/cvol  smb=() \n\n                  c$=/var/smb/cvol       smb=(abe=\nfalse\n guestok=\nfalse\n)      \nDefault Share\n\nzfs smb=()\n    zfs/storage/backup smb=()\n          backup=/storage/backup\n\n\n\n\nYou can create additional CIFS datasets using the following 4 commands.\n\n\n# zfs create -o casesensitivity=mixed -o sharesmb=on \npool_name/dataset_name\n\n# zfs set sharesmb=name=\nnew_share_name\n \npool_name/dataset_name\n\n# chown -R \nuser_account\n \npath_to_dataset\n\n# sharemgr show -vp\n\n\n\n\n\nConfiguring CIFS/SMB Linux client connectivity\n\n\nAdding a remote share using the Linux smbclient\n\n\n\n\nAccessing an SMB Share With Linux Machines\n\n\n\n\nAdding a remote share using the KDE Dolphin file manager GUI\n\n\n\n\nIn the left hand pane click \nNetwork\n\n\nIn the right hand pane click \nAdd Network Folder\n\n\nThe Network Folder Wizard opens\n\n\nSelect the radio button for \nMicrosoft Windows network drive\n and click next\n\n\nSpecify a name for the share - can be anything - this is just a label\n\n\nSpecify the remote CIFS/SMB server name (or IP address)\n\n\nSpecify the share name of the remote CIFS/SMB share\n\n\nClick the save and connect button\n\n\nYou'll be prompted for a remote username and password\n\n\nEnsure the checkbox is marked to save credentials or you'll be asked for everything you do.\n\n\n\n\nAdding a remote share using a Windows client\n\n\n\n\n place_holder \n\n\n\n\nConfiguring OpenIndiana as an NFS Server\n\n\n Place holder for content \n\n\nConfiguring OpenIndiana as an ISCSI Target Server -(COMSTAR)\n\n\n Place holder for content",
+            "text": "Network Communications - (Draft) - work in progress\n\n\n Place holder for content \n\n\nPPP\n\n\n Place holder for content \n\n\nPPPoE\n\n\n Place holder for content \n\n\nEmail\n\n\n Place holder for content \n\n\nWWW server\n\n\n\n\nApache\n\n\nnginx\n\n\n\n\nFirewalls\n\n\n\n\nIP packet filtering (IPF)\n\n\n\n\nAdvanced Networking\n\n\n Place holder for content \n\n\nCrossbow\n\n\n Place holder for content \n\n\nUsing OpenIndiana as a NAS\n\n\nDOC TEAM NOTES:\n\n\nFor a variation of configuring a home NAS - this could be done virtually as well\n\n\n\n\nRunning OI as a VMware EXSI guest\n\n\nLocal storage hardware is passed through to the OI guest and then shared via ISCSI, CIFS, NFS, etc.\n\n\n\n\n\n\n\n\nFor help writing this section, see the following OpenSolaris references:\n\n\n\n\nSetting Up an OpenSolaris NAS Box\n\n\nGetting Started With the Solaris CIFS Service\n\n\nHow to enable guest access to a Solaris CIFS share\n\n\nSolaris CIFS Service Troubleshooting\n\n\nWhat's New With Solaris CIFS\n\n\nCIFS Technical References\n\n\n\n\nAlso have a look at the \nOpenSolaris CIFS Administration Guide\n\n\nConfiguring OpenIndiana as a CIFS (Samba) Server\n\n\n place holder for section introduction content \n\n\nCommands used\n\n\n\n\nsharemgr\n - configure and manage file sharing\n\n\nsmbadm\n - configure and manage CIFS local groups and users, and manage domain membership\n\n\nzfs\n - configures ZFS file systems\n\n\npasswd\n - change login password and password attributes\n\n\nchown\n - change file ownership\n\n\n\n\nConfiguration steps\n\n\nStart by listing available storage pools.\n\n\n# zfs list\n\nNAME                           USED  AVAIL  REFER  MOUNTPOINT\nstorage                        498K   899G    19K  /storage\n\n\n\n\n\nCreate your ZFS dataset to be shared via CIFS/SMB.\n\n\n# zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup\n\n\n\n\n\nStart the CIFS service.\n\n\n# svcadm enable -r smb/server\n\n\n\n\nJoin the CIFS server to a workgroup.\n\n\n# smbadm join -w WORKGROUP\n\n\n\n\nConfigure PAM authentication for the CIFS service.\n\n\n# echo \nother password required pam_smb_passwd.so.1 nowarn\n \n /etc/pam.conf\n\n\n\n\nReset the password for the local user accounts which will be used for remotely accessing the CIFS/SMB share.\n\n\n# passwd \nuser_account\n\n\n\n\n\nSet the share name to be used for the CIFS/SMB share.\n\n\n# zfs set sharesmb=name=backup storage/backup\n\n\n\n\nChange the ownership of ZFS dataset to the user account which will be used for remotely accessing the CIFS/SMB share.\n\n\n# chown -R \nuser_account\n /storage/backup\n\n\n\n\nVerify everything is all set to go.\n\n\n# sharemgr show -vp\n\ndefault nfs=()\nsmb smb=()\n        * /var/smb/cvol  smb=() \n\n                  c$=/var/smb/cvol       smb=(abe=\nfalse\n guestok=\nfalse\n)      \nDefault Share\n\nzfs smb=()\n    zfs/storage/backup smb=()\n          backup=/storage/backup\n\n\n\n\nYou can create additional CIFS datasets using the following 4 commands.\n\n\n# zfs create -o casesensitivity=mixed -o sharesmb=on \npool_name/dataset_name\n\n# zfs set sharesmb=name=\nnew_share_name\n \npool_name/dataset_name\n\n# chown -R \nuser_account\n \npath_to_dataset\n\n# sharemgr show -vp\n\n\n\n\n\nConfiguring CIFS/SMB Linux client connectivity\n\n\n place holder \n\n\nAdding a remote share using the Linux smbclient\n\n\n\n\nAccessing an SMB Share With Linux Machines\n\n\n\n\nAdding a remote share using the KDE Dolphin file manager GUI\n\n\n\n\nIn the left hand pane click \nNetwork\n\n\nIn the right hand pane click \nAdd Network Folder\n\n\nThe Network Folder Wizard opens\n\n\nSelect the radio button for \nMicrosoft Windows network drive\n and click next\n\n\nSpecify a name for the share - can be anything - this is just a label\n\n\nSpecify the remote CIFS/SMB server name (or IP address)\n\n\nSpecify the share name of the remote CIFS/SMB share\n\n\nClick the save and connect button\n\n\nYou'll be prompted for a remote username and password\n\n\nEnsure the checkbox is marked to save credentials or you'll be asked for everything you do.\n\n\n\n\nAdding a remote share using a Windows client\n\n\n place holder \n\n\nConfiguring OpenIndiana as an NFS server\n\n\n Place holder for content \n\n\nConfiguring OpenIndiana as an NIS server\n\n\n Place holder for content \n\n\nConfiguring OpenIndiana as an LDAP server\n\n\n Place holder for content",
             "title": "Network Communications"
         },
         {
             "location": "/handbook/network-communications/#network-communications-draft-work-in-progress",
-            "text": "",
+            "text": "Place holder for content",
             "title": "Network Communications - (Draft) - work in progress"
         },
         {
             "location": "/handbook/network-communications/#ppp",
-            "text": "",
+            "text": "Place holder for content",
             "title": "PPP"
         },
         {
             "location": "/handbook/network-communications/#pppoe",
-            "text": "",
+            "text": "Place holder for content",
             "title": "PPPoE"
         },
         {
             "location": "/handbook/network-communications/#email",
-            "text": "",
+            "text": "Place holder for content",
             "title": "Email"
         },
         {
+            "location": "/handbook/network-communications/#www-server",
+            "text": "Apache  nginx",
+            "title": "WWW server"
+        },
+        {
             "location": "/handbook/network-communications/#firewalls",
-            "text": "",
+            "text": "IP packet filtering (IPF)",
             "title": "Firewalls"
         },
         {
             "location": "/handbook/network-communications/#advanced-networking",
-            "text": "",
+            "text": "Place holder for content",
             "title": "Advanced Networking"
         },
         {
             "location": "/handbook/network-communications/#crossbow",
-            "text": "",
+            "text": "Place holder for content",
             "title": "Crossbow"
         },
         {
             "location": "/handbook/network-communications/#using-openindiana-as-a-nas",
-            "text": "place holder for section introduction content",
+            "text": "DOC TEAM NOTES:  For a variation of configuring a home NAS - this could be done virtually as well   Running OI as a VMware EXSI guest  Local storage hardware is passed through to the OI guest and then shared via ISCSI, CIFS, NFS, etc.     For help writing this section, see the following OpenSolaris references:   Setting Up an OpenSolaris NAS Box  Getting Started With the Solaris CIFS Service  How to enable guest access to a Solaris CIFS share  Solaris CIFS Service Troubleshooting  What's New With Solaris CIFS  CIFS Technical References   Also have a look at the  OpenSolaris CIFS Administration Guide",
             "title": "Using OpenIndiana as a NAS"
         },
         {
             "location": "/handbook/network-communications/#configuring-openindiana-as-a-cifs-samba-server",
-            "text": "",
+            "text": "place holder for section introduction content",
             "title": "Configuring OpenIndiana as a CIFS (Samba) Server"
         },
         {
-            "location": "/handbook/network-communications/#home-nas-setup-steps",
-            "text": "Get the hardware  Assemble the hardware  Install OpenIndiana  Configure OpenIndiana  Configure Windows",
-            "title": "Home NAS setup steps"
+            "location": "/handbook/network-communications/#commands-used",
+            "text": "sharemgr  - configure and manage file sharing  smbadm  - configure and manage CIFS local groups and users, and manage domain membership  zfs  - configures ZFS file systems  passwd  - change login password and password attributes  chown  - change file ownership",
+            "title": "Commands used"
         },
         {
-            "location": "/handbook/network-communications/#commands-used",
-            "text": "sharemgr  - configure and manage file sharing  smbadm  - configure and manage CIFS local groups and users, and manage domain membership  zfs  - configures ZFS file systems  passwd  - change login password and password attributes  chown  - change file ownership    Start by listing available storage pools.  # zfs list\n\nNAME                           USED  AVAIL  REFER  MOUNTPOINT\nstorage                        498K   899G    19K  /storage  Create your ZFS dataset to be shared via CIFS/SMB.  # zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup  Start the CIFS service.  # svcadm enable -r smb/server  Join the CIFS server to a workgroup.  # smbadm join -w WORKGROUP  Configure PAM authentication for the CIFS service.  # echo  other password required pam_smb_passwd.so.1 nowarn    /etc/pam.conf  Reset the password for the local user accounts which will be used for remotely accessing the CIFS/SMB share.  # passwd  user_account   Set the share name to be used for the CIFS/SMB share.  # zfs set sharesmb=name=backup storage/backup  Change the ownership of ZFS dataset to the user account which will be used for remotely accessing the CIFS/SMB share.  # chown -R  user_account  /storage/backup  Verify everything is all set to go.  # sharemgr show -vp\n\ndefault nfs=()\nsmb smb=()\n        * /var/smb/cvol  smb=()  \n                  c$=/var/smb/cvol       smb=(abe= false  guestok= false )       Default Share \nzfs smb=()\n    zfs/storage/backup smb=()\n          backup=/storage/backup  You can create additional CIFS datasets using the following 4 commands.  # zfs create -o casesensitivity=mixed -o sharesmb=on  pool_name/dataset_name \n# zfs set sharesmb=name= new_share_name   pool_name/dataset_name \n# chown -R  user_account   path_to_dataset \n# sharemgr show -vp",
-            "title": "commands used"
+            "location": "/handbook/network-communications/#configuration-steps",
+            "text": "Start by listing available storage pools.  # zfs list\n\nNAME                           USED  AVAIL  REFER  MOUNTPOINT\nstorage                        498K   899G    19K  /storage  Create your ZFS dataset to be shared via CIFS/SMB.  # zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup  Start the CIFS service.  # svcadm enable -r smb/server  Join the CIFS server to a workgroup.  # smbadm join -w WORKGROUP  Configure PAM authentication for the CIFS service.  # echo  other password required pam_smb_passwd.so.1 nowarn    /etc/pam.conf  Reset the password for the local user accounts which will be used for remotely accessing the CIFS/SMB share.  # passwd  user_account   Set the share name to be used for the CIFS/SMB share.  # zfs set sharesmb=name=backup storage/backup  Change the ownership of ZFS dataset to the user account which will be used for remotely accessing the CIFS/SMB share.  # chown -R  user_account  /storage/backup  Verify everything is all set to go.  # sharemgr show -vp\n\ndefault nfs=()\nsmb smb=()\n        * /var/smb/cvol  smb=()  \n                  c$=/var/smb/cvol       smb=(abe= false  guestok= false )       Default Share \nzfs smb=()\n    zfs/storage/backup smb=()\n          backup=/storage/backup  You can create additional CIFS datasets using the following 4 commands.  # zfs create -o casesensitivity=mixed -o sharesmb=on  pool_name/dataset_name \n# zfs set sharesmb=name= new_share_name   pool_name/dataset_name \n# chown -R  user_account   path_to_dataset \n# sharemgr show -vp",
+            "title": "Configuration steps"
         },
         {
             "location": "/handbook/network-communications/#configuring-cifssmb-linux-client-connectivity",
-            "text": "Adding a remote share using the Linux smbclient   Accessing an SMB Share With Linux Machines   Adding a remote share using the KDE Dolphin file manager GUI   In the left hand pane click  Network  In the right hand pane click  Add Network Folder  The Network Folder Wizard opens  Select the radio button for  Microsoft Windows network drive  and click next  Specify a name for the share - can be anything - this is just a label  Specify the remote CIFS/SMB server name (or IP address)  Specify the share name of the remote CIFS/SMB share  Click the save and connect button  You'll be prompted for a remote username and password  Ensure the checkbox is marked to save credentials or you'll be asked for everything you do.   Adding a remote share using a Windows client    place_holder",
+            "text": "place holder",
             "title": "Configuring CIFS/SMB Linux client connectivity"
+        },
+        {
+            "location": "/handbook/network-communications/#adding-a-remote-share-using-the-linux-smbclient",
+            "text": "Accessing an SMB Share With Linux Machines",
+            "title": "Adding a remote share using the Linux smbclient"
+        },
+        {
+            "location": "/handbook/network-communications/#adding-a-remote-share-using-the-kde-dolphin-file-manager-gui",
+            "text": "In the left hand pane click  Network  In the right hand pane click  Add Network Folder  The Network Folder Wizard opens  Select the radio button for  Microsoft Windows network drive  and click next  Specify a name for the share - can be anything - this is just a label  Specify the remote CIFS/SMB server name (or IP address)  Specify the share name of the remote CIFS/SMB share  Click the save and connect button  You'll be prompted for a remote username and password  Ensure the checkbox is marked to save credentials or you'll be asked for everything you do.",
+            "title": "Adding a remote share using the KDE Dolphin file manager GUI"
+        },
+        {
+            "location": "/handbook/network-communications/#adding-a-remote-share-using-a-windows-client",
+            "text": "place holder",
+            "title": "Adding a remote share using a Windows client"
         },
         {
             "location": "/handbook/network-communications/#configuring-openindiana-as-an-nfs-server",
             "text": "Place holder for content",
-            "title": "Configuring OpenIndiana as an NFS Server"
+            "title": "Configuring OpenIndiana as an NFS server"
         },
         {
-            "location": "/handbook/network-communications/#configuring-openindiana-as-an-iscsi-target-server-comstar",
+            "location": "/handbook/network-communications/#configuring-openindiana-as-an-nis-server",
             "text": "Place holder for content",
-            "title": "Configuring OpenIndiana as an ISCSI Target Server -(COMSTAR)"
+            "title": "Configuring OpenIndiana as an NIS server"
+        },
+        {
+            "location": "/handbook/network-communications/#configuring-openindiana-as-an-ldap-server",
+            "text": "Place holder for content",
+            "title": "Configuring OpenIndiana as an LDAP server"
         },
         {
             "location": "/handbook/appendix/",
