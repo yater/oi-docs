@@ -521,11 +521,11 @@ Ideally suited for both workstations and servers, simply choose the installer ty
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <ul>
-<li>OpenIndiana releases from the legacy oi-dev-151x branch are no longer maintained.</li>
-<li>For those desiring to upgrade from legacy installations, Hipster IPS repositories are available.</li>
-<li>While upgrades from the legacy branch are possible, the most trouble free method is to perform a clean install.
-</div></li>
+<li>The legacy oi-dev-151x branch is no longer maintained.</li>
+<li>While upgrades to Hipster are possible, the most trouble free method is to perform a clean install.</li>
 </ul>
+</div>
+
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
@@ -574,23 +574,14 @@ For this effort to succeed, we ask our user base to diligently bring security an
 <ul>
 <li><a href="http://dlc.openindiana.org/isos/hipster">Primary Mirror</a></li>
 <li><a href="http://ftp.vim.org/os/openindiana.org/dlc/isos/hipster">Vim.org Alternate Mirror</a></li>
-<li><a href="http://ftp.vim.org/os/openindiana.org/dlc/isos/hipster">Torrents</a></li>
+<li><a href="http://dlc.openindiana.org/torrents/">Torrents</a></li>
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
-<!-- CAUTION: -->
-
-<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well">
-OpenIndiana Hipster does not yet support USB 3.0.</p>
-<ul>
-<li>When attaching backward compatible USB 3.0 devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.
-</div></li>
-</ul>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-At this time, creating a bootable flash drive requires the use of a header file.</p>
+<div class="well"></p>
+<p>At this time, creating a bootable flash drive requires the use of a header file.</p>
 <ul>
 <li>There are 2 unique USB header files (1G and 2G).</li>
 <li>Please ensure you have selected the correct file.<ul>
@@ -600,8 +591,19 @@ At this time, creating a bootable flash drive requires the use of a header file.
 </ul>
 </li>
 </ul>
-<p>Failure to use the correct USB header file can result in the USB drive either failing to boot, or only partially booting (and falling back to systems maintenance mode with KSH93 errors).
-</div></p>
+<p>Failure to use the correct USB header file can result in the USB drive either failing to boot, or only partially booting (and falling back to systems maintenance mode with KSH93 errors).</p>
+</div>
+
+<!-- CAUTION: -->
+
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well"></p>
+<p>OpenIndiana Hipster does not yet support USB 3.0.</p>
+<ul>
+<li>When attaching backward compatible USB 3.0 devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.</li>
+</ul>
+</div>
+
 <p>For further information about how to create a bootable OpenIndiana flash drive, consult the <a href="../../handbook/getting-started/#creating-a-bootable-openindiana-usb-flash-drive">OpenIndiana Handbook</a>.</p>
 <h2 id="what-package-manager-does-openindiana-use">What package manager does OpenIndiana use?</h2>
 <p>OpenIndiana uses the network based <a href="https://en.wikipedia.org/wiki/Image_Packaging_System">Image Packaging System (IPS)</a>.
