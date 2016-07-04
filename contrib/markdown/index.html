@@ -341,6 +341,10 @@
         
             <li><a href="#internal-urls">Internal URL's</a></li>
         
+            <li><a href="#images">Images</a></li>
+        
+            <li><a href="#block-quotes">Block quotes</a></li>
+        
             <li><a href="#code-blocks">Code blocks</a></li>
         
             <li><a href="#in-line-code">In-line code</a></li>
@@ -388,8 +392,9 @@ _This is italic text_
 <div class="well"></p>
 <p>This is plain text</p>
 <p><em>This is italic text</em></p>
-<p><strong>This is bold text</strong>
-</div></p>
+<p><strong>This is bold text</strong></p>
+</div>
+
 <h3 id="headers">Headers</h3>
 <p>Headers in markdown (much like HTML) come in various sizes.</p>
 <p><strong>Markdown Code</strong> <i class="fa fa-code fa-lg" aria-hidden="true"></i></p>
@@ -432,9 +437,10 @@ The more hashes added, the smaller the header will be, for example.</p>
 <ol>
 <li>First item</li>
 <li>Second item</li>
-<li>Third item
-</div></li>
+<li>Third item</li>
 </ol>
+</div>
+
 <h3 id="unordered-lists">Unordered lists</h3>
 <p>Unordered lists are great for general lists that don't need to be done
 in specific steps.</p>
@@ -449,9 +455,10 @@ in specific steps.</p>
 <ul>
 <li>this</li>
 <li>is</li>
-<li>unordered
-</div></li>
+<li>unordered</li>
 </ul>
+</div>
+
 <h3 id="nested-lists">Nested lists</h3>
 <p><strong>Markdown Code</strong> <i class="fa fa-code fa-lg" aria-hidden="true"></i></p>
 <pre><code class="markdown">* Markdown lists are:
@@ -466,11 +473,12 @@ in specific steps.</p>
 <li>Markdown lists are:<ul>
 <li>awesome</li>
 <li>amazing</li>
-<li>really cool
-</div></li>
+<li>really cool</li>
 </ul>
 </li>
 </ul>
+</div>
+
 <h3 id="tables">Tables</h3>
 <p><strong>Markdown Code</strong> <i class="fa fa-code fa-lg" aria-hidden="true"></i></p>
 <pre><code class="markdown">| Table Header 1 | Table Header 2
@@ -514,8 +522,9 @@ or (bare url's)
 <div class="well"></p>
 <p><a href="http://www.openindiana.org">The OpenIndiana Website</a></p>
 <p>or (bare url's)</p>
-<p><a href="http://www.openindiana.org">http://www.openindiana.org</a>
-</div></p>
+<p><a href="http://www.openindiana.org">http://www.openindiana.org</a></p>
+</div>
+
 <h3 id="internal-urls">Internal URL's</h3>
 <p>Internal URL's operate a little differently than external URL's.
 Simply specify the relative path to the document.
@@ -527,9 +536,34 @@ You can even target a specific section of the document.</p>
 </code></pre>
 
 <p><strong>Rendered HTML</strong> <i class="fa fa-html5" aria-hidden="true"></i>
-<div class="well">
-<a href="../../handbook/getting-started/">The OpenIndiana Handbook - getting started</a></p>
+<div class="well"></p>
+<p><a href="../../handbook/getting-started/">The OpenIndiana Handbook - getting started</a></p>
 <p><a href="../../handbook/appendix/#finding-help-and-support">Handbook - Appendix - Finding Help and Support</a></p>
+</div>
+
+<h3 id="images">Images</h3>
+<p>Specify the relative path to the image, just like an internal URL.</p>
+<p><strong>Markdown Code</strong> <i class="fa fa-code fa-lg" aria-hidden="true"></i></p>
+<pre><code class="markdown">![openindiana logo](../Openindiana.png)
+</code></pre>
+
+<p><strong>Rendered HTML</strong> <i class="fa fa-html5" aria-hidden="true"></i>
+<div class="well"></p>
+<p><img alt="openindiana logo" src="../../Openindiana.png" /></p>
+</div>
+
+<h3 id="block-quotes">Block quotes</h3>
+<p><strong>Markdown Code</strong> <i class="fa fa-code fa-lg" aria-hidden="true"></i></p>
+<pre><code class="markdown">&gt; This is a block quote.
+&gt; And here is the 2nd line of the quote.
+</code></pre>
+
+<p><strong>Rendered HTML</strong> <i class="fa fa-html5" aria-hidden="true"></i>
+<div class="well"></p>
+<blockquote>
+<p>This is a block quote.
+And here is the 2nd line of the quote.</p>
+</blockquote>
 </div>
 
 <h3 id="code-blocks">Code blocks</h3>
