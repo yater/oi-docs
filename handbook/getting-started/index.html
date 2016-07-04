@@ -331,7 +331,7 @@
         
             <li><a href="#system-requirements">System Requirements</a></li>
         
-            <li><a href="#preparation-for-installing-openindiana-hipster">Preparation for Installing OpenIndiana Hipster</a></li>
+            <li><a href="#preparation-for-installing-openindiana">Preparation for Installing OpenIndiana</a></li>
         
             <li><a href="#creating-a-bootable-openindiana-dvd">Creating a bootable OpenIndiana DVD</a></li>
         
@@ -467,14 +467,64 @@ As the FAQ evolves, try to keep this section in sync.
 </ul>
 </div>
 
-<h2 id="preparation-for-installing-openindiana-hipster">Preparation for Installing OpenIndiana Hipster</h2>
-<p>&lt; Place holder for content &gt;</p>
+<h2 id="preparation-for-installing-openindiana">Preparation for Installing OpenIndiana</h2>
+<p>Prior to installing OpenIndiana:</p>
+<ul>
+<li>Ensure your system meets the recommended hardware requirements.</li>
+<li>Ensure to consult the HCL.</li>
+</ul>
+<!-- CAUTION: -->
+
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well"></p>
+<p>Installing OpenIndiana on unsupported hardware may cause excessive CPU usage, instability, or other problems.</p>
+<p>Please be sure to consult the hardware compatibility list (HCL):</p>
+<ul>
+<li><a href="https://www.illumos.org/hcl/">Illumos HLC</a></li>
+<li><a href="http://wiki.openindiana.org/oi/Components">OpenIndiana HCL - components</a></li>
+<li><a href="http://wiki.openindiana.org/oi/Systems">OpenIndiana HCL - systems</a></li>
+</ul>
+</div>
+
+<p><strong>DOC TEAM NOTE:</strong></p>
+<ul>
+<li>Gigabyte motherboards with Intel socket 775 and ICH10 chipset don't work well with OI.<ul>
+<li>Kernel CPU usage can range from 40-80% cpu @ idle.</li>
+</ul>
+</li>
+<li>Seems to work OK on Intel brand desktop motherboards though.</li>
+<li>Works well with HP Zxxx class workstation hardware.</li>
+</ul>
 <h3 id="backing-up-data">Backing up data</h3>
-<p>&lt; Place holder for content &gt;</p>
+<!-- CAUTION: -->
+
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well"></p>
+<p>Before attempting to install OpenIndiana, first ensure you backup any important data.
+Do not save the data on another partition or on another disk within the same system.
+Instead save the data to an external device such as a USB hard drive, or external system (network backup service, or a networked system).
+Always verify your backed up data.</p>
+</div>
+
 <h3 id="deciding-where-to-install-openindiana">Deciding where to install OpenIndiana</h3>
-<p>&lt; Place holder for content &gt;</p>
-<h3 id="gathering-network-information">Gathering Network Information</h3>
-<p>&lt; Place holder for content &gt;</p>
+<p>By default the OpenIndiana installer creates an EFI partition using a GPT partition table.
+Using this option, OpenIndiana will use the entire disk.
+No other operating system can share the same disk.</p>
+<p>Optionally you may use a legacy MBR partition.
+MBR partitions will allow you to create multiple partitions.
+MBR will also support dual booting another operating system.</p>
+<p>Another option is to install to a virtual machine.</p>
+<h3 id="gathering-network-information">Gathering network information</h3>
+<p>If you network uses a DHCP server, OpenIndiana can be configured to automatically obtain it's network information.
+If a DHCP server is not available, then you will need to manually configure your network settings.</p>
+<p>Obtain the following information:</p>
+<ol>
+<li>IP address</li>
+<li>Subnet mask</li>
+<li>Gateway</li>
+<li>Network domain name</li>
+<li>Network DNS servers</li>
+</ol>
 <h3 id="downloading-the-software">Downloading the software</h3>
 <!--
 
@@ -699,30 +749,7 @@ Alternately, you may need to change the boot device order in your BIOS configura
 These technologies must be disabled prior to booting an OpenIndiana DVD or USB stick.</p>
 </div>
 
-<h4 id="booting-physical-hardware">Booting Physical Hardware</h4>
-<!-- CAUTION: -->
-
-<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well"></p>
-<p>Booting OpenIndiana on unsupported hardware may cause excessive CPU usage, instability, or other problems.</p>
-<p>Please be sure to consult the hardware compatibility list (HCL):</p>
-<ul>
-<li><a href="https://www.illumos.org/hcl/">Illumos HLC</a></li>
-<li><a href="http://wiki.openindiana.org/oi/Components">OpenIndiana HCL - components</a></li>
-<li><a href="http://wiki.openindiana.org/oi/Systems">OpenIndiana HCL - systems</a></li>
-</ul>
-</div>
-
-<p><strong>DOC TEAM NOTE:</strong></p>
-<ul>
-<li>Gigabyte motherboards with Intel socket 775 and ICH10 chipset don't work well with OI.<ul>
-<li>Kernel CPU usage can range from 40-80% cpu @ idle.</li>
-</ul>
-</li>
-<li>Seems to work OK on Intel brand desktop motherboards though.</li>
-<li>Works well with HP Zxxx class workstation hardware.</li>
-</ul>
-<h4 id="booting-virtual-hardware">Booting Virtual Hardware</h4>
+<h3 id="booting-openindiana-on-virtual-hardware">Booting OpenIndiana on virtual hardware</h3>
 <p>The most efficient way to boot a virtual machine is to boot directly from the DVD ISO file.
 Alternately, you may use host to guest DVD/USB passthrough to boot from physical media.
 See the notes below for optimizing OpenIndiana for several popular hypervisors.</p>
