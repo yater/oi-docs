@@ -424,46 +424,42 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 </ul>
 <h4 id="configuration-steps">Configuration steps</h4>
 <p>Start by listing available storage pools.</p>
-<pre><code class="bash"># zfs list
-
-NAME                           USED  AVAIL  REFER  MOUNTPOINT
+<p><code>zfs list</code></p>
+<pre><code class="bash">NAME                           USED  AVAIL  REFER  MOUNTPOINT
 storage                        498K   899G    19K  /storage
-
 </code></pre>
 
 <p>Create your ZFS dataset to be shared via CIFS/SMB.</p>
-<pre><code class="bash"># zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup
-
+<pre><code class="bash">zfs create -o casesensitivity=mixed -o sharesmb=on storage/backup
 </code></pre>
 
 <p>Start the CIFS service.</p>
-<pre><code class="bash"># svcadm enable -r smb/server
+<pre><code class="bash">svcadm enable -r smb/server
 </code></pre>
 
 <p>Join the CIFS server to a workgroup.</p>
-<pre><code class="bash"># smbadm join -w WORKGROUP
+<pre><code class="bash">smbadm join -w WORKGROUP
 </code></pre>
 
 <p>Configure PAM authentication for the CIFS service.</p>
-<pre><code class="bash"># echo &quot;other password required pam_smb_passwd.so.1 nowarn&quot; &gt;&gt; /etc/pam.conf
+<pre><code class="bash">echo &quot;other password required pam_smb_passwd.so.1 nowarn&quot; &gt;&gt; /etc/pam.conf
 </code></pre>
 
 <p>Reset the password for the local user accounts which will be used for remotely accessing the CIFS/SMB share.</p>
-<pre><code class="bash"># passwd &lt;user_account&gt;
+<pre><code class="bash">passwd &lt;user_account&gt;
 </code></pre>
 
 <p>Set the share name to be used for the CIFS/SMB share.</p>
-<pre><code class="bash"># zfs set sharesmb=name=backup storage/backup
+<pre><code class="bash">zfs set sharesmb=name=backup storage/backup
 </code></pre>
 
 <p>Change the ownership of ZFS dataset to the user account which will be used for remotely accessing the CIFS/SMB share.</p>
-<pre><code class="bash"># chown -R &lt;user_account&gt; /storage/backup
+<pre><code class="bash">chown -R &lt;user_account&gt; /storage/backup
 </code></pre>
 
 <p>Verify everything is all set to go.</p>
-<pre><code class="bash"># sharemgr show -vp
-
-default nfs=()
+<p><code>sharemgr show -vp</code></p>
+<pre><code class="bash">default nfs=()
 smb smb=()
         * /var/smb/cvol  smb=() &quot;&quot;
                   c$=/var/smb/cvol       smb=(abe=&quot;false&quot; guestok=&quot;false&quot;)      &quot;Default Share&quot;
@@ -473,13 +469,12 @@ zfs smb=()
 </code></pre>
 
 <p>You can create additional CIFS datasets using the following 4 commands.</p>
-<pre><code class="bash"># zfs create -o casesensitivity=mixed -o sharesmb=on &lt;pool_name/dataset_name&gt;
-# zfs set sharesmb=name=&lt;new_share_name&gt; &lt;pool_name/dataset_name&gt;
-# chown -R &lt;user_account&gt; &lt;path_to_dataset&gt;
-# sharemgr show -vp
-
-</code></pre>
-
+<ul>
+<li><code>zfs create -o casesensitivity=mixed -o sharesmb=on &lt;pool_name/dataset_name&gt;</code></li>
+<li><code>zfs set sharesmb=name=&lt;new_share_name&gt; &lt;pool_name/dataset_name&gt;</code></li>
+<li><code>chown -R &lt;user_account&gt; &lt;path_to_dataset&gt;</code></li>
+<li><code>sharemgr show -vp</code></li>
+</ul>
 <h4 id="configuring-cifssmb-linux-client-connectivity">Configuring CIFS/SMB Linux client connectivity</h4>
 <p>&lt; place holder &gt;</p>
 <h5 id="adding-a-remote-share-using-the-linux-smbclient">Adding a remote share using the Linux smbclient</h5>
