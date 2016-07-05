@@ -323,29 +323,27 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#openindiana-handbook-getting-started">OpenIndiana Handbook - Getting started</a></li>
+        <li class="main active"><a href="#openindiana-handbook-getting-started">OpenIndiana Handbook - Getting Started</a></li>
         
             <li><a href="#introduction">Introduction</a></li>
         
-            <li><a href="#openindiana-software-releases">OpenIndiana Software Releases</a></li>
+            <li><a href="#openindiana-software-releases">OpenIndiana software releases</a></li>
         
-            <li><a href="#system-requirements">System Requirements</a></li>
+            <li><a href="#system-requirements">System requirements</a></li>
         
-            <li><a href="#preparation-for-installing-openindiana">Preparation for Installing OpenIndiana</a></li>
+            <li><a href="#preparation-for-installing-openindiana">Preparation for installing OpenIndiana</a></li>
         
             <li><a href="#creating-a-bootable-openindiana-dvd">Creating a bootable OpenIndiana DVD</a></li>
         
-            <li><a href="#creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB Flash Drive</a></li>
-        
-            <li><a href="#testing-openindiana-using-live-media">Testing Openindiana Using Live Media</a></li>
+            <li><a href="#creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB flash drive</a></li>
         
             <li><a href="#booting-openindiana">Booting OpenIndiana</a></li>
         
             <li><a href="#installing-openindiana">Installing OpenIndiana</a></li>
         
-            <li><a href="#troubleshooting-installations">Troubleshooting Installations</a></li>
+            <li><a href="#troubleshooting-installations">Troubleshooting installations</a></li>
         
-            <li><a href="#installing-applications">Installing Applications</a></li>
+            <li><a href="#installing-applications">Installing applications</a></li>
         
             <li><a href="#xorg">Xorg</a></li>
         
@@ -373,7 +371,7 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 -->
 
-<h1 id="openindiana-handbook-getting-started">OpenIndiana Handbook - Getting started</h1>
+<h1 id="openindiana-handbook-getting-started">OpenIndiana Handbook - Getting Started</h1>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
@@ -387,7 +385,7 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 The purpose of the OpenIndiana Project is to ensure the continued availability of an openly developed distribution based on OpenSolaris.
 The OpenIndiana project is also a continuation of the collaborative effort and community spirit of the <a href="https://en.wikipedia.org/wiki/OpenSolaris">OpenSolaris project</a>.</p>
 <p>For a comprehensive history of the OpenSolaris project, see Jim Grisanzio's <a href="https://jimgrisanzio.wordpress.com/opensolaris/">OpenSolaris timeline</a>.</p>
-<h2 id="openindiana-software-releases">OpenIndiana Software Releases</h2>
+<h2 id="openindiana-software-releases">OpenIndiana software releases</h2>
 <!--
 
 The content for this section is pulled from the OpenIndiana FAQ (section 'What is the OpenIndiana Release Schedule?').
@@ -429,7 +427,7 @@ Ideally suited for both workstations and servers, simply choose the installer ty
 While every package is tested to ensure stability, caution is nevertheless warranted when deploying Hipster into mission critical production environments.</p>
 </div>
 
-<h2 id="system-requirements">System Requirements</h2>
+<h2 id="system-requirements">System requirements</h2>
 <!--
 
 The content for this section is pulled from the OpenIndiana FAQ (section 'What are the recommended hardware specifications?').
@@ -467,7 +465,7 @@ As the FAQ evolves, try to keep this section in sync.
 </ul>
 </div>
 
-<h2 id="preparation-for-installing-openindiana">Preparation for Installing OpenIndiana</h2>
+<h2 id="preparation-for-installing-openindiana">Preparation for installing OpenIndiana</h2>
 <p>Prior to installing OpenIndiana:</p>
 <ul>
 <li>Ensure your system meets the recommended hardware requirements.</li>
@@ -539,27 +537,36 @@ As the FAQ evolves, try to keep this section in sync.
 <li><a href="http://dlc.openindiana.org/torrents/">Torrents</a></li>
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
+<p>Download Example:</p>
+<pre><code class="bash">wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso&quot;
+wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso.sha256sum&quot;
+</code></pre>
+
+<h3 id="checking-the-md5sha">Checking the MD5/SHA</h3>
+<p>Checksum Verification Example:</p>
+<pre><code class="bash">sha256sum --check OI-hipster-gui-20160421.iso.sha256sum
+OI-hipster-gui-20160421.iso: OK
+</code></pre>
+
 <h2 id="creating-a-bootable-openindiana-dvd">Creating a bootable OpenIndiana DVD</h2>
-<ul>
-<li>Obtain the software from the download site</li>
-<li>Check MD5/SHA</li>
-<li>Burn it to a DVD</li>
-</ul>
-<h4 id="bsd">BSD</h4>
+<h3 id="bsdillumossolaris">BSD/illumos/Solaris</h3>
+<p><strong>UNIX Console</strong> <i class="fa fa-sun-o" aria-hidden="true"></i></p>
 <pre><code class="bash">cdrecord dev=device imagefile.iso
 </code></pre>
 
-<p>Note: Use the <code>cdrecord -scanbus</code> command to locate your CD/DVD writer device.</p>
-<h4 id="illumossolaris">Illumos/Solaris</h4>
-<p>&lt; Place holder for content &gt;</p>
-<h4 id="linux">Linux</h4>
-<p><strong>Linux Console</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i></p>
-<pre><code class="bash">$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso&quot;
-$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso.sha256sum&quot;
-$ sha256sum --check OI-hipster-gui-20160421.iso.sha256sum
-OI-hipster-gui-20160421.iso: OK
-$ wodim -v dev=/dev/sr0 -dao OI-hipster-gui-20160421.iso
+<p>To locate your device:</p>
+<ul>
+<li>For BSD, use the <code>cdrecord -scanbus</code></li>
+<li>For illumos/Solaris, use <code>rmformat -l</code></li>
+</ul>
+<p><strong>UNIX GUI</strong> <i class="fa fa-sun-o" aria-hidden="true"></i>
+<div class="well"></p>
+<p>Use the application specific to your desktop (Brasero, K3B, etc.)</p>
+</div>
 
+<h3 id="linux">Linux</h3>
+<p><strong>Linux Console</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i></p>
+<pre><code class="bash">wodim -v dev=device -dao imagefile.iso
 </code></pre>
 
 <p><strong>Linux GUI</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i>
@@ -587,7 +594,7 @@ $ wodim -v dev=/dev/sr0 -dao OI-hipster-gui-20160421.iso
 For further information, please consult the help documentation for your Linux distribution.</p>
 </div>
 
-<h4 id="mac-os-x">Mac OS-X</h4>
+<h3 id="mac-os-x">Mac OS-X</h3>
 <p><strong>MAC Console</strong> <i class="fa fa-apple fa-lg" aria-hidden="true"></i></p>
 <pre><code class="bash">growisofs -Z /dev/dvdrw=image.iso
 </code></pre>
@@ -597,7 +604,7 @@ For further information, please consult the help documentation for your Linux di
 <p>Applications &gt; Utilities &gt; Disk Utility</p>
 </div>
 
-<h4 id="windows">Windows</h4>
+<h3 id="windows">Windows</h3>
 <p><strong>Windows Console</strong> <i class="fa fa-windows fa-lg" aria-hidden="true"></i></p>
 <p>Isoburn is a Windows GUI utility which can be launched via the command prompt as follows:</p>
 <pre><code class="cmd">ISOBURN.EXE [/Q] [&lt;drive letter&gt;:] &lt;disk image file name&gt;
@@ -613,7 +620,7 @@ For further information, please consult the help documentation for your Linux di
 </ul>
 </div>
 
-<h2 id="creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB Flash Drive</h2>
+<h2 id="creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB flash drive</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
 <li>USB flash drive - (2GB or larger)</li>
@@ -630,7 +637,7 @@ For further information, please consult the help documentation for your Linux di
 <li>Please ensure you have selected the correct file.<ul>
 <li>The 1G.header is only suitable for use with the text installer (Command line console).</li>
 <li>The 2G.header is only suitable for use with the live installer (Gnome desktop).</li>
-<li>The files are <em>NOT</em> interchangeable.</li>
+<li>The files are <strong>NOT</strong> interchangeable.</li>
 </ul>
 </li>
 </ul>
@@ -725,10 +732,6 @@ For further information, please consult the help documentation for your Linux di
 <p>The FreeBSD project recommends <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to write USB keys on the Windows operating system.
 This is a more modern application than the old "OpenSolaris Live USB creator" utility.
 We'll need to test this to ensure this works with the OpenIndiana USB images.</p>
-<h2 id="testing-openindiana-using-live-media">Testing Openindiana Using Live Media</h2>
-<p>The Live Media DVD and USB installers provide a graphical live environment where you can explore OpenIndiana and test the compatibility of your hardware.
-When using Live Media to explore OpenIndiana, no changes are made to your system, unless you explicitly choose to install OpenIndiana.</p>
-<p>Although it is possible to use it over a network with SSH X forwarding if you enable SSH.</p>
 <h2 id="booting-openindiana">Booting OpenIndiana</h2>
 <p>Insert the bootable media (DVD or USB flash drive) and boot (start/restart) your computer.
 When you see the boot menu, press the enter key to start OpenIndiana on your computer.
@@ -775,19 +778,54 @@ See the notes below for optimizing OpenIndiana for several popular hypervisors.<
 </tr>
 </tbody>
 </table>
-<h3 id="authenticating-when-using-the-openindiana-livedvd">Authenticating when using the OpenIndiana LiveDVD</h3>
-<p>The user login for the text session is username 'jack' along with the password 'jack'.
-For administrative or elevated access, prepend your commands with <code>pfexec</code>.
-You may also use the <code>sudo</code> command.</p>
-<p>You may obtain root using the <code>su</code> command along with the password 'openindiana'.</p>
-<h3 id="using-the-device-driver-utility">Using the Device Driver Utility</h3>
+<h3 id="the-openindiana-boot-menu">The OpenIndiana boot menu</h3>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>OpenIndiana will automatically boot the selected entry within 30 seconds.
+To stop the boot timer, press the escape key.
+To edit a boot entry, press the [e]dit key.
+For a command line press the [c]ommand key.</p>
+</div>
+
+<p><img alt="grub menu" src="../images/boot/grub_menu.png" /></p>
+<p>The OpenIndiana boot menu offers multiple choices.
+Use the arrow keys to select a boot entry.</p>
+<ul>
+<li>OI Hipster (normal boot)</li>
+<li>OI Hipster VESA driver</li>
+<li>OI Hipster text console</li>
+<li>Boot from Hard Disk</li>
+<li>OI Hipster Enable SSH</li>
+<li>OI Hipster with mangnifier</li>
+<li>OI Hipster with screen reader</li>
+</ul>
+<h3 id="selecting-keyboard-layout-and-display-language">Selecting keyboard layout and display language</h3>
+<p><img alt="Select keyboard layout" src="../images/gui_install/SKL.png" /></p>
+<p>Select your keyboard layout by entering the number corresponding to your desired keyboard layout.
+For example, select 47 for US-English, or 46 for UK-English, etc.
+The default is US-English.</p>
+<p><img alt="Select display language" src="../images/gui_install/SDL.png" /></p>
+<p>Select your language by entering the number corresponding to your desired language.
+The default is English.</p>
+<h3 id="the-live-media-desktop">The live media desktop</h3>
+<p><img alt="live desktop" src="../images/live_desktop/live_desktop.png" /></p>
+<p>The Live Media DVD and USB installers provide a graphical live environment where you can explore OpenIndiana and test the compatibility of your hardware.
+When using Live Media, no changes are made to your system unless you explicitly choose to install OpenIndiana.</p>
+<h3 id="live-media-authentication">Live media authentication</h3>
+<p>The user login for the live media session is <code>jack</code> along with the password <code>jack</code>.
+For administrative or elevated access, prepend your commands with <code>sudo</code>.
+You may also use the <code>pfexec</code> command.</p>
+<p>You may obtain root using the <code>su</code> command along with the password <code>openindiana</code>.</p>
+<h3 id="using-the-device-driver-utility">Using the device driver utility</h3>
 <p>Available from the LiveDVD, the <em>Device Driver Utility</em> allows you to check whether your hardware requires additional drivers.</p>
 <h2 id="installing-openindiana">Installing OpenIndiana</h2>
 <p><strong>DOC TEAM NOTE:</strong></p>
 <p>For some guidance writing this section:</p>
 <p>Installation walkthrough: <a href="http://technodrone.blogspot.com/2012/05/openindiana-installation-walkthrough.html">web link</a></p>
 <p>Installation videos: <a href="https://www.youtube.com/watch?v#VVWP_5oAy3w">web link</a></p>
-<h3 id="installing-openindiana-from-live-media">Installing OpenIndiana from Live Media</h3>
+<h3 id="installing-openindiana-from-live-media">Installing OpenIndiana from live media</h3>
 <p>To install OpenIndiana from Live Media, you have two options.</p>
 <ul>
 <li>GUI based guided install.</li>
@@ -795,13 +833,7 @@ You may also use the <code>sudo</code> command.</p>
 </ul>
 <p>Each of these options is represented by a desktop icon.
 Select the appropriate installer option by clicking the corresponding desktop installer icon.</p>
-<h4 id="gui-based-guided-install">GUI based Guided Install</h4>
-<p><img alt="Select keyboard layout" src="../images/gui_install/SKL.png" /></p>
-<p>This menu in the boot process is for selecting your <code>keyboard layout</code>,
-(e.g. 47 for US-English, 46 for UK-English, etc).</p>
-<p><img alt="Select display language" src="../images/gui_install/SDL.png" /></p>
-<p>While this menu is for setting the <code>display language</code>
-(i.e. what language the user-interface is in)</p>
+<h4 id="gui-based-guided-install">GUI based guided install</h4>
 <p><img alt="First Install Screen" src="../images/gui_install/OGI.png" /></p>
 <p>As soon as the desktop loads, click the <code>Install OpenIndiana</code> icon and this
 window will appear, click next. (if you get error dialogue boxes, just close
@@ -825,7 +857,7 @@ Go make a cup of coffee, or something! It might be a while.</p>
 <p><img alt="Ding, OS is ready" src="../images/gui_install/FIS.png" /></p>
 <p>Your installation of OpenIndiana installed correctly,
 You can now reboot into your new shiny system!</p>
-<h4 id="text-based-guided-install">Text based Guided Install</h4>
+<h4 id="text-based-guided-install">Text based guided install</h4>
 <p>The text based guided install start and runs within a command line console.
 Navigation within the installer is performed by pressing specifically designated navigation keys (F2, Tab, etc.).</p>
 <!-- NOTE: -->
@@ -905,7 +937,7 @@ If these configuration settings are correct, begin the installation by pressing 
 The installation logs are available by pressing the F4 key.
 If you ran the installation from Live Media, can exit the installation by pressing F9.
 Otherwise, you will want to reboot the system using the F8 key.</p>
-<h3 id="installing-openindiana-using-the-text-installer">Installing OpenIndiana using the Text Installer</h3>
+<h3 id="installing-openindiana-using-the-text-installer">Installing OpenIndiana using the text installer</h3>
 <p>The text installer is not graphical nor does it have a live environment.
 When you boot from the text installer, you have the following choices:</p>
 <ul>
@@ -913,7 +945,7 @@ When you boot from the text installer, you have the following choices:</p>
 <li>Spawn a shell to be used as a rescue disk.</li>
 </ul>
 <p>The text installer installation process uses the previously described <em>Text based Guided Install</em>.</p>
-<h2 id="troubleshooting-installations">Troubleshooting Installations</h2>
+<h2 id="troubleshooting-installations">Troubleshooting installations</h2>
 <ul>
 <li>If you do not see a menu after booting your computer with the DVD or USB device, and instead see some text and a <code>grub&gt;</code> prompt, there may be an error in your copy of the installer, or it was created incorrectly.</li>
 <li>If you see a <code>login:</code> prompt after selecting your keyboard and language and no desktop appears after several seconds, there may be a problem with the drivers for your graphics hardware.<ul>
@@ -930,11 +962,11 @@ When you boot from the text installer, you have the following choices:</p>
 <li>OpenIndiana Hipster does not currently support USB3.</li>
 <li>You cannot boot a USB thumbdrive installer from a USB3 port.</li>
 </ul>
-<h2 id="installing-applications">Installing Applications</h2>
+<h2 id="installing-applications">Installing applications</h2>
 <p>Import and validate: <a href="http://wiki.openindiana.org/oi/pkg+Cheat+Sheet">pgk cheat sheet</a></p>
 <h2 id="xorg">Xorg</h2>
 <p>&lt; placeholder &gt;</p>
-<h3 id="video-card-support-3d">Video Card Support (3D)</h3>
+<h3 id="video-card-support-3d">Video card support (3D)</h3>
 <p>Nearly all cards are supported for 2nd, but only Nvidia is supported for 3D.
 Work is progressing to provide support for AMD and Intel.</p>
 <h4 id="nvidia">Nvidia</h4>
