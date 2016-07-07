@@ -79,8 +79,110 @@
                     
                         
 <li >
+    <a href="../../misc/conduct/">OpenIndiana Code of Conduct</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../misc/faq/">OpenIndiana FAQ</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../../misc/pdl/">Public Documentation License</a>
 </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handbook <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../handbook/getting-started/">Getting Started</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../handbook/common-tasks/">Common Tasks</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../handbook/systems-administration/">Systems Administration</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../handbook/network-communications/">Network Communications</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../handbook/appendix/">Appendix</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../dev/userland/">Building oi-userland</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">OpenSolaris Books</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../books/about/">About OpenSolaris Books</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/basic/">Basic Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/advanced/">Advanced Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/express/">Solaris Express Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/trusted/">Trusted Extensions Administration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../books/develop/">Development Titles</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -126,126 +228,6 @@
 <li >
     <a href="../markdown/">Markdown Syntax Guide</a>
 </li>
-
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="../../misc/conduct/">OpenIndiana Code of Conduct</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../misc/faq/">OpenIndiana FAQ</a>
-</li>
-
-                    
-                        
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">OpenIndiana Handbook</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../../handbook/getting-started/">Getting Started</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../handbook/common-tasks/">Common Tasks</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../handbook/systems-administration/">Systems Administration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../handbook/network-communications/">Network Communications</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../handbook/appendix/">Appendix</a>
-</li>
-
-        
-    </ul>
-  </li>
-
-                    
-                        
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">OpenSolaris Books</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../../books/">Book Index</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../books/basic/">Basic Administration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../books/advanced/">Advanced Administration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../books/express/">Solaris Express Administration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../books/trusted/">Trusted Extensions Administration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../../books/develop/">Development Titles</a>
-</li>
-
-        
-    </ul>
-  </li>
-
-                    
-                        
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Development</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../../dev/userland/">Building oi-userland</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                     
                     </ul>
@@ -337,6 +319,8 @@
         
             <li><a href="#handbook-network-communications">Handbook - Network Communications</a></li>
         
+            <li><a href="#opensolaris-redistributable-books">OpenSolaris Redistributable Books</a></li>
+        
     
     </ul>
 </div></div>
@@ -360,48 +344,25 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 -->
 
-<!--
-
-DOC TEAM NOTES: Just some notes about things....[saved from handbook.md before the big slice and dice].
-
-Pre-installation caveats and considerations
-
-* System partitioning, Gparted, etc.
-* Device Driver utility - (also how to manually install missing drivers - and where to find them if they are available)
-* Network install drivers: `pkgrecv -s http://pkg.openindiana.org/hipster-2015 -d bash.p5a -a bash && sudo pkg install -nv  -g bash.p5a bash`
-* Local install drivers: `pkg install -g name.p5a fmri`
-* How to disable drivers at boot time (this might help fix the kernel panic we see when trying to boot OI inside KVM)
-* Physical or virtual?
-
-What are the post-installation caveats and considerations?
-
-* e.g. - What kinds of things can be done with a system once installed?
-
-Helpful resources for writing some of these sections
-
-* https://web.archive.org/web/20090611234850/http://dlc.sun.com/osol/docs/downloads/minibook/en/820-7102-10-Eng-doc.pdf[ Getting Started with OpenSolaris 2008.11]
-* https://web.archive.org/web/20091229232632/http://www.opensolaris.com/learn/[OpenSolaris Learn site - Wayback Machine]
-* https://web.archive.org/web/20100105080516/http://dlc.sun.com/osol/docs/content/2009.06/[OpenSolaris 2009.06 docs]
-* https://web.archive.org/web/20100401024945/http://www.opensolaris.com/use/OpenSolaris200906Booklet.pdf[OpenSolaris 2009.06 Booklet PDF]
-
--->
-
 <h1 id="contributor-topics">Contributor Topics</h1>
 <p>The goal of this page is to provide a TODO list of things which need to be documented.
 Topics will be organized first by page and then by topic.</p>
-<h4 id="potentially-useful-reference-information">Potentially useful reference information</h4>
+<h3 id="potentially-useful-reference-information">Potentially useful reference information</h3>
 <p>NOTE: When clicking some of the links found within these resources, it may be necessary to removed the ';jsessionid=xxx' from the end of the URL. Otherwise the wayback machine will report a 'not found' error message.</p>
 <ul>
 <li><a href="https://web.archive.org/web/20090819174546/http://opensolaris.org/os/">OpenSolaris.org</a></li>
 <li><a href="https://web.archive.org/web/20090817114142/http://opensolaris.org/os/projects#portal">OpenSolaris Projects</a></li>
 <li><a href="https://web.archive.org/web/20090605190426/http://opensolaris.org/os/communities/#portal">OpenSolaris Communities</a></li>
-<li><a href="https://web.archive.org/web/20081207155129/http://opensolaris.org/os/community/documentation/files/OSOLDOCSG.pdf">OpenSolaris Documentation Style Guide</a> - [Internet Archive - PDF]</li>
-<li><a href="https://web.archive.org/web/20090823064740/http://www.opensolaris.org/os/community/documentation/">docs from www.opensolaris.org</a> - [Internet Archive]</li>
-<li><a href="https://web.archive.org/web/20100909110451/http://hub.opensolaris.org/bin/view/Main/documentation">docs from hub.opensolaris.org</a> - [Internet Archive]</li>
-<li><a href="https://web.archive.org/web/20110702071619/http://cr.opensolaris.org/~gman/opensolaris-whats-new-2010-03">What's new for OSOL 2010.03</a> - [Internet Archive]</li>
-<li>link to illumos graphics files: <a href="https://www.illumos.org/projects/site/files">https://www.illumos.org/projects/site/files</a></li>
-<li><a href="https://web.archive.org/web/20110904232819/http://dlc.sun.com/osol/docs/downloads/minibook/en/820-7102-10-Eng-doc.pdf">Getting Started With OpenSolaris 2008.11</a> - [Internet Archive - PDF]</li>
+<li><a href="https://web.archive.org/web/20081207155129/http://opensolaris.org/os/community/documentation/files/OSOLDOCSG.pdf">OpenSolaris Documentation Style Guide</a></li>
+<li><a href="https://web.archive.org/web/20090823064740/http://www.opensolaris.org/os/community/documentation/">docs from www.opensolaris.org</a></li>
+<li><a href="https://web.archive.org/web/20100909110451/http://hub.opensolaris.org/bin/view/Main/documentation">docs from hub.opensolaris.org</a></li>
+<li><a href="https://web.archive.org/web/20110702071619/http://cr.opensolaris.org/~gman/opensolaris-whats-new-2010-03">What's new for OSOL 2010.03</a></li>
+<li><a href="https://www.illumos.org/projects/site/files">link to illumos graphics files</a></li>
+<li><a href="https://web.archive.org/web/20110904232819/http://dlc.sun.com/osol/docs/downloads/minibook/en/820-7102-10-Eng-doc.pdf">Getting Started With OpenSolaris 2008.11</a></li>
 <li><a href="https://www.freebsd.org/doc/en_US.ISO8859-1/books/fdp-primer/">FreeBSD Documentation Project Primer for New Contributors</a></li>
+<li><a href="https://web.archive.org/web/20091229232632/http://www.opensolaris.com/learn/">OpenSolaris Learn site - Wayback Machine</a></li>
+<li><a href="https://web.archive.org/web/20100105080516/http://dlc.sun.com/osol/docs/content/2009.06/">OpenSolaris 2009.06 docs</a></li>
+<li><a href="https://web.archive.org/web/20100401024945/http://www.opensolaris.com/use/OpenSolaris200906Booklet.pdf">OpenSolaris 2009.06 Booklet PDF</a></li>
 </ul>
 <h2 id="faq">FAQ</h2>
 <p>Have a look at the following resources for ideas and inspiration for writing new content:</p>
@@ -416,8 +377,13 @@ Topics will be organized first by page and then by topic.</p>
 <li><a href="https://web.archive.org/web/20100401021842/http://www.opensolaris.com/use/Auto_Installer.pdf">OpenSolaris Automated Installer Guide</a></li>
 <li><a href="https://web.archive.org/web/20090824053055/http://opensolaris.org/os/project/czosug/events_archive/czosug_muni_20090228_OpenSolaris_and_Linux_Basic_Comparison.pdf">Linux Versus OpenSolaris</a></li>
 <li><a href="https://web.archive.org/web/20090924031858/http://dlc.sun.com/osol/docs/content/2009.06/IMGPACKAGESYS/giksz.html">IPS versus apt - from IPS guide</a></li>
+<li>System partitioning, Gparted, etc.</li>
+<li>Device Driver utility - (also how to manually install missing drivers - and where to find them if they are available)</li>
+<li>How to disable drivers at boot time</li>
+<li>Network install drivers: <code>pkgrecv -s http://pkg.openindiana.org/hipster-2015 -d bash.p5a -a bash &amp;&amp; sudo pkg install -nv  -g bash.p5a bash</code></li>
+<li>Local install drivers: <code>pkg install -g name.p5a fmri</code></li>
 </ul>
-<h4 id="write-some-comparison-tables">Write some comparison tables</h4>
+<h3 id="write-some-comparison-tables">Write some comparison tables</h3>
 <ul>
 <li>Provide some contrast/comparisons between OI and other illumos distros.</li>
 <li>Provide some contrast/comparisons between OI and other BSD distros (PCBSD in relation to freebsd, etc.)</li>
@@ -454,7 +420,7 @@ In contrast, Oracle dropped lp completely in the Solaris 11.0 release.</p>
 <li><a href="https://web.archive.org/web/20090602164813/http://opensolaris.org/os/community/smf/">OpenSolaris SMF Community</a></li>
 <li><a href="https://web.archive.org/web/20090603223153/http://opensolaris.org/os/community/smf/faq">OpenSolaris SMF FAQ</a></li>
 </ul>
-<h4 id="abi-support">ABI support</h4>
+<h3 id="abi-support">ABI support</h3>
 <ul>
 <li>Write about the change from Sun Studio to GCC its implications for ABI from previous Solaris releases/OpenSolaris, etc.<ul>
 <li>For more details, see: <a href="http://openindiana.org/pipermail/oi-dev/2014-December/003496.html">http://openindiana.org/pipermail/oi-dev/2014-December/003496.html</a></li>
@@ -462,7 +428,7 @@ In contrast, Oracle dropped lp completely in the Solaris 11.0 release.</p>
 </ul>
 </li>
 </ul>
-<h4 id="write-about-virtualization">Write about Virtualization</h4>
+<h3 id="write-about-virtualization">Write about Virtualization</h3>
 <ul>
 <li>add a page about running OI as a virtual guest in Virtualbox, VMware, KVM, talk about which provides the best hardware support, guest tools compatibility, other caveats, etc.</li>
 </ul>
@@ -472,14 +438,20 @@ In contrast, Oracle dropped lp completely in the Solaris 11.0 release.</p>
 <li><a href="http://web.archive.org/web/20090514083449/http://wikis.sun.com/display/OpenSolarisInfo/COMSTAR+Administration">COMSTAR info</a></li>
 <li><a href="https://web.archive.org/web/20090719072357/http://www.opensolaris.org/os/project/crossbow">Crossbow info</a></li>
 </ul>
-<h4 id="installing-oi-onto-an-iscsi-exposed-scsi-target">Installing OI onto an ISCSI exposed SCSI target</h4>
+<h3 id="installing-oi-onto-an-iscsi-exposed-scsi-target">Installing OI onto an ISCSI exposed SCSI target</h3>
 <p>A good tutorial might be to write about installing OpenIndiana Hipster on an ISCSI target.</p>
 <pre><code class="bash">[14:50:02] &lt;alp&gt; does someone have some links on &quot;installing OI on ISCSI&quot; ?
 [14:57:40] &lt;tsoome&gt; alp get to illumos wiki, open projects loader -&gt; ideas, from there you get link for jeffpc iscsi experiment
 [14:57:46] &lt;tsoome&gt; I did use it to play with ipxe+iscsi+loader
 </code></pre>
 
-<p>Also can look at Oracle docs for reference: <a href="https://docs.oracle.com/cd/E26502_01/html/E29008/iscsi-1.html">https://docs.oracle.com/cd/E26502_01/html/E29008/iscsi-1.html</a></p></div>
+<p>Also can look at Oracle docs for reference: <a href="https://docs.oracle.com/cd/E26502_01/html/E29008/iscsi-1.html">https://docs.oracle.com/cd/E26502_01/html/E29008/iscsi-1.html</a></p>
+<h2 id="opensolaris-redistributable-books">OpenSolaris Redistributable Books</h2>
+<ul>
+<li>Review the OpenSolaris redistributable books.</li>
+<li>Determine the relevancy of each book in comparison to the current development state of OpenIndiana Hipster.</li>
+<li>Compose lists of errata as required.</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
