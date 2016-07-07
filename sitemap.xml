@@ -12,19 +12,19 @@
     
         
     <url>
-     <loc>None/misc/about/</loc>
+     <loc>None/misc/openindiana/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/misc/oi-docs/</loc>
      <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/misc/conduct/</loc>
-     <lastmod>2016-07-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/misc/faq/</loc>
      <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -86,6 +86,12 @@
     
         
     <url>
+     <loc>None/contrib/content/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/contrib/getting-started/</loc>
      <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
@@ -124,12 +130,6 @@
     
 
     
-        
-    <url>
-     <loc>None/notes/content/</loc>
-     <lastmod>2016-07-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
         
     <url>
      <loc>None/notes/bsd/</loc>
