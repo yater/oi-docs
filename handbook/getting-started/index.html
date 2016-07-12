@@ -1173,18 +1173,39 @@ http://wiki.openindiana.org/display/oi/oi_hipster
 <p>To remove a package from the system, use the command: <code>pkg uninstall &lt;package-name&gt;</code></p>
 <h3 id="ips-package-repositories">IPS package repositories</h3>
 <p>As previously mentioned, the IPS repository is the remote network location where IPS packages reside.</p>
-<p>To list the remote IPS repositories configured on your system, use the command <code>pkg publisher</code>.</p>
-<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List configured repositories</td>
+<td><code>pkg publisher</code></td>
+</tr>
+<tr>
+<td>Add a repository</td>
+<td><code>pkg set-publisher -g &lt;repository_URL&gt; &lt;repository_name&gt;</code></td>
+</tr>
+<tr>
+<td>Remove a repository</td>
+<td><code>pkg set-publisher -G &lt;repository_URL&gt; &lt;repository_name&gt;</code></td>
+</tr>
+<tr>
+<td>Replace a repository</td>
+<td><code>pkg set-publisher \</code> <br> <code>-G &lt;old_repository_URL&gt; \</code> <br> <code>-g &lt;new_repository_URL&gt; &lt;repository_name&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example (Listing the repositories configured on the system):</p>
 <pre><code class="bash">pkg publisher
 PUBLISHER                   TYPE     STATUS P LOCATION
 openindiana.org              origin   online F http://pkg.openindiana.org/hipster/
 </code></pre>
 
-<p>To add a new publisher, use the command: <code>pkg set-publisher -g repository_url repository_name</code>
-To remove a publisher, use the command: <code>pkg set-publisher -G repository_url repository_name</code></p>
-<p>To change an existing publisher, use the following command syntax:</p>
-<p><code>pkg set-publisher -G &lt;old-repository&gt; -g &lt;new-repository&gt;</code></p>
-<p>For example:</p>
+<p>Example (Replacing a repository):</p>
 <pre><code class="bash">pkg set-publisher \
 -G http://pkg.openindiana.org/hipster-2015 \
 -g http://pkg.openindiana.org/hipster openindiana.org
