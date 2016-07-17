@@ -378,7 +378,66 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <ul>
 <li>How to use the hidden <code>gstreamer-properties</code> configuration utility.</li>
 <li>Pulse Audio configuration</li>
+<li><a href="https://www.solarismultimedia.com/">possible resource</a></li>
 </ul>
+<p>Searching for cards with pulse audio command line tool</p>
+<pre><code class="bash">pacmd list-cards
+</code></pre>
+
+<p>listing devices</p>
+<pre><code class="bash">ls /dev/sound
+0  0ctl  audiohd:0  audiohd:0ctl  audiohd:0dsp  audiohd:0mixer
+</code></pre>
+
+<pre><code class="bash">ls -l /dev/audio* /dev/sound/*
+lrwxrwxrwx 1 root root  7 Jul 14 21:57 /dev/audio -&gt; sound/0
+lrwxrwxrwx 1 root root 10 Jul 14 21:57 /dev/audioctl -&gt; sound/0ctl
+lrwxrwxrwx 1 root root  9 Jul 14 21:57 /dev/sound/0 -&gt; audiohd:0
+lrwxrwxrwx 1 root root 12 Jul 14 21:57 /dev/sound/0ctl -&gt; audiohd:0ctl
+lrwxrwxrwx 1 root root 50 Jul 14 21:57 /dev/sound/audiohd:0 -&gt; ../../devices/pci@0,0/pci17aa,20f2@1b:sound,audio0
+lrwxrwxrwx 1 root root 53 Jul 14 21:57 /dev/sound/audiohd:0ctl -&gt; ../../devices/pci@0,0/pci17aa,20f2@1b:sound,audioctl0
+lrwxrwxrwx 1 root root 48 Jul 14 21:57 /dev/sound/audiohd:0dsp -&gt; ../../devices/pci@0,0/pci17aa,20f2@1b:sound,dsp0
+lrwxrwxrwx 1 root root 50 Jul 14 21:57 /dev/sound/audiohd:0mixer -&gt; ../../devices/pci@0,0/pci17aa,20f2@1b:sound,mixer0
+</code></pre>
+
+<pre><code class="bash">cat /dev/sndstat
+SunOS Audio Framework
+
+Audio Devices:
+0: audiohd#0 Intel HD Audio, ICH9 (DUPLEX)
+
+Mixers:
+0: audiohd#0 Intel HD Audio, ICH9
+        HD codec: Conexant CX20561
+</code></pre>
+
+<h4 id="testing-audio">Testing audio</h4>
+<p>Finding the hardware</p>
+<pre><code class="bash">prtconf -d | grep -i audio
+        pci17aa,20f2 (pciex8086,293e) [Intel Corporation 82801I (ICH9 Family) HD Audio Controller], instance #0
+</code></pre>
+
+<p>Listing the devices</p>
+<pre><code class="bash">audioctl list-devices
+audiohd#0
+</code></pre>
+
+<p>Running the test</p>
+<pre><code class="bash">audiotest
+Sound subsystem and version: SunOS Audio 4.0 (0x00040003)
+Platform: SunOS 5.11 illumos-380fd67 i86pc
+
+*** Scanning sound adapter #1 ***
+/dev/sound/audiohd:0dsp (audio engine 0): audiohd#0
+  - Performing audio playback test...
+        &lt;left&gt; ................OK
+        &lt;right&gt; ...............OK
+        &lt;stereo&gt; ..............OK
+        &lt;measured sample rate 47949.00 Hz (-0.11%)&gt;
+
+*** All tests completed OK ***
+</code></pre>
+
 <h3 id="mp3-and-cd-audio-support">MP3 and CD audio support</h3>
 <p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
 <ul>
