@@ -331,7 +331,7 @@
         
             <li><a href="#managing-boot-environments">Managing boot environments</a></li>
         
-            <li><a href="#xorg">Xorg</a></li>
+            <li><a href="#the-x-window-system">The X-Window system</a></li>
         
     
     </ul>
@@ -1716,8 +1716,176 @@ Therefore, use 3rd party repositories and 3rd party package tools at your own ri
 </div>
 
 <h2 id="managing-boot-environments">Managing boot environments</h2>
-<p>&lt; Place Holder &gt;</p>
-<h2 id="xorg">Xorg</h2>
+<p>A boot environment is a bootable instance of an OpenIndiana operating system image plus any other application software packages installed into that image.
+You can maintain multiple boot environments on your system, and each boot environment could have different software versions installed.
+Upon the initial installation of OpenIndiana onto your system, a boot environment is created.
+Use the <code>beadm</code><sup>1M</sup> utility to administer additional boot environments on your system.</p>
+<p>The <code>beadmn</code> utility is designed to work in concert with the ZFS file system and the IPS package manager.</p>
+<h3 id="why-use-multiple-boot-environments">Why use multiple boot environments?</h3>
+<p>With multiple boot environments, the process of updating software becomes a low risk operation because you can create backup boot environments before making any software updates to your system.
+If needed, you have the option of booting a backup boot environment.</p>
+<p>Here are some specific examples where having more than one OpenIndiana boot environment, and managing them with the <code>beadm</code> utility, is useful:</p>
+<ul>
+<li>
+<p>When you use the <code>pkg update</code> command to update all the packages in your active OpenIndiana boot environment, this process automatically creates a clone of that boot environment.
+The packages are updated in the clone rather than in the original boot environment.
+After successfully completing the updates, the new clone is activated.
+Then, the clone will become the new default boot environment on the next reboot.
+The original boot environment remains on the GRUB menu as an alternate selection.
+You can use the <code>beadm list</code> command to see a list of all the boot environments on the system, including the backup boot environment that still has its original, unchanged software.
+If you are not satisfied with the updates made to the environment, you can use the <code>beadm activate</code> command to specify that the backup will become the default boot environment on the next reboot.</p>
+</li>
+<li>
+<p>If you are modifying a boot environment, you can take a snapshot of that environment at any stage during modifications by using the <code>beadm create</code> command.
+A snapshot is a read-only image of a dataset or boot environment at a given point in time.
+You can create custom names for each snapshot that identify when or why the snapshot was created.
+For example, if you are doing monthly upgrades to your boot environment, you can capture snapshots for each monthly upgrade.
+You can use the <code>beadm list -s</code> command to view the available snapshots for a boot environment.
+A snapshot is not bootable.
+But, you can create a boot environment, based on that snapshot, by using the <code>-e</code> option for the <code>beadm create</code> command.
+Then you can use the <code>beadm activate</code> command to specify that this boot environment will become the default boot environment on the next reboot.</p>
+</li>
+<li>
+<p>You can maintain more than one boot environment on your system, and perform various upgrades on each of them as needed.
+For example, you can clone a boot environment by using the <code>beadm create</code> command.
+A clone is a bootable copy of a boot environment.
+Then, you can install, test, and update different software packages on the original boot environment and on its clone.
+Although only one boot environment can be active at a time, you can mount an inactive boot environment by using the <code>beadm mount</code> command.
+Then you can use the <code>pkg image-update</code> command with the <code>-R</code> option to update all the packages in that inactive, mounted environment.
+Or, use the <code>pkg install packagename</code> with the <code>-R</code> option to update specific packages on that environment.</p>
+</li>
+</ul>
+<h3 id="features-of-the-beadm-utility">Features of the beadm utility</h3>
+<p>The <code>beadm</code> utility has the following features:</p>
+<ul>
+<li>
+<p>The <code>beadm</code> utility aggregates all datasets in a boot environment and performs actions on the entire boot environment at once.
+You no longer need to perform ZFS commands to modify each dataset individually.</p>
+</li>
+<li>
+<p>The <code>beadm</code> utility manages the dataset structures within boot environments.
+For example, when the <code>beadm</code> utility clones a boot environment that has shared datasets, the utility automatically recognizes and manages those shared datasets for the new boot environment.</p>
+</li>
+<li>
+<p>The <code>beadm</code> utility enables you to perform administrative tasks on your boot environments.
+These tasks can be performed without upgrading your system.</p>
+</li>
+<li>
+<p>The <code>beadm</code> utility automatically manages and updates the GRUB menu.
+For example, when you use the <code>beadm</code> utility to create a new boot environment, that environment is automatically added to the GRUB menu.</p>
+</li>
+</ul>
+<p>The <code>beadm</code> utility enables you to perform the following tasks:</p>
+<ul>
+<li>Create a new boot environment based on the active boot environment</li>
+<li>Create a new boot environment based on an inactive boot environment</li>
+<li>Create a snapshot of an existing boot environment</li>
+<li>Create a new boot environment based on an existing snapshot</li>
+<li>Create a new boot environment and add a custom title to the GRUB menu.</li>
+<li>Activate an existing, inactive boot environment</li>
+<li>Mount a boot environment</li>
+<li>Unmount a boot environment</li>
+<li>Destroy a boot environment</li>
+<li>Destroy a snapshot of a boot environment</li>
+<li>Rename an existing, inactive boot environment</li>
+<li>Display information about your boot environment snapshots and datasets</li>
+</ul>
+<h3 id="beadm-command-reference">beadm command reference</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beadm</code></td>
+<td>Displays command usage</td>
+</tr>
+<tr>
+<td><code>beadm activate &lt;BE&gt;</code></td>
+<td>Makes the specified boot environment the active boot environment upon the next reboot.</td>
+</tr>
+<tr>
+<td><code>beadm create &lt;BE&gt;</code></td>
+<td>Creates a new boot environment with the name specified. Unless the -e option is provided, the new boot environment is created as a clone of the currently running boot environment.</td>
+</tr>
+<tr>
+<td><code>beadm create &lt;BE@snapshot&gt;</code></td>
+<td>Creates a snapshot of the existing boot environment with the specified snapshot name.</td>
+</tr>
+<tr>
+<td><code>beadm destroy &lt;BE&gt;</code></td>
+<td>Destroys the boot environment named BE or destroys an existing snapshot, BE@snapshot, of a boot environment. Prompts for confirmation before destroying the boot environment.</td>
+</tr>
+<tr>
+<td><code>beadm list &lt;BE&gt;</code></td>
+<td>Lists information about the specified boot environment, or lists information for all boot environments if a boot environment name is not provided. The default is to list boot environments without any additional information.</td>
+</tr>
+<tr>
+<td><code>beadm mount &lt;BE&gt; &lt;mountpoint&gt;</code></td>
+<td>Mounts the specified boot environment at the specified mount point. The mount point must be an already existing, empty directory.</td>
+</tr>
+<tr>
+<td><code>beadm rename &lt;old BE&gt; &lt;new BE&gt;</code></td>
+<td>Renames the specified boot environment.</td>
+</tr>
+<tr>
+<td><code>beadm unmount [-f] &lt;BE&gt;</code></td>
+<td>Unmounts the specified boot environment. <code>-f</code> – Forcefully unmounts the boot environment even if it is currently busy.</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed instructions about the <code>beadm</code> utility, see the <code>beadm</code><sup>1M</sup> man page.</p>
+<h3 id="beadm-zones-support">beadm zones support</h3>
+<p>Zones partitioning technology is used to virtualize operating system services and provide an isolated and secure environment for running applications.
+Each OpenIndiana system is a global zone.
+Within a global zone, specific non-global zones can be created.</p>
+<h3 id="zones-support-limitations">Zones support limitations</h3>
+<p>Note the following limitations of support for non-global zones in the beadm utility and in related processes:</p>
+<ul>
+<li>When you use the pkg image-update command, the command only upgrades ipkg branded zones.</li>
+<li>The beadm utility is not supported inside a non-global zone.</li>
+<li>Non-global zone support is limited to ZFS support. Zones are not supported unless they are on ZFS.</li>
+<li>Zones are not supported in the rpool/ROOT namespace. Non-global zones are cloned or copied only when the original zone is within the shared area for the global zone, for example, within rpool/export or within rpool/zones.</li>
+<li>Although the beadm utility affects the non-global zones on your system, the beadm utility does not display zones information. Use the zoneadm utility to view changes in the
+zones in your boot environment. For example, use the zoneadm list command to view a list of all current zones on the system.</li>
+</ul>
+<p>For further information, see the <code>zoneadm</code><sup>1M</sup> man page.</p>
+<h3 id="zones-support-specifications">Zones support specifications</h3>
+<p>The beadm command impacts the non-global zones in your boot environments as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Support Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beadm create</code></td>
+<td>When you clone a boot environment by using the beadm create command, all zones in that boot environment are copied into the new boot environment.</td>
+</tr>
+<tr>
+<td><code>beadm destroy</code></td>
+<td>When you destroy an inactive boot environment, the zones that belong to that boot environment are also destroyed.</td>
+</tr>
+<tr>
+<td><code>beadm mount</code></td>
+<td>When you mount a boot environment, the zones in that environment are mounted relative to the mount points for the environment.</td>
+</tr>
+<tr>
+<td><code>beadm unmount</code></td>
+<td>When you unmount a boot environment, the zones in that environment are also unmounted. All mount points are returned to their states prior to being mounted.</td>
+</tr>
+<tr>
+<td><code>beadm rename</code></td>
+<td>When you rename a boot environment, that change does not impact the names of the zones or the names of the datasets that are used for those zones in that boot environment. The change does not impact the relationships between the zones and their related boot environments.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-x-window-system">The X-Window system</h2>
 <p>&lt; placeholder &gt;</p>
 <h3 id="video-card-support-3d">Video card support (3D)</h3>
 <p>Nearly all cards are supported for 2nd, but only Nvidia is supported for 3D.
