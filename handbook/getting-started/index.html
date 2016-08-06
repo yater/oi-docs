@@ -454,45 +454,61 @@ As the FAQ evolves, try to keep this section in sync.
 </div>
 
 <h2 id="exploring-openindiana">Exploring OpenIndiana</h2>
-<h3 id="live-cd">Live CD</h3>
-<p>OpenIndiana GUI installer also serves as a Live CD, so one can try OpenIndiana without installing it. This is especially good for testing hardware compatibility prior to installing OpenIndiana.</p>
+<p>There are several ways in which you can explore OpenIndiana without having to perform a bare metal install.</p>
+<ul>
+<li>Live media (USB/DVD)</li>
+<li>Virtual machines (PC emulation via software)</li>
+<li>Vagrant (virtual machine image automation)</li>
+</ul>
+<h3 id="live-media">Live Media</h3>
+<p>Available in both DVD and USB formats, the OpenIndiana GUI installer also functions as live media.
+This allows you try OpenIndiana without the need to install it.
+Exploring OpenIndiana via the live media is an especially good way to test your hardware compatibility prior to installing the operating system.</p>
 <h3 id="virtual-machines">Virtual machines</h3>
-<p>OpenIndiana is known to work in the following virtualization software:</p>
+<p>OpenIndiana is known to work with the following virtualization software:</p>
 <ul>
 <li><a href="https://www.virtualbox.org">VirtualBox</a></li>
 <li><a href="https://www.vmware.com/products/fusion.html">VMWare Fusion</a></li>
 <li><a href="https://www.vmware.com/products/workstation.html">VMWare Workstation Pro</a></li>
 <li><a href="https://www.vmware.com/products/player.html">VMWare Workstation Player</a></li>
-<li>Linux KVM</li>
-<li>illumos KVM</li>
+<li><a href="http://www.vmware.com/products/vsphere.html">VMWare VSphere</a></li>
+<li><a href="http://www.linux-kvm.org/page/Main_Page">Linux KVM</a></li>
+<li>illumos KVM - (The illumos port of Linux KVM)</li>
 </ul>
-<p>OpenIndiana has to be installed in the virtualization software.</p>
+<p>Virtual machines provide a PC emulation layer in which you install OpenIndiana just as you would on physical 'bare metal' hardware.</p>
 <h3 id="vagrant">Vagrant</h3>
-<p>OpenIndiana comes with official <a href="https://www.vagrantup.com">Vagrant</a> boxes, which can be used for exploring OpenIndiana before installing it.</p>
+<p>Vagrant provides an excellent way to explore OpenIndiana as it fully automates the process of bringing a virtual machine online.
+OpenIndiana comes with an official <a href="https://www.vagrantup.com">Vagrant</a> box, which can be used for exploring OpenIndiana before installing it.</p>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>At this moment, only text variant of OpenIndiana is available in the form of Vagarnt box. Only supported Vagrant provider is VirtualBox right now. This may change in the future.</p>
+<p>At this time, the OpenIndiana Vagrant box is only available in the form of a text based console.
+Additionally, Virtualbox is the only currently supported Vagrant provider.
+In the future the OpenIndiana project hopes to provide additional Vagrant box options.</p>
 </div>
 
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>Vagrant is officialy available for Mac OS X, Windows and Linux.</p>
+<p>Vagrant is officially available for Mac OS X, Windows and Linux.</p>
 </div>
 
 <ul>
-<li>
-<p>Download and install the latest version of Vagrant for your platform from the <a href="https://www.vagrantup.com/downloads.html">official download page</a>.</p>
-</li>
-<li>
-<p>Download and install the latest version of Virtualbox for your platform from the <a href="https://www.virtualbox.org/wiki/Downloads">official download page</a>.</p>
-</li>
-<li>
-<p>Run the following command to download and boot OpenIndiana vagrant box:</p>
-</li>
+<li>Download and install the latest version of Vagrant for your platform from the <a href="https://www.vagrantup.com/downloads.html">official download page</a>.</li>
+<li>Download and install the latest version of Virtualbox for your platform from the <a href="https://www.virtualbox.org/wiki/Downloads">official download page</a>.</li>
+</ul>
+<!-- CAUTION: -->
+
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well"></p>
+<p>Older versions of Vagrant (as packaged by many LTS Linux distributions), may not support downloading the Vagrant box instance.
+To work around this limitation, be sure to remove any previously installed instances of Vagrant and obtain the latest Vagrant software directly from the Vagrant website.</p>
+</div>
+
+<ul>
+<li>Run the following command to download and boot the OpenIndiana vagrant box:</li>
 </ul>
 <pre><code class="bash">mkdir ~/openindiana_test
 cd ~/openindiana_test
@@ -500,15 +516,16 @@ vagrant init openindiana/hipster
 vagrant up --provider virtualbox
 </code></pre>
 
-<p>This will create a file called Vagrantfile under ~/openindiana_test directory. Vagrant box will be also booted.</p>
+<p>This will create a file titled <em>Vagrantfile</em> under the ~/openindiana_test directory.
+The Vagrant box will also be booted.</p>
 <ul>
-<li>Once, the VM is online one can connect to it:</li>
+<li>Once, the Vagrant box virtual machine is online, connect to it using the following command:</li>
 </ul>
 <pre><code class="bash">vagrant ssh
 </code></pre>
 
 <ul>
-<li>To destroy the OpenIndiana vagrant instance, issue the following command:</li>
+<li>To destroy the OpenIndiana Vagrant instance, issue the following command:</li>
 </ul>
 <pre><code class="bash">vagrant destroy
 </code></pre>
