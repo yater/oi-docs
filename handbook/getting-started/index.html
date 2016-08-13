@@ -367,7 +367,7 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <p>This document is a work in progress (draft).</p>
 </div>
 
-<p>Import and validate (compare with FAQ, etc.): <a href="http://wiki.openindiana.org/oi/1.+Introduction">old handbook intro</a></p>
+<p>Import and validate (compare with FAQ, etc.): <a href="https://wiki.openindiana.org/oi/1.+Introduction">old handbook intro</a></p>
 <h2 id="introduction">Introduction</h2>
 <p>The OpenIndiana project is the open source community which develops, maintains, and supports the <a href="https://en.wikipedia.org/wiki/OpenIndiana">OpenIndiana</a> distribution, an <a href="https://en.wikipedia.org/wiki/Illumos">illumos</a> based Unix-like operating system derived from OpenSolaris.
 The purpose of the OpenIndiana Project is to ensure the continued availability of an openly developed distribution based on OpenSolaris.
@@ -544,8 +544,8 @@ The Vagrant box will also be booted.</p>
 <p>Please be sure to consult the hardware compatibility list (HCL):</p>
 <ul>
 <li><a href="https://www.illumos.org/hcl/">Illumos HLC</a></li>
-<li><a href="http://wiki.openindiana.org/oi/Components">OpenIndiana HCL - components</a></li>
-<li><a href="http://wiki.openindiana.org/oi/Systems">OpenIndiana HCL - systems</a></li>
+<li><a href="https://wiki.openindiana.org/oi/Components">OpenIndiana HCL - components</a></li>
+<li><a href="https://wiki.openindiana.org/oi/Systems">OpenIndiana HCL - systems</a></li>
 </ul>
 </div>
 
@@ -596,10 +596,14 @@ As the FAQ evolves, try to keep this section in sync.
 
 -->
 
+<p>Primary download mirror (London, England):</p>
 <ul>
-<li><a href="http://dlc.openindiana.org/isos/hipster">Primary Mirror</a></li>
-<li><a href="http://ftp.vim.org/os/openindiana.org/dlc/isos/hipster">Vim.org Alternate Mirror</a></li>
-<li><a href="http://dlc.openindiana.org/torrents/">Torrents</a></li>
+<li><a href="http://dlc.openindiana.org/isos/hipster">ISO's and USB Images</a></li>
+<li><a href="http://dlc.openindiana.org/torrents">Torrents</a></li>
+</ul>
+<p>Alternate mirrors (Asia, Europe, and North America)</p>
+<ul>
+<li><a href="https://wiki.openindiana.org/oi/Mirrors">https://wiki.openindiana.org/oi/Mirrors</a></li>
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
 <p>Download Example:</p>
@@ -1438,7 +1442,7 @@ When booting from the text based installer, you are presented with the following
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well"></p>
-<p>Have a look at: <a href="http://wiki.openindiana.org/oi/pkg+Cheat+Sheet">pgk cheat sheet</a> to see whether there is anything there which we might want to import and validate.</p>
+<p>Have a look at: <a href="https://wiki.openindiana.org/oi/pkg+Cheat+Sheet">pgk cheat sheet</a> to see whether there is anything there which we might want to import and validate.</p>
 </div>
 
 <h3 id="introduction_1">Introduction</h3>
@@ -1458,7 +1462,7 @@ OpenIndiana Hipster uses IPS for its packaging system.</p>
 <p>Once you have installed packages, IPS enables you to search, update, and manage those packages on your system.</p>
 <p>With IPS , you can upgrade your system to a newer build of OpenIndiana Hipster, install and update your software to the latest available versions, and retrieve packages from mirror repositories.</p>
 <p>If the system on which IPS is installed is located on a network, IPS can automatically access the OpenIndiana Hipster package repository.
-For OpenIndiana Hipster, your IPS client can access the packages from <a href="http://pkg.openindiana.org/hipster">http://pkg.openindiana.org/hipster</a>.</p>
+For OpenIndiana Hipster, your IPS client can access the packages from <a href="https://pkg.openindiana.org/hipster">https://pkg.openindiana.org/hipster</a>.</p>
 <h3 id="ips-packages">IPS packages</h3>
 <p>An IPS package is defined as a collection of files, directories, links, drivers and dependencies in a defined format.</p>
 <p>Note the following points about IPS packages:</p>
@@ -1689,13 +1693,14 @@ http://wiki.openindiana.org/display/oi/oi_hipster
 <p>Example (Listing the repositories configured on the system):</p>
 <pre><code class="bash">pkg publisher
 PUBLISHER                   TYPE     STATUS P LOCATION
-openindiana.org              origin   online F http://pkg.openindiana.org/hipster/
+openindiana.org             origin   online F https://pkg.openindiana.org/hipster/
+hipster-encumbered          origin   online F https://pkg.openindiana.org/hipster-encumbered/
 </code></pre>
 
 <p>Example (Replacing a repository):</p>
 <pre><code class="bash">pkg set-publisher \
 -G http://pkg.openindiana.org/hipster-2015 \
--g http://pkg.openindiana.org/hipster openindiana.org
+-g https://pkg.openindiana.org/hipster openindiana.org
 </code></pre>
 
 <h3 id="ips-package-repository-precedence">IPS package repository precedence</h3>
@@ -1991,7 +1996,7 @@ Work is progressing to provide support for AMD and Intel.</p>
         <footer class="col-md-12">
             <hr>
             
-                <center>Copyright &copy; 2016 <a href="http://www.openindiana.org">The OpenIndiana Project</a></center>
+                <center>Copyright &copy; 2016 <a href="https://www.openindiana.org">The OpenIndiana Project</a></center>
             
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
