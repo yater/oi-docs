@@ -373,51 +373,143 @@ For this reason, we're happy to accept your contribution in any format you wish 
 </div>
 
 <h2 id="prerequisites">Prerequisites</h2>
-<h4 id="sign-up-for-a-github-account">Sign up for a <a href="https://github.com">Github</a> account</h4>
+<p>If you haven't already, sign up for a <a href="https://github.com">Github</a> account.</p>
 <h4 id="install-and-configure-git">Install and configure Git</h4>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arch</td>
+<td><code>pacman -S git</code></td>
+</tr>
+<tr>
+<td>Centos/RHEL</td>
+<td><code>yum install git</code></td>
+</tr>
+<tr>
+<td>Debian/Mint/Ubuntu</td>
+<td><code>apt-get install git</code></td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><code>dnf install git</code></td>
+</tr>
+<tr>
+<td>OpenIndiana</td>
+<td><code>pkg install git</code></td>
+</tr>
+</tbody>
+</table>
+<p>After GIT is installed, be sure to configure your name and email address.
+For further details, see: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></p>
+<h4 id="install-python-pip">Install python-pip</h4>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arch</td>
+<td><code>pacman -S python-pip</code></td>
+</tr>
+<tr>
+<td>Centos/RHEL</td>
+<td><code>yum install python-pip</code></td>
+</tr>
+<tr>
+<td>Debian/Mint/Ubuntu</td>
+<td><code>apt-get install python-pip</code></td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><code>dnf install pythop-pip</code></td>
+</tr>
+<tr>
+<td>OpenIndiana</td>
+<td><code>pkg install pip</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="install-rubygems">Install rubygems</h4>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arch</td>
+<td><code>pacman -S ruby</code></td>
+</tr>
+<tr>
+<td>Centos/RHEL</td>
+<td><code>yum install rubygems</code></td>
+</tr>
+<tr>
+<td>Debian/Mint/Ubuntu</td>
+<td><code>apt-get install rubgems-integration</code></td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><code>dnf install rubygem-rails</code></td>
+</tr>
+<tr>
+<td>OpenIndiana</td>
+<td>Installed by default as part of Ruby</td>
+</tr>
+</tbody>
+</table>
+<h4 id="install-nodejs-npm-optional">Install nodejs-npm - Optional</h4>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arch</td>
+<td><code>pacman -S nodejs npm</code></td>
+</tr>
+<tr>
+<td>Centos/RHEL</td>
+<td><code>yum install nodejs npm</code></td>
+</tr>
+<tr>
+<td>Debian/Mint/Ubuntu</td>
+<td><code>apt-get install nodejs-legacy</code></td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td><code>dnf install npm</code></td>
+</tr>
+<tr>
+<td>OpenIndiana</td>
+<td><code>pkg install nodejs</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="install-mkdocs">Install mkdocs</h4>
 <ul>
-<li>Arch: <code>pacman -S git</code></li>
-<li>Centos/RHEL: <code>yum install git</code></li>
-<li>Debian/Mint/Ubuntu: <code>apt-get install git</code></li>
-<li>Fedora: <code>dnf install git</code></li>
-<li>OpenIndiana: <code>pkg install git</code></li>
-</ul>
-<p>or see: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></p>
-<h4 id="install-pip">Install pip</h4>
-<ul>
-<li>Arch: <code>pacman -S python-pip</code></li>
-<li>Centos/RHEL: <code>yum install python-pip</code></li>
-<li>Debian/Mint/Ubuntu: <code>apt-get install python-pip</code></li>
-<li>Fedora: <code>dnf install pythop-pip</code></li>
-<li>OpenIndiana: <code>pkg install pip</code></li>
-</ul>
-<h4 id="install-gem">Install gem</h4>
-<ul>
-<li>Arch: <code>pacman -S ruby</code></li>
-<li>Centos/RHEL: <code>yum install rubygems</code></li>
-<li>Debian/Mint/Ubuntu <code>apt-get install rubgems-integration</code></li>
-<li>Fedora <code>dnf install rubygem-rails</code></li>
-<li>OpenIndiana: Installed by default as part of Ruby</li>
-</ul>
-<h4 id="install-npm-optional">Install npm - Optional</h4>
-<ul>
-<li>Arch: <code>pacman -S nodejs npm</code></li>
-<li>Centos/RHEL: <code>yum install nodejs npm</code></li>
-<li>Debian/Mint/Ubuntu: <code>apt-get install nodejs-legacy</code></li>
-<li>Fedora: <code>dnf install npm</code></li>
-<li>OpenIndiana: <code>pkg install nodejs</code></li>
-</ul>
-<h4 id="install-mkdocs-mkdocs">Install MkDocs (mkdocs)</h4>
-<ul>
-<li>Most operating systems: <code>pip install mkdocs</code></li>
-<li>OpenIndiana: <code>pip-2.7 install mkdocs</code></li>
+<li>Most operating systems (including OpenIndiana): <code>pip install mkdocs</code></li>
 </ul>
 <p>Verify your installation with <code>mkdocs --version</code></p>
 <h4 id="install-markdown-lint-mdl">Install Markdown Lint (mdl)</h4>
 <ul>
 <li><code>gem install mdl</code></li>
 </ul>
-<h4 id="install-markdown-spellcheck-mdspell-optional">Install Markdown-spellcheck (mdspell) - Optional</h4>
+<h4 id="install-markdown-spellcheck-optional">Install markdown-spellcheck (Optional)</h4>
 <ul>
 <li><code>npm install markdown-spellcheck</code></li>
 </ul>
@@ -618,6 +710,24 @@ Prior to submitting a pull request (PR), please consider running Markdown Lint l
 <p>Markdown Lint will automatically traverse the entire folder structure looking for problems.
 Alternately you may also run <code>mdl</code> on a specific file.
 Simply replace the period (.) with the path to the file.</p>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>Before you can run <code>mdl</code>, it may be necessary to add the path to your <code>$PATH</code> variable.</p>
+<p>For example:</p>
+<p>On OpenIndiana, markdown lint (mdl) resides in <code>/usr/ruby/1.9/bin/</code> which is not normally part of the search path.
+To run this command without having to specify the complete path each time, add the following to your <code>.bashrc</code></p>
+<pre><code class="bash">PATH=$PATH:/usr/ruby/1.9/bin/
+export PATH
+</code></pre>
+
+<p>To immediately effect this change, source your <code>.bashrc</code> as follows:</p>
+<pre><code class="bash">source ~/.bashrc
+</code></pre>
+
+</div>
+
 <h2 id="running-markdown-spell-check-locally">Running Markdown spell check (locally)</h2>
 <p>Markdown spell check or <code>mdspell</code> is used to check for spelling errors.
 Prior to submitting a PR, please consider running <code>mdspell</code> locally on your computer.</p>

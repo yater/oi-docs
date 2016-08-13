@@ -625,7 +625,9 @@ OI-hipster-gui-20160421.iso: OK
 
 <p>For example:</p>
 <pre><code class="bash">cdrecord dev=/dev/rdsk/c4t1d0p0 OI-hipster-gui-20160421.iso
-/usr/bin/cdrecord.bin: No write mode specified.
+</code></pre>
+
+<pre><code class="bash">/usr/bin/cdrecord.bin: No write mode specified.
 /usr/bin/cdrecord.bin: Assuming -sao mode.
 /usr/bin/cdrecord.bin: If your drive does not accept -sao, try -tao.
 /usr/bin/cdrecord.bin: Future versions of cdrecord may have different drive dependent defaults.
@@ -662,7 +664,9 @@ Blanking the disk will destroy all data on the disk.</p>
 
 <p>For example:</p>
 <pre><code class="bash">cdrecord dev=/dev/rdsk/c4t1d0p0 blank=fast
-Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
+</code></pre>
+
+<pre><code class="bash">Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
 scsidev: '/dev/rdsk/c4t1d0p0'
 devname: '/dev/rdsk/c4t1d0p0'
 scsibus: -2 target: -2 lun: -2
@@ -693,7 +697,9 @@ Last chance to quit, starting real write    0 seconds. Operation starts.
 </ul>
 <p>For example:</p>
 <pre><code class="bash">cdrecord --scanbus
-Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
+</code></pre>
+
+<pre><code class="bash">Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
 Warning: Using USCSI interface.
 Using libscg version 'schily-0.9'.
 scsibus4:
@@ -716,7 +722,9 @@ scsibus4:
 </div>
 
 <pre><code class="bash">rmformat -l
-Looking for devices...
+</code></pre>
+
+<pre><code class="bash">Looking for devices...
      1. Logical Node: /dev/rdsk/c4t1d0p0
         Physical Node: /pci@0,0/pci17aa,20f8@1f,2/cdrom@1,0
         Connected Device: HL-DT-ST DVDRAM GSA-U20N  HX12
@@ -1438,6 +1446,9 @@ When booting from the text based installer, you are presented with the following
 <li>You cannot boot a USB thumbdrive installer from a USB3 port.</li>
 </ul>
 <h2 id="the-image-package-system-ips">The Image Package System (IPS)</h2>
+<p>The image packaging system is delivered as part of the OpenIndiana userland.
+As such, the pkg related man pages are not available on the illumos.org website.
+These pages are only available by running the man page viewer locally on your system.</p>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
@@ -1545,7 +1556,9 @@ If no search options are specified, the search is restricted to the local system
 Using the <code>-r</code> option, the command searches the remote repository (or repositories) associated with the system.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg search -r xchat
-INDEX                ACTION VALUE                                   PACKAGE
+</code></pre>
+
+<pre><code class="bash">INDEX                ACTION VALUE                                   PACKAGE
 pkg.summary          set    HexChat is an IRC client based on XChat pkg:/desktop/irc/hexchat@2.12.1-2016.0.0.1
 pkg.summary          set    XChat IRC Client                        pkg:/desktop/irc/xchat@2.8.8-2016.0.0.5
 basename             file   usr/bin/xchat                           pkg:/desktop/irc/xchat@2.8.8-2016.0.0.5
@@ -1556,7 +1569,9 @@ pkg.fmri             set    openindiana.org/desktop/irc/xchat       pkg:/desktop
 <p>The <code>pkg search</code> command may also be used to find the package containing a particular file.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg search -l /usr/bin/gpg2
-INDEX      ACTION VALUE        PACKAGE
+</code></pre>
+
+<pre><code class="bash">INDEX      ACTION VALUE        PACKAGE
 path       file   usr/bin/gpg2 pkg:/crypto/gnupg@2.0.28-2016.0.0.0
 </code></pre>
 
@@ -1564,7 +1579,9 @@ path       file   usr/bin/gpg2 pkg:/crypto/gnupg@2.0.28-2016.0.0.0
 <p>To list information about packages installed on the local system use the command <code>pkg list &lt;package-name&gt;</code>.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg list gimp
-NAME (PUBLISHER)                                  VERSION                    IFO
+</code></pre>
+
+<pre><code class="bash">NAME (PUBLISHER)                                  VERSION                    IFO
 image/editor/gimp                                 2.8.16-2016.0.0.2          i--
 </code></pre>
 
@@ -1573,7 +1590,9 @@ If the package is not installed on the local system, use the <code>-r</code> opt
 <p>The <code>pkg contents</code> command can also be used to list the dependencies found in a package.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg contents -H -t depend -o fmri xchat
-pkg:/library/desktop/gdk-pixbuf@2.31.6-2016.0.0.0
+</code></pre>
+
+<pre><code class="bash">pkg:/library/desktop/gdk-pixbuf@2.31.6-2016.0.0.0
 pkg:/library/desktop/gtk2@2.24.30-2016.0.0.0
 pkg:/library/desktop/libsexy@0.1.11-2016.0.0.0
 pkg:/library/desktop/pango@1.36.8-2016.0.0.2
@@ -1593,7 +1612,9 @@ pkg:/x11/library/libx11@1.6.3-2016.0.0.0
 <p>When installing packages, use of the <code>-v</code> (verbose) switch is entirely optional.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg install xchat
-           Packages to install:   1
+</code></pre>
+
+<pre><code class="bash">           Packages to install:   1
             Packages to update:   1
             Services to change:   2
        Create boot environment:  No
@@ -1628,7 +1649,9 @@ Any dependent packages are also automatically updated.</li>
 <p>To update all the packages installed on a system to their latest available version, use the <code>pkg update</code> command.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg update
-            Packages to remove:    4
+</code></pre>
+
+<pre><code class="bash">            Packages to remove:    4
            Packages to install:   11
             Packages to update: 1018
             Packages to change:    2
@@ -1692,7 +1715,9 @@ http://wiki.openindiana.org/display/oi/oi_hipster
 </table>
 <p>Example (Listing the repositories configured on the system):</p>
 <pre><code class="bash">pkg publisher
-PUBLISHER                   TYPE     STATUS P LOCATION
+</code></pre>
+
+<pre><code class="bash">PUBLISHER                   TYPE     STATUS P LOCATION
 openindiana.org             origin   online F https://pkg.openindiana.org/hipster/
 hipster-encumbered          origin   online F https://pkg.openindiana.org/hipster-encumbered/
 </code></pre>
@@ -1732,7 +1757,9 @@ These rules can be overridden by using explicit publishers and package version n
 <p>To list the IPS transactional history, use the <code>pkg history</code> command.</p>
 <p>For example:</p>
 <pre><code class="bash">pkg history
-START                    OPERATION                CLIENT             OUTCOME
+</code></pre>
+
+<pre><code class="bash">START                    OPERATION                CLIENT             OUTCOME
 2016-04-21T03:30:04      purge-history            pkg                Succeeded
 2016-07-02T16:09:56      uninstall                pkg                Succeeded
 2016-07-02T16:10:33      uninstall                pkg                Succeeded
@@ -1769,7 +1796,9 @@ Therefore, be sure to consult the <code>pkg</code><sup>1</sup> man page for full
 <p>To retrieve additional information about a specific command use: <code>pkg help &lt;command name&gt;</code></p>
 <p>For example:</p>
 <pre><code class="bash">pkg help update
-Usage:
+</code></pre>
+
+<pre><code class="bash">Usage:
         pkg update [-fnvq] [-C n] [-g path_or_uri ...] [--accept] [--ignore-missing]
             [--licenses] [--no-be-activate] [--no-index] [--no-refresh]
             [--no-backup-be | --require-backup-be] [--backup-be-name]

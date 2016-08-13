@@ -357,40 +357,70 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <h2 id="basic-unix-commands">Basic UNIX commands</h2>
 <p>&lt; place holder &gt;</p>
 <h2 id="basic-system-administration">Basic system administration</h2>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>Adding users, etc.</li>
 </ul>
+</div>
+
 <h2 id="desktop-applications">Desktop applications</h2>
 <p>&lt; place holder &gt;</p>
 <h3 id="how-can-the-desktop-be-modified">How can the desktop be modified?</h3>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
-<li>Gnome walkthrough</li>
+<li>Gnome or (MATE) walkthrough</li>
 <li>Appearance applet<ul>
 <li>Enabling Compiz</li>
 <li>Configuring font anti-aliasing</li>
+<li>Desktop backgrounds</li>
 </ul>
 </li>
 </ul>
+</div>
+
 <h2 id="multimedia">Multimedia</h2>
 <p>&lt; place holder &gt;</p>
+<h4 id="gstreamer-plugin-prerequisites">gstreamer plugin prerequisites</h4>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+The following gstreamer plugins are required for operation of the <code>gstreamer-properties</code> (sound properties) tool.</p>
+<ul>
+<li>library/audio/gstreamer/plugin/base</li>
+<li>library/audio/gstreamer/plugin/gnonlin</li>
+<li>library/audio/gstreamer/plugin/good</li>
+</ul>
+</div>
+
 <h3 id="pulse-audio-configuration">Pulse Audio configuration</h3>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>How to use the hidden <code>gstreamer-properties</code> configuration utility.</li>
 <li>Pulse Audio configuration</li>
 <li><a href="https://www.solarismultimedia.com/">possible resource</a></li>
 </ul>
+</div>
+
 <p>Searching for cards with pulse audio command line tool</p>
 <pre><code class="bash">pacmd list-cards
 </code></pre>
 
 <p>listing devices</p>
 <pre><code class="bash">ls /dev/sound
-0  0ctl  audiohd:0  audiohd:0ctl  audiohd:0dsp  audiohd:0mixer
+</code></pre>
+
+<pre><code class="bash">0  0ctl  audiohd:0  audiohd:0ctl  audiohd:0dsp  audiohd:0mixer
 </code></pre>
 
 <pre><code class="bash">ls -l /dev/audio* /dev/sound/*
-lrwxrwxrwx 1 root root  7 Jul 14 21:57 /dev/audio -&gt; sound/0
+</code></pre>
+
+<pre><code class="bash">lrwxrwxrwx 1 root root  7 Jul 14 21:57 /dev/audio -&gt; sound/0
 lrwxrwxrwx 1 root root 10 Jul 14 21:57 /dev/audioctl -&gt; sound/0ctl
 lrwxrwxrwx 1 root root  9 Jul 14 21:57 /dev/sound/0 -&gt; audiohd:0
 lrwxrwxrwx 1 root root 12 Jul 14 21:57 /dev/sound/0ctl -&gt; audiohd:0ctl
@@ -401,7 +431,9 @@ lrwxrwxrwx 1 root root 50 Jul 14 21:57 /dev/sound/audiohd:0mixer -&gt; ../../dev
 </code></pre>
 
 <pre><code class="bash">cat /dev/sndstat
-SunOS Audio Framework
+</code></pre>
+
+<pre><code class="bash">SunOS Audio Framework
 
 Audio Devices:
 0: audiohd#0 Intel HD Audio, ICH9 (DUPLEX)
@@ -411,20 +443,26 @@ Mixers:
         HD codec: Conexant CX20561
 </code></pre>
 
-<h4 id="testing-audio">Testing audio</h4>
+<h3 id="testing-audio">Testing audio</h3>
 <p>Finding the hardware</p>
 <pre><code class="bash">prtconf -d | grep -i audio
-        pci17aa,20f2 (pciex8086,293e) [Intel Corporation 82801I (ICH9 Family) HD Audio Controller], instance #0
+</code></pre>
+
+<pre><code class="bash">        pci17aa,20f2 (pciex8086,293e) [Intel Corporation 82801I (ICH9 Family) HD Audio Controller], instance #0
 </code></pre>
 
 <p>Listing the devices</p>
 <pre><code class="bash">audioctl list-devices
-audiohd#0
+</code></pre>
+
+<pre><code class="bash">audiohd#0
 </code></pre>
 
 <p>Running the test</p>
 <pre><code class="bash">audiotest
-Sound subsystem and version: SunOS Audio 4.0 (0x00040003)
+</code></pre>
+
+<pre><code class="bash">Sound subsystem and version: SunOS Audio 4.0 (0x00040003)
 Platform: SunOS 5.11 illumos-380fd67 i86pc
 
 *** Scanning sound adapter #1 ***
@@ -439,39 +477,72 @@ Platform: SunOS 5.11 illumos-380fd67 i86pc
 </code></pre>
 
 <h3 id="mp3-and-cd-audio-support">MP3 and CD audio support</h3>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>Codecs, etc.</li>
 <li>Rythembox (audio player)</li>
 <li>Sound Juicer (CD ripper)</li>
 </ul>
+</div>
+
+<h4 id="gstreamer-plugin-prerequisites_1">gstreamer plugin prerequisites</h4>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Before you can play MP3 files, several gstreamer plugins are required.
+Due to licensing concerns in some countries, these plugins are not part of the default OpenIndiana installation.
+You may however install them from the <strong><em>hipster-encumbered</em></strong> repository.</p>
+<ul>
+<li>library/audio/gstreamer/plugin/bad</li>
+<li>library/audio/gstreamer/plugin/ffmpeg</li>
+<li>library/audio/gstreamer/plugin/ugly</li>
+</ul>
+</div>
+
 <h3 id="video-support">Video support</h3>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>How to get OI to play a DVD</li>
 <li>How to get flash player installed and working.</li>
 <li>How to get VLC installed and working.</li>
 <li>Totem (video player)</li>
 </ul>
+</div>
+
 <h3 id="using-openindiana-as-a-media-server-htpc-etc">Using OpenIndiana as a media server, HTPC, etc.</h3>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li><a href="http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2">http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2</a></li>
 <li><a href="http://lightsandshapes.com/plex-on-smartos.html">http://lightsandshapes.com/plex-on-smartos.html</a></li>
 </ul>
+</div>
+
 <h2 id="printing">Printing</h2>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>OI uses CUPS as the primary print system.</li>
 <li>GNOME print manager (<code>system-config-printer</code>)</li>
 </ul>
 <p>See the additional information about printing in contrib/topics.md
 Also see the deprecation comments in the OSOL printing guide.</p>
+</div>
+
 <h2 id="graphics-workstation">Graphics workstation</h2>
-<p>DOC TEAM ITEMS TO WRITE ABOUT:</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
 <ul>
 <li>GIMP</li>
 </ul>
+</div>
+
 <h2 id="desktop-publishing-system-etc">Desktop Publishing system, Etc.</h2>
 <p>&lt; Place holder for content &gt;</p></div>
         </div>
