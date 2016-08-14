@@ -411,15 +411,11 @@ ITEMS TO WRITE ABOUT:</p>
 </code></pre>
 
 <p>listing devices</p>
-<pre><code class="bash">ls /dev/sound
-</code></pre>
-
+<p><code>ls /dev/sound</code></p>
 <pre><code class="bash">0  0ctl  audiohd:0  audiohd:0ctl  audiohd:0dsp  audiohd:0mixer
 </code></pre>
 
-<pre><code class="bash">ls -l /dev/audio* /dev/sound/*
-</code></pre>
-
+<p><code>ls -l /dev/audio* /dev/sound/*</code></p>
 <pre><code class="bash">lrwxrwxrwx 1 root root  7 Jul 14 21:57 /dev/audio -&gt; sound/0
 lrwxrwxrwx 1 root root 10 Jul 14 21:57 /dev/audioctl -&gt; sound/0ctl
 lrwxrwxrwx 1 root root  9 Jul 14 21:57 /dev/sound/0 -&gt; audiohd:0
@@ -430,9 +426,7 @@ lrwxrwxrwx 1 root root 48 Jul 14 21:57 /dev/sound/audiohd:0dsp -&gt; ../../devic
 lrwxrwxrwx 1 root root 50 Jul 14 21:57 /dev/sound/audiohd:0mixer -&gt; ../../devices/pci@0,0/pci17aa,20f2@1b:sound,mixer0
 </code></pre>
 
-<pre><code class="bash">cat /dev/sndstat
-</code></pre>
-
+<p><code>cat /dev/sndstat</code></p>
 <pre><code class="bash">SunOS Audio Framework
 
 Audio Devices:
@@ -445,23 +439,17 @@ Mixers:
 
 <h3 id="testing-audio">Testing audio</h3>
 <p>Finding the hardware</p>
-<pre><code class="bash">prtconf -d | grep -i audio
-</code></pre>
-
+<p><code>prtconf -d | grep -i audio</code></p>
 <pre><code class="bash">        pci17aa,20f2 (pciex8086,293e) [Intel Corporation 82801I (ICH9 Family) HD Audio Controller], instance #0
 </code></pre>
 
 <p>Listing the devices</p>
-<pre><code class="bash">audioctl list-devices
-</code></pre>
-
+<p><code>audioctl list-devices</code></p>
 <pre><code class="bash">audiohd#0
 </code></pre>
 
 <p>Running the test</p>
-<pre><code class="bash">audiotest
-</code></pre>
-
+<p><code>audiotest</code></p>
 <pre><code class="bash">Sound subsystem and version: SunOS Audio 4.0 (0x00040003)
 Platform: SunOS 5.11 illumos-380fd67 i86pc
 
