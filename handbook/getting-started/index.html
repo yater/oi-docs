@@ -893,7 +893,7 @@ For further information, please consult the help documentation for your Linux di
 </ul>
 </div>
 
-<h3 id="bsdillumossolarislinuxos-x">BSD/illumos/Solaris/Linux/OS X</h3>
+<h3 id="bsdlinuxos-x">BSD/Linux/OS X</h3>
 <pre><code class="bash">cat 1G.header OI-hipster-text-20160421.usb | sudo dd bs=1024k of=/dev/sdX
 </code></pre>
 
@@ -902,6 +902,24 @@ For further information, please consult the help documentation for your Linux di
 </code></pre>
 
 <p>Replace "X" with the appropriate letter for your USB device</p>
+<h3 id="illumossolaris">illumos/Solaris</h3>
+<p>For illumos based distributions including OpenIndiana, a script <a href="https://raw.githubusercontent.com/OpenIndiana/slim_source/oi/hipster/usr/src/cmd/install-tools/usbcopy">(USBCOPY)</a> is available to copy the USB image onto a USB device.</p>
+<p>Be sure to run as root or with SUDO as the script exits if not run with elevated permissions.</p>
+<p><code>sudo ./usbcopy OI-hipster-gui-20160421.usb</code></p>
+<pre><code class="bash">Found the following USB devices:
+0:    devices/dev/rdsk/c4t0d0p0    3.9 GB    USB    DISK 2.0       1.00
+Enter the number of your choice: 0
+
+WARNING: All data on your USB storage will be lost.
+Are you sure you want to install to
+USB DISK 2.0 1.00, 3900 MB at /dev/rdsk/c4t0d0p0 ?  (y/n) y
+Copying and verifying image to USB device
+Finished 1643 MB in 685 seconds (2.3MB/s)
+0 block(s) re-written due to verification failure
+Installing grub to USB device /dev/rdsk/c4t0d0s0
+Completed copy to USB
+</code></pre>
+
 <h3 id="windows_1">Windows</h3>
 <p>The OpenSolaris Live USB Creator is a small stand alone GUI utility suitable for creating an OpenIndiana live USB stick.</p>
 <p><a href="http://devzone.sites.pid0.org/OpenSolaris/opensolaris-liveusb-creator">OpenSolaris USB Creator</a></p>
