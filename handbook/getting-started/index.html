@@ -240,33 +240,6 @@
                 </li>
             
             
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notes <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="../../notes/bsd/">Content Management - The BSD Approach</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../notes/project/">Improving the OpenIndiana Project</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../notes/books/">The OpenSolaris Redistributable Books</a>
-</li>
-
-                    
-                    </ul>
-                </li>
-            
-            
             </ul>
 
             <!-- Search, Navigation and Repo links -->
@@ -1491,19 +1464,11 @@ For OpenIndiana Hipster, your IPS client can access the packages from <a href="h
 Actions are defined when an IPS package is created.
 Actions are used for defining the files and directories of the package, setting package attributes, declaring dependencies on other packages, creating users and groups, and installing device drivers.
 Some actions may optionally have tags that provide meta information about the action such as locale information and debug configuration.</li>
+<li>IPS packages can only be installed from an IPS repository.<ul>
+<li>IPS package repositories can be local to the system or on a remote networked system.</li>
 </ul>
-<h3 id="ips-package-archives-p5p">IPS package archives (.p5p)</h3>
-<p>When the IPS system was originally conceived there was no standard on-disk format for an IPS package.
-Hence, unlike a .rpm file, an SVR4 package, or a .nbm file, it was not possible to transfer an IPS package from system to system.
-The remote IPS repository where the IPS package resided was the only source for the package.
-This is because in its native state, the IPS package is not something you can normally download as a single archive file.</p>
-<p>Recognizing this limitation of IPS, the <code>.p5p</code> IPS archive format was developed.
-For IPS archives, files are stored in the pax archive format, along with additional metadata, such as IPS manifest files, and a specific layout of the contents.
-The <code>pkgrecv</code> command is used to create IPS archives.</p>
-<p>For example, to create a <code>.p5p</code> IPS package archive containing the package <code>editor/gnu-emacs</code> and all of its dependencies from the repository located at <code>http://example.com:10000</code>, use the following command:</p>
-<pre><code class="bash">pkgrecv -s http://example.com:10000 -d /my/emacs.p5p -a -r editor/gnu-emacs
-</code></pre>
-
+</li>
+</ul>
 <h3 id="ips-commands">IPS commands</h3>
 <p>The Image Packaging System software provides the following commands:</p>
 <table>
@@ -1591,7 +1556,7 @@ image/editor/gimp                                 2.8.16-2016.0.0.2          i--
 </code></pre>
 
 <p>To list the entire contents of a package, use the command: <code>pkg contents &lt;package-name&gt;</code>.
-If the package is not installed on the local system, use the <code>-r</code> option.</p>
+If the package is not installed on the local system, use the <code>-r</code> option to search the remote repositories defined on the system.</p>
 <p>The <code>pkg contents</code> command can also be used to list the dependencies found in a package.</p>
 <p>For example:</p>
 <p><code>pkg contents -H -t depend -o fmri xchat</code></p>
@@ -1611,8 +1576,30 @@ pkg:/x11/library/libx11@1.6.3-2016.0.0.0
 
 <h3 id="installing-packages">Installing packages</h3>
 <p>Use the following command to install a package.</p>
-<p><code>pkg install [-v] &lt;package-name&gt;</code></p>
-<p>When installing packages, use of the <code>-v</code> (verbose) switch is entirely optional.</p>
+<p><code>pkg install [options] &lt;package-name&gt;</code></p>
+<p>Some commonly used options are:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>Issue verbose progress messages</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Perform a dry run (no actual changes are made)</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>Hides progress messages</td>
+</tr>
+</tbody>
+</table>
 <p>For example:</p>
 <p><code>pkg install xchat</code></p>
 <pre><code class="bash">           Packages to install:   1
@@ -1647,7 +1634,32 @@ Any dependent packages are also automatically updated.</li>
 </div>
 
 <h3 id="updating-packages">Updating packages</h3>
-<p>To update all the packages installed on a system to their latest available version, use the <code>pkg update</code> command.</p>
+<p>The command to use for updating packages on the system is:</p>
+<p><code>pkg update [options] [package(s)]</code></p>
+<p>Some commonly used options are:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>Issue verbose progress messages</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>Perform a dry run (no actual changes are made)</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>Hides progress messages</td>
+</tr>
+</tbody>
+</table>
+<p>To update all the packages installed on a system to their latest available version, use the <code>pkg update</code> command without specifying any package names.</p>
 <p>For example:</p>
 <p><code>pkg update</code></p>
 <pre><code class="bash">            Packages to remove:    4
@@ -1685,7 +1697,8 @@ http://wiki.openindiana.org/display/oi/oi_hipster
 <h3 id="removing-packages">Removing packages</h3>
 <p>To remove a package from the system, use the command: <code>pkg uninstall &lt;package-name&gt;</code></p>
 <h3 id="ips-package-repositories">IPS package repositories</h3>
-<p>As previously mentioned, the IPS repository is the remote network location where IPS packages reside.</p>
+<p>As previously mentioned, the IPS repository is the remote network location where IPS packages reside.
+Below is a list of commands for adding, removing, or replacing repositories.</p>
 <table>
 <thead>
 <tr>
@@ -1725,6 +1738,21 @@ hipster-encumbered          origin   online F https://pkg.openindiana.org/hipste
 -g https://pkg.openindiana.org/hipster openindiana.org
 </code></pre>
 
+<h3 id="listing-information-about-repositories">Listing information about repositories</h3>
+<p>While the <code>pkgrepo</code> command is primarily used for creating and working with IPS repositories.
+It can also be used for querying the contents of a repository.</p>
+<p>For example:</p>
+<p><code>pkgrepo info -s https://pkg.openindiana.org/hipster/</code></p>
+<pre><code class="bash">PUBLISHER       PACKAGES STATUS           UPDATED
+openindiana.org 3692     online           2016-08-21T07:03:11.566484Z
+</code></pre>
+
+<p>If you want to directly query the remote repository for a full list of all available packages, you can do so using the <code>pkgrepo list</code> command.</p>
+<ul>
+<li><code>pkgrepo list -s &lt;repo_URL&gt;</code></li>
+</ul>
+<p>Do keep in mind you may want to filter the output of the command in some way to keep the list more manageable.
+If not, you're likely to see thousands of lines scroll through your console window.</p>
 <h3 id="ips-package-repository-precedence">IPS package repository precedence</h3>
 <p>When multiple remote IPS repositories are associated with a system and when using the <code>pkg</code> command-line interface with only package names, the following rules apply.
 These rules can be overridden by using explicit publishers and package version numbers.</p>
@@ -1783,6 +1811,56 @@ These rules can be overridden by using explicit publishers and package version n
 <p>To view more details of a particular IPS transaction, use the command:</p>
 <p><code>pkg history -t 2016-07-09T11:33:05 -l</code></p>
 <p>The <code>-t</code> switch allows you to specify a particular transaction and the <code>-l</code> switch provides extended details of that transaction.</p>
+<h3 id="ips-package-archives-p5p">IPS package archives (.p5p)</h3>
+<p>When the IPS system was originally conceived there was no standard on-disk format for an IPS package.
+Hence, unlike a .rpm file, an SVR4 package, or a .nbm file, it was not possible to transfer IPS packages from system to system.
+The remote IPS repository where the IPS package resided was the only source for the package.
+This is because in its native state, the IPS package is not something you can normally download as a single archive file.</p>
+<p>Recognizing this limitation of IPS, the <code>.p5p</code> IPS archive format was developed.
+For IPS archives, files are stored in the pax archive format, along with additional metadata, such as IPS manifest files, and a specific layout of the contents.</p>
+<p>IPS p5p archives are not like Linux packages where you can install software directly from the package.
+Instead p5p archives are a portable repository format containing a collection of packages.
+This allows you to create p5p archives for transfer to non-networked systems.
+IPS package archives are also useful for sharing packages for the purpose of testing.</p>
+<p>IPS archives allow you to:</p>
+<ul>
+<li>Download one or more packages (along with all necessary dependencies) into a p5p archive file.</li>
+<li>Create a local repository based on the contents of the p5p archive file.</li>
+<li>Install packages from the locally created repository.</li>
+</ul>
+<h4 id="creating-the-p5p-package">Creating the p5p package</h4>
+<p>To create an IPS archive, the <code>pkgrecv</code> command is used.</p>
+<p>For example, to create a <code>.p5p</code> IPS package archive containing the package <code>userland/web/browser/firefox</code> and all of its dependencies from the repository located at <code>http://example.com:10000</code>, use the following command:</p>
+<pre><code class="bash">pkgrecv -s http://example.com:10000 -d ~/firefox_test.p5p -a -r pkg://userland/web/browser/firefox@45.3.0-2016.0.0.0:20160817T064143Z
+</code></pre>
+
+<h4 id="listing-the-contents-of-a-p5p-package">Listing the contents of a p5p package</h4>
+<p>There are at least two different ways to view the contents of an IPS archive.</p>
+<p><code>pkgrepo -s ~/firefox_test.p5p list</code></p>
+<pre><code class="bash">PUBLISHER NAME                                          O VERSION
+userland  library/expat                                   2.1.0-2015.0.1.1:20150901T125810Z
+userland  library/glib2                                   2.43.4-2016.0.0.4:20160705T121550Z
+userland  library/glib2/charset-alias                     2.43.4-2016.0.0.4:20160705T121609Z
+userland  system/library/fontconfig                       2.11.95-2016.0.0.0:20160512T122747Z
+userland  web/browser/firefox                             45.3.0-2016.0.0.0:20160817T064143Z
+userland  x11/library/toolkit/libxt                       1.1.4-2016.0.0.0:20160706T165209Z
+</code></pre>
+
+<p>This also works:</p>
+<p><code>pkg list -f -g  ~/firefox_test.p5p</code></p>
+<pre><code class="bash">NAME (PUBLISHER)                                  VERSION                    IFO
+library/expat (userland)                          2.1.0-2015.0.1.1           ---
+library/glib2 (userland)                          2.43.4-2016.0.0.4          ---
+library/glib2/charset-alias (userland)            2.43.4-2016.0.0.4          ---
+system/library/fontconfig (userland)              2.11.95-2016.0.0.0         ---
+web/browser/firefox (userland)                    45.3.0-2016.0.0.0          ---
+x11/library/toolkit/libxt (userland)              1.1.4-2016.0.0.0           ---
+</code></pre>
+
+<h4 id="adding-the-package-as-a-local-repository">Adding the package as a local repository</h4>
+<p><code>pkg set-publisher -p firefox_test.p5p</code></p>
+<h4 id="installing-software-from-the-local-repository">Installing software from the local repository</h4>
+<p><code>pkg install firefox@45.3.0-2016.0.0.0:20160817T064143</code></p>
 <h3 id="finding-help-with-pkg">Finding help with pkg</h3>
 <p>The primary source of help for any OpenIndiana command is to review the man page for the command.
 Therefore, be sure to consult the <code>pkg</code><sup>1</sup> man page for full command information and usage examples.</p>
@@ -1810,6 +1888,31 @@ Here are some of the available tools:</p>
 <li>pkgrm</li>
 </ul>
 <h3 id="3rd-party-package-management-tools">3rd party package management tools</h3>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
+<ul>
+<li><a href="https://pkgsrc.joyent.com/">https://pkgsrc.joyent.com/</a></li>
+<li>
+<p><a href="https://pkgsrc.joyent.com/install-on-illumos/">https://pkgsrc.joyent.com/install-on-illumos/</a></p>
+</li>
+<li>
+<p>Need to answer the questions - Where and how can I install more software?</p>
+</li>
+<li>Discuss 3rd party package managers (PKGIN, etc.)</li>
+<li>Discuss the various 3rd party repos (opencsw, sfe, pkgsrc.joyent, etc.), what's available in them, and which might break compatibility, etc.</li>
+<li>Describe SFE (SPEC FILES EXTRA) and how it differs from OI and other repos.</li>
+<li>How to add additional repos, etc.</li>
+<li>How to compile your own software.<ul>
+<li>I think there is an existing wiki page for this.</li>
+<li>Given the limited number of IPS packages currently available, this is a pretty important subject to write about.</li>
+<li>Also could look here (might be outdated):</li>
+<li><a href="http://www.inetdaemon.com/tutorials/computers/software/operating_systems/unix/Solaris/compiling_software.shtml">web link</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
 <p>In addition to IPS and SVR4 package management tools, it is also possible to use <code>pkgsrc</code>.</p>
 <p>For more information about pkgsrc, see the <a href="https://pkgsrc.joyent.com/">Joyent package source website</a>.</p>
 <!-- CAUTION: -->
