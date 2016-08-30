@@ -442,37 +442,6 @@ For further details, see: <a href="https://help.github.com/articles/set-up-git/"
 </tr>
 </tbody>
 </table>
-<h4 id="install-nodejs-npm-optional">Install nodejs-npm - Optional</h4>
-<table>
-<thead>
-<tr>
-<th>Operating System</th>
-<th>Command</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Arch</td>
-<td><code>pacman -S nodejs npm</code></td>
-</tr>
-<tr>
-<td>Centos/RHEL</td>
-<td><code>yum install nodejs npm</code></td>
-</tr>
-<tr>
-<td>Debian/Mint/Ubuntu</td>
-<td><code>apt-get install nodejs-legacy</code></td>
-</tr>
-<tr>
-<td>Fedora</td>
-<td><code>dnf install npm</code></td>
-</tr>
-<tr>
-<td>OpenIndiana</td>
-<td><code>pkg install nodejs</code></td>
-</tr>
-</tbody>
-</table>
 <h4 id="install-mkdocs">Install mkdocs</h4>
 <ul>
 <li>Most operating systems (including OpenIndiana): <code>pip install mkdocs</code></li>
@@ -482,9 +451,9 @@ For further details, see: <a href="https://help.github.com/articles/set-up-git/"
 <ul>
 <li><code>gem install mdl</code></li>
 </ul>
-<h4 id="install-markdown-spellcheck-optional">Install markdown-spellcheck (Optional)</h4>
+<h4 id="install-vim-markdown-plugin-optional">Install VIM Markdown plugin (optional)</h4>
 <ul>
-<li><code>npm install markdown-spellcheck</code></li>
+<li><a href="https://github.com/plasticboy/vim-markdown/">https://github.com/plasticboy/vim-markdown/</a></li>
 </ul>
 <h2 id="fork-the-openindiana-docs-repository">Fork the OpenIndiana Docs repository</h2>
 <ul>
@@ -581,13 +550,15 @@ upstream        https://github.com/OpenIndiana/oi-docs.git (push)
 </li>
 </ul>
 <pre><code class="markdown">docs/
+├── books/
 ├── contrib/
 ├── dev/
 ├── favicon.ico
 ├── handbook/
 ├── index.md
 ├── misc/
-└── notes/
+├── Openindiana.png
+└── retired/
 </code></pre>
 
 <table>
@@ -598,6 +569,10 @@ upstream        https://github.com/OpenIndiana/oi-docs.git (push)
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>books/</td>
+<td>Legacy OpenSolaris Books</td>
+</tr>
 <tr>
 <td>contrib/</td>
 <td>Contributor guidance docs</td>
@@ -623,8 +598,12 @@ upstream        https://github.com/OpenIndiana/oi-docs.git (push)
 <td>Miscellaneous docs</td>
 </tr>
 <tr>
-<td>notes</td>
-<td>Doc team reference notes</td>
+<td>Openindiana.pgn</td>
+<td>OpenIndiana project graphic</td>
+</tr>
+<tr>
+<td>retired</td>
+<td>Deprecated docs, etc.</td>
 </tr>
 </tbody>
 </table>

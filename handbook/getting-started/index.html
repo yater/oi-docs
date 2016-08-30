@@ -294,7 +294,7 @@
         
             <li><a href="#creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB flash drive</a></li>
         
-            <li><a href="#booting-openindiana">Booting OpenIndiana</a></li>
+            <li><a href="#booting-openindiana-installer-media">Booting OpenIndiana installer media</a></li>
         
             <li><a href="#installing-openindiana">Installing OpenIndiana</a></li>
         
@@ -896,7 +896,7 @@ Completed copy to USB
 <h3 id="windows_1">Windows</h3>
 <p>The OpenSolaris Live USB Creator is a small stand alone GUI utility suitable for creating an OpenIndiana live USB stick.</p>
 <p><a href="http://devzone.sites.pid0.org/OpenSolaris/opensolaris-liveusb-creator">OpenSolaris USB Creator</a></p>
-<h2 id="booting-openindiana">Booting OpenIndiana</h2>
+<h2 id="booting-openindiana-installer-media">Booting OpenIndiana installer media</h2>
 <p>Insert the bootable media (DVD or USB flash drive) and boot (start/restart) your computer.
 When you see the boot menu, press the enter key to start OpenIndiana on your computer.
 As it runs, you will be prompted with a few questions.</p>
@@ -904,19 +904,28 @@ As it runs, you will be prompted with a few questions.</p>
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>For the computer to boot from the media, you may need to specify the device by pressing the boot order hotkey.
-Alternately, you may need to change the boot device order in your BIOS configuration.</p>
+<p>For the computer to boot from the media, you may need to either:</p>
+<ul>
+<li>Specify the appropriate boot device by pressing the boot order hotkey.</li>
+<li>Change the boot device order found in your computer's system BIOS configuration.</li>
+</ul>
 </div>
 
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
 <div class="well"></p>
-<p>OpenIndiana does not yet support UEFI (Unified Extensible Firmware Interface) or secure boot.
-These technologies must be disabled prior to booting an OpenIndiana DVD or USB stick.</p>
+<p>OpenIndiana does not yet support the following technologies:</p>
+<ul>
+<li>Secure boot (UEFI boot path validation)</li>
+<li>UEFI (Unified Extensible Firmware Interface)</li>
+<li>USB 3.0 (eXtensible Host Controller Interface)</li>
+</ul>
+<p>To successfully boot the OpenIndiana installer, these technologies must first be disabled.
+For further information, consult the manufacturers documentation for your computer hardware.</p>
 </div>
 
-<h3 id="booting-openindiana-on-virtual-hardware">Booting OpenIndiana on virtual hardware</h3>
+<h3 id="booting-the-openindiana-installer-on-virtual-hardware">Booting the OpenIndiana installer on virtual hardware</h3>
 <p>The most efficient way to boot a virtual machine is to boot directly from the DVD ISO file.
 Alternately, you may use host to guest DVD/USB passthrough to boot from physical media.
 See the notes below for optimizing OpenIndiana for several popular hypervisors.</p>
@@ -942,40 +951,56 @@ See the notes below for optimizing OpenIndiana for several popular hypervisors.<
 </tr>
 </tbody>
 </table>
-<h3 id="the-openindiana-boot-menu">The OpenIndiana boot menu</h3>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>OpenIndiana will automatically boot the selected entry within 30 seconds.
-To stop the boot timer, press the escape key.
-To edit a boot entry, press the [e]dit key.
-For a command line press the [c]ommand key.</p>
+<p>At this time, Oracle Virtualbox provides the best support for illumos based distributions such as OpenIndiana.
+VMware Workstation Player and Linux KVM may also be used to run OpenIndiana as a guest operating system.
+However, generally speaking, these latter 2 hypervisors do not support illumos based operating systems as well as Virtualbox.
+Therefore, the table above has listed these hypervisors in order of compatibility.</p>
+<p>If you experience difficulties booting OpenIndiana on virtual hardware, or find virtual hardware devices which are either not properly recognized, or fail to function as expected, please report the problem to the upstream illumos Project. You may do so by submitting an issue using the <a href="https://www.illumos.org/issues">illumos project bug tracker</a>.</p>
+</div>
+
+<h3 id="the-openindiana-installer-boot-menu">The OpenIndiana installer boot menu</h3>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>The OpenIndiana installer will automatically boot the selected (highlighted) entry within 30 seconds.</p>
+<ul>
+<li>To stop the boot timer, press the <code>Esc</code> (escape) key.</li>
+<li>To edit a boot entry, press the <code>e</code> (edit) key.</li>
+<li>For a command line press the <code>c</code> (command) key.</li>
+</ul>
 </div>
 
 <p><img alt="grub menu" src="../images/boot/grub_menu.png" /></p>
-<p>The OpenIndiana boot menu offers multiple choices.
-Use the arrow keys to select a boot entry.
-Once you have made a selection, press enter to initialize the boot process.</p>
+<p>The OpenIndiana installer boot menu offers multiple choices:</p>
 <ul>
 <li>OI Hipster (normal boot)</li>
 <li>OI Hipster VESA driver</li>
 <li>OI Hipster text console</li>
 <li>Boot from Hard Disk</li>
 <li>OI Hipster Enable SSH</li>
-<li>OI Hipster with mangnifier</li>
+<li>OI Hipster with magnifier</li>
 <li>OI Hipster with screen reader</li>
 </ul>
+<p>Use the up and down arrow keys to select a boot entry.
+Once you have made a boot menu selection, press the <code>Enter</code> key to initialize the OpenIndiana installer boot process.</p>
 <h3 id="selecting-keyboard-layout-and-display-language">Selecting keyboard layout and display language</h3>
-<p><img alt="Select keyboard layout" src="../images/gui_install/SKL.png" /></p>
+<p><img alt="Select keyboard layout" src="../images/boot/keyboard.png" /></p>
 <p>OpenIndiana offers 47 different keyboard layouts.
 Select your keyboard layout by entering the number corresponding to your desired keyboard layout.
-For example, select 47 for US-English, or 46 for UK-English, etc.
-The default keyboard layout is US-English.</p>
-<p><img alt="Select display language" src="../images/gui_install/SDL.png" /></p>
+For example, select <code>18</code> for German, or <code>35</code> for Russian, etc.
+The default keyboard layout is selection <code>47</code> US-English.
+Once you have selected a keyboard layout, press the <code>Enter</code> key to continue.</p>
+<p><img alt="Select display language" src="../images/boot/language.png" /></p>
 <p>OpenIndiana offers 22 different language options.
-Select your language by entering the number corresponding to your desired language.
-The default language is English.</p>
+Select a language by entering the number corresponding to your desired language.
+For example, select <code>3</code> for Chinese - Simplified, or <code>18</code> for Portuguese - Brazil, etc.
+The default language selection is <code>7</code> for English.
+Once you have selected a language, press the <code>Enter</code> key to continue.</p>
 <h3 id="the-live-media-desktop">The live media desktop</h3>
 <p><img alt="live desktop" src="../images/live_desktop/live_desktop.png" /></p>
 <p>The Live Media DVD and USB installers provide a graphical live environment where you can explore OpenIndiana and test the compatibility of your hardware.
@@ -988,8 +1013,8 @@ When using Live Media, no changes are made to your system unless you explicitly 
 <li>Gparted Partition Editor</li>
 </ul>
 <h3 id="using-the-device-driver-utility">Using the device driver utility</h3>
-<p>Available from the LiveDVD, the <em>Device Driver Utility</em> may be used to scan your hardware for compatability.
-The utility generates a list of hardware devices along with the cooresponding driver in use for each device.
+<p>Available from the Live Media desktop, the <em>Device Driver Utility</em> may be used to scan your hardware for compatibility.
+The utility generates a list of hardware devices along with the corresponding driver in use for each device.
 The utility will also show you devices for which there is no driver loaded.
 The device driver utility allows you to check whether your hardware requires additional drivers.</p>
 <h3 id="using-the-gparted-partition-editor">Using the Gparted Partition Editor</h3>
@@ -997,12 +1022,11 @@ The device driver utility allows you to check whether your hardware requires add
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well"></p>
-<p>Editing partition tables is a potentially destructive process.
+<div class="well">
+Editing partition tables is a potentially destructive process.
 While you are unlikely to physically damage the disk, there is a risk of losing data.
-Before using the partition editor, please be sure to back up your data to a remote system or device.</p>
-</div>
-
+Before using the partition editor, please be sure to back up your data to a remote system or device.
+</div></p>
 <h3 id="live-media-authentication">Live media authentication</h3>
 <p>The user login for the live media session is <code>jack</code> along with the password <code>jack</code>.
 For administrative or elevated access, prepend your commands with <code>sudo</code>.</p>
@@ -1050,24 +1074,36 @@ Other existing partitions are not changed.
 <p>Each of these options is represented by a desktop icon.
 Select the appropriate installer option by clicking the corresponding desktop installer icon.</p>
 <h3 id="install-openindiana-graphical-installer">Install OpenIndiana (graphical installer)</h3>
-<p>Begin installing OpenIndiana using the graphical installer by double clicking the desktop icon labeled: <em>Install OpenIndiana</em>.</p>
-<p><img alt="First Install Screen" src="../images/gui_install/OGI.png" /></p>
+<p><img alt="Launch the installer" src="../images/gui_install/install_1.png" /></p>
+<p>To launch the OpenIndiana graphical installer, locate and double click the desktop icon labeled: <em><strong>Install OpenIndiana</strong></em>.</p>
+<p>As shown below, and in the subsequent screens, the installer starts a new process, running within it's own window.</p>
+<p><img alt="First install screen" src="../images/gui_install/install_2.png" /></p>
 <p>When the installer starts, the first screen you will see is the welcome page.
-When ready to begin the installation, click <em>Next</em>.</p>
-<p><img alt="Disk Menu" src="../images/gui_install/SIL.png" /></p>
-<p>The top portion of the disk screen shows all the disks found on the system, including removable disks.
-The installer also displays the size of each disk in Gigabytes (GB).
-Within this upper panel, select the disk where you wish to install OpenIndiana.</p>
-<p>The lower portion of this screen displays partitioning options.</p>
+Please take some time to read the additional guidance provided below.
+When ready to begin, click the <em><strong>Next</strong></em> button to continue on with the installation process.</p>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
-Regardless of the partitioning option chosen for the installation, manual control of the OpenSolaris file system layout is not supported.
-During the installation, the Solaris fdisk partition is reformatted with a default ZFS file system layout.
-All existing file systems on the Solaris partition are destroyed.
-The installation uses a Solaris fdisk partition to create a ZFS storage pool.
-</div></p>
+Please disregard the reference to the getting started guide.
+This guide no longer exists on the Live Media installer.</p>
+<p><em><strong>A bug has been opened for this issue and a new getting started guide is being created</strong></em>.</p>
+<p>Also, when clicking the link for the release notes, please click it only once and wait until Firefox finishes loading.
+The Firefox web browser will open to the 'OpenIndiana Releases' page of the OpenIndiana Wiki.
+This however, is not where you will find the release notes.
+<em><strong>A bug has been opened to correct this issue</strong></em>.</p>
+<p>The release notes may be accessed in one of the following ways:</p>
+<ul>
+<li>Perform a search within the Wiki site for the release notes.</li>
+<li>Browse to the following Wiki page: <a href="https://wiki.openindiana.org/oi/Release+Notes">https://wiki.openindiana.org/oi/Release+Notes</a>.
+</div></li>
+</ul>
+<p><img alt="Disk selection and partitioning menu -1" src="../images/gui_install/install_3.png" /></p>
+<p>The top portion of the disk selection and partitioning screen shows all the disks found on the system, including removable disks.
+Each disk is represented with a disk icon.
+Below each disk icon the installer displays the size of each disk in Gigabytes (GB) and the disk type (IDE, ATA, etc.).
+Within this upper panel, select the disk where you wish to install OpenIndiana.
+The lower portion of this screen displays partitioning options.</p>
 <p>Within the lower panel, select one of the following options:</p>
 <table>
 <thead>
@@ -1087,7 +1123,19 @@ The installation uses a Solaris fdisk partition to create a ZFS storage pool.
 </tr>
 </tbody>
 </table>
-<p>When you have revised the partitioning as needed, and are ready to continue on to the next screen, click Next.</p>
+<p><img alt="Disk selection and partitioning menu -2" src="../images/gui_install/install_4.png" />
+If you choose to partition the disk, you have additional options as shown above.
+Please take some time to read the additional guidance provided below.
+When you have revised the partitioning as needed, click the <em><strong>Next</strong></em> button to continue.</p>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Regardless of the partitioning option chosen for the installation, manual control of the OpenSolaris file system layout is not supported.
+During the installation, the Solaris fdisk partition is reformatted with a default ZFS file system layout.
+All existing file systems on the Solaris partition are destroyed.
+The installation uses a Solaris fdisk partition to create a ZFS storage pool.
+</div></p>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
@@ -1129,7 +1177,7 @@ In this case, all data on the selected disk is destroyed.</p>
 <li>Use the fdisk(1M) command to create new partitions that use the free space between exiting partitions.
 </div></li>
 </ul>
-<p><img alt="Time Zone, Date and Time" src="../images/gui_install/SDAT.png" /></p>
+<p><img alt="Time zone, date and time" src="../images/gui_install/install_5.png" /></p>
 <p>This screen enables you to type the correct time zone, date, and time for the system to be installed.
 The top half of the panel displays a world map with major cities marked.
 The bottom half of the panel provides drop-down selections.
@@ -1154,7 +1202,7 @@ The options for each drop-down field are determined by the selection made in the
 After making your selections, you may also edit the default date and time that is provided.
 </div></p>
 <p>When the settings are correct, click Next to continue.</p>
-<p><img alt="Locale" src="../images/gui_install/SL.png" /></p>
+<p><img alt="Locale" src="../images/gui_install/install_6.png" /></p>
 <p>This screen enables you to select a language and locale.
 These selections determine the language support, the default date and time, and other data formats for the installed system.</p>
 <ul>
@@ -1176,7 +1224,7 @@ Only one locale can be selected.</p>
 <div class="well">
 Any time that you log in to the installed system, you can change either the locale for that particular session or the default locale by using the Options button in the Login dialog box.
 </div></p>
-<p><img alt="Users" src="../images/gui_install/SMUD.png" /></p>
+<p><img alt="Users" src="../images/gui_install/install_7.png" /></p>
 <p>Review the following guidelines:</p>
 <ul>
 <li>Root login is not enabled either on the Live CD or on the installed system.
@@ -1208,36 +1256,54 @@ If you do not want to define a user account, you can proceed.</p>
 The computer name field cannot be blank.</p>
 </li>
 </ul>
-<p><img alt="Waiting game" src="../images/gui_install/ISS.png" /></p>
-<p>The installation begins when you click Install.
-During the installation, a progress bar is displayed.</p>
+<p><img alt="Installation summary" src="../images/gui_install/install_8.png" /></p>
+<p>This screen summarizes the configuration options which will be used to perform the installation.
+Be sure to take the time to review this summary.
+If a configuration option needs to be changed, you may do so by clicking the <em><strong>Back</strong></em> button.
+If the installation options are acceptable, click the <em><strong>Install</strong></em> button to begin the installation.</p>
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
 <div class="well">
-Do not interrupt an installation in progress.
+Once you have clicked the <em><strong>Install</strong></em> button, the option to <em><strong>Quit</strong></em> the installation is no longer available.
+Do not attempt to interrupt an installation already in progress or the system will be left in an inconsistent state.
 </div></p>
-<p><img alt="Ding, OS is ready" src="../images/gui_install/FIS.png" /></p>
+<p><img alt="Installation in progress" src="../images/gui_install/install_9.png" /></p>
+<p>During the installation, a progress bar is displayed.
+The time required to complete the installation is dependent on your hardware.</p>
+<p><img alt="Completion summary" src="../images/gui_install/install_10.png" /></p>
 <p>The final screen displays completion messages.
-You can review the installation log in this panel.
-To exit the installer, select Quit and shut down your system.
-You can either quit or reboot from this panel.</p>
+From within this panel you may review the installation log.
+To view the installation log, click the link titled <em><strong>OpenIndiana Installation Log</strong></em>.
+The installation log will open in a new window.</p>
+<p><img alt="Installation log" src="../images/gui_install/install_11.png" /></p>
+<p>Using the slider located on the right side of the log viewer window, you may scroll up and down to view the entire log file.
+After reviewing the log, you may exit the log viewer by clicking the <em><strong>Close</strong></em> button.</p>
+<p><strong>Congratulations!</strong>
+You have completed the installation of the OpenIndiana Hipster operating system.</p>
+<p>From here you now have several options:</p>
 <ul>
-<li>After a successful installation, to start the installed system, select Reboot.
-The reboot process might take a few minutes.</li>
+<li>Quit the installer by clicking the <em><strong>Quit</strong></em> button and continue to explore the Live Media.</li>
+<li>Quit the installer by clicking the <em><strong>Quit</strong></em> button and then manually shut down or restart your system.</li>
+<li>Reboot the computer by clicking the <em><strong>Reboot</strong></em> button.</li>
 </ul>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
-Eject the Live CD as the next boot begins.
-Or, select the “Boot from Hard Disk” option on the GRUB menu.
+To prevent the Live Media from starting again after the reboot, eject the Live Media as the next boot begins.
+Or alternately, when presented with the Live Media installer options menu, select the <em><strong>Boot from Hard Disk</strong></em> option.
 </div></p>
-<p>After you have installed OpenIndiana, if you have another operating system on your system, you might need to update the GRUB menu.
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+After you have installed OpenIndiana, if you have another operating system on your system, you might need to update the GRUB menu.
 The GRUB menu displays a list of operating systems that can be booted.
 Solaris and Windows operating systems are displayed automatically on the GRUB menu.
-The contents of the GRUB menu.lst file define what is displayed in the GRUB menu when you boot the system.
-If you have an additional OpenIndiana or a Linux OS that is not displayed on the menu, you need to edit the GRUB menu.lst file.</p>
+The contents of the GRUB <code>menu.lst</code> file define what is displayed in the GRUB menu when you boot the system.
+If you have an additional OpenIndiana or a Linux OS that is not displayed on the menu, you may need to edit the GRUB <code>menu.lst</code> file.
+</div></p>
 <h3 id="install-openindiana-using-the-text-installer">Install OpenIndiana using the Text Installer</h3>
 <p>The text based guided install starts and runs within a command line console.
 Navigation within the installer is performed by pressing specifically designated navigation keys (F2, Tab, etc.).</p>
