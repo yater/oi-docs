@@ -483,7 +483,7 @@ To work around this limitation, be sure to remove any previously installed insta
 <ul>
 <li>Run the following command to download and boot the OpenIndiana vagrant box:</li>
 </ul>
-<pre><code class="bash">mkdir ~/openindiana_test
+<pre><code>mkdir ~/openindiana_test
 cd ~/openindiana_test
 vagrant init openindiana/hipster
 vagrant up --provider virtualbox
@@ -494,13 +494,13 @@ The Vagrant box will also be booted.</p>
 <ul>
 <li>Once, the Vagrant box virtual machine is online, connect to it using the following command:</li>
 </ul>
-<pre><code class="bash">vagrant ssh
+<pre><code>vagrant ssh
 </code></pre>
 
 <ul>
 <li>To destroy the OpenIndiana Vagrant instance, issue the following command:</li>
 </ul>
-<pre><code class="bash">vagrant destroy
+<pre><code>vagrant destroy
 </code></pre>
 
 <h2 id="preparation-for-installing-openindiana">Preparation for installing OpenIndiana</h2>
@@ -522,15 +522,6 @@ The Vagrant box will also be booted.</p>
 </ul>
 </div>
 
-<p><strong>DOC TEAM NOTE:</strong></p>
-<ul>
-<li>Gigabyte motherboards with Intel socket 775 and ICH10 chipset don't work well with OI.<ul>
-<li>Kernel CPU usage can range from 40-80% cpu @ idle.</li>
-</ul>
-</li>
-<li>Seems to work OK on Intel brand desktop motherboards though.</li>
-<li>Works well with HP Zxxx class workstation hardware.</li>
-</ul>
 <h3 id="backing-up-data">Backing up data</h3>
 <!-- CAUTION: -->
 
@@ -551,7 +542,7 @@ MBR partitions will allow you to create multiple partitions.
 MBR will also support dual booting another operating system.</p>
 <p>Another option is to install to a virtual machine.</p>
 <h3 id="gathering-network-information">Gathering network information</h3>
-<p>If you network uses a DHCP server, OpenIndiana can be configured to automatically obtain it's network information.
+<p>If your network uses a DHCP server, OpenIndiana can be configured to automatically obtain it's network information.
 If a DHCP server is not available, then you will need to manually configure your network settings.</p>
 <p>Obtain the following information:</p>
 <ol>
@@ -580,93 +571,42 @@ As the FAQ evolves, try to keep this section in sync.
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
 <p>Download Example:</p>
-<pre><code class="bash">wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso&quot;
+<pre><code>wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso&quot;
 wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso.sha256sum&quot;
 </code></pre>
 
 <h3 id="checking-the-md5sha">Checking the MD5/SHA</h3>
-<p>Checksum Verification Example:</p>
-<pre><code class="bash">sha256sum --check OI-hipster-gui-20160421.iso.sha256sum
+<p>Checksum verification example:</p>
+<pre><code>sha256sum --check OI-hipster-gui-20160421.iso.sha256sum
 OI-hipster-gui-20160421.iso: OK
 </code></pre>
 
 <h2 id="creating-a-bootable-openindiana-dvd">Creating a bootable OpenIndiana DVD</h2>
 <h3 id="bsdillumossolaris">BSD/illumos/Solaris</h3>
 <p><strong>UNIX Console</strong> <i class="fa fa-sun-o" aria-hidden="true"></i></p>
-<pre><code class="bash">cdrecord dev=device imagefile.iso
-</code></pre>
-
-<p>For example:</p>
-<p><code>cdrecord dev=/dev/rdsk/c4t1d0p0 OI-hipster-gui-20160421.iso</code></p>
-<pre><code class="bash">/usr/bin/cdrecord.bin: No write mode specified.
-/usr/bin/cdrecord.bin: Assuming -sao mode.
-/usr/bin/cdrecord.bin: If your drive does not accept -sao, try -tao.
-/usr/bin/cdrecord.bin: Future versions of cdrecord may have different drive dependent defaults.
-Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
-scsidev: '/dev/rdsk/c4t1d0p0'
-devname: '/dev/rdsk/c4t1d0p0'
-scsibus: -2 target: -2 lun: -2
-Warning: Using USCSI interface.
-Using libscg version 'schily-0.9'.
-Device type    : Removable CD-ROM
-Version        : 0
-Response Format: 2
-Capabilities   :
-Vendor_info    : 'HL-DT-ST'
-Identifikation : 'DVDRAM GSA-U20N '
-Revision       : 'HX12'
-Device seems to be: Generic mmc2 DVD-R/DVD-RW/DVD-RAM.
-Using generic SCSI-3/mmc-2 DVD-R/DVD-RW/DVD-RAM driver (mmc_dvd).
-Driver flags   : NO-CD DVD MMC-3 SWABAUDIO BURNFREE
-Supported modes: PACKET SAO LAYER_JUMP
-Starting to write CD/DVD/BD at speed 2 in real SAO mode for single session.
-Last chance to quit, starting real write    0 seconds. Operation starts.
-Turning BURN-Free off
-Track 01: Total bytes read/written: 1435766784/1435766784 (701058 sectors).
-</code></pre>
-
+<p>The command to use for writing a CD or DVD is <code>cdrecord</code>.
+The syntax of the command is: <code>cdrecord dev=device imagefile.iso</code></p>
+<p>Examples:</p>
+<ul>
+<li><code>cdrecord dev=/dev/rdsk/c4t1d0p0 imagefile.iso</code></li>
+<li><code>cdrecord dev=4,1,0 imagefile.iso</code></li>
+</ul>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>If you reusing a DVD-RW, be sure to blank it first.
-Blanking the disk will destroy all data on the disk.</p>
+<p>If you are re-using a DVD-RW, be sure to blank it first.</p>
+<p>For example: <code>cdrecord dev=/dev/rdsk/c4t1d0p0 blank=fast</code></p>
+<p>Warning: Blanking the disk will destroy all data on the disk.</p>
 </div>
 
-<p>For example:</p>
-<p><code>cdrecord dev=/dev/rdsk/c4t1d0p0 blank=fast</code></p>
-<pre><code class="bash">Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
-scsidev: '/dev/rdsk/c4t1d0p0'
-devname: '/dev/rdsk/c4t1d0p0'
-scsibus: -2 target: -2 lun: -2
-Warning: Using USCSI interface.
-Using libscg version 'schily-0.9'.
-Device type    : Removable CD-ROM
-Version        : 0
-Response Format: 2
-Capabilities   :
-Vendor_info    : 'HL-DT-ST'
-Identifikation : 'DVDRAM GSA-U20N '
-Revision       : 'HX12'
-Device seems to be: Generic mmc2 DVD-R/DVD-RW/DVD-RAM.
-Using generic SCSI-3/mmc-2 DVD-R/DVD-RW/DVD-RAM driver (mmc_dvd).
-Driver flags   : NO-CD DVD MMC-3 SWABAUDIO BURNFREE
-Supported modes: PACKET SAO LAYER_JUMP
-WARNING: Phys disk size 1124800 differs from rzone size 0! Prerecorded disk?
-WARNING: Phys start: 196608 Phys end 1321407
-WARNING: Drive returns zero media size. Using media size from ADIP.
-Starting to write CD/DVD/BD at speed 2 in real BLANK mode for single session.
-Last chance to quit, starting real write    0 seconds. Operation starts.
-</code></pre>
-
-<p>To locate your device:</p>
+<p>Locating your DVD or CD writing device:</p>
 <ul>
-<li>For BSD, use the <code>cdrecord -scanbus</code></li>
-<li>For illumos/Solaris, use <code>rmformat -l</code></li>
+<li>For BSD, use <code>cdrecord -scanbus</code> to locate your device.</li>
 </ul>
 <p>For example:</p>
-<p><code>cdrecord --scanbus</code></p>
-<pre><code class="bash">Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
+<p><code>cdrecord -scanbus</code></p>
+<pre><code>Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
 Warning: Using USCSI interface.
 Using libscg version 'schily-0.9'.
 scsibus4:
@@ -684,12 +624,16 @@ scsibus4:
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>When using <code>cdrecord --scanbus</code> to determine the device name, specify the device using the SCSI bus ID.</p>
+<p>When using <code>cdrecord -scanbus</code> to determine the device name, specify the device using the SCSI bus ID.</p>
 <p>For example: <code>cdrecord dev=4,1,0 imagefile.iso</code></p>
 </div>
 
+<ul>
+<li>For illumos/Solaris, you may use either <code>rmformat -l</code> or <code>cdrecord -scanbus</code> to locate your device.</li>
+</ul>
+<p>For example:</p>
 <p><code>rmformat -l</code></p>
-<pre><code class="bash">Looking for devices...
+<pre><code>Looking for devices...
      1. Logical Node: /dev/rdsk/c4t1d0p0
         Physical Node: /pci@0,0/pci17aa,20f8@1f,2/cdrom@1,0
         Connected Device: HL-DT-ST DVDRAM GSA-U20N  HX12
@@ -715,12 +659,27 @@ scsibus4:
 
 <h3 id="linux">Linux</h3>
 <p><strong>Linux Console</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i></p>
-<pre><code class="bash">wodim -v dev=device -dao imagefile.iso
+<p>The command to use to write a CD or DVD on Linux is <code>wodim</code>.
+The syntax of the command is: <code>wodim -v dev=device -dao imagefile.iso</code></p>
+<p>For example:</p>
+<p><code>wodim -v dev=/dev/sr0 -dao imagefile.iso</code></p>
+<p>Locating your DVD or CD writing device:</p>
+<ul>
+<li>On Linux use the <code>lsblk</code> command to locate your device.</li>
+</ul>
+<p>For example:</p>
+<p><code>lsblk</code></p>
+<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 232.9G  0 disk
+├─sda1   8:1    0 227.8G  0 part /
+├─sda2   8:2    0     1K  0 part
+└─sda5   8:5    0     4G  0 part
+sr0     11:0    1  1024M  0 rom
 </code></pre>
 
 <p><strong>Linux GUI</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i>
 <div class="well"></p>
-<p>There are many different CD/DVD writer applications available for Linux.</p>
+<p>There are several different CD/DVD writer applications available for Linux.</p>
 <table>
 <thead>
 <tr>
@@ -745,7 +704,7 @@ For further information, please consult the help documentation for your Linux di
 
 <h3 id="mac-os-x">Mac OS X</h3>
 <p><strong>MAC Console</strong> <i class="fa fa-apple fa-lg" aria-hidden="true"></i></p>
-<pre><code class="bash">growisofs -Z /dev/dvdrw=image.iso
+<pre><code>growisofs -Z /dev/dvdrw=image.iso
 </code></pre>
 
 <p><strong>MAC GUI</strong> <i class="fa fa-apple fa-lg" aria-hidden="true"></i>
@@ -770,40 +729,63 @@ For further information, please consult the help documentation for your Linux di
 </div>
 
 <h2 id="creating-a-bootable-openindiana-usb-flash-drive">Creating a bootable OpenIndiana USB flash drive</h2>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>USB flash drive - (2GB or larger)</li>
-<li>Download the OpenIndiana USB Live Media installer</li>
-<li>Download the appropriate OpenIndiana 1G or 2G header file</li>
-</ul>
 <!-- NOTE: -->
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well"></p>
-<p>At this time, creating a bootable flash drive requires the use of a header file.</p>
+<div class="well">
+There are two unique methods for creating bootable USB flash drives.
+The method to use depends on the release date of the USB image you intend to write.</p>
+<h4 id="method-1">Method 1</h4>
 <ul>
-<li>There are 2 unique USB header files (1G and 2G).</li>
-<li>Please ensure you have selected the correct file.<ul>
-<li>The 1G.header is only suitable for use with the text installer (Command line console).</li>
-<li>The 2G.header is only suitable for use with the live installer (Gnome desktop).</li>
-<li>The files are <strong>NOT</strong> interchangeable.</li>
+<li>Applies to the experimental releases of July 2016 and all subsequent (newer) releases.</li>
 </ul>
-</li>
+<h4 id="method-2">Method 2</h4>
+<ul>
+<li>Applies to all OpenIndiana releases up to and including the OpenIndiana Hipster 2016.04 release.</li>
+<li>This includes the legacy oi-dev-151a series of OpenIndiana releases.
+</div></li>
 </ul>
-<p>Failure to use the correct USB header file can result in the USB drive either failing to boot, or only partially booting (and falling back to systems maintenance mode with KSH93 errors).</p>
-</div>
-
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well"></p>
-<p>OpenIndiana Hipster does not yet support USB 3.0.</p>
+<div class="well">
+OpenIndiana Hipster does not yet support USB 3.0 or UEFI.</p>
 <ul>
-<li>When attaching backward compatible USB 3.0 devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.</li>
+<li>If you intend to install OpenIndiana Hipster on a system with USB 3.0 and or UEFI capabilities, please be sure to disable these features.</li>
+<li>When attaching backward compatible USB 3.0 flash devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.
+</div></li>
 </ul>
-</div>
+<h3 id="prerequisites">Prerequisites</h3>
+<h4 id="methods-1-2">Methods 1 &amp; 2</h4>
+<ul>
+<li>USB flash drive - (2GB or larger).</li>
+<li>Download the OpenIndiana USB installer image.</li>
+</ul>
+<h4 id="method-2_1">Method 2</h4>
+<!-- NOTE: -->
 
-<h4 id="identifying-the-path-to-your-usb-device">Identifying the path to your USB device</h4>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Header files are only required when writing a legacy image <strong>AND</strong> using the dd utility.
+</div></p>
+<ul>
+<li>Download the appropriate OpenIndiana 1G or 2G header file<ul>
+<li>There are 2 unique USB header files (1G and 2G).</li>
+<li>Please ensure you have selected the correct file as the files are <strong>NOT</strong> interchangeable.<ul>
+<li>The 1G.header is only suitable for use with the text installer (Command line console).</li>
+<li>The 2G.header is only suitable for use with the live installer (Gnome desktop).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- CAUTION: -->
+
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well">
+Failure to use the correct USB header file can result in the USB drive either failing to boot, or only partially booting.
+</div></p>
+<h3 id="identifying-the-path-to-your-usb-device">Identifying the path to your USB device</h3>
 <table>
 <thead>
 <tr>
@@ -833,53 +815,88 @@ For further information, please consult the help documentation for your Linux di
 <td><code>diskutil list</code></td>
 <td><code>/dev/disk*</code></td>
 </tr>
-<tr>
-<td>Windows</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
 </tbody>
 </table>
 <!-- CAUTION: -->
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well"></p>
-<p>When issuing the USB copy command, be sure to specify the entire USB device.</p>
+<div class="well">
+When issuing the USB copy command:</p>
 <ul>
-<li>Do not including any partition or slice number.<ul>
-<li>For example use <code>sda</code>, not <code>sda1</code>; <code>c0t0d0</code>, not <code>c0t0d0p1</code>.</li>
+<li>Make sure you identify the correct storage device as all data on the device will be erased.</li>
+<li>Be sure to specify the entire USB device without appending any partition or slice number.</li>
 </ul>
-</li>
-<li>Make sure you identify the correct storage device.<ul>
-<li>All data on the device will be erased.</li>
-</ul>
-</li>
-<li>If any filesystems are located on the USB storage device, they must first be unmounted.<ul>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correct</td>
+<td><code>/dev/sda</code></td>
+</tr>
+<tr>
+<td>Incorrect</td>
+<td><code>/dev/sda1</code></td>
+</tr>
+<tr>
+<td>Correct</td>
+<td><code>/dev/rdsk/c0t0d0</code></td>
+</tr>
+<tr>
+<td>Incorrect</td>
+<td><code>/dev/rdsk/c0t0d0p1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>If any file systems are located on the USB storage device, they must first be unmounted.<ul>
 <li>Desktops may automatically mount removable devices.</li>
 <li>As necessary, select any desktop icons for the USB device and issue an 'Eject' or 'Unmount' command.</li>
 <li>For Linux, use <code>umount &lt;path&gt;</code>.</li>
 <li>For illumos/Solaris use <code>rmumount &lt;path&gt;</code>.</li>
 <li>for MAC OS X use <code>diskutil unmountDisk &lt;path&gt;</code>.</li>
-<li>Verify using the <code>mount</code> command.</li>
+<li>Verify using the <code>mount</code> command.
+</div></li>
 </ul>
 </li>
 </ul>
-</div>
-
 <h3 id="bsdlinuxos-x">BSD/Linux/OS X</h3>
-<pre><code class="bash">cat 1G.header OI-hipster-text-20160421.usb | sudo dd bs=1024k of=/dev/sdX
+<p>Replace <code>X</code> with the appropriate letter for your USB device.</p>
+<h4 id="method-1-new-releases">Method 1 (New releases)</h4>
+<pre><code>sudo dd bs=4M if=./image.usb of=/dev/sdX status=progress &amp;&amp; sync
+</code></pre>
+
+<h4 id="method-2-legacy-releases">Method 2 (Legacy releases)</h4>
+<pre><code>cat 1G.header image.usb | sudo dd bs=1024k of=/dev/sdX
 </code></pre>
 
 <p>For live images larger than 1GB, use the following command instead.</p>
-<pre><code class="bash">cat 2G.header OI-hipster-gui-20160421.usb | sudo dd bs=1024k of=/dev/sdX
+<pre><code>cat 2G.header image.usb | sudo dd bs=1024k of=/dev/sdX
 </code></pre>
 
-<p>Replace "X" with the appropriate letter for your USB device</p>
 <h3 id="illumossolaris">illumos/Solaris</h3>
+<p>Replace <code>X</code> with the appropriate letter for your USB device.</p>
+<h4 id="method-1-new-releases_1">Method 1 (New releases)</h4>
+<pre><code>sudo dd bs=4M if=./image.usb of=/dev/sdb status=progress &amp;&amp; sync
+</code></pre>
+
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Recent releases of OpenIndiana Hipster use the GNU version of dd (/usr/gnu/bin/dd), which should support the <code>status=progress</code> option.
+Older releases however may still be using illumos dd (/usr/bin/dd) which may not support this option.
+</div></p>
+<h4 id="method-2-legacy-releases_1">Method 2 (Legacy releases)</h4>
 <p>For illumos based distributions including OpenIndiana, a script <a href="https://raw.githubusercontent.com/OpenIndiana/slim_source/oi/hipster/usr/src/cmd/install-tools/usbcopy">(USBCOPY)</a> is available to copy the USB image onto a USB device.</p>
 <p>Be sure to run as root or with SUDO as the script exits if not run with elevated permissions.</p>
-<p><code>sudo ./usbcopy OI-hipster-gui-20160421.usb</code></p>
-<pre><code class="bash">Found the following USB devices:
+<p><code>sudo ./usbcopy image.usb</code></p>
+<pre><code>Found the following USB devices:
 0:    devices/dev/rdsk/c4t0d0p0    3.9 GB    USB    DISK 2.0       1.00
 Enter the number of your choice: 0
 
@@ -894,6 +911,16 @@ Completed copy to USB
 </code></pre>
 
 <h3 id="windows_1">Windows</h3>
+<h4 id="method-1-new-releases_2">Method 1 (New releases)</h4>
+<p>Newer releases can be written using <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a>.</p>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+By default the Win32 Disk Imager utility is looking for <code>.img</code> files and won't see files with a <code>.usb</code> extension.
+To resolve this issue, be sure to select the <code>*.*</code> (all files) option from the file extension drop down menu.
+</div></p>
+<h4 id="method-2-legacy-releases_2">Method 2 (Legacy releases)</h4>
 <p>The OpenSolaris Live USB Creator is a small stand alone GUI utility suitable for creating an OpenIndiana live USB stick.</p>
 <p><a href="http://devzone.sites.pid0.org/OpenSolaris/opensolaris-liveusb-creator">OpenSolaris USB Creator</a></p>
 <h2 id="booting-openindiana-installer-media">Booting OpenIndiana installer media</h2>
@@ -955,10 +982,7 @@ See the notes below for optimizing OpenIndiana for several popular hypervisors.<
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>At this time, Oracle Virtualbox provides the best support for illumos based distributions such as OpenIndiana.
-VMware Workstation Player and Linux KVM may also be used to run OpenIndiana as a guest operating system.
-However, generally speaking, these latter 2 hypervisors do not support illumos based operating systems as well as Virtualbox.
-Therefore, the table above has listed these hypervisors in order of compatibility.</p>
+<p>The OpenIndiana Project recommends the Oracle Virtualbox hypervisor as it provides the best support for illumos based distributions such as OpenIndiana.</p>
 <p>If you experience difficulties booting OpenIndiana on virtual hardware, or find virtual hardware devices which are either not properly recognized, or fail to function as expected, please report the problem to the upstream illumos Project. You may do so by submitting an issue using the <a href="https://www.illumos.org/issues">illumos project bug tracker</a>.</p>
 </div>
 
@@ -1054,7 +1078,7 @@ You will need to update the GRUB menu after the installation.
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
 <div class="well">
-Please take note the following important considerations:</p>
+Please be advised of the following important considerations:</p>
 <ul>
 <li>The installation overwrites the whole disk layout if one of the following is true:<ul>
 <li>The disk table cannot be read.</li>
@@ -1466,16 +1490,15 @@ When booting from the text based installer, you are presented with the following
 <p>The procedure for installing from the text based installer follows the same process as the previously described <a href="../getting-started/#install-openindiana-using-the-text-installer">Install OpenIndiana using the Text Installer</a></p>
 <h2 id="post-installation-steps">Post installation steps</h2>
 <h3 id="resetting-the-root-password">Resetting the root password</h3>
-<p>The root password is immediately expired after installation and you will need to choose a new one.</p>
+<p>The root password is immediately expired after installation and you will be required to select a new password.</p>
 <p>Use the following steps to change the root password:</p>
 <ul>
-<li>open a Terminal</li>
-<li>execute <code>su -</code> and give the password you chose for your account at installation time</li>
-<li>you will be informed that root's password has expired and prompted to change it</li>
-<li>once changed you can exit the su session</li>
+<li>Open a Terminal</li>
+<li>Execute <code>su -</code> and provide the password you chose for your account at installation time</li>
+<li>You will be informed that root's password has expired and prompted to change it</li>
+<li>Once changed you can exit the su session</li>
 <li>You should be able to login/authenticate as root now.</li>
 </ul>
-<p>Resetting the root password does not allow root to login via ssh.</p>
 <h2 id="troubleshooting-installations">Troubleshooting installations</h2>
 <ul>
 <li>If you do not see a menu after booting your computer with the DVD or USB device, and instead see some text and a <code>grub&gt;</code> prompt, there may be an error in your copy of the installer, or it was created incorrectly.</li>
@@ -1578,7 +1601,9 @@ Some actions may optionally have tags that provide meta information about the ac
 The pkg<sup>1</sup> command uses valid FMRI package information to perform its command actions.
 The FMRI includes descriptive information about the package, such as the package name, version information, and date.</p>
 <p>For example:</p>
-<p>FMRI: pkg://openindiana.org/image/editor/gimp@2.8.16-2016.0.0.0:20160702T042138Z</p>
+<pre><code>FMRI: pkg://openindiana.org/image/editor/gimp@2.8.16-2016.0.0.0:20160702T042138Z
+</code></pre>
+
 <ul>
 <li>Scheme – pkg</li>
 <li>Authority – openindiana.org</li>
@@ -1596,7 +1621,7 @@ If no search options are specified, the search is restricted to the local system
 Using the <code>-r</code> option, the command searches the remote repository (or repositories) associated with the system.</p>
 <p>For example:</p>
 <p><code>pkg search -r xchat</code></p>
-<pre><code class="bash">INDEX                ACTION VALUE                                   PACKAGE
+<pre><code>INDEX                ACTION VALUE                                   PACKAGE
 pkg.summary          set    HexChat is an IRC client based on XChat pkg:/desktop/irc/hexchat@2.12.1-2016.0.0.1
 pkg.summary          set    XChat IRC Client                        pkg:/desktop/irc/xchat@2.8.8-2016.0.0.5
 basename             file   usr/bin/xchat                           pkg:/desktop/irc/xchat@2.8.8-2016.0.0.5
@@ -1607,7 +1632,7 @@ pkg.fmri             set    openindiana.org/desktop/irc/xchat       pkg:/desktop
 <p>The <code>pkg search</code> command may also be used to find the package containing a particular file.</p>
 <p>For example:</p>
 <p><code>pkg search -l /usr/bin/gpg2</code></p>
-<pre><code class="bash">INDEX      ACTION VALUE        PACKAGE
+<pre><code>INDEX      ACTION VALUE        PACKAGE
 path       file   usr/bin/gpg2 pkg:/crypto/gnupg@2.0.28-2016.0.0.0
 </code></pre>
 
@@ -1617,7 +1642,7 @@ If you have troubles finding a package you know should exist, try using wildcard
 <p>To list information about packages installed on the local system use the command <code>pkg list &lt;package-name&gt;</code>.</p>
 <p>For example:</p>
 <p><code>pkg list gimp</code></p>
-<pre><code class="bash">NAME (PUBLISHER)                                  VERSION                    IFO
+<pre><code>NAME (PUBLISHER)                                  VERSION                    IFO
 image/editor/gimp                                 2.8.16-2016.0.0.2          i--
 </code></pre>
 
@@ -1626,7 +1651,7 @@ If the package is not installed on the local system, use the <code>-r</code> opt
 <p>The <code>pkg contents</code> command can also be used to list the dependencies found in a package.</p>
 <p>For example:</p>
 <p><code>pkg contents -H -t depend -o fmri xchat</code></p>
-<pre><code class="bash">pkg:/library/desktop/gdk-pixbuf@2.31.6-2016.0.0.0
+<pre><code>pkg:/library/desktop/gdk-pixbuf@2.31.6-2016.0.0.0
 pkg:/library/desktop/gtk2@2.24.30-2016.0.0.0
 pkg:/library/desktop/libsexy@0.1.11-2016.0.0.0
 pkg:/library/desktop/pango@1.36.8-2016.0.0.2
@@ -1668,7 +1693,7 @@ pkg:/x11/library/libx11@1.6.3-2016.0.0.0
 </table>
 <p>For example:</p>
 <p><code>pkg install xchat</code></p>
-<pre><code class="bash">           Packages to install:   1
+<pre><code>           Packages to install:   1
             Packages to update:   1
             Services to change:   2
        Create boot environment:  No
@@ -1728,7 +1753,7 @@ Any dependent packages are also automatically updated.</li>
 <p>To update all the packages installed on a system to their latest available version, use the <code>pkg update</code> command without specifying any package names.</p>
 <p>For example:</p>
 <p><code>pkg update</code></p>
-<pre><code class="bash">            Packages to remove:    4
+<pre><code>            Packages to remove:    4
            Packages to install:   11
             Packages to update: 1018
             Packages to change:    2
@@ -1793,13 +1818,13 @@ Below is a list of commands for adding, removing, or replacing repositories.</p>
 </table>
 <p>Example (Listing the repositories configured on the system):</p>
 <p><code>pkg publisher</code></p>
-<pre><code class="bash">PUBLISHER                   TYPE     STATUS P LOCATION
+<pre><code>PUBLISHER                   TYPE     STATUS P LOCATION
 openindiana.org             origin   online F https://pkg.openindiana.org/hipster/
 hipster-encumbered          origin   online F https://pkg.openindiana.org/hipster-encumbered/
 </code></pre>
 
 <p>Example (Replacing a repository):</p>
-<pre><code class="bash">pkg set-publisher \
+<pre><code>pkg set-publisher \
 -G http://pkg.openindiana.org/hipster-2015 \
 -g https://pkg.openindiana.org/hipster openindiana.org
 </code></pre>
@@ -1809,7 +1834,7 @@ hipster-encumbered          origin   online F https://pkg.openindiana.org/hipste
 It can also be used for querying the contents of a repository.</p>
 <p>For example:</p>
 <p><code>pkgrepo info -s https://pkg.openindiana.org/hipster/</code></p>
-<pre><code class="bash">PUBLISHER       PACKAGES STATUS           UPDATED
+<pre><code>PUBLISHER       PACKAGES STATUS           UPDATED
 openindiana.org 3692     online           2016-08-21T07:03:11.566484Z
 </code></pre>
 
@@ -1848,7 +1873,7 @@ These rules can be overridden by using explicit publishers and package version n
 <p>To list the IPS transactional history, use the <code>pkg history</code> command.</p>
 <p>For example:</p>
 <p><code>pkg history</code></p>
-<pre><code class="bash">START                    OPERATION                CLIENT             OUTCOME
+<pre><code>START                    OPERATION                CLIENT             OUTCOME
 2016-04-21T03:30:04      purge-history            pkg                Succeeded
 2016-07-02T16:09:56      uninstall                pkg                Succeeded
 2016-07-02T16:10:33      uninstall                pkg                Succeeded
@@ -1897,13 +1922,13 @@ IPS package archives are also useful for sharing packages for the purpose of tes
 <h4 id="creating-the-p5p-package">Creating the p5p package</h4>
 <p>To create an IPS archive, the <code>pkgrecv</code> command is used.</p>
 <p>For example, to create a <code>.p5p</code> IPS package archive containing the package <code>userland/web/browser/firefox</code> and all of its dependencies from the repository located at <code>http://example.com:10000</code>, use the following command:</p>
-<pre><code class="bash">pkgrecv -s http://example.com:10000 -d ~/firefox_test.p5p -a -r pkg://userland/web/browser/firefox@45.3.0-2016.0.0.0:20160817T064143Z
+<pre><code>pkgrecv -s http://example.com:10000 -d ~/firefox_test.p5p -a -r pkg://userland/web/browser/firefox@45.3.0-2016.0.0.0:20160817T064143Z
 </code></pre>
 
 <h4 id="listing-the-contents-of-a-p5p-package">Listing the contents of a p5p package</h4>
 <p>There are at least two different ways to view the contents of an IPS archive.</p>
 <p><code>pkgrepo -s ~/firefox_test.p5p list</code></p>
-<pre><code class="bash">PUBLISHER NAME                                          O VERSION
+<pre><code>PUBLISHER NAME                                          O VERSION
 userland  library/expat                                   2.1.0-2015.0.1.1:20150901T125810Z
 userland  library/glib2                                   2.43.4-2016.0.0.4:20160705T121550Z
 userland  library/glib2/charset-alias                     2.43.4-2016.0.0.4:20160705T121609Z
@@ -1914,7 +1939,7 @@ userland  x11/library/toolkit/libxt                       1.1.4-2016.0.0.0:20160
 
 <p>This also works:</p>
 <p><code>pkg list -f -g  ~/firefox_test.p5p</code></p>
-<pre><code class="bash">NAME (PUBLISHER)                                  VERSION                    IFO
+<pre><code>NAME (PUBLISHER)                                  VERSION                    IFO
 library/expat (userland)                          2.1.0-2015.0.1.1           ---
 library/glib2 (userland)                          2.43.4-2016.0.0.4          ---
 library/glib2/charset-alias (userland)            2.43.4-2016.0.0.4          ---
@@ -1935,7 +1960,7 @@ Therefore, be sure to consult the <code>pkg</code><sup>1</sup> man page for full
 <p>To retrieve additional information about a specific command use: <code>pkg help &lt;command name&gt;</code></p>
 <p>For example:</p>
 <p><code>pkg help update</code></p>
-<pre><code class="bash">Usage:
+<pre><code>Usage:
         pkg update [-fnvq] [-C n] [-g path_or_uri ...] [--accept] [--ignore-missing]
             [--licenses] [--no-be-activate] [--no-index] [--no-refresh]
             [--no-backup-be | --require-backup-be] [--backup-be-name]
@@ -2026,7 +2051,7 @@ For example, you can clone a boot environment by using the <code>beadm create</c
 A clone is a bootable copy of a boot environment.
 Then, you can install, test, and update different software packages on the original boot environment and on its clone.
 Although only one boot environment can be active at a time, you can mount an inactive boot environment by using the <code>beadm mount</code> command.
-Then you can use the <code>pkg image-update</code> command with the <code>-R</code> option to update all the packages in that inactive, mounted environment.
+Then you can use the <code>pkg update</code> command with the <code>-R</code> option to update all the packages in that inactive, mounted environment.
 Or, use the <code>pkg install packagename</code> with the <code>-R</code> option to update specific packages on that environment.</p>
 </li>
 </ul>
@@ -2084,7 +2109,7 @@ For example, when you use the <code>beadm</code> utility to create a new boot en
 </tr>
 <tr>
 <td><code>beadm create &lt;BE&gt;</code></td>
-<td>Creates a new boot environment with the name specified. Unless the -e option is provided, the new boot environment is created as a clone of the currently running boot environment.</td>
+<td>Creates a new boot environment with the name specified. Unless the <code>-e</code> option is provided, the new boot environment is created as a clone of the currently running boot environment.</td>
 </tr>
 <tr>
 <td><code>beadm create &lt;BE@snapshot&gt;</code></td>
@@ -2120,12 +2145,15 @@ Within a global zone, specific non-global zones can be created.</p>
 <h3 id="zones-support-limitations">Zones support limitations</h3>
 <p>Note the following limitations of support for non-global zones in the beadm utility and in related processes:</p>
 <ul>
-<li>When you use the pkg image-update command, the command only upgrades ipkg branded zones.</li>
-<li>The beadm utility is not supported inside a non-global zone.</li>
-<li>Non-global zone support is limited to ZFS support. Zones are not supported unless they are on ZFS.</li>
-<li>Zones are not supported in the rpool/ROOT namespace. Non-global zones are cloned or copied only when the original zone is within the shared area for the global zone, for example, within rpool/export or within rpool/zones.</li>
-<li>Although the beadm utility affects the non-global zones on your system, the beadm utility does not display zones information. Use the zoneadm utility to view changes in the
-zones in your boot environment. For example, use the zoneadm list command to view a list of all current zones on the system.</li>
+<li>When using the <code>pkg update</code> command, the <code>-r</code> switch is required to upgrade all zones.</li>
+<li>The <code>beadm</code> utility is not supported inside a non-global zone.</li>
+<li>Non-global zone support is limited to ZFS support.
+Zones are not supported unless they are on ZFS.</li>
+<li>Zones are not supported in the rpool/ROOT namespace.
+Non-global zones are cloned or copied only when the original zone is within the shared area for the global zone, for example, within rpool/export or within rpool/zones.</li>
+<li>Although the <code>beadm</code> utility affects the non-global zones on your system, the <code>beadm</code> utility does not display zones information.
+Use the <code>zoneadm</code> utility to view changes in the zones in your boot environment.
+For example, use the <code>zoneadm</code> list command to view a list of all current zones on the system.</li>
 </ul>
 <p>For further information, see the <code>zoneadm</code><sup>1M</sup> man page.</p>
 <h3 id="zones-support-specifications">Zones support specifications</h3>
@@ -2161,27 +2189,37 @@ zones in your boot environment. For example, use the zoneadm list command to vie
 </tbody>
 </table>
 <h2 id="the-x-window-system">The X-Window system</h2>
-<p>&lt; placeholder &gt;</p>
+<p>Nearly all cards can use the VESA driver, and are therefore supported for 2D.</p>
 <h3 id="video-card-support-3d">Video card support (3D)</h3>
-<p>Nearly all cards are supported for 2nd, but only Nvidia is supported for 3D.
-Work is progressing to provide support for AMD and Intel.</p>
-<h4 id="nvidia">Nvidia</h4>
+<ul>
+<li>Beginning with the July 2016 experimental release, both Nvidia and Intel GPU's are now supported.</li>
+<li>AMD GPU's are not currently supported (VESA driver only).</li>
+</ul>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well"></p>
 <ul>
 <li>Talk about the expected behavior when booting the live CD from a system with an NVIDIA card.</li>
 <li>Discuss procedure for adding an NVIDIA card to a system that was using VESA or some other non-3d video driver.</li>
 <li>Troubleshooting - what logs to look at, manual configuration, etc.</li>
 <li>Walk through NVIDIA utility screens.</li>
 </ul>
-<h4 id="amd">AMD</h4>
-<ul>
-<li>Currently no 3rd support, VESA driver only.</li>
-</ul>
-<h4 id="intel">Intel</h4>
-<ul>
-<li>Still working to incorporate this into Hipster.</li>
-</ul>
+</div>
+
 <h3 id="how-does-one-add-a-missing-device-driver">How does one add a missing device driver?</h3>
-<p>&lt; Write about finding hardware id's, searching for drivers, installing, loading, /etc/driver_alias'es file. &gt;</p></div>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well"></p>
+<p>Write about:</p>
+<ul>
+<li>Finding hardware id's</li>
+<li>Searching for drivers</li>
+<li>Installing and loading drivers</li>
+<li>Adding device ID's to <code>/etc/driver_alias</code>, etc.</li>
+</ul>
+</div></div>
         </div>
 
         <footer class="col-md-12">
