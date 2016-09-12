@@ -339,18 +339,18 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <div class="well">
 First and foremost, we understand using development tools and techniques to write end user documentation is not for everyone.
 For this reason, we're happy to accept your contribution in any format you wish to provide.</p>
-<p>We'll happy accept contributions in plain text, .doc, .docx, .odt, html, xml, latex, pdf, GitHub Gist, etc.
-From there, we will review the document for conversion to markdown and subsequent incorporation into OpenIndiana Docs.</p>
-<p>In a nutshell, if you think your contribution can be helpful to the greater OpenIndiana community, we'll be happy to review it.</p>
+<p>After receiving your submission, we will review the document for conversion to markdown and subsequent incorporation into OpenIndiana Docs.
+Contributions may be submitted in plain text, .doc, .docx, .odt, html, xml, latex, pdf, GitHub Gist, etc.</p>
+<p>In summary, if you believe your contribution would be helpful to the greater OpenIndiana community, we'll be willing to review it.
+For further information, please contact us via one of the methods provided below.</p>
 <p>To make a suggestion or report a problem with a document, please make your request by submitting a <a href="https://github.com/OpenIndiana/oi-docs/issues">Github issue</a>.</p>
 <p>The docs team can be reached via email: <em><strong>docs at openindiana.org</strong></em>.</p>
 <p>You may also inquire via IRC:</p>
 <ul>
 <li><a href="irc://irc.freenode.net/openindiana">#openindiana (freenode)</a></li>
-<li><a href="irc://irc.freenode.net/oi-dev">#oi-dev (freenode)</a></li>
+<li><a href="irc://irc.freenode.net/oi-dev">#oi-dev (freenode)</a>
+</div></li>
 </ul>
-</div>
-
 <h2 id="prerequisites">Prerequisites</h2>
 <p>If you haven't already, sign up for a <a href="https://github.com">Github</a> account.</p>
 <h4 id="install-and-configure-git">Install and configure Git</h4>
@@ -669,17 +669,25 @@ See the code snippet below for examples.</p>
 <h2 id="visualize-your-changes-using-live-preview">Visualize your changes using live preview</h2>
 <p>To assist with the content authoring process, it may be helpful to visualize your changes using a live preview.</p>
 <ul>
-<li>From the root of the website-2.0 folder:<ul>
-<li>Type: <code>mkdocs serve</code></li>
+<li>From the root of the <code>oi-docs/</code> directory:<ul>
+<li>Type: <code>mkdocs serve</code> and press enter.</li>
 <li>Open your web browser to 127.0.0.1:8000.</li>
 </ul>
 </li>
 </ul>
-<p>To shut down the live preview web server, use [CTRL] + [C].</p>
+<p>Each time you save your changes, the site page is automatically reloaded within your web browser.</p>
+<p>To shut down the live preview web server, use <code>CTRL</code> + <code>C</code>.</p>
+<!-- NOTE: -->
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+If you wish to preview your changes on a remotely networked system or on a networked mobile device such as a tablet, the site can also be served on your LAN IP address.</p>
+<p>To do so, issue the following command: <code>mkdocs serve --dev-addr=0.0.0.0:8000</code>
+</div></p>
 <h2 id="running-markdown-lint-locally">Running Markdown Lint (locally)</h2>
 <p>Markdown Lint is used to check your changes for Markdown syntax errors.
 Prior to submitting a pull request (PR), please consider running Markdown Lint locally on your computer.</p>
-<p>From the root site folder (website-2.0) execute the following command:</p>
+<p>From the root of the <code>oi-docs/</code> directory, execute the following command:</p>
 <pre><code class="bash">mdl -s markdownlint-rules.rb .
 </code></pre>
 
