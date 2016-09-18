@@ -282,6 +282,8 @@
         
             <li><a href="#finding-help-and-support">Finding help and support</a></li>
         
+            <li><a href="#ips-command-matrix">IPS command matrix</a></li>
+        
             <li><a href="#developing-with-openindiana">Developing with OpenIndiana</a></li>
         
             <li><a href="#software-development-testing">Software Development Testing</a></li>
@@ -292,28 +294,40 @@
             <div class="col-md-9" role="main">
 
 <h1 id="openindiana-handbook-appendix">OpenIndiana Handbook - Appendix</h1>
-<!-- NOTE: -->
-
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well"></p>
-<p>This document is a work in progress (draft).</p>
-</div>
-
+<div class="well">
+This document is a work in progress (draft).
+</div></p>
 <p>&lt; place holder for introduction content &gt;</p>
 <h2 id="finding-help-and-support">Finding help and support</h2>
 <p>&lt; Place Holder for section Introduction Content &gt;</p>
 <h3 id="local-system-command-line-help">Local system command line help</h3>
 <ul>
-<li>apropos - search the manual page names and descriptions</li>
+<li>apropos - search the manual page names and descriptions<ul>
+<li>Used to find keywords in man pages</li>
+</ul>
+</li>
 <li>find - search for files in a directory hierarchy</li>
-<li>info - read Info documents</li>
-<li>locate - find files by name</li>
-<li>man - an interface to the on-line reference manuals</li>
+<li>info - read Info documents<ul>
+<li>A viewer for GNU info pages</li>
+</ul>
+</li>
+<li>locate - find files by name<ul>
+<li>Uses the mlocate database to find files and folders</li>
+</ul>
+</li>
+<li>man - an interface to the on-line reference manuals (man pages)<ul>
+<li>To pipe the output of a man page to a text file use the command: <code>man [manpage] | col -x -b &gt; [filename].txt</code>.</li>
+<li>For example: <code>man pkg | col -x -b &gt; pkg.txt</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="web-based-support-resources">Web based support resources</h3>
-<p><strong>DOC TEAM NOTE:</strong></p>
-<p>The content for this section was originally pulled from the OpenIndiana FAQ and since has been expanded here.
-We may want to revisit the FAQ and pull these changes over.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+The content for this section was originally pulled from the OpenIndiana FAQ and since has been expanded here.
+We may want to revisit the FAQ and pull these changes over.
+</div></p>
 <table>
 <thead>
 <tr>
@@ -352,18 +366,84 @@ We may want to revisit the FAQ and pull these changes over.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="ips-command-matrix">IPS command matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>IPS Command</th>
+<th>apt Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Install a package</td>
+<td><code>pkg install</code></td>
+<td><code>apt install</code></td>
+</tr>
+<tr>
+<td>Uninstall a package</td>
+<td><code>pkg uninstall</code></td>
+<td><code>apt remove</code></td>
+</tr>
+<tr>
+<td>Update all packages</td>
+<td><code>pkg update</code></td>
+<td><code>apt upgrade</code></td>
+</tr>
+<tr>
+<td>Search for a package</td>
+<td><code>pkg search</code></td>
+<td><code>apt search</code></td>
+</tr>
+<tr>
+<td>Display installed packages</td>
+<td><code>pkg list</code></td>
+<td><code>apt list</code></td>
+</tr>
+<tr>
+<td>Display package information</td>
+<td><code>pkg info</code></td>
+<td><code>apt show</code></td>
+</tr>
+<tr>
+<td>Display package contents</td>
+<td><code>pkg contents</code></td>
+<td><code>dpkg-query -L</code></td>
+</tr>
+<tr>
+<td>Display publisher information</td>
+<td><code>pkg publisher</code></td>
+<td><code>cat /etc/apt/sources.list.d/*</code></td>
+</tr>
+<tr>
+<td>Add or update a publisher</td>
+<td><code>pkg set-publisher</code></td>
+<td>edit <code>/etc/apt/sources.list.d/*</code> files</td>
+</tr>
+<tr>
+<td>Remove a publisher</td>
+<td><code>pkg unset-publisher</code></td>
+<td>edit <code>/etc/apt/sources.list.d/*</code> files</td>
+</tr>
+</tbody>
+</table>
 <h2 id="developing-with-openindiana">Developing with OpenIndiana</h2>
-<p><strong>DOC TEAM NOTE:</strong></p>
-<p>The book titled "Introduction to Operating Systems: A Hands-On Approach Using the OpenSolaris Project" may be a good resource for helping to complete this part of the handbook.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+The book titled "Introduction to Operating Systems: A Hands-On Approach Using the OpenSolaris Project" may be a good resource for helping to complete this part of the handbook.</p>
 <p>Questions to ask:</p>
 <ul>
 <li>How can OI be used as a development platform?</li>
 <li>What programming tools, languages, etc., are available?</li>
-<li>How can OI be used to further the development of OI itself?</li>
+<li>How can OI be used to further the development of OI itself?
+</div></li>
 </ul>
 <h2 id="software-development-testing">Software Development Testing</h2>
-<p><strong>DOC TEAM NOTE:</strong></p>
-<p>Need to add some guidance about how to add a test repo to test specific packages, etc.</p></div>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+Need to add some guidance about how to add a test repo to test specific packages, etc.
+</div></p></div>
         </div>
 
         <footer class="col-md-12">
