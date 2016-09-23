@@ -396,7 +396,26 @@ Here are just a few of them:</p>
 <li>tar, zip, etc.</li>
 </ul>
 <h3 id="zfs">ZFS</h3>
-<p>&lt; place holder &gt;</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
+<p>Gotcha's such as the following:</p>
+<pre><code>&lt;e^ipi&gt; don't suppose there's any solution to this:
+&lt;e^ipi&gt; cannot replace 1509280528045021472 with /dev/dsk/c0t5000C5009204EB9Bd0s0: devices have different sector alignment
+&lt;tsoome&gt; thats 512 versus non-512 sector issue
+&lt;tsoome&gt; you need to build new pool based on larger sector
+&lt;tsoome&gt; if its mirror, you can attach 512B disk to 4k pool, but not vice versa...
+&lt;e^ipi&gt; well, damn.
+&lt;tsoome&gt; that error message is too confusing, should be replaced by more clear one;)
+&lt;e^ipi&gt; I swear this pool is already mix &amp; match, freebsd complained about it
+&lt;e^ipi&gt; (but still used it)
+&lt;tsoome&gt; there is that thing that ashift is vdev property;)
+&lt;tsoome&gt; not pool property (one reason why that linux zpool create ashift= option is bad)
+&lt;tsoome&gt; or sort of bad anyhow
+</code></pre>
+
+</div>
+
 <h4 id="importing-zfs-disks">Importing ZFS disks</h4>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
