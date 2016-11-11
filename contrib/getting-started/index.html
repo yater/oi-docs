@@ -7,7 +7,7 @@
         
         
         
-        <link rel="shortcut icon" href="../../favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico">
         
 
 	<title>Getting Started - OpenIndiana Docs</title>
@@ -382,8 +382,13 @@ For further information, please contact us via one of the methods provided below
 </tr>
 </tbody>
 </table>
-<p>After GIT is installed, be sure to configure your name and email address.
-For further details, see: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+After GIT is installed, be sure to configure your name and email address.</p>
+<p>For further details about configuring GIT, see: <a href="https://help.github.com/articles/set-up-git/">https://help.github.com/articles/set-up-git/</a></p>
+<p>Also, if you need a good tutorial for quickly getting up to speed with GIT, see here: <a href="http://rypress.com/tutorials/git/index">http://rypress.com/tutorials/git/index</a></p>
+<p>Fear not though, only basic git commands are required for working with OI-DOCS.
+</div></p>
 <h4 id="install-python-pip">Install python-pip</h4>
 <table>
 <thead>
@@ -411,7 +416,7 @@ For further details, see: <a href="https://help.github.com/articles/set-up-git/"
 </tr>
 <tr>
 <td>OpenIndiana</td>
-<td><code>pkg install pip</code></td>
+<td>N/A - (MKDocs now in Hipster repository)</td>
 </tr>
 </tbody>
 </table>
@@ -447,10 +452,12 @@ For further details, see: <a href="https://help.github.com/articles/set-up-git/"
 </tbody>
 </table>
 <h4 id="install-mkdocs">Install mkdocs</h4>
+<p>For OpenIndiana Hipster, MKDocs and all of it's dependencies have been packaged and are available in the OI Hipster repository.
+So, if you're already running Hipster, installing MKDocs is as simple as: <code>pkg install mkdocs</code></p>
 <ul>
-<li>Most operating systems (including OpenIndiana): <code>pip install mkdocs</code></li>
-<li>Verify your installation with <code>mkdocs --version</code></li>
+<li>Most other operating systems: <code>pip install mkdocs</code></li>
 </ul>
+<p>After MKDocs has been installed, be sure to verify your installation with <code>mkdocs --version</code></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
 If you experience difficulties installing mkdocs, try using the python 3 version of <code>pip</code>.</p>
@@ -460,6 +467,7 @@ If you experience difficulties installing mkdocs, try using the python 3 version
 </div></li>
 </ul>
 <h4 id="install-markdown-lint-mdl">Install Markdown Lint (mdl)</h4>
+<p>For most operating systems:</p>
 <ul>
 <li><code>gem install mdl</code></li>
 </ul>

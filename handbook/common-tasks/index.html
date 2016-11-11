@@ -7,7 +7,7 @@
         
         
         
-        <link rel="shortcut icon" href="../../favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico">
         
 
 	<title>Common Tasks - OpenIndiana Docs</title>
@@ -364,8 +364,13 @@ ITEMS TO WRITE ABOUT:</p>
 </ul>
 </li>
 </ul>
-</div>
-
+<p>In regards to the default terminal emulator, see: <a href="https://www.illumos.org/issues/7525">https://www.illumos.org/issues/7525</a></p>
+<ul>
+<li>we introduce mediator x-terminal-emulator for link /usr/bin/x-terminal-emulator with possible implementations gnome-terminal, mate-terminal and xterm;</li>
+<li>mate-terminal implementation has the highest priority (if it is installed, by default it wins);</li>
+<li>glib is modified to use link /usr/bin/x-terminal-emulator if it's found for running applications with Terminal=true.
+</div></li>
+</ul>
 <h2 id="multimedia-audio">Multimedia - Audio</h2>
 <p>&lt; Place Holder for future content &gt;</p>
 <h2 id="multimedia-video">Multimedia - Video</h2>

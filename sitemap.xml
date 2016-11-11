@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,66 +12,26 @@
     
         
     <url>
-     <loc>None/misc/openindiana/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/misc/openindiana/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/misc/oi-docs/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/misc/oi-docs/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/misc/conduct/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/misc/conduct/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/misc/pdl/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/handbook/getting-started/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/handbook/common-tasks/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/handbook/systems-administration/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/handbook/network-communications/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/handbook/appendix/</loc>
-     <lastmod>2016-10-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/dev/userland/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/misc/pdl/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -80,38 +40,38 @@
     
         
     <url>
-     <loc>None/books/about/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/handbook/getting-started/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/books/basic/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/handbook/common-tasks/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/books/advanced/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/handbook/systems-administration/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/books/express/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/handbook/network-communications/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/books/trusted/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/handbook/appendix/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/books/develop/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/dev/userland/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -120,44 +80,84 @@
     
         
     <url>
-     <loc>None/contrib/content/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/about/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/getting-started/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/basic/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/tools/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/advanced/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/roles/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/express/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/topics/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/trusted/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/style/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/books/develop/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/contrib/content/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contrib/markdown/</loc>
-     <lastmod>2016-10-17</lastmod>
+     <loc>/contrib/getting-started/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contrib/tools/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contrib/roles/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contrib/topics/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contrib/style/</loc>
+     <lastmod>2016-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contrib/markdown/</loc>
+     <lastmod>2016-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
