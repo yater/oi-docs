@@ -361,20 +361,26 @@ Ideally suited for both workstations and servers, simply choose the installer ty
 <tr>
 <th>Workstation</th>
 <th>Server</th>
+<th>Minimal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Live installer (Gnome desktop)</td>
-<td>Text installer (command line console)</td>
+<td>Live installer (Mate desktop)</td>
+<td>Text Only (No GUI)</td>
+<td>Text Only (No GUI)</td>
 </tr>
 </tbody>
 </table>
+<p>For a full list of links to the various installer images, visit the <a href="https://www.openindiana.org/download/">OpenIndiana Downloads</a> page.</p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <ul>
 <li>The legacy oi-dev-151x branch is no longer maintained.</li>
-<li>While upgrades to Hipster are possible, the most trouble free method is to perform a clean install.</li>
+<li>While upgrades to Hipster are possible, the most trouble free method is to perform a clean install.<ul>
+<li>Click the following link for <a href="https://wiki.openindiana.org/pages/viewpage.action?pageId=30802657">instructions for upgrading from legacy releases</a>.</li>
+</ul>
+</li>
 </ul>
 </div>
 
@@ -548,25 +554,24 @@ As the FAQ evolves, try to keep this section in sync.
 
 -->
 
-<p>Primary download mirror (London, England):</p>
+<p>For a full list of links to the various installer images, visit the following page:</p>
 <ul>
-<li><a href="http://dlc.openindiana.org/isos/hipster">CD/DVD (ISO) and USB Images</a></li>
-<li><a href="http://dlc.openindiana.org/torrents">Torrents</a></li>
+<li><a href="https://www.openindiana.org/download/">OpenIndiana Downloads</a></li>
 </ul>
-<p>Alternate mirrors (Asia, Europe, and North America)</p>
+<p>For a complete list of alternate mirrors (Asia, Europe, North America, etc.)</p>
 <ul>
-<li><a href="https://wiki.openindiana.org/oi/Mirrors">https://wiki.openindiana.org/oi/Mirrors</a></li>
+<li><a href="https://wiki.openindiana.org/oi/Mirrors">OpenIndiana Download Mirrors</a></li>
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
 <p>Download example:</p>
-<pre><code>wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso&quot;
-wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20160421.iso.sha256sum&quot;
+<pre><code>wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso&quot;
+wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso.sha256sum&quot;
 </code></pre>
 
 <h3 id="checking-the-md5sha">Checking the MD5/SHA</h3>
 <p>Checksum verification example:</p>
-<pre><code>sha256sum --check OI-hipster-gui-20160421.iso.sha256sum
-OI-hipster-gui-20160421.iso: OK
+<pre><code>sha256sum --check OI-hipster-gui-20161030.iso.sha256sum
+OI-hipster-gui-20161030.iso: OK
 </code></pre>
 
 <h2 id="creating-a-bootable-openindiana-dvd">Creating a bootable OpenIndiana DVD</h2>
@@ -717,7 +722,10 @@ There are two unique methods for creating bootable USB flash drives.
 The method to use depends on the release date of the USB image you intend to write.</p>
 <h4 id="method-1">Method 1</h4>
 <ul>
-<li>Applies to the experimental releases of July 2016 and all subsequent (newer) releases.</li>
+<li>Applies to the experimental releases of July 2016 and all subsequent (newer) releases.<ul>
+<li>For example: The OpenIndiana Hipster 2016.10 release uses this method.</li>
+</ul>
+</li>
 </ul>
 <h4 id="method-2">Method 2</h4>
 <ul>
@@ -730,9 +738,21 @@ The method to use depends on the release date of the USB image you intend to wri
 OpenIndiana Hipster does not yet support USB 3.0 or UEFI.</p>
 <ul>
 <li>If you intend to install OpenIndiana Hipster on a system with USB 3.0 and or UEFI capabilities, please be sure to disable these features.</li>
-<li>When attaching backward compatible USB 3.0 flash devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.
-</div></li>
+<li>When attaching backward compatible USB 3.0 flash devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.</li>
 </ul>
+<div class="well">
+
+<b>Breaking USB 3.0 news update - November 18, 2016</b>
+
+<ul>
+<li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
+<li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
+<li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
+</ul>
+</div>
+
+</div>
+
 <h3 id="prerequisites">Prerequisites</h3>
 <h4 id="methods-1-2">Methods 1 &amp; 2</h4>
 <ul>
@@ -741,9 +761,16 @@ OpenIndiana Hipster does not yet support USB 3.0 or UEFI.</p>
 </ul>
 <h4 id="method-2_1">Method 2</h4>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-Header files are only required when writing a legacy image <strong>AND</strong> using the dd utility.
-</div></p>
+<div class="well"></p>
+<ul>
+<li>Header files are only required when writing a legacy image <b>AND</b> using the dd utility.<ul>
+<li>Header files are <b>NOT</b> required when writing current images.</li>
+<li>For example: The Hipster 2016.10 release, does <b>NOT</b> require header files.</li>
+</ul>
+</li>
+</ul>
+</div>
+
 <ul>
 <li>Download the appropriate OpenIndiana 1G or 2G header file<ul>
 <li>There are 2 unique USB header files (1G and 2G).</li>
@@ -919,6 +946,17 @@ As it runs, you will be prompted with a few questions.</p>
 </ul>
 <p>To successfully boot the OpenIndiana installer, these technologies must first be disabled.
 For further information, consult the manufacturers documentation for your computer hardware.</p>
+<div class="well">
+
+<b>Breaking USB 3.0 news update - November 18, 2016</b>
+
+<ul>
+<li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
+<li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
+<li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
+</ul>
+</div>
+
 </div>
 
 <h3 id="booting-the-openindiana-installer-on-virtual-hardware">Booting the OpenIndiana installer on virtual hardware</h3>
@@ -954,29 +992,154 @@ See the notes below for optimizing OpenIndiana for several popular hypervisors.<
 </div>
 
 <h3 id="the-openindiana-installer-boot-menu">The OpenIndiana installer boot menu</h3>
+<p>Introduced with the Hipster 2016.10 release, the FreeBSD boot loader has been ported to OpenIndiana.</p>
+<p>The new boot loader provides many new capabilities:</p>
+<ul>
+<li>Booting to the first disk</li>
+<li>Single user mode</li>
+<li>Debugger options</li>
+</ul>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
-<p>The OpenIndiana installer will automatically boot the selected (highlighted) entry within 30 seconds.</p>
+<p>The OpenIndiana installer will automatically boot option # <b>1. Boot Multi User</b> within 10 seconds.</p>
 <ul>
-<li>To stop the boot timer, press the <code>Esc</code> (escape) key.</li>
-<li>To edit a boot entry, press the <code>e</code> (edit) key.</li>
-<li>For a command line press the <code>c</code> (command) key.</li>
+<li>To pause the Autoboot timer, press the <code>Space</code> key.</li>
 </ul>
 </div>
 
-<p><img alt="grub menu" src="../images/boot/grub_menu.png" /></p>
-<p>The OpenIndiana installer boot menu offers multiple choices:</p>
+<p><img alt="forth_menu" src="../images/boot/forth_main_menu.png" /></p>
+<p>The OpenIndiana installer boot menu offers multiple choices.</p>
+<table>
+<thead>
+<tr>
+<th>Main Menu Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Boot Multi User</td>
+<td>Normal boot (desktop or shell)</td>
+</tr>
+<tr>
+<td>2. Boot Single user</td>
+<td>Boots to rescue mode</td>
+</tr>
+<tr>
+<td>3. Escape to loader prompt</td>
+<td>Boots to forth shell</td>
+</tr>
+<tr>
+<td>4. Reboot</td>
+<td>Restarts the computer</td>
+</tr>
+<tr>
+<td>5. Configure Boot Options</td>
+<td>Enters into boot options menu</td>
+</tr>
+<tr>
+<td>6. ChainLoad disk0</td>
+<td>Boots the OS found on 1st disk</td>
+</tr>
+<tr>
+<td>7. Select OI Extras</td>
+<td>Enters into extras menu</td>
+</tr>
+</tbody>
+</table>
+<p>Select your boot option by pressing the associated number key.</p>
 <ul>
-<li>OI Hipster (normal boot)</li>
-<li>OI Hipster VESA driver</li>
-<li>OI Hipster text console</li>
-<li>Boot from Hard Disk</li>
-<li>OI Hipster Enable SSH</li>
-<li>OI Hipster with magnifier</li>
-<li>OI Hipster with screen reader</li>
+<li>Options 1, 2, 3, 4, and 6, result in the immediate execution of the selected option.</li>
+<li>Options 5 and 7 provide interactive menus as shown below.</li>
 </ul>
-<p>Use the up and down arrow keys to select a boot entry.
-Once you have made a boot menu selection, press the <code>Enter</code> key to initialize the OpenIndiana installer boot process.</p>
+<p><img alt="forth_boot_menu_options" src="../images/boot/forth_menu_boot_options.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Boot Option Menu</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Back to Main Menu</td>
+<td>Returns to main menu</td>
+</tr>
+<tr>
+<td>2. OsConsole</td>
+<td>Provides several tty options</td>
+</tr>
+<tr>
+<td>3. ACPI</td>
+<td>Toggles ACPI to ON, OFF, MADT, or Legacy</td>
+</tr>
+<tr>
+<td>4. Single User</td>
+<td>Toggles single user mode</td>
+</tr>
+<tr>
+<td>5. Verbose</td>
+<td>Toggles verbose boot messages</td>
+</tr>
+<tr>
+<td>6. Reconfigure</td>
+<td>Reconfigures hardware</td>
+</tr>
+<tr>
+<td>7. kmdb</td>
+<td>Toggles Kernel Mode Debugger</td>
+</tr>
+<tr>
+<td>8. Debug</td>
+<td>Toggles debug</td>
+</tr>
+</tbody>
+</table>
+<p>Toggle (enable/disable) these options by selecting the associated number key.</p>
+<p>For example:</p>
+<ul>
+<li>Pressing 5 enables verbose mode.</li>
+<li>Pressing 5 again, disables the verbose option.</li>
+</ul>
+<p><img alt="forth_boot_menu_extras" src="../images/boot/forth_menu_extras.png" /></p>
+<table>
+<thead>
+<tr>
+<th>OI Extras Menu</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Back to Main Menu</td>
+<td>Returns to main menu</td>
+</tr>
+<tr>
+<td>2. Vesa driver</td>
+<td>Forces the vesa driver</td>
+</tr>
+<tr>
+<td>3. Text console</td>
+<td>Enables the text console</td>
+</tr>
+<tr>
+<td>4. Enable ssh</td>
+<td>Enables ssh server for live desktop</td>
+</tr>
+</tbody>
+</table>
+<p>Toggle (enable/disable) these options by selecting the associated number key.</p>
+<p>For example:</p>
+<ul>
+<li>Pressing 2 forces the VESA driver.</li>
+<li>Pressing 2 again, disables the VESA driver.</li>
+</ul>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>Even when booting the Mate Live Image, selecting option # 3 (text console) option will boot the system to a text based console.
+The logon credentials required to access the shell are jack/jack.</p>
+</div>
+
 <h3 id="selecting-keyboard-layout-and-display-language">Selecting keyboard layout and display language</h3>
 <p><img alt="Select keyboard layout" src="../images/boot/keyboard.png" /></p>
 <p>OpenIndiana offers 47 different keyboard layouts.
