@@ -539,13 +539,13 @@ MBR will also support dual booting another operating system.</p>
 <p>If your network uses a DHCP server, OpenIndiana can be configured to automatically obtain it's network information.
 If a DHCP server is not available, then you will need to manually configure your network settings.</p>
 <p>Obtain the following information:</p>
-<ol>
+<ul>
 <li>IP address</li>
 <li>Subnet mask</li>
 <li>Gateway</li>
 <li>Network domain name</li>
 <li>Network DNS servers</li>
-</ol>
+</ul>
 <h3 id="downloading-the-software">Downloading the software</h3>
 <!--
 
@@ -1142,17 +1142,26 @@ The logon credentials required to access the shell are jack/jack.</p>
 
 <h3 id="selecting-keyboard-layout-and-display-language">Selecting keyboard layout and display language</h3>
 <p><img alt="Select keyboard layout" src="../images/boot/keyboard.png" /></p>
-<p>OpenIndiana offers 47 different keyboard layouts.
-Select your keyboard layout by entering the number corresponding to your desired keyboard layout.
-For example, select <code>18</code> for German, or <code>35</code> for Russian, etc.
-The default keyboard layout is selection <code>47</code> US-English.
-Once you have selected a keyboard layout, press the <code>Enter</code> key to continue.</p>
+<p>OpenIndiana offers 47 different keyboard layouts.</p>
+<ul>
+<li>Select your keyboard layout by entering the number corresponding to your desired keyboard layout.</li>
+<li>For example, select <code>18</code> for German, or <code>35</code> for Russian, etc.</li>
+<li>The default keyboard layout is selection <code>47</code> US-English.</li>
+</ul>
+<p>Once you have selected a keyboard layout, press the <code>Enter</code> key to continue.</p>
 <p><img alt="Select display language" src="../images/boot/language.png" /></p>
-<p>OpenIndiana offers 22 different language options.
-Select a language by entering the number corresponding to your desired language.
-For example, select <code>3</code> for Chinese - Simplified, or <code>18</code> for Portuguese - Brazil, etc.
-The default language selection is <code>7</code> for English.
-Once you have selected a language, press the <code>Enter</code> key to continue.</p>
+<p>OpenIndiana offers 22 different language options.</p>
+<ul>
+<li>Select a language by entering the number corresponding to your desired language.</li>
+<li>For example, select <code>3</code> for Chinese - Simplified, or <code>18</code> for Portuguese - Brazil, etc.</li>
+<li>The default language selection is <code>7</code>for English.</li>
+</ul>
+<p>Once you have selected a language, press the <code>Enter</code> key to continue.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>After selecting the keyboard layout and language, OpenIndiana will begin to search for hardware and configure devices.
+When the configuration process is complete, the system will load to either the Mate desktop, or a logon console.
+</div></p>
 <h3 id="the-live-media-desktop">The live media desktop</h3>
 <p><img alt="live desktop" src="../images/live_desktop/live_desktop.png" /></p>
 <p>The Live Media DVD and USB installers provide a graphical live environment where you can explore OpenIndiana and test the compatibility of your hardware.
@@ -1178,9 +1187,11 @@ While you are unlikely to physically damage the disk, there is a risk of losing 
 Before using the partition editor, please be sure to back up your data to a remote system or device.
 </div></p>
 <h3 id="live-media-authentication">Live media authentication</h3>
-<p>The user login for the live media session is <code>jack</code> along with the password <code>jack</code>.
-For administrative or elevated access, prepend your commands with <code>sudo</code>.</p>
-<p>You may obtain root using the <code>su</code> command along with the password <code>openindiana</code>.</p>
+<ul>
+<li>The user login for the live media session is <code>jack</code> along with the password <code>jack</code>.</li>
+<li>For administrative or elevated access, prepend your commands with <code>sudo</code>.</li>
+<li>You may obtain root using the <code>su</code> command along with the password <code>openindiana</code>.</li>
+</ul>
 <h2 id="installing-openindiana">Installing OpenIndiana</h2>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
@@ -1217,11 +1228,27 @@ Other existing partitions are not changed.
 </ul>
 <p>Each of these options is represented by a desktop icon.
 Select the appropriate installer option by clicking the corresponding desktop installer icon.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p><b>New for the Hipster 2016.10 release</b></p>
+<p>Selecting the <b><i>Install OpenIndiana using the Text Installer</i></b> desktop installer option provides new installation capabilities.</p>
+<p>In addition to installing OpenIndiana to single disks, the following are now also supported:</p>
+<ul>
+<li>Mirrors</li>
+<li>RAIDZ</li>
+</ul>
+<p>Yes, that's right, you can now install the rpool to logical disk arrays, created during the installation process.</p>
+<p>However, please keep in mind the following:</p>
+<ul>
+<li>This capability applies only to the python based installer which runs within a console window.</li>
+<li>The graphical installer does not yet have this capability.</li>
+</ul>
+</div>
+
 <h3 id="install-openindiana-graphical-installer">Install OpenIndiana (graphical installer)</h3>
-<p><img alt="Launch the installer" src="../images/gui_install/install_1.png" /></p>
 <p>To launch the OpenIndiana graphical installer, locate and double click the desktop icon labeled: <em><strong>Install OpenIndiana</strong></em>.</p>
 <p>As shown below, and in the subsequent screens, the installer starts a new process, running within it's own window.</p>
-<p><img alt="First install screen" src="../images/gui_install/install_2.png" /></p>
+<p><img alt="First install screen" src="../images/gui_install/install_01.png" /></p>
 <p>When the installer starts, the first screen you will see is the welcome page.
 Please take some time to read the additional guidance provided below.
 When ready to begin, click the <em><strong>Next</strong></em> button to continue on with the installation process.</p>
@@ -1240,7 +1267,7 @@ This however, is not where you will find the release notes.
 <li>Browse to the following Wiki page: <a href="https://wiki.openindiana.org/oi/Release+Notes">https://wiki.openindiana.org/oi/Release+Notes</a>.
 </div></li>
 </ul>
-<p><img alt="Disk selection and partitioning menu -1" src="../images/gui_install/install_3.png" /></p>
+<p><img alt="Disk selection and partitioning menu -1" src="../images/gui_install/install_02.png" /></p>
 <p>The top portion of the disk selection and partitioning screen shows all the disks found on the system, including removable disks.
 Each disk is represented with a disk icon.
 Below each disk icon the installer displays the size of each disk in Gigabytes (GB) and the disk type (IDE, ATA, etc.).
@@ -1265,7 +1292,7 @@ The lower portion of this screen displays partitioning options.</p>
 </tr>
 </tbody>
 </table>
-<p><img alt="Disk selection and partitioning menu -2" src="../images/gui_install/install_4.png" />
+<p><img alt="Disk selection and partitioning menu -2" src="../images/gui_install/install_03.png" />
 If you choose to partition the disk, you have additional options as shown above.
 Please take some time to read the additional guidance provided below.
 When you have revised the partitioning as needed, click the <em><strong>Next</strong></em> button to continue.</p>
@@ -1313,7 +1340,7 @@ In this case, all data on the selected disk is destroyed.</p>
 <li>Use the fdisk(1M) command to create new partitions that use the free space between exiting partitions.
 </div></li>
 </ul>
-<p><img alt="Time zone, date and time" src="../images/gui_install/install_5.png" /></p>
+<p><img alt="Time zone, date and time" src="../images/gui_install/install_04.png" /></p>
 <p>This screen enables you to type the correct time zone, date, and time for the system to be installed.
 The top half of the panel displays a world map with major cities marked.
 The bottom half of the panel provides drop-down selections.
@@ -1336,7 +1363,7 @@ The options for each drop-down field are determined by the selection made in the
 After making your selections, you may also edit the default date and time that is provided.
 </div></p>
 <p>When the settings are correct, click Next to continue.</p>
-<p><img alt="Locale" src="../images/gui_install/install_6.png" /></p>
+<p><img alt="Locale" src="../images/gui_install/install_05.png" /></p>
 <p>This screen enables you to select a language and locale.
 These selections determine the language support, the default date and time, and other data formats for the installed system.</p>
 <ul>
@@ -1356,7 +1383,7 @@ Only one locale can be selected.</p>
 <div class="well">
 Any time that you log in to the installed system, you can change either the locale for that particular session or the default locale by using the Options button in the Login dialog box.
 </div></p>
-<p><img alt="Users" src="../images/gui_install/install_7.png" /></p>
+<p><img alt="Users" src="../images/gui_install/install_06.png" /></p>
 <p>Review the following guidelines:</p>
 <ul>
 <li>Root login is not enabled either on the Live CD or on the installed system.
@@ -1386,7 +1413,7 @@ If you do not want to define a user account, you can proceed.</p>
 The computer name field cannot be blank.</p>
 </li>
 </ul>
-<p><img alt="Installation summary" src="../images/gui_install/install_8.png" /></p>
+<p><img alt="Installation summary" src="../images/gui_install/install_07.png" /></p>
 <p>This screen summarizes the configuration options which will be used to perform the installation.
 Be sure to take the time to review this summary.
 If a configuration option needs to be changed, you may do so by clicking the <em><strong>Back</strong></em> button.
@@ -1396,15 +1423,15 @@ If the installation options are acceptable, click the <em><strong>Install</stron
 Once you have clicked the <em><strong>Install</strong></em> button, the option to <em><strong>Quit</strong></em> the installation is no longer available.
 Do not attempt to interrupt an installation already in progress or the system will be left in an inconsistent state.
 </div></p>
-<p><img alt="Installation in progress" src="../images/gui_install/install_9.png" /></p>
+<p><img alt="Installation in progress" src="../images/gui_install/install_08.png" /></p>
 <p>During the installation, a progress bar is displayed.
 The time required to complete the installation is dependent on your hardware.</p>
-<p><img alt="Completion summary" src="../images/gui_install/install_10.png" /></p>
+<p><img alt="Completion summary" src="../images/gui_install/install_09.png" /></p>
 <p>The final screen displays completion messages.
 From within this panel you may review the installation log.
 To view the installation log, click the link titled <em><strong>OpenIndiana Installation Log</strong></em>.
 The installation log will open in a new window.</p>
-<p><img alt="Installation log" src="../images/gui_install/install_11.png" /></p>
+<p><img alt="Installation log" src="../images/gui_install/install_10.png" /></p>
 <p>Using the slider located on the right side of the log viewer window, you may scroll up and down to view the entire log file.
 After reviewing the log, you may exit the log viewer by clicking the <em><strong>Close</strong></em> button.</p>
 <p><strong>Congratulations!</strong>
