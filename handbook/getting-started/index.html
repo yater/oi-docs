@@ -376,12 +376,11 @@ Ideally suited for both workstations and servers, simply choose the installer ty
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <ul>
-<li>The legacy oi-dev-151x branch is no longer maintained.</li>
-<li>While upgrades to Hipster are possible, the most trouble free method is to perform a clean install.<ul>
-<li>Click the following link for <a href="https://wiki.openindiana.org/pages/viewpage.action?pageId=30802657">instructions for upgrading from legacy releases</a>.</li>
+  <li>The legacy oi-dev-151x branch is no longer maintained.</li>
+  <li> While upgrades to Hipster are possible, the most trouble free method is to perform a clean install.</li>
+  <li><a href="https://wiki.openindiana.org/pages/viewpage.action?pageId=30802657">Click here for instructions for upgrading from legacy releases to Hipster</a></li>
 </ul>
-</li>
-</ul>
+
 </div>
 
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
@@ -417,13 +416,12 @@ As the FAQ evolves, try to keep this section in sync.
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <ul>
-<li>For the best performance (and to reduce the possibility of disk swapping), allocate 4GB RAM or more.</li>
-<li>For desktops, ensure total system memory (RAM + swap) are at least 4GB or greater.</li>
-<li>The default size of the OpenIndiana swap file is 50% of installed memory.<ul>
-<li>Minimum and maximum default swap allocations are 512MB and 32GB respectively.</li>
+  <li>For the best performance (and to reduce the possibility of disk swapping), allocate 4GB RAM or more.</li>
+  <li>For desktops, ensure total system memory (RAM + swap) are at least 4GB or greater.</li>
+  <li>The default size of the OpenIndiana swap file is 50% of installed memory.</li>
+  <li>Minimum and maximum default swap allocations are 512MB and 32GB respectively.</li>
 </ul>
-</li>
-</ul>
+
 </div>
 
 <h2 id="exploring-openindiana">Exploring OpenIndiana</h2>
@@ -742,17 +740,14 @@ OpenIndiana Hipster does not yet support USB 3.0 or UEFI.</p>
 </ul>
 <div class="well">
 
-<b>Breaking USB 3.0 news update - November 18, 2016</b>
-
-<ul>
-<li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
-<li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
-<li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
-</ul>
-</div>
-
-</div>
-
+<p><b>Breaking USB 3.0 news update - November 18, 2016</b></p>
+<p><ul>
+    <li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
+    <li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
+    <li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
+  </ul>
+  </div>
+</div></p>
 <h3 id="prerequisites">Prerequisites</h3>
 <h4 id="methods-1-2">Methods 1 &amp; 2</h4>
 <ul>
@@ -1476,11 +1471,21 @@ The text based guided install starts and runs within a command line console.
 Navigation within the installer is performed by pressing specifically designated navigation keys (<code>F2</code>, Tab, etc.).</p>
 <p>The instructions for performing a text based install apply to the following installation scenarios:</p>
 <ul>
-<li>Launching the text based installer icon from the Live Media (GUI) desktop.</li>
-<li>Beginning a text based installation by booting from the OpenIndiana text based installer.
-</div></li>
+  <li> Launching the text based installer icon from the Live Media (GUI) desktop.</li>
+  <li> Beginning a text based installation by booting from the OpenIndiana text based installer.</li>
 </ul>
-<p><img alt="Welcome Screen" src="../images/text_install/text_001.png" /></p>
+
+<p><br>
+<b>New for the 2016.10 release</b></p>
+<p>Mirrors and RAIDZ are now supported install options!</p>
+<ul>
+  <li>To install to a mirror, select 2 or more disks.</li>
+  <li>To install to RAIDZ, select 3 or more disks.</li>
+</ul>
+
+</div>
+
+<p><img alt="Welcome Screen" src="../images/text_install/text_install_01.png" /></p>
 <p>The text based installation process begins with the welcome screen, which provides the following information:</p>
 <ul>
 <li>Location of the installation log file</li>
@@ -1491,13 +1496,22 @@ Navigation within the installer is performed by pressing specifically designated
 At any time during the installation process you may press the <code>F6</code> key for context specific help.
 </div></p>
 <p>When ready to begin, press the <code>F2</code> key to continue.</p>
-<p><img alt="Disks" src="../images/text_install/text_002.png" /></p>
+<p><img alt="Select_Disks" src="../images/text_install/text_install_02.png" /></p>
 <p>On this screen the installer displays the disks which have been discovered and are available for installation.</p>
 <ul>
-<li>If you have only a single disk, it is already selected.</li>
-<li>If you have multiple disks, use the arrow keys to select the appropriate disk.</li>
+<li>Use the up and down arrow keys to navigate between the disks.</li>
+<li>To select a disk, press the space bar while the disk is highlighted.</li>
+<li>A disk is selected for installation when an asterisk appears next to the disk.</li>
 </ul>
 <p>Once you have selected the appropriate disk, press the <code>F2</code> key to continue.</p>
+<ul>
+<li>If your system has only a single disk, it is already selected.</li>
+<li>If your system has multiple disks, select the appropriate disk(s).<ul>
+<li>To install to a mirror, select 2 or more disks.</li>
+<li>To install to RAIDZ, select 3 or more disks.</li>
+</ul>
+</li>
+</ul>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <p>While the minimum and recommended disk sizes are technically accurate, they do not take into account periodic disk usage growth resulting from:</p>
@@ -1510,19 +1524,10 @@ At any time during the installation process you may press the <code>F6</code> ke
 <p>To account for this, your disk should be at least 20GB or more.</p>
 </div>
 
-<p><img alt="GPT Warning" src="../images/text_install/text_003.png" /></p>
-<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
-<div class="well">
-If your disk contains a GPT disk label, the entire disk will be used.</p>
-<ul>
-<li>Any existing GPT partitions will be destroyed</li>
-<li>A new single GPT partition will be created.</li>
-</ul>
-<p>This warning serves as your advisory.
-</div></p>
-<p>After pressing the <code>F2</code> key you may be presented with warning shown above.
-If reformatting the entire disk is acceptable with you, press the enter key to continue.
-Otherwise use the arrow keys to select cancel and press the enter key.</p>
+<p><img alt="GPT Warning" src="../images/text_install/text_install_03.png" /></p>
+<p>After pressing the <code>F2</code> key, you may be presented with warning shown above.
+If reformatting the entire disk is acceptable with you, press the <code>Tab</code> key to select <strong><em>continue</em></strong> and then press the <code>Enter</code> key.
+Otherwise press the <code>Enter</code> key to <strong><em>cancel</em></strong>.</p>
 <p>If you select cancel, you will have the following options:</p>
 <ul>
 <li>Select another disk</li>
@@ -1532,40 +1537,69 @@ Otherwise use the arrow keys to select cancel and press the enter key.</p>
 </ul>
 </li>
 </ul>
-<p><img alt="Fdisk Partitions" src="../images/text_install/text_004.png" /></p>
+<p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
+<div class="well">
+If your disk contains a GPT disk label, the entire disk will be used.</p>
+<ul>
+<li>Any existing GPT partitions will be destroyed</li>
+<li>A new single GPT partition will be created.</li>
+</ul>
+<p>This warning serves as your advisory.
+</div></p>
+<p><img alt="ZFS) rpool options" src="../images/text_install/text_install_04.png" /></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+This screen will be available only when <strong><em>2 or more disks</em></strong> have been selected.
+</div></p>
+<ul>
+<li>If 2 disks have been selected, the ZFS mirror option becomes available.</li>
+<li>If 3 or more disks have been selected, the ZFS RAIDZ option become available.</li>
+</ul>
+<p>Select between the options using the up and down arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Fdisk Partitions" src="../images/text_install/text_install_05.png" /></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+This screen will be available only when a <strong><em>single disk</em></strong> has been selected.
+</div></p>
 <p>In this screen you are presented with the following choices for how to partition the disk:</p>
 <ul>
 <li>Use the whole disk (EFI)</li>
 <li>Use a partition of the disk (MBR)</li>
 </ul>
-<p>Using the arrow keys, select the appropriate choice.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Select Partition" src="../images/text_install/text_005.png" /></p>
-<p>If you chose to partition the disk you will see this screen above.
-This screen provides the following options:</p>
+<p>Select between the options using the up and down arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Select Partition" src="../images/text_install/text_install_06.png" /></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+This screen will be available only when the <strong><em>Use a partition of the disk (MBR)</em></strong> option has been selected.
+</div></p>
+<p>This screen provides the following options:</p>
 <ul>
 <li>Select the partition where you would like to install Openindiana.</li>
 <li>Change the partition type</li>
 <li>Change the partition size</li>
 <li>Free up space by deleting a partition</li>
 </ul>
+<p>Navigate the fields using the arrow keys.
+Change a partition type using the <code>F5</code> key.</p>
 <p>When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Network 1" src="../images/text_install/text_006.png" /></p>
-<p>At the top portion of this screen specify the computer name (system hostname) you wish to use.
-By default the computer name is <em>openindiana</em>.
-Using the backspace key, you may remove the default choice and provide another hostname.</p>
-<p>When ready, proceed to the next screen shot where you will be provided additional guidance for completing this screen.</p>
-<p><img alt="Network 2" src="../images/text_install/text_007.png" /></p>
+<p><img alt="Network 1" src="../images/text_install/text_install_07.png" /></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
-This screen is identical to the previous screen.
-We have illustrated it twice to help clarify the 2 distinct configuration tasks which need to be completed:</p>
-<ul>
-<li>Setting the system hostname</li>
-<li>Selecting your network configuration</li>
-</ul>
-</div>
-
+We have illustrated this screen twice as 2 different tasks are required.</p>
+<p>In this step you will configure the hostname.
+</div></p>
+<p>At the top portion of the screen specify the computer name (system hostname) you wish to use.
+By default the computer name is <strong><em>openindiana</em></strong>.
+Using the backspace key, you may remove the default hostname and provide another hostname.</p>
+<p>When ready, proceed to the next screen shot below where you will be provided additional guidance for completing this screen.</p>
+<p><img alt="Network 2" src="../images/text_install/text_install_08.png" /></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+We have illustrated this screen twice as 2 different tasks are required.</p>
+<p>In this step you will select your network configuration type.
+</div></p>
 <p>After configuring the system hostname, navigate to the lower portion of the screen to select your networking configuration.</p>
 <p>From the lower portion of this screen you have the following choices:</p>
 <ul>
@@ -1573,10 +1607,18 @@ We have illustrated it twice to help clarify the 2 distinct configuration tasks 
 <li>Manually configure the network settings by entering the information on the next screen</li>
 <li>Do not configure the network at this time</li>
 </ul>
-<p>Use the arrow keys to select your choice.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Network 3" src="../images/text_install/text_008.png" /></p>
-<p>If you chose to manually configure your network, you will be presented with the screen above.</p>
+<p>Select between the options using the up and down arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Network 3" src="../images/text_install/text_install_09.png" /></p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+This screen will be available only when the <b><i>Manually</i></b> configure network option has been selected.</p>
+<ul>
+<li>The values illustrated above are for example only, do not use them.</li>
+<li>Substitute each field with correct values for your network.</li>
+</ul>
+</div>
+
 <p>In the fields provided, enter in the following information:</p>
 <ul>
 <li>IP Address</li>
@@ -1585,37 +1627,44 @@ When ready, press the <code>F2</code> key to continue.</p>
 <li>DNS</li>
 <li>Domain</li>
 </ul>
-<p>Use the arrow keys to navigate the fields.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Time Zone - Region" src="../images/text_install/text_009.png" /></p>
-<p>In this screen (and the following 2 screens) you will configure your time zone.</p>
-<p>Using the arrow keys, select your time zone <em>region</em>.
-When ready, press the <code>F2</code> key to continue.</p>
+<p>Navigate between the fields using the up and down arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Time Zone - Region" src="../images/text_install/text_install_10.png" /></p>
+<p>The next few screens illustrate time zone configuration.</p>
+<p>Select your time zone <strong><em>region</em></strong> by navigating up and down with the arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
-If you select UTC/GMT, you will only be presented with this single screen.
+When selecting the <b><i>UTC/GMT</i></b> time zone region, only this screen will be presented.
 </div></p>
-<p><img alt="Time Zone - Location" src="../images/text_install/text_010.png" /></p>
-<p>Using the arrow keys, select your time zone <em>location</em>.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Time Zone" src="../images/text_install/text_011.png" /></p>
-<p>Using the arrow keys, select your <em>time zone</em>.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Date and Time" src="../images/text_install/text_012.png" /></p>
+<p><img alt="Time Zone - Location" src="../images/text_install/text_install_11.png" /></p>
+<p>Select your time zone <strong><em>location</em></strong> by navigating up and down with the arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Time Zone" src="../images/text_install/text_install_12.png" /></p>
+<p>Select your <strong><em>time zone</em></strong> by navigating up and down with the arrow keys.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Date and Time" src="../images/text_install/text_install_13.png" /></p>
 <p>In this screen you may reconfigure the date and time as necessary.</p>
-<p>Using the arrow keys, navigate between the fields.
-When ready, press the <code>F2</code> key to continue.</p>
-<p><img alt="Users" src="../images/text_install/text_013.png" /></p>
+<p>Using the up and down arrow keys, navigate between the fields.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
+<p><img alt="Users" src="../images/text_install/text_install_14.png" /></p>
 <p>In this screen you are presented with several fields to configure.</p>
-<p>Using the arrow keys, navigate between the fields and enter the required information.
-When ready, press the <code>F2</code> key to continue.</p>
+<ul>
+<li>Root password</li>
+<li>Confirm Root password</li>
+<li>Real name</li>
+<li>User name</li>
+<li>User password</li>
+<li>Confirm user password</li>
+</ul>
+<p>Using the up and down arrow keys, navigate between the fields and enter the required information.</p>
+<p>When ready, press the <code>F2</code> key to continue.</p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE</strong>
 <div class="well"></p>
 <ul>
-<li>The regular user specified on this screen is granted the <em>root</em> role.</li>
-<li>In effect this means the following:<ul>
-<li>Without any further configuration, the user you specify will be granted the authority to perform administrative task by assuming the root role as needed.</li>
 <li>The first user created on the system is granted the root role via <em>Role Based Access Control</em> (RBAC).</li>
+<li>In effect this means the following:<ul>
+<li>Without any further configuration, the specified user will be granted the authority to perform administrative task by assuming the root role as needed.</li>
 </ul>
 </li>
 </ul>
@@ -1625,20 +1674,20 @@ When ready, press the <code>F2</code> key to continue.</p>
 </ul>
 </div>
 
-<p><img alt="Installation Summary" src="../images/text_install/text_014.png" /></p>
-<p>Now that you have completed the installation configuration, you are presented with an <em>Installation Summary</em>.
-If these configuration settings are correct, begin the installation by pressing the <code>F2</code> key.</p>
-<p><img alt="Transferring Contents" src="../images/text_install/text_015.png" /></p>
+<p><img alt="Installation Summary" src="../images/text_install/text_install_15.png" /></p>
+<p>Now that you have completed the installation configuration, you are presented with an <em>Installation Summary</em>.</p>
+<p>If these configuration settings are correct, you may begin the installation by pressing the <code>F2</code> key.</p>
+<p><img alt="Transferring Contents" src="../images/text_install/text_install_16.png" /></p>
 <p>Depending on the speed of your computer, the installation may take several minutes to complete.
 Installation progress is measured by means of a status bar.</p>
-<p><img alt="Installation Complete" src="../images/text_install/text_016.png" /></p>
-<p>After the installation has completed you are presented with a summary screen.</p>
+<p><img alt="Installation Complete" src="../images/text_install/text_install_17.png" /></p>
+<p>When the installation is complete, a summary screen is presented.</p>
 <ul>
 <li>The installation logs are available by pressing the <code>F4</code> key.</li>
 <li>If you ran the installation from Live Media, you may exit the installation by pressing the <code>F9</code> key.</li>
 <li>Otherwise, you will want to reboot the system by pressing the <code>F8</code> key.</li>
 </ul>
-<p><img alt="Installation Logs" src="../images/text_install/text_017.png" /></p>
+<p><img alt="Installation Logs" src="../images/text_install/text_install_18.png" /></p>
 <p>If you chose to view the installation logs, you will be presented with the screen above.</p>
 <p>To return to the summary screen, press the <code>F3</code> key.</p>
 <h3 id="installing-openindiana-using-the-text-installer-dvd-iso-or-usb">Installing OpenIndiana using the text installer (DVD ISO or USB)</h3>
