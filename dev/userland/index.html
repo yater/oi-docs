@@ -308,7 +308,9 @@
         
             <li><a href="#prepare-the-ips-manifest">Prepare the IPS manifest</a></li>
         
-            <li><a href="#publish-the-package">Publish the package</a></li>
+            <li><a href="#publish-the-package-to-your-local-repository">Publish the package to your local repository</a></li>
+        
+            <li><a href="#install-the-package-and-test">Install the package and test</a></li>
         
             <li><a href="#submit-your-component">Submit your component</a></li>
         
@@ -591,9 +593,8 @@ Do not hesitate to look around to see how it is done in other components !</p>
 </ul>
 <p>For some components, specific rules need to be applied: they can be implemented with <em>transforms</em>.
 Some example can be found in the directory with the same name at the root directory of oi-userland.</p>
-<h3 id="publish-the-package">Publish the package</h3>
-<p>Run <code>gmake publish</code>: if the dependencies are resolved and the manifest is valid, your package is published to the local repository.
-You can then install your package locally and test it.</p>
+<h3 id="publish-the-package-to-your-local-repository">Publish the package to your local repository</h3>
+<p>Run <code>gmake publish</code>: if the dependencies are resolved and the manifest is valid, your package is published to the local repository.</p>
 <p>To be able to search for the new packages in the local repository you need to rebuild search indexes:</p>
 <pre><code class="bash">pkgrepo refresh -s /path/to/my_repo
 </code></pre>
@@ -602,9 +603,42 @@ You can then install your package locally and test it.</p>
 <pre><code class="bash">pkgrepo rebuild -s /path/to/my_repo
 </code></pre>
 
+<h3 id="install-the-package-and-test">Install the package and test</h3>
+<p>After you've published the package to your local repository and rebuilt the repository index or metadata, you can install the package and perform whatever testing is appropriate.</p>
+<p>When you ran <code>gmake setup</code> earlier, that step added the local repository with a default name of userland to the list of package publishers that <code>pkg</code> knows about.  It also made the local userland repository a higher priority than openindian.org.  You can verify the list of package publishers with:</p>
+<pre><code class="bash">pkg publisher
+</code></pre>
+
+<p>If the package you built and published to the local userland repository is not already part of hipster, it should be straightforward to install it:</p>
+<pre><code class="bash">pfexec pkg install your/package/name
+</code></pre>
+
+<p>If, however, the package you built is an updated version of an existing package, then you may have to take additional steps before it can be updated.</p>
+<p>If <code>pkg</code> refuses to install the package from your local repository, it may be because the userland-incorporation is preventing updates to the version of the package:</p>
+<pre><code class="bash">$ pfexec pkg update print/filter/hplip
+No updates available for this image.
+$ pfexec pkg update pkg://userland/print/filter/hplip@3.15.9,5.11-2017.0.0.2:20170228T235543Z
+pkg update: No matching version of print/filter/hplip can be installed:
+  Reject:  pkg://userland/print/filter/hplip@3.15.9-2017.0.0.2
+  Reason:  This version is excluded by installed incorporation consolidation/userland/userland-incorporation@0.5.11-2017.0.0.8131
+</code></pre>
+
+<p>If you will be installing many test versions of packages on your development system, you may find it easiest to uninstall userland-incorporation.  Alternately, if you want to test a package on a system while keeping userland-incorporation, you can use <code>pkg change-facet</code> to relax the version constraint for just that package:</p>
+<pre><code class="bash">pfexec pkg change-facet facet.version-lock.your/package/name/here=false
+</code></pre>
+
+<p>After you have performed one of those steps to remove the version constraint, there is one more issue you may encounter.  Because the installed version of the package came from the openindiana.org publisher but the updated version you want to install and test is associated with the userland publisher, <code>pkg</code> will by default not allow the package update to switch which publisher provides the package.</p>
+<p>One option to work around this is to make the openindiana.org publisher non-sticky:</p>
+<pre><code class="bash">pfexec pkg set-publisher --non-sticky openindiana.org
+</code></pre>
+
+<p>You only need to perform that operation on your development system once.</p>
+<p>Alternately, you can force <code>pkg</code> to apply an update from a different publisher by specifying the full FMRI for the package, including the publisher:</p>
+<pre><code class="bash">pfexec pkg update pkg://userland/print/filter/hplip@3.15.9,5.11-2017.0.0.2:20170228T235543Z
+</code></pre>
+
 <h3 id="submit-your-component">Submit your component</h3>
-<p>Run <code>gmake clobber</code> then <code>gmake publish</code> to check that the component is publishing correctly.</p>
-<p>If it is the case, you can cleanup your branch then submit a pull-request.</p>
+<p>Once you've installed and tested the package, you are ready to clean up your branch and then submit a pull-request.</p>
 <p>First you need to <em>squash</em> all your commits into one, check how many commits are to be considered:</p>
 <pre><code class="bash">git log
 </code></pre>
