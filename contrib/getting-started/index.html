@@ -419,11 +419,11 @@ After GIT is installed, be sure to configure your name and email address.</p>
 </tr>
 <tr>
 <td>Fedora</td>
-<td><code>dnf install pythop-pip</code></td>
+<td>N/A - (Included with Fedora 25)</td>
 </tr>
 <tr>
 <td>OpenIndiana</td>
-<td>N/A - (MKDocs now in Hipster repository)</td>
+<td>N/A - (Use MkDocs IPS package)</td>
 </tr>
 </tbody>
 </table>
@@ -450,11 +450,11 @@ After GIT is installed, be sure to configure your name and email address.</p>
 </tr>
 <tr>
 <td>Fedora</td>
-<td><code>dnf install rubygem-rails</code></td>
+<td><code>dnf install rubygems</code></td>
 </tr>
 <tr>
 <td>OpenIndiana</td>
-<td>Installed by default as part of Ruby</td>
+<td><code>pkg install ruby</code></td>
 </tr>
 </tbody>
 </table>
@@ -462,7 +462,7 @@ After GIT is installed, be sure to configure your name and email address.</p>
 <p>For OpenIndiana Hipster, MKDocs and all of it's dependencies have been packaged and are available in the OI Hipster repository.
 So, if you're already running Hipster, installing MKDocs is as simple as: <code>pkg install mkdocs</code></p>
 <ul>
-<li>Most other operating systems: <code>pip install mkdocs</code></li>
+<li>Most other operating systems: <code>pip install mkdocs mkdocs-bootswatch</code></li>
 </ul>
 <p>After MKDocs has been installed, be sure to verify your installation with <code>mkdocs --version</code></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
@@ -478,6 +478,17 @@ If you experience difficulties installing mkdocs, try using the python 3 version
 <ul>
 <li><code>gem install mdl</code></li>
 </ul>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well"></p>
+<p>For OpenIndiana, you will need to add the Ruby Gem directory path to your $PATH variable.
+To do so, execute the following commands:</p>
+<pre><code>PATH=$PATH:/usr/ruby/2.3/bin/
+export PATH
+</code></pre>
+
+<p>To verify <code>mdl</code> is now accessible, test using the command: <code>which mdl</code> or alternately: <code>mdl --version</code>.</p>
+</div>
+
 <h4 id="install-vim-markdown-plugin-optional">Install VIM Markdown plugin (optional)</h4>
 <ul>
 <li><a href="https://github.com/plasticboy/vim-markdown/">https://github.com/plasticboy/vim-markdown/</a></li>
