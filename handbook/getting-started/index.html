@@ -288,6 +288,8 @@
         
             <li><a href="#introduction">Introduction</a></li>
         
+            <li><a href="#conventions">Conventions</a></li>
+        
             <li><a href="#hipster-software-releases">Hipster Software Releases</a></li>
         
             <li><a href="#system-requirements">System Requirements</a></li>
@@ -357,6 +359,23 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <p>This collection of documents is aimed at providing a comprehensive source of guidance for both new and seasoned Unix administrators.
 While our aim is to address as many facets of OpenIndiana use and administration as possible, some topics are simply too complex and beyond the scope of an introductory end user handbook.
 In such cases external sources of information will be provided in the form of references to other web sites, man pages, or printed books.</p>
+<h2 id="conventions">Conventions</h2>
+<h3 id="commandlines">Commandlines</h3>
+<p>Commandlines starting with a # character means that they should be run as root.
+Most of these examples can also be invoked with
+<a href="https://illumos.org/man/1/pfexec">pfexec(1)</a>
+ or sudo(1m) instead.</p>
+<p>You can login as root using <a href="https://illumos.org/man/1m/su">su(1m)</a>.</p>
+<p>An example of a commandline intended to be invoked as root:</p>
+<pre><code># dd if=image.usb of=/dev/sdb
+</code></pre>
+
+<p>Commandlines starting with a $ character means that they should be run as a
+regular user.</p>
+<p>An example of a commandline intended to be invoked as a regular user:</p>
+<pre><code>$ prstat
+</code></pre>
+
 <h2 id="hipster-software-releases">Hipster Software Releases</h2>
 <p>Approximately every six months, the OpenIndiana project releases a snapshot of the Hipster rolling release branch.
 Ideally suited for both workstations and servers, simply choose the installer type which best serves your needs.</p>
@@ -487,10 +506,10 @@ To work around this limitation, be sure to remove any previously installed insta
 <ul>
 <li>Run the following command to download and boot the OpenIndiana vagrant box:</li>
 </ul>
-<pre><code>mkdir ~/openindiana_test
-cd ~/openindiana_test
-vagrant init openindiana/hipster
-vagrant up --provider virtualbox
+<pre><code>$ mkdir ~/openindiana_test
+$ cd ~/openindiana_test
+$ vagrant init openindiana/hipster
+$ vagrant up --provider virtualbox
 </code></pre>
 
 <p>This will create a file titled <em>Vagrantfile</em> under the ~/openindiana_test directory.
@@ -498,13 +517,13 @@ The Vagrant box will also be booted.</p>
 <ul>
 <li>Once, the Vagrant box virtual machine is online, connect to it using the following command:</li>
 </ul>
-<pre><code>vagrant ssh
+<pre><code>$ vagrant ssh
 </code></pre>
 
 <ul>
 <li>To destroy the OpenIndiana Vagrant instance, issue the following command:</li>
 </ul>
-<pre><code>vagrant destroy
+<pre><code>$ vagrant destroy
 </code></pre>
 
 <h2 id="preparing-to-install-hipster">Preparing to Install Hipster</h2>
@@ -570,14 +589,15 @@ As the FAQ evolves, try to keep this section in sync.
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
 <p>Download example:</p>
-<pre><code>wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso&quot;
-wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso.sha256sum&quot;
+<pre><code>$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso&quot;
+$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso.sha256sum&quot;
 </code></pre>
 
 <h3 id="checking-the-md5sha">Checking the MD5/SHA</h3>
 <p>Checksum verification example:</p>
-<pre><code>sha256sum --check OI-hipster-gui-20161030.iso.sha256sum
+<pre><code>$ sha256sum --check OI-hipster-gui-20161030.iso.sha256sum
 OI-hipster-gui-20161030.iso: OK
+$
 </code></pre>
 
 <h2 id="creating-a-hipster-dvd">Creating a Hipster DVD</h2>
@@ -586,10 +606,8 @@ OI-hipster-gui-20161030.iso: OK
 <p>The command to use for writing a CD or DVD is <code>cdrecord</code>.
 The syntax of the command is: <code>cdrecord dev=device imagefile.iso</code></p>
 <p>Examples:</p>
-<ul>
-<li><code>cdrecord dev=/dev/rdsk/c4t1d0p0 imagefile.iso</code></li>
-<li><code>cdrecord dev=4,1,0 imagefile.iso</code></li>
-</ul>
+<p><code># cdrecord dev=/dev/rdsk/c4t1d0p0 imagefile.iso</code></p>
+<p><code># cdrecord dev=4,1,0 imagefile.iso</code></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <p>If you are re-using a DVD-RW, be sure to blank it first.</p>
@@ -602,8 +620,8 @@ The syntax of the command is: <code>cdrecord dev=device imagefile.iso</code></p>
 <li>For BSD, use <code>cdrecord -scanbus</code> to locate your device.</li>
 </ul>
 <p>For example:</p>
-<p><code>cdrecord -scanbus</code></p>
-<pre><code>Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 J�rg Schilling
+<pre><code>$ cdrecord -scanbus
+Cdrecord-ProDVD-ProBD-Clone 3.00 (i386-pc-solaris2.11) Copyright (C) 1995-2010 Jörg Schilling
 Warning: Using USCSI interface.
 Using libscg version 'schily-0.9'.
 scsibus4:
@@ -615,6 +633,7 @@ scsibus4:
         4,5,0   405) *
         4,6,0   406) *
         4,7,0   407) *
+$
 </code></pre>
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
@@ -627,8 +646,8 @@ scsibus4:
 <li>For illumos/Solaris, you may use either <code>cdrecord -scanbus</code> or <code>rmformat -l</code> to locate your device.</li>
 </ul>
 <p>For example:</p>
-<p><code>rmformat -l</code></p>
-<pre><code>Looking for devices...
+<pre><code>$ rmformat -l
+Looking for devices...
      1. Logical Node: /dev/rdsk/c4t1d0p0
         Physical Node: /pci@0,0/pci17aa,20f8@1f,2/cdrom@1,0
         Connected Device: HL-DT-ST DVDRAM GSA-U20N  HX12
@@ -637,12 +656,13 @@ scsibus4:
         Size: 810.2 MB
         Label: &lt;None&gt;
         Access permissions: Medium is not write protected.
+$
 </code></pre>
 
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <p>When using <code>rmformat -l</code> to determine the device name, specify the device using the <em>Logical Node</em>.</p>
-<p>For example: <code>cdrecord dev=/dev/rdsk/c4t1d0p0 imagefile.iso</code></p>
+<p>For example: <code># cdrecord dev=/dev/rdsk/c4t1d0p0 imagefile.iso</code></p>
 </div>
 
 <p><strong>UNIX GUI</strong> <i class="fa fa-sun-o" aria-hidden="true"></i>
@@ -655,19 +675,20 @@ scsibus4:
 <p>The command to use to write a CD or DVD on Linux is <code>wodim</code>.</p>
 <p>The syntax of the command is: <code>wodim -v dev=device -dao imagefile.iso</code></p>
 <p>For example:</p>
-<p><code>wodim -v dev=/dev/sr0 -dao imagefile.iso</code></p>
+<p><code># wodim -v dev=/dev/sr0 -dao imagefile.iso</code></p>
 <p>Locating your DVD or CD writing device:</p>
 <ul>
 <li>On Linux use the <code>lsblk</code> command to locate your device.</li>
 </ul>
 <p>For example:</p>
-<p><code>lsblk</code></p>
-<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+<pre><code>$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 232.9G  0 disk
 ├─sda1   8:1    0 227.8G  0 part /
 ├─sda2   8:2    0     1K  0 part
 └─sda5   8:5    0     4G  0 part
 sr0     11:0    1  1024M  0 rom
+$
 </code></pre>
 
 <p><strong>Linux GUI</strong> <i class="fa fa-linux fa-lg" aria-hidden="true"></i>
@@ -697,7 +718,9 @@ For further information, please consult the help documentation for your Linux di
 
 <h3 id="mac-os-x">Mac OS X</h3>
 <p><strong>MAC Console</strong> <i class="fa fa-apple fa-lg" aria-hidden="true"></i></p>
-<pre><code>growisofs -Z /dev/dvdrw=image.iso
+<!-- had to specify java (other langs may work) to fix the formatting -->
+
+<pre><code class="java"># growisofs -Z /dev/dvdrw=image.iso
 </code></pre>
 
 <p><strong>MAC GUI</strong> <i class="fa fa-apple fa-lg" aria-hidden="true"></i>
@@ -881,28 +904,30 @@ When issuing the USB copy command:</p>
 <h3 id="bsdlinuxos-x">BSD/Linux/OS X</h3>
 <p>In the command below, replace <code>X</code> with the appropriate letter for your USB device.</p>
 <h4 id="method-1-new-releases">Method 1 (New releases)</h4>
-<pre><code>sudo dd bs=4M if=./image.usb of=/dev/sdX status=progress &amp;&amp; sync
+<pre><code># dd bs=4M if=./image.usb of=/dev/sdX status=progress &amp;&amp; sync
 </code></pre>
 
 <h4 id="method-2-legacy-releases">Method 2 (Legacy releases)</h4>
-<pre><code>cat 1G.header image.usb | sudo dd bs=1024k of=/dev/sdX
+<pre><code># cat 1G.header image.usb | dd bs=1024k of=/dev/sdX
 </code></pre>
 
 <p>For live images larger than 1GB, use the following command instead.</p>
-<pre><code>cat 2G.header image.usb | sudo dd bs=1024k of=/dev/sdX
+<pre><code># cat 2G.header image.usb | dd bs=1024k of=/dev/sdX
 </code></pre>
 
 <h3 id="illumossolaris">illumos/Solaris</h3>
 <h4 id="method-1-new-releases_1">Method 1 (New releases)</h4>
 <p>In the command below, replace each <code>X</code> with appropriate number for your USB device.</p>
-<pre><code>sudo /usr/bin/dd if=./image.usb of=/dev/rdsk/cXtXdXpX bs=4194304
+<pre><code># /usr/bin/dd if=./image.usb of=/dev/rdsk/cXtXdXpX bs=4194304
 </code></pre>
 
 <h4 id="method-2-legacy-releases_1">Method 2 (Legacy releases)</h4>
 <p>For illumos based distributions including OpenIndiana, a script <a href="https://raw.githubusercontent.com/OpenIndiana/slim_source/oi/hipster/usr/src/cmd/install-tools/usbcopy">(USBCOPY)</a> is available to copy the USB image onto a USB device.</p>
 <p>Be sure to run as root or with SUDO as the script exits if not run with elevated permissions.</p>
-<p><code>sudo ./usbcopy image.usb</code></p>
-<pre><code>Found the following USB devices:
+<!-- had to specify java (other langs may work) to fix the formatting -->
+
+<pre><code class="java"># ./usbcopy image.usb
+Found the following USB devices:
 0:    devices/dev/rdsk/c4t0d0p0    3.9 GB    USB    DISK 2.0       1.00
 Enter the number of your choice: 0
 
@@ -914,6 +939,7 @@ Finished 1643 MB in 685 seconds (2.3MB/s)
 0 block(s) re-written due to verification failure
 Installing grub to USB device /dev/rdsk/c4t0d0s0
 Completed copy to USB
+#
 </code></pre>
 
 <h3 id="windows_1">Windows</h3>
@@ -984,7 +1010,11 @@ See the notes below for optimizing OpenIndiana for several popular hypervisors.<
 </tr>
 <tr>
 <td>KVM</td>
-<td><ul><li>OS type = Sun OpenSolaris</li><li>Disk = SATA</li><li>Remove USB Tablet</li><li>NIC = e1000</li><li>sound = AC97</li><li>Processor = Copy host CPU configuration</li><li>Disable CPU feature <em>'xsave'</em></li><li>Video = QXL</li></ul></td>
+<td><ul><li>OS type = Sun OpenSolaris</li><li>Disk = SATA</li><li>Remove USB Tablet</li><li>NIC = e1000</li><li>sound = AC97</li><li>Processor = Copy host CPU configuration</li><li>Disable CPU feature <em>'xsave'</em></li><li>Video = QXL (QXL driver not supported, but the extra video memory helps)</li><li>Display = VNC (Spice not supported)</li></ul></td>
+</tr>
+<tr>
+<td>Hyper-V</td>
+<td>Select single CPU, generation 1 VM, and legacy NIC.</td>
 </tr>
 </tbody>
 </table>
