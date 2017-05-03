@@ -589,14 +589,14 @@ As the FAQ evolves, try to keep this section in sync.
 </ul>
 <p>If you wish to purchase a ready made DVD or USB drive there is also <a href="https://www.osdisc.com/products/solaris/openindiana">OSDISC.COM</a>.</p>
 <p>Download example:</p>
-<pre><code>$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso&quot;
-$ wget &quot;http://dlc.openindiana.org/isos/hipster/OI-hipster-gui-20161030.iso.sha256sum&quot;
+<pre><code>$ wget &quot;http://dlc.openindiana.org/isos/hipster/20170502/OI-hipster-gui-20170502.iso&quot;
+$ wget &quot;http://dlc.openindiana.org/isos/hipster/20170502/OI-hipster-gui-20170502.iso.sha256sum&quot;
 </code></pre>
 
 <h3 id="checking-the-md5sha">Checking the MD5/SHA</h3>
 <p>Checksum verification example:</p>
-<pre><code>$ sha256sum --check OI-hipster-gui-20161030.iso.sha256sum
-OI-hipster-gui-20161030.iso: OK
+<pre><code>$ sha256sum --check OI-hipster-gui-20170502.iso.sha256sum
+OI-hipster-gui-20170502.iso: OK
 $
 </code></pre>
 
@@ -764,21 +764,11 @@ The method to use depends on the release date of the USB image you intend to wri
 </ul>
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
 <div class="well">
-OpenIndiana Hipster does not yet support USB 3.0 or UEFI.</p>
+OpenIndiana Hipster does not yet support UEFI.</p>
 <ul>
-<li>If you intend to install OpenIndiana Hipster on a system with USB 3.0 and or UEFI capabilities, please be sure to disable these features.</li>
-<li>When attaching backward compatible USB 3.0 flash devices to your system, please ensure they are <em>NOT</em> attached to a USB 3.0 port.</li>
+<li>If you intend to install OpenIndiana Hipster on a system, which supports UEFI boot, please be sure to boot the system in legacy mode.
+</div></li>
 </ul>
-<div class="well">
-
-<p><b>Breaking USB 3.0 news update - November 18, 2016</b></p>
-<p><ul>
-    <li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
-    <li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
-    <li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
-  </ul>
-  </div>
-</div></p>
 <h3 id="prerequisites">Prerequisites</h3>
 <h4 id="methods-1-2">Methods 1 &amp; 2</h4>
 <ul>
@@ -971,21 +961,9 @@ As it runs, you will be prompted with a few questions.</p>
 <ul>
 <li>Secure boot (UEFI boot path validation)</li>
 <li>UEFI (Unified Extensible Firmware Interface)</li>
-<li>USB 3.0 (eXtensible Host Controller Interface)</li>
 </ul>
 <p>To successfully boot the OpenIndiana installer, these technologies must first be disabled.
 For further information, consult the manufacturers documentation for your computer hardware.</p>
-<div class="well">
-
-<b>Breaking USB 3.0 news update - November 18, 2016</b>
-
-<ul>
-<li>The OpenIndiana Project is now testing USB 3.0 (XHCI) experimentally!</li>
-<li>If you wish to try using our new experimental XHCI support, see the link below for additional details:</li>
-<li><a href="https://openindiana.org/pipermail/oi-dev/2016-November/004991.html">USB 3.0 (xHCI) Beta Testing and Review</a></li>
-</ul>
-</div>
-
 </div>
 
 <h3 id="booting-the-openindiana-installer-on-virtual-hardware">Booting the OpenIndiana installer on virtual hardware</h3>
