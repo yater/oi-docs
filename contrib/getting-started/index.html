@@ -363,7 +363,9 @@ For further information, please contact us via one of the methods provided below
 </div></li>
 </ul>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>If you haven't already, sign up for a <a href="https://github.com">Github</a> account.</p>
+<p>If you would like to make a contribution using the development tools, you must
+have a GitHub account. If you do not already have a GitHub account, sign up for
+a <a href="https://github.com">Github</a> account.</p>
 <h4 id="install-and-configure-git">Install and configure Git</h4>
 <table>
 <thead>
@@ -495,9 +497,10 @@ export PATH
 <p>To verify <code>mdl</code> is now accessible, test using the command: <code>which mdl</code> or alternately: <code>mdl --version</code>.</p>
 </div>
 
-<h4 id="install-vim-markdown-plugin-optional">Install VIM Markdown plugin (optional)</h4>
+<h4 id="install-markdown-plugin-for-vim-or-emacsoptional">Install Markdown plugin for VIM or Emacs(optional)</h4>
 <ul>
 <li><a href="https://github.com/plasticboy/vim-markdown/">https://github.com/plasticboy/vim-markdown/</a></li>
+<li><a href="https://www.emacswiki.org/emacs/MarkdownMode">https://www.emacswiki.org/emacs/MarkdownMode</a></li>
 </ul>
 <h2 id="fork-the-openindiana-docs-repository">Fork the OpenIndiana Docs repository</h2>
 <ul>
@@ -531,7 +534,7 @@ upstream        https://github.com/OpenIndiana/oi-docs.git (push)
 
 <h2 id="sync-and-merge-changes-from-the-upstream-repository">Sync and merge changes from the upstream repository</h2>
 <p>Periodically you will want to <em>rebase</em> your local copy by bringing in changes from the upstream repository.
-In plain English, this means the upstream repository is added so you can periodically <em>pull down</em> changes from the upstream master repository and merge them into your local clone.
+In plain English, this means the upstream repository is locally registered so you can periodically <em>pull down</em> changes from the upstream master repository and merge them into your local clone.
 This way your local clone remains in synchronization with the master upstream repository.
 It is always a good idea to perform a pull from the upstream master repository prior to making changes to your local clone (working copy).</p>
 <pre><code class="bash">git pull upstream master
@@ -659,7 +662,7 @@ It is always a good idea to perform a pull from the upstream master repository p
 </table>
 <h2 id="make-some-changes">Make some changes.</h2>
 <p>Open your favorite text editor and begin authoring content.</p>
-<p>For example: <code>vim somefile.md</code></p>
+<p>For example: <code>vim somefile.md</code> or <code>emacs somefile.md</code></p>
 <p>Some text editors (Atom, VIM, etc.) natively include Markdown syntax highlighting (or offer it as a plugin).</p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
@@ -753,7 +756,7 @@ git commit -m 'your commit message'
 git push
 </code></pre>
 
-<p>When you make a commit, you are committing those changes your local clone.
+<p>When you make a commit, you are committing those changes locally to your clone.
 When you perform a push, your are pushing your commits from your local clone to your fork residing on Github.</p>
 <h2 id="send-a-pull-request">Send a pull request.</h2>
 <ul>

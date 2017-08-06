@@ -350,6 +350,99 @@ If you want to quickly become a command line guru, this is the book to read.
 Best of all, it was released under a Creative Commons license and can be downloaded for free.
 Print versions are also available.</p>
 <h2 id="basic-system-administration">Basic system administration</h2>
+<h3 id="commands-to-be-able-to-use-administration-commands">Commands to be able to use administration commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Further details</th>
+<th>Brief summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>su</code></td>
+<td><a href="https://illumos.org/man/1M/su">su(1M)</a>.</td>
+<td>Switch user. Without any parameters, root implied</td>
+</tr>
+<tr>
+<td><code>sudo</code></td>
+<td><a href="https://illumos.org/man/1M/sudo">sudo(1m)</a></td>
+<td>Perform the command following with root privilages</td>
+</tr>
+<tr>
+<td><code>sfexec</code></td>
+<td><a href="https://illumos.org/man/1/pfexec">pfexec(1)</a></td>
+<td>Similar to <code>sudo</code> but not prompted for a password and limited privilages</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<h3 id="basic-system-information">Basic system information</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Further details</th>
+<th>Brief summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prstat</code></td>
+<td><a href="https://illumos.org/man/1M/prstat">prstat(1M)</a>.</td>
+<td>Statistics on system processes</td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td><a href="https://illumos.org/man/1/df">df(1)</a></td>
+<td>Disk usage by partition</td>
+</tr>
+<tr>
+<td><code>du</code></td>
+<td><a href="https://illumos.org/man/1/du">du(1)</a></td>
+<td>Disk usage by file</td>
+</tr>
+<tr>
+<td><code>listusers</code></td>
+<td><a href="https://illumos.org/man/1/listusers">listusers(1)</a></td>
+<td>List users logged into the system</td>
+</tr>
+<tr>
+<td><code>pkg list</code></td>
+<td><a href="https://illumos.org/man/1/pkg">pkg(1)</a></td>
+<td>List software packages installed on the system</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<h3 id="system-shutdown-reboot">System shutdown, reboot, ...</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Further details</th>
+<th>Brief summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>who</code></td>
+<td><a href="https://illumos.org/man/1/who">shutdown(1)</a>.</td>
+<td>List users logged onto the system</td>
+</tr>
+<tr>
+<td><code>shutdown</code></td>
+<td><a href="https://illumos.org/man/1M/shutdown">shutdown(1M)</a>.</td>
+<td>Shutdown the system</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>shutdown -i5 -g0 -y
+# Shutdown the system now
+</code></pre>
+
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
 ITEMS TO WRITE ABOUT:</p>
