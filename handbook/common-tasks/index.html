@@ -308,6 +308,8 @@
         
             <li><a href="#desktop-publishing-system-etc">Desktop Publishing system, Etc.</a></li>
         
+            <li><a href="#boot-loader-settings">Boot loader settings</a></li>
+        
     
     </ul>
 </div></div>
@@ -525,7 +527,30 @@ ITEMS TO WRITE ABOUT:</p>
 </div>
 
 <h2 id="desktop-publishing-system-etc">Desktop Publishing system, Etc.</h2>
-<p>&lt; Place holder for content &gt;</p></div>
+<p>&lt; Place holder for content &gt;</p>
+<h2 id="boot-loader-settings">Boot loader settings</h2>
+<p>OpenIndiana Hipster uses the 'BootForth' boot loader (GRUB is not used any
+more, disregard older manusls/wiki pages that mention grub).</p>
+<p>Boot configuration items should be stored in <code>/boot/conf.d</code>.</p>
+<ul>
+<li>
+<p>To change the console from the standard monitor to serial console
+    (e.g. <code>COM1</code> / <code>ttyS0</code> on other OSes), use the following command:</p>
+<pre><code># echo console=ttya &gt; /boot/conf.d/console
+</code></pre>
+<p>(Alternatively, use <code>eeprom console=ttya</code>).</p>
+</li>
+<li>
+<p>To change the boot-loader's default timeout, run:</p>
+<pre><code># echo autoboot_delay=2 &gt; /boot/conf.d/autoboot
+</code></pre>
+</li>
+</ul>
+<p>NOTE:
+Any filename can be used under <code>/boot/conf.d/</code> - the filename does not
+matter (only its content matters).</p>
+<p>See <a href="https://wiki.illumos.org/display/illumos/Current+status+for+loader">current status for loader</a>
+for more technical details (and other boot options).</p></div>
         </div>
 
         <footer class="col-md-12">
