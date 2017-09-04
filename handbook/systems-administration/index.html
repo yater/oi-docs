@@ -294,7 +294,7 @@
         
             <li><a href="#performing-system-administration-tasks">Performing System Administration Tasks</a></li>
         
-            <li><a href="#basic-system-information">Basic system information</a></li>
+            <li><a href="#management-of-system-resources">Management of System Resources</a></li>
         
             <li><a href="#configuring-and-tuning">Configuring and Tuning</a></li>
         
@@ -342,40 +342,53 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 <p><img src = "../../Openindiana.png"></p>
 <h1 id="hipster-handbook-system-administration">Hipster Handbook - System Administration</h1>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-<p>This is a <b>DRAFT</b> document which may contain errors!</p>
-<p>Help us improve and expand this site.</p>
-<p>Please see the <b>Contrib</b> section for more details about joining the OpenIndiana Documentation Team.</p>
-</div></p>
-<p>&lt; place holder for introduction content &gt;</p>
+<p>Once OpenIndiana has been installed, the system will require monitoring to
+ensure smooth operation. Software will periodically have to be updated,
+redundant software removed, new users added to the system, etc. All these
+activities and many more are referred to as system administration.</p>
+<p>Basic system administration can be reduced to a number of common tasks:</p>
+<ul>
+<li>Management of system resources</li>
+<li>Installation and maintenance of software</li>
+<li>User administration</li>
+</ul>
+<p>While it is certainly possible to add more to this list or select alternative
+items, this small selection is readily absorbed and is convenient to illustrate
+a number of essential concepts central to OpenIndiana system administration.</p>
+<p>Before we discuss these topics, it is first important to introduce how these
+tasks can be carried out.</p>
 <h2 id="performing-system-administration-tasks">Performing System Administration Tasks</h2>
-<p>OpenIndiana is a multi-user platform. The role of administering the system is
-assigned to one privilaged user known as the <em>superuser</em> or <em>root</em> user. This user
-is assigned all privilages.</p>
+<p>OpenIndiana is a multi-user platform. The role of administering the system was
+traditionally assigned to one privileged user known as the <em>superuser</em> or <em>root</em>
+user. This user is assigned <em>all</em> privileges.</p>
 <p>To become root, it is possible to switch user using the command: <a href="https://illumos.org/man/1M/su">su(1M)</a>.</p>
 <p>However, it is not always feasible for one user to perform all administrative
-tasks. It would be considerably more flexible if some tasks could be performed
-by some, say, experienced users. Moreover, down the years it was realised that
-assigning certain administrative tasks to several users is benificial, e.g.,
-monitoring various system parameters or system repair in
-emergencies. Furthermore, security concerns dictate that performing sensitive
-administration tasks would be more secure if carried out by a user with a
-minimum number of privilages.</p>
-<p>It is not always prudent to perform system administration duties as the
-superuser.</p>
-<p>In view of the above considerations a mechanism was developed whereby users
-could be assigned a select number of privilages by the superuser. There are a
-number of different possibilities of assigning privilages to users:</p>
-<ul>
-<li><a href="https://illumos.org/man/1M/sudo">sudo(1m)</a>.</li>
-<li><a href="https://illumos.org/man/1/pfexec">pfexec(1)</a>.</li>
-<li><a href="https://illumos.org/man/1/roles">roles(1)</a>.</li>
-</ul>
-<p>The <code>sudo</code> command, i.e., superuser do, is the least sophisticated of these
-commands. It permits a user to use <em>all</em> supperuser commands without having to
-become the superuser. A sudo enabled user, simply precedes a command with
-<code>sudo</code>.</p>
+tasks. It would be more flexible if some tasks could be performed by some, say,
+experienced users. To enable some users to carry out a command with <em>all</em> root
+privileges, or to <em>do</em> an administrative command the following is used: <a href="https://illumos.org/man/1M/sudo">sudo(1m)</a>.</p>
+<p>However, security concerns dictate that performing sensitive administration
+tasks would be more secure if carried out by a user with a minimum number of
+privileges. Both aforementioned mechanisms provide <em>all</em> privileges.</p>
+<p>It is not always prudent to perform system administration duties with all
+privileges.</p>
+<p>Hence, a mechanism was developed whereby users could be assigned a select number
+of privileges by the superuser. OpenIndia provides, in addition to these
+traditional  mechanisms, a richer means to perform these duties known as
+Role-Based Access Control.</p>
+<p>RBAC involves collecting a select number of privileges and bundling these
+together as a role. A user can then be assigned one, or several roles.</p>
+<h3 id="root-su1m">root: <a href="https://illumos.org/man/1M/su">su(1M)</a></h3>
+<p>This is historically the privileged, super user that can perform all
+administrative tasks.</p>
+<p>Use the <code>su</code> command to login as root:</p>
+<pre><code>su
+Password:
+</code></pre>
+
+<h3 id="superuser-do-sudo1m">SUperuser DO: <a href="https://illumos.org/man/1M/sudo">sudo(1m)</a></h3>
+<p>The <code>sudo</code> command, i.e., superuser do, permits a user to use <em>all</em> supperuser
+commands without having to become the superuser. A sudo enabled user, simply
+precedes a command with <code>sudo</code>.</p>
 <p>To enable a user the ability to use <code>sudo</code>, the superuser edits <code>/etc/sudoers</code>.
 This should ideally be done as follows:</p>
 <pre><code>visudo
@@ -385,24 +398,96 @@ This should ideally be done as follows:</p>
 <a href="https://illumos.org/man/1/sudoers">sudoers(1)</a> provides details on the precise
 means to appropriately add a user to use sudo.</p>
 <p>Example:</p>
-<p>To shutdown the system, root privilages are required. If a standard user issues
-the <code>shutdown</code> command, the system will issue a warning. However, if the user is
-allowed to use sudo, then the user can now shutdown the system:</p>
-<pre><code>sudo shutdown
+<p>To shutdown the system, root privileges are required. If a standard user issues
+the <code>shutdown</code> command, the system will issue a warning. However, if the user has
+been enabled to use sudo, then the user can now shutdown the system:</p>
+<pre><code>sudo shutdown -i5 -g0 -y
 </code></pre>
 
 <p>The user is then prompted for the user's password and a file is checked to
-establish whether the user is permitted to perform the operation.</p>
-<p>The <code>pfexec</code> command is more flexibly in the number of privilages that can be
+establish whether the user is permitted to perform the operation.
+The options are explained below.</p>
+<h3 id="role-based-access-control-rbac">Role-Based Access Control (RBAC)</h3>
+<p>The <em>all-or-nothing</em> power assigned to the root user has its obvious
+limitations.  While sudo is an improvement by limiting root privileges for only
+a single command, a user allowed to use sudo has access to all root commands.</p>
+<p>An improvement on the above systems would be one in which privileges could be
+assigned on a more fine-grained and selective basis.</p>
+<p>Imagine a user assigned the task of administrating some particular hardware, for
+example, printers attached to the system.  A more desirable system would be one
+in which this user had the ability to permit users to use a printing device,
+remove print jobs from the print spool, add new printers to the system, ...
+Moreover, it would be advantageous if it were possible to assign privileges to
+perform only these actions and none other.</p>
+<p>RBAC was developed to accomplish this.</p>
+<h4 id="what-is-rbac">What is RBAC</h4>
+<h4 id="how-to-use-rbac">How to use RBAC</h4>
+<p>The root user or a user with sudo enabled can shutdown the system.
+We can use RBAC to enable a user to be able to shutdown the system. However, we
+can create a role that allows only the privilege to shutdown the system, and
+no additional privileges. We can then assign this role to one or several users.</p>
+<ul>
+<li>assign a privilege to a role to shutdown the system</li>
+</ul>
+<pre><code>roleadd -m -d /usr/sbin/shutdown shutdown
+</code></pre>
+
+<ul>
+<li>Assign a password</li>
+</ul>
+<pre><code>passwd shutdown
+</code></pre>
+
+<ul>
+<li>Assign this role to a user</li>
+</ul>
+<pre><code>usermod -R shutdown whoever
+</code></pre>
+
+<ul>
+<li>Create a SHUTDOWN profile</li>
+</ul>
+<pre><code>echo &quot;SHUTDOWN:::profile to shutdown:help=shutdown.html&quot; &gt;&gt; /etc/security/prof_attr
+</code></pre>
+
+<ul>
+<li>Okay, now assign the role profile SHUTDOWN to the role shutdown</li>
+</ul>
+<pre><code>rolemod -P SHUTDOWN shutdown
+</code></pre>
+
+<ul>
+<li>Assign some administrative command to profile</li>
+</ul>
+<pre><code>echo &quot;SHUTDOWN:suser:cmd:::/usr/sbin/shutdown:euid=0&quot; &gt;&gt; /etc/security/exec_attr
+</code></pre>
+
+<ul>
+<li>Use it</li>
+</ul>
+<pre><code>su shutdown
+</code></pre>
+
+<p>Now user whoever can shutdown the system.</p>
+<p>The <code>pfexec</code> command is more flexibly in the number of privileges that can be
 assigned to a user.</p>
-<p>It also worth mentioning an additional method of assigning privilages to users:
+<p>It also worth mentioning an additional method of assigning privileges to users:
 roles. The idea behind roles is a sophisticated and powerful mechanism. It was
 originally developed with security in mind.</p>
-<p>The superuser can define roles, assign various privilages to these roles and
+<p>The superuser can define roles, assign various privileges to these roles and
 then assign a set of roles to a user. In other words, it allows a much more
-fine grained means of assigning privilages to users as opposed to the 'all or
+fine grained means of assigning privileges to users as opposed to the 'all or
 nothing' method of sudo.</p>
-<h2 id="basic-system-information">Basic system information</h2>
+<h3 id="convention">Convention</h3>
+<p>Instead of elaborating each administrative command with one of the above means
+of acquiring administrative privileges, it has become standard procedure to prefix
+the command with a dollar character.</p>
+<p>Example:</p>
+<pre><code>$ shutdown -i5 -g0 -y
+</code></pre>
+
+<h2 id="management-of-system-resources">Management of System Resources</h2>
+<h3 id="basic-system-information">Basic system information</h3>
 <h4 id="system-processes">System processes</h4>
 <pre><code class="markdown">prstat
 </code></pre>
@@ -427,7 +512,7 @@ human readable format.</p>
 </code></pre>
 
 <p>This will list the size of each file in the current directory and all
-subdirectories, starting with the smallest up to the largest files.</p>
+sub-directories, starting with the smallest up to the largest files.</p>
 <h4 id="who-is-logged-on-to-the-system">Who is logged on to the system</h4>
 <pre><code class="markdown">listusers
 </code></pre>
@@ -441,7 +526,7 @@ subdirectories, starting with the smallest up to the largest files.</p>
 can change from one system state to another by using the <code>shutdown</code> command and
 specify the run-level using the <code>i</code> option. You can always determine the
 run-level via <code>who -r</code>.</p>
-<p>You must be root or have root privilages (e.g., using <code>sudo</code>) to send the system
+<p>You must be root or have root privileges (e.g., using <code>sudo</code>) to send the system
 into a different state, i.e., turn off, reboot, etc. Shutdown and turn off all
 hardware (if supported by the hardware) now:</p>
 <pre><code class="markdown">shutdown -i5 -g0 -y
@@ -451,7 +536,7 @@ hardware (if supported by the hardware) now:</p>
 using the system. Thus, it is always wise to establish who is currently logged
 onto the system before changing the run-level.</p>
 <ul>
-<li><code>-i [run-level]</code> is used to specifiy the run-level. This is either a digit or a
+<li><code>-i [run-level]</code> is used to specify the run-level. This is either a digit or a
   single letter. Here are some run-levels available:<ul>
 <li><code>5</code> stop all system services, and turns off hardware devices, etc. Here
   are some run-levels.</li>
@@ -506,7 +591,7 @@ ITEMS TO WRITE ABOUT:</p>
 <p>&lt; place holder &gt;</p>
 <h2 id="security">Security</h2>
 <p>&lt; place holder &gt;</p>
-<h3 id="role-based-access-control-rbac">Role based access control (RBAC)</h3>
+<h3 id="role-based-access-control-rbac_1">Role based access control (RBAC)</h3>
 <p>&lt; place holder &gt;</p>
 <h2 id="zones">Zones</h2>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
