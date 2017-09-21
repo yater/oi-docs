@@ -538,8 +538,7 @@ onto the system before changing the run-level.</p>
 <ul>
 <li><code>-i [run-level]</code> is used to specify the run-level. This is either a digit or a
   single letter. Here are some run-levels available:<ul>
-<li><code>5</code> stop all system services, and turns off hardware devices, etc. Here
-  are some run-levels.</li>
+<li><code>5</code> stop all system services, and turns off hardware devices, etc.</li>
 <li><code>6</code> reboot the system.</li>
 <li><code>1</code> single-user mode. Primarily used for system maintenance.</li>
 <li><code>S</code> single-user mode where only a command line terminal is available.</li>
@@ -562,31 +561,40 @@ onto the system before changing the run-level.</p>
 <h3 id="service-management-smf">Service management (SMF)</h3>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<p><strong>Start a service</strong></p>
-<pre><code>svcadm enable &lt;service name&gt;
+ITEMS TO WRITE ABOUT: provide more detailed explanations.
+</div></p>
+<p>List services:</p>
+<pre><code>svcs # list (permanently) enabled services
+svcs -a # list all services
+svcs -vx # list faulty services
 </code></pre>
 
-<p><strong>Start service along with it's dependencies</strong></p>
-<pre><code>svcadm enable -r &lt;service name&gt;
+<p>Get information about a service:</p>
+<pre><code>svcs &lt;service name&gt; # one-line status
+svcs -x &lt;service name&gt; # important information
+svcs -d &lt;service name&gt; # check the service's dependencies
+svcs -l &lt;service name&gt; # all the available information
 </code></pre>
 
-<p><strong>Start a service temporarily (won't survive a reboot)</strong></p>
-<pre><code>svcadm enable -t &lt;service name&gt;
+<p>Start a service:</p>
+<pre><code>svcadm enable &lt;service name&gt; # permanently enable/start
+svcadm enable -t &lt;service name&gt; # temporary start (won't survive a reboot)
+svcadm enable -r &lt;service name&gt; # permanently enable/start service along with its dependencies
 </code></pre>
 
-<p><strong>Check service dependencies</strong></p>
-<pre><code>svcs -d &lt;service name &gt;
+<p>Restart / reload a service:</p>
+<pre><code>svcadm refresh &lt;service name&gt; # reload the service's configuration
+svcadm restart &lt;service name&gt; # restart the service
 </code></pre>
-
-<p><strong>Check status of services</strong></p>
-<pre><code>svcs -vx
-</code></pre>
-
-</div>
 
 <h3 id="systems-logging-and-monitoring">Systems logging and monitoring</h3>
-<p>&lt; place holder &gt;</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
+<div class="well">
+ITEMS TO WRITE ABOUT:</p>
+<ul>
+<li>Where to find the logs (<code>/var/log</code>, <code>/var/svc/log</code>).
+</div></li>
+</ul>
 <h2 id="illumos-boot-process">Illumos boot process</h2>
 <p>&lt; place holder &gt;</p>
 <h2 id="security">Security</h2>
@@ -793,7 +801,7 @@ ITEMS TO WRITE ABOUT:</p>
 <pre><code class="bash">:~$ sudo svcadm disable physical:nwam
 </code></pre>
 
-<p>Define in your IP/hostname <code>/etc/hosts</code>, if not already, an entry for this host. For example:</p>
+<p>Define your IP/hostname in <code>/etc/hosts</code>. For example:</p>
 <pre><code class="bash">192.168.1.22 hostname hostname.local localhost loghost
 # Subsittude 192.168.1.22 for YOUR IP
 </code></pre>

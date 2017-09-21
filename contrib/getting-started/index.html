@@ -304,7 +304,7 @@
         
             <li><a href="#openindiana-docs-site-structure-master-branch">OpenIndiana Docs site structure (master branch)</a></li>
         
-            <li><a href="#make-some-changes">Make some changes.</a></li>
+            <li><a href="#make-some-changes">Make some changes</a></li>
         
             <li><a href="#adding-new-pages-to-the-site-menu">Adding new pages to the site menu</a></li>
         
@@ -489,9 +489,14 @@ If you experience difficulties installing mkdocs, try using the python 3 version
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well"></p>
 <p>For OpenIndiana, you will need to add the Ruby Gem directory path to your $PATH variable.
-To do so, execute the following commands:</p>
+To do so, add the following to your <code>.bashrc</code> (or similar file if you use a
+different shell):</p>
 <pre><code>PATH=$PATH:/usr/ruby/2.3/bin/
 export PATH
+</code></pre>
+
+<p>To immediately effect this change, source your <code>.bashrc</code> as follows:</p>
+<pre><code class="bash">source ~/.bashrc
 </code></pre>
 
 <p>To verify <code>mdl</code> is now accessible, test using the command: <code>which mdl</code> or alternately: <code>mdl --version</code>.</p>
@@ -660,7 +665,7 @@ It is always a good idea to perform a pull from the upstream master repository p
 </tr>
 </tbody>
 </table>
-<h2 id="make-some-changes">Make some changes.</h2>
+<h2 id="make-some-changes">Make some changes</h2>
 <p>Open your favorite text editor and begin authoring content.</p>
 <p>For example: <code>vim somefile.md</code> or <code>emacs somefile.md</code></p>
 <p>Some text editors (Atom, VIM, etc.) natively include Markdown syntax highlighting (or offer it as a plugin).</p>
@@ -720,21 +725,10 @@ Prior to submitting a pull request (PR), please consider running Markdown Lint l
 Alternately you may also run <code>mdl</code> on a specific file.
 Simply replace the period (.) with the path to the file.</p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well"></p>
-<p>Before you can run <code>mdl</code>, it may be necessary to add the path to your <code>$PATH</code> variable.</p>
-<p>For example:</p>
-<p>On OpenIndiana, markdown lint (mdl) resides in <code>/usr/ruby/1.9/bin/</code> which is not normally part of the search path.
-To run this command without having to specify the complete path each time, add the following to your <code>.bashrc</code></p>
-<pre><code class="bash">PATH=$PATH:/usr/ruby/1.9/bin/
-export PATH
-</code></pre>
-
-<p>To immediately effect this change, source your <code>.bashrc</code> as follows:</p>
-<pre><code class="bash">source ~/.bashrc
-</code></pre>
-
-</div>
-
+<div class="well">
+Before you can run <code>mdl</code>, it may be necessary to modify your <code>$PATH</code> variable:
+see “<a href="#install-markdown-lint-mdl">Install Markdown Lint</a>” above.
+</div></p>
 <h2 id="enabling-spell-checking-in-vim">Enabling spell checking in vim</h2>
 <p>You can invoke spell checking in your current session by inputting the command:</p>
 <p><code>:set spell spelllang=en_us</code></p>

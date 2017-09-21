@@ -364,16 +364,16 @@ Print versions are also available.</p>
 <tbody>
 <tr>
 <td><code>su</code></td>
-<td><a href="https://illumos.org/man/1M/su">su(1M)</a>.</td>
+<td><a href="https://illumos.org/man/1M/su">su(1M)</a></td>
 <td>Switch user. Without any parameters, root implied</td>
 </tr>
 <tr>
 <td><code>sudo</code></td>
-<td><a href="https://illumos.org/man/1M/sudo">sudo(1m)</a></td>
+<td><a href="https://illumos.org/man/1M/sudo">sudo(1M)</a></td>
 <td>Perform the command following with root privilages</td>
 </tr>
 <tr>
-<td><code>sfexec</code></td>
+<td><code>pfexec</code></td>
 <td><a href="https://illumos.org/man/1/pfexec">pfexec(1)</a></td>
 <td>Similar to <code>sudo</code> but not prompted for a password and limited privilages</td>
 </tr>
@@ -392,7 +392,7 @@ Print versions are also available.</p>
 <tbody>
 <tr>
 <td><code>prstat</code></td>
-<td><a href="https://illumos.org/man/1M/prstat">prstat(1M)</a>.</td>
+<td><a href="https://illumos.org/man/1M/prstat">prstat(1M)</a></td>
 <td>Statistics on system processes</td>
 </tr>
 <tr>
@@ -406,11 +406,6 @@ Print versions are also available.</p>
 <td>Disk usage by file</td>
 </tr>
 <tr>
-<td><code>listusers</code></td>
-<td><a href="https://illumos.org/man/1/listusers">listusers(1)</a></td>
-<td>List users logged into the system</td>
-</tr>
-<tr>
 <td><code>pkg list</code></td>
 <td><a href="https://illumos.org/man/1/pkg">pkg(1)</a></td>
 <td>List software packages installed on the system</td>
@@ -418,7 +413,7 @@ Print versions are also available.</p>
 </tbody>
 </table>
 <p>Examples:</p>
-<h3 id="system-shutdown-reboot">System shutdown, reboot, ...</h3>
+<h3 id="system-shutdown-reboot">System shutdown, reboot…</h3>
 <table>
 <thead>
 <tr>
@@ -429,36 +424,50 @@ Print versions are also available.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>who</code></td>
-<td><a href="https://illumos.org/man/1/who">shutdown(1)</a>.</td>
-<td>List users logged onto the system</td>
-</tr>
-<tr>
 <td><code>shutdown</code></td>
-<td><a href="https://illumos.org/man/1M/shutdown">shutdown(1M)</a>.</td>
+<td><a href="https://illumos.org/man/1M/shutdown">shutdown(1M)</a></td>
 <td>Shutdown the system</td>
 </tr>
 </tbody>
 </table>
-<p>Example:</p>
-<pre><code>shutdown -i5 -g0 -y
-# Shutdown the system now
+<p>Examples:</p>
+<pre><code>shutdown -i5 -g0 -y # Turn off the machine immediately
+shutdown -i6 -g0 -y # Reboot the machine immediately
+shutdown -i6 -g120 -y # Reboot the machine in 2 minutes (120 seconds)
 </code></pre>
 
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>Adding users, etc.</li>
-<li>Shutting down the system<ul>
-<li><code>shutdown [options]</code></li>
-<li><code>reboot</code></li>
-<li><code>halt</code></li>
-</ul>
-</li>
-</ul>
-</div>
-
+<h3 id="user-management">User management</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Further details</th>
+<th>Brief summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>listusers</code></td>
+<td><a href="https://illumos.org/man/1/listusers">listusers(1)</a></td>
+<td>List users accounts</td>
+</tr>
+<tr>
+<td><code>who</code></td>
+<td><a href="https://illumos.org/man/1/who">who(1)</a></td>
+<td>List users logged onto the system</td>
+</tr>
+<tr>
+<td><code>useradd</code></td>
+<td><a href="https://illumos.org/man/1M/useradd">useradd(1M)</a></td>
+<td>Create a new user</td>
+</tr>
+<tr>
+<td><code>usermod</code></td>
+<td><a href="https://illumos.org/man/1M/usermod">usermod(1M)</a></td>
+<td>Modify a user (group memberships, roles, login shell…)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="desktop-applications">Desktop applications</h2>
 <p>&lt; place holder &gt;</p>
 <h3 id="how-can-the-desktop-be-modified">How can the desktop be modified?</h3>
