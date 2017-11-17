@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://docs.openindiana.org/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,25 +13,25 @@
         
     <url>
      <loc>http://docs.openindiana.org/misc/openindiana/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/misc/oi-docs/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/misc/conduct/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/misc/pdl/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -41,43 +41,43 @@
         
     <url>
      <loc>http://docs.openindiana.org/handbook/getting-started/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/handbook/common-tasks/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/handbook/systems-administration/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/handbook/network-communications/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/handbook/appendix/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/dev/userland/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/handbook/community/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -87,37 +87,37 @@
         
     <url>
      <loc>http://docs.openindiana.org/books/about/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/books/basic/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/books/advanced/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/books/express/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/books/trusted/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/books/develop/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -127,49 +127,49 @@
         
     <url>
      <loc>http://docs.openindiana.org/contrib/content/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/getting-started/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/tools/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/roles/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/topics/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/style/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/markdown/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://docs.openindiana.org/contrib/git/</loc>
-     <lastmod>2017-09-21</lastmod>
+     <lastmod>2017-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
