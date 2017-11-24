@@ -365,7 +365,7 @@ user. This user is assigned <em>all</em> privileges.</p>
 <p>However, it is not always feasible for one user to perform all administrative
 tasks. It would be more flexible if some tasks could be performed by some, say,
 experienced users. To enable some users to carry out a command with <em>all</em> root
-privileges, or to <em>do</em> an administrative command the following is used: <a href="https://illumos.org/man/1M/sudo">sudo(1m)</a>.</p>
+privileges, or to <em>do</em> an administrative command sudo(1m) can be used.</p>
 <p>However, security concerns dictate that performing sensitive administration
 tasks would be more secure if carried out by a user with a minimum number of
 privileges. Both aforementioned mechanisms provide <em>all</em> privileges.</p>
@@ -385,7 +385,7 @@ administrative tasks.</p>
 Password:
 </code></pre>
 
-<h3 id="superuser-do-sudo1m">SUperuser DO: <a href="https://illumos.org/man/1M/sudo">sudo(1m)</a></h3>
+<h3 id="superuser-do-sudo1m">SUperuser DO: sudo(1m)</h3>
 <p>The <code>sudo</code> command, i.e., superuser do, permits a user to use <em>all</em> supperuser
 commands without having to become the superuser. A sudo enabled user, simply
 precedes a command with <code>sudo</code>.</p>
@@ -395,7 +395,7 @@ This should ideally be done as follows:</p>
 </code></pre>
 
 <p>This performs various syntax checks.
-<a href="https://illumos.org/man/1/sudoers">sudoers(1)</a> provides details on the precise
+sudoers(1) provides details on the precise
 means to appropriately add a user to use sudo.</p>
 <p>Example:</p>
 <p>To shutdown the system, root privileges are required. If a standard user issues
@@ -721,7 +721,6 @@ ITEMS TO WRITE ABOUT:</p>
 <p>OpenIndiana offers several backup solutions.
 Here are just a few of them:</p>
 <ul>
-<li><a href="http://www.areca-backup.org/">Areca</a></li>
 <li><a href="https://borgbackup.readthedocs.io/en/stable/">Borg Backup</a></li>
 <li><a href="http://blog.bacula.org/">Bacula</a></li>
 <li>Time-Slider</li>
@@ -845,27 +844,8 @@ ITEMS TO WRITE ABOUT:</p>
 ITEMS TO WRITE ABOUT:</p>
 <p>In a nutshell, most modern Intel processors such as i3, i5, i7, and Xeon provide EPT support.
 Most older processors such as Core2duo and Core2Quad lack EPT support, and a few of them lack virtualization support at all.
-You can check your processor for EPT support via the following link: <a href="http://ark.intel.com/Products/VirtualizationTechnology">http://ark.intel.com/Products/VirtualizationTechnology</a></p>
-<ul>
-<li>Hipster is currently testing a new package for managing KVM instances as SMF services.<ul>
-<li><a href="http://www.kvmadm.org/">kvmadm</a></li>
-</ul>
-</li>
-<li>libvirt is on the roadmap for the future releases and will open the door for virsh, and likely virt-manager as well.</li>
-</ul>
-<pre><code>&lt;leoric&gt; Testers needed! pkg://userland/system/qemu/kvmadm@0.10.3,5.11-2015.0.2.0:20160322T212709Z
-&lt;leoric&gt; jeffpc: I know, you like kvm :)
-&lt;jeffpc&gt; heh
-&lt;jeffpc&gt; leoric: is there documentation for it?
-&lt;leoric&gt; https://github.com/hadfl/kvmadm/blob/master/doc/kvmadm.pod
-&lt;jeffpc&gt; oh, is it http://www.kvmadm.org/ ?
-&lt;leoric&gt; yes
-&lt;jeffpc&gt; interesting
-&lt;jeffpc&gt; I'll have to give it a try at some point
-</code></pre>
-
-</div>
-
+You can check your processor for EPT support via the following link: <a href="http://ark.intel.com/Products/VirtualizationTechnology">http://ark.intel.com/Products/VirtualizationTechnology</a>
+</div></p>
 <h2 id="localization">Localization</h2>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
