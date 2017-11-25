@@ -429,7 +429,7 @@ no additional privileges. We can then assign this role to one or several users.<
 <ul>
 <li>assign a privilege to a role to shutdown the system</li>
 </ul>
-<pre><code>roleadd -m -d /usr/sbin/shutdown shutdown
+<pre><code>roleadd shutdown
 </code></pre>
 
 <ul>
@@ -459,13 +459,14 @@ no additional privileges. We can then assign this role to one or several users.<
 <ul>
 <li>Assign some administrative command to profile</li>
 </ul>
-<pre><code>echo &quot;SHUTDOWN:suser:cmd:::/usr/sbin/shutdown:euid=0&quot; &gt;&gt; /etc/security/exec_attr
+<pre><code>echo &quot;SHUTDOWN:suser:cmd:::/usr/sbin/shutdown:uid=0&quot; &gt;&gt; /etc/security/exec_attr
 </code></pre>
 
 <ul>
 <li>Use it</li>
 </ul>
 <pre><code>su shutdown
+shutdown -i5 -g0 -y
 </code></pre>
 
 <p>Now user whoever can shutdown the system.</p>
