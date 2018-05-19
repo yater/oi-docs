@@ -676,7 +676,7 @@ Zones proxy daemon client <code>svc:/application/pkg/zones-proxy-client:default<
 <div class="well">
 Note, you can't use system repository with nlipkg-branded zones.
 </div></p>
-<p>IPS determines if it should use zones proxy client in zone based on image's use-system-repo property (which is false by default).</p>
+<p>IPS determines if it should use zones proxy client in zone based on image's <code>use-system-repo</code> property (defaults to False).</p>
 <p>To configure your system to use system repository, perform the following actions.</p>
 <p>1) In global zone:</p>
 <pre><code># pkg install pkg:/package/pkg/system-repository pkg:/package/pkg/zones-proxy
@@ -684,20 +684,21 @@ Note, you can't use system repository with nlipkg-branded zones.
 # svcadm enable svc:/application/pkg/zones-proxyd:default
 </code></pre>
 
-<p>2) In NGZ:</p>
-<pre><code># svcadm enable svc:/application/pkg/zones-proxy-client:default
+<p>2) In non-global zone:</p>
+<pre><code># pkg install pkg:/package/pkg/zones-proxy
+# svcadm enable svc:/application/pkg/zones-proxy-client:default
 # pkg set-property use-system-repo True
 </code></pre>
 
-<p>After this in NGZ in publisher description you'll see system-repository location:</p>
+<p>After this in NGZ's publisher description you'll see system-repository location:</p>
 <pre><code># pkg publisher
 PUBLISHER                   TYPE     STATUS P LOCATION
 openindiana.org (non-sticky, syspub) origin   online T &lt;system-repository&gt;
 hipster-encumbered (syspub)     origin   online T &lt;system-repository&gt;
 </code></pre>
 
-<p>You can check if your configuration works by issuing <code>pkg refresh</code> command in zone. <code>pkg(1M)</code> should contact repository indirectly via zones-proxy-client.</p>
-<p>To convert you zone back to non-proxied configuration, run</p>
+<p>You can check if your configuration works by issuing <code>pkg refresh</code> command in the zone. <code>pkg(1M)</code> should contact repository indirectly via zones-proxy-client.</p>
+<p>To revert your zone to proxy-less configuration, run</p>
 <pre><code># pkg set-property use-system-repo False
 </code></pre>
 
