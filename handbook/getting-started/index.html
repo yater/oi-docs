@@ -2348,7 +2348,7 @@ Therefore, use 3rd party repositories and 3rd party package tools at your own ri
 You can maintain multiple boot environments on your system, and each boot environment could have different software versions installed.
 Upon the initial installation of OpenIndiana onto your system, a boot environment is created.
 Use the <code>beadm</code><sup>1M</sup> utility to administer additional boot environments on your system.</p>
-<p>The <code>beadmn</code> utility is designed to work in concert with the ZFS file system and the IPS package manager.</p>
+<p>The <code>beadm</code> utility is designed to work in concert with the ZFS file system and the IPS package manager.</p>
 <h3 id="why-use-multiple-boot-environments">Why use multiple boot environments?</h3>
 <p>With multiple boot environments, the process of updating software becomes a low risk operation because you can create backup boot environments before making any software updates to your system.
 If needed, you have the option of booting a backup boot environment.</p>
@@ -2383,6 +2383,18 @@ Then you can use the <code>pkg update</code> command with the <code>-R</code> op
 Or, use the <code>pkg install packagename</code> with the <code>-R</code> option to update specific packages on that environment.</p>
 </li>
 </ul>
+<div class="well">
+When <code>pkg</code> creates new boot environment, it determines its name using <code>auto-be-name</code> image property.
+When prefixed with "time:" string, the remaining part of property is interpreted as <code>strftime(3C)</code> argument.
+If <code>pkg</code> can't produce unique boot environment name based on auto-be-name image property,
+it uses the property as base to generate unique name, appending numerical suffix prefixed by "-" symbol.
+Note, that due to name generation rules, any numerical suffix, prefixed by "-", can be incremented to
+generate unique name, so given "time:openindiana-%Y-%m-%d" <code>auto-be-name image</code> property value
+(which is not recommended), <code>pkg</code> will produce boot environment names ending with current date, current date + 1 and so on.
+By default <code>auto-be-name</code> is set to "time:openindiana-%Y:%m:%d", so that boot environments are named like
+"openindiana-2019:03:29". You can get current value using <code>pkg property</code> command and set it with <code>pkg set-property</code>.
+</div>
+
 <h3 id="features-of-the-beadm-utility">Features of the beadm utility</h3>
 <p>The <code>beadm</code> utility has the following features:</p>
 <ul>
