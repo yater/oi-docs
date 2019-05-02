@@ -898,9 +898,9 @@ When issuing the USB copy command:</p>
 </li>
 </ul>
 <h3 id="bsdlinuxos-x">BSD/Linux/OS X</h3>
-<p>In the command below, replace <code>X</code> with the appropriate letter for your USB device.</p>
+<p>In the command below, replace <code>X</code> with the appropriate letter for your USB device. At least on Linux and FreeBSD you can add <code>status=progress</code> operand to print basic transfer statistics, refer to <code>dd(1)</code> man page of your platform for more information.</p>
 <h4 id="method-1-new-releases">Method 1 (New releases)</h4>
-<pre><code># dd bs=4M if=./image.usb of=/dev/sdX status=progress &amp;&amp; sync
+<pre><code># dd bs=4M if=./image.usb of=/dev/sdX &amp;&amp; sync
 </code></pre>
 
 <h4 id="method-2-legacy-releases">Method 2 (Legacy releases)</h4>
