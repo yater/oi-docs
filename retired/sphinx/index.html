@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.openindiana.org/handbook/common-tasks/">
+        <link rel="canonical" href="http://docs.openindiana.org/retired/sphinx/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Common Tasks - OpenIndiana Docs</title>
+        <title>Sphinx - OpenIndiana Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -79,32 +79,32 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handbook <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../getting-started/">Getting Started</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Common Tasks</a>
+    <a href="../../handbook/getting-started/">Getting Started</a>
 </li>
                                     
 <li >
-    <a href="../systems-administration/">Systems Administration</a>
+    <a href="../../handbook/common-tasks/">Common Tasks</a>
 </li>
                                     
 <li >
-    <a href="../network-communications/">Network Communications</a>
+    <a href="../../handbook/systems-administration/">Systems Administration</a>
 </li>
                                     
 <li >
-    <a href="../appendix/">Appendix</a>
+    <a href="../../handbook/network-communications/">Network Communications</a>
 </li>
                                     
 <li >
-    <a href="../community/">Community Contributed Tutorials</a>
+    <a href="../../handbook/appendix/">Appendix</a>
+</li>
+                                    
+<li >
+    <a href="../../handbook/community/">Community Contributed Tutorials</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -192,18 +192,8 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../getting-started/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../systems-administration/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                             <li>
-                                <a href="https://github.com/OpenIndiana/oi-docs.git/edit/master/docs/handbook/common-tasks.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/OpenIndiana/oi-docs.git/edit/master/docs/retired/sphinx.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -213,16 +203,11 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#hipster-handbook-common-tasks">Hipster Handbook - Common Tasks</a></li>
-            <li><a href="#basic-unix-commands">Basic UNIX commands</a></li>
-            <li><a href="#basic-system-administration">Basic system administration</a></li>
-            <li><a href="#desktop-applications">Desktop applications</a></li>
-            <li><a href="#multimedia-audio">Multimedia - Audio</a></li>
-            <li><a href="#multimedia-video">Multimedia - Video</a></li>
-            <li><a href="#printing">Printing</a></li>
-            <li><a href="#graphics-workstation">Graphics workstation</a></li>
-            <li><a href="#desktop-publishing-system-etc">Desktop Publishing system, Etc.</a></li>
-            <li><a href="#boot-loader-settings">Boot loader settings</a></li>
+        <li class="main active"><a href="#building-a-document-management-toolchain-using-sphinx">Building a Document Management Toolchain using Sphinx</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#tool-chain-installation">Tool chain installation</a></li>
+            <li><a href="#using-sphinx">Using Sphinx</a></li>
+            <li><a href="#references">References:</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -230,9 +215,8 @@
 <!--
 
 The contents of this Documentation are subject to the Public Documentation License Version 1.01
- (the "License"); you may only use this Documentation if you comply with the terms of this License.
+(the "License"); you may only use this Documentation if you comply with the terms of this License.
 A copy of the License is available at http://illumos.org/license/PDL.
-
 
 The Original Documentation is _________________.
 
@@ -246,232 +230,103 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 -->
 
-<p><img src = "../../Openindiana.png"></p>
-<h1 id="hipster-handbook-common-tasks">Hipster Handbook - Common Tasks</h1>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-<p>This is a <b>DRAFT</b> document which may contain errors!</p>
-<p>Help us improve and expand this site.</p>
-<p>Please see the <b>Contrib</b> section for more details about joining the OpenIndiana Documentation Team.</p>
-</div></p>
-<p>&lt; place holder for introduction content &gt;</p>
-<h2 id="basic-unix-commands">Basic UNIX commands</h2>
-<p>In addition to native command line system administration tools, OpenIndiana also includes the GNU core utilities suite.
-When working with basic UNIX commands, most likely you will be using the GNU core utilities.
-For learning to navigate the OpenIndiana command line environment, Linux command line books are very helpful.</p>
-<p>One of the best books currently available is <a href="http://linuxcommand.org/tlcl.php">The Linux Command Line</a> by William Shotts.
-If you want to quickly become a command line guru, this is the book to read.
-Best of all, it was released under a Creative Commons license and can be downloaded for free.
-Print versions are also available.</p>
-<h2 id="basic-system-administration">Basic system administration</h2>
-<h3 id="commands-to-be-able-to-use-administration-commands">Commands to be able to use administration commands</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>su</code></td>
-<td><a href="https://illumos.org/man/1M/su">su(1M)</a></td>
-<td>Switch user. Without any parameters, root implied</td>
-</tr>
-<tr>
-<td><code>sudo</code></td>
-<td>sudo(1M)</td>
-<td>Perform the command following with root privilages</td>
-</tr>
-<tr>
-<td><code>pfexec</code></td>
-<td><a href="https://illumos.org/man/1/pfexec">pfexec(1)</a></td>
-<td>Similar to <code>sudo</code> but not prompted for a password and limited privilages</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<h3 id="basic-system-information">Basic system information</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>prstat</code></td>
-<td><a href="https://illumos.org/man/1M/prstat">prstat(1M)</a></td>
-<td>Statistics on system processes</td>
-</tr>
-<tr>
-<td><code>df</code></td>
-<td><a href="https://illumos.org/man/1m/df">df(1M)</a></td>
-<td>Disk usage by partition</td>
-</tr>
-<tr>
-<td><code>du</code></td>
-<td><a href="https://illumos.org/man/1/du">du(1)</a></td>
-<td>Disk usage by file</td>
-</tr>
-<tr>
-<td><code>pkg list</code></td>
-<td>pkg(1)</td>
-<td>List software packages installed on the system</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<h3 id="system-shutdown-reboot">System shutdown, reboot…</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>shutdown</code></td>
-<td><a href="https://illumos.org/man/1M/shutdown">shutdown(1M)</a></td>
-<td>Shutdown the system</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<pre><code>shutdown -i5 -g0 -y # Turn off the machine immediately
-shutdown -i6 -g0 -y # Reboot the machine immediately
-shutdown -i6 -g120 -y # Reboot the machine in 2 minutes (120 seconds)
-</code></pre>
-
-<h3 id="user-management">User management</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>listusers</code></td>
-<td><a href="https://illumos.org/man/1/listusers">listusers(1)</a></td>
-<td>List users accounts</td>
-</tr>
-<tr>
-<td><code>who</code></td>
-<td><a href="https://illumos.org/man/1/who">who(1)</a></td>
-<td>List users logged onto the system</td>
-</tr>
-<tr>
-<td><code>useradd</code></td>
-<td><a href="https://illumos.org/man/1M/useradd">useradd(1M)</a></td>
-<td>Create a new user</td>
-</tr>
-<tr>
-<td><code>usermod</code></td>
-<td><a href="https://illumos.org/man/1M/usermod">usermod(1M)</a></td>
-<td>Modify a user (group memberships, roles, login shell…)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="desktop-applications">Desktop applications</h2>
-<p>&lt; place holder &gt;</p>
-<h3 id="how-can-the-desktop-be-modified">How can the desktop be modified?</h3>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
+<h1 id="building-a-document-management-toolchain-using-sphinx">Building a Document Management Toolchain using Sphinx</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This article looks at the Sphinx documentation management framework and how it could be used as part of a document management toolchain.
+Sphinx is a python based docs framework and uses RestructuredText as it's text markup language.</p>
+<h3 id="system-characteristics">System Characteristics</h3>
 <ul>
-<li>Gnome or (MATE) walkthrough</li>
-<li>Appearance applet<ul>
-<li>Enabling Compiz</li>
-<li>Configuring font anti-aliasing</li>
-<li>Desktop backgrounds</li>
+<li>Easy to use</li>
+<li>TOC is easy to navigate.</li>
+<li>Produces a very professional looking end product.</li>
+<li>Processes text markup into highly polished, searchable and indexed HTML docs (as well as PDF and EPUB).</li>
+<li>Produces chunked HTML by means of pulling together several smaller documents into one larger document.</li>
+</ul>
+<h3 id="editing-tools">Editing tools</h3>
+<ul>
+<li>As a text markup any text editor can be used.</li>
+<li>There is a VIM plugin for RestructuredTEXT named RIV, which provides text folding, syntax highlighting, etc., but it's rather buggy.</li>
+<li>Another available plugin is InstantRST which provides a realtime text parsing webserver to provide you realtime feedback for your edits.</li>
+</ul>
+<h2 id="tool-chain-installation">Tool chain installation</h2>
+<p>You can install Sphinx on OpenIndiana Hipster, but latex is required for converting documents to PDF.
+I'm not sure whether latex is available on Hipster.</p>
+<h3 id="linux-mint-172">Linux Mint 17.2</h3>
+<ul>
+<li><code>sudo apt-get install git</code></li>
+<li><code>sudo apt-get install python-sphinx</code></li>
+<li><code>pip install https://github.com/Rykka/instant-rst.py/archive/master.zip</code></li>
+</ul>
+<h3 id="openindiana-hipster">OpenIndiana Hipster</h3>
+<ul>
+<li><code>pkg install git</code></li>
+<li><code>pkg install pip</code></li>
+<li><code>pip install sphinx</code></li>
+<li><code>pip install https://github.com/Rykka/instant-rst.py/archive/master.zip</code></li>
+</ul>
+<h3 id="setup-vim-for-using-sphinx">Setup VIM for using Sphinx</h3>
+<ul>
+<li>Configure Vundle for VIM (Vundle is used to manage VIM plugins)<ul>
+<li>backup your VIM configuration by renaming your existing .vimrc and .vim folder</li>
+<li><code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></li>
+<li>Configure .vimrc for vundle per: <a href="https://github.com/VundleVim/Vundle.vim">https://github.com/VundleVim/Vundle.vim</a></li>
+</ul>
+</li>
+<li>Add plugins to .vimrc and use vundle to install the plugins<ul>
+<li>Configure .vimrc for <code>Plugin 'Rykka/riv.vim'</code></li>
+<li>Configure .vimrc for <code>Plugin 'Rykka/InstantRst'</code></li>
+<li>From within VIM, run <code>:PluginInstall</code> to process/install the plugins</li>
 </ul>
 </li>
 </ul>
-<p>In regards to the default terminal emulator, see: <a href="https://www.illumos.org/issues/7525">https://www.illumos.org/issues/7525</a></p>
+<h2 id="using-sphinx">Using Sphinx</h2>
+<h3 id="getting-started">Getting Started</h3>
 <ul>
-<li>we introduce mediator x-terminal-emulator for link /usr/bin/x-terminal-emulator with possible implementations gnome-terminal, mate-terminal and xterm;</li>
-<li>mate-terminal implementation has the highest priority (if it is installed, by default it wins);</li>
-<li>glib is modified to use link /usr/bin/x-terminal-emulator if it's found for running applications with Terminal=true.
-</div></li>
+<li>Create a new repository on GitHub.</li>
+<li>Clone your repository to your local machine.</li>
+<li>cd into the directory creating by <code>git clone</code>.</li>
+<li>Configure Sphinx<ul>
+<li><code>sphinx-quickstart</code>  (Note: For help on this, see the Sphinx website, which explains all the options.)</li>
 </ul>
-<h2 id="multimedia-audio">Multimedia - Audio</h2>
-<p>&lt; Place Holder for future content &gt;</p>
-<h2 id="multimedia-video">Multimedia - Video</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>How to get OI to play a DVD</li>
-<li>How to get flash player installed and working.</li>
-<li>How to get VLC installed and working.</li>
-<li>Totem (video player)</li>
-</ul>
-</div>
-
-<h3 id="using-openindiana-as-a-media-server-htpc-etc">Using OpenIndiana as a media server, HTPC, etc.</h3>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li><a href="http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2">http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2</a></li>
-<li><a href="http://lightsandshapes.com/plex-on-smartos.html">http://lightsandshapes.com/plex-on-smartos.html</a></li>
-</ul>
-</div>
-
-<h2 id="printing">Printing</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>OI uses CUPS as the primary print system.</li>
-<li>GNOME print manager (<code>system-config-printer</code>)</li>
-</ul>
-<p>See the additional information about printing in contrib/topics.md
-Also see the deprecation comments in the OSOL printing guide.</p>
-</div>
-
-<h2 id="graphics-workstation">Graphics workstation</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>GIMP</li>
-</ul>
-</div>
-
-<h2 id="desktop-publishing-system-etc">Desktop Publishing system, Etc.</h2>
-<p>&lt; Place holder for content &gt;</p>
-<h2 id="boot-loader-settings">Boot loader settings</h2>
-<p>OpenIndiana Hipster uses the 'BootForth' boot loader (GRUB is not used any
-more, disregard older manusls/wiki pages that mention grub).</p>
-<p>Boot configuration items should be stored in <code>/boot/conf.d</code>.</p>
-<ul>
-<li>
-<p>To change the console from the standard monitor to serial console
-    (e.g. <code>COM1</code> / <code>ttyS0</code> on other OSes), use the following command:</p>
-<pre><code># echo console=ttya &gt; /boot/conf.d/console
-</code></pre>
-<p>(Alternatively, use <code>eeprom console=ttya</code>).</p>
-</li>
-<li>
-<p>To change the boot-loader's default timeout, run:</p>
-<pre><code># echo autoboot_delay=2 &gt; /boot/conf.d/autoboot
-</code></pre>
 </li>
 </ul>
-<p>NOTE:
-Any filename can be used under <code>/boot/conf.d/</code> - the filename does not
-matter (only its content matters).</p>
-<p>See <a href="https://wiki.illumos.org/display/illumos/Current+status+for+loader">current status for loader</a>
-for more technical details (and other boot options).</p></div>
+<h3 id="writing-your-docs">Writing your docs</h3>
+<ul>
+<li>Write your docs using RestructuredTEXT - (See the Sphinx website for guidance)<ul>
+<li>Sphinx docs use the .rst file name extension.</li>
+</ul>
+</li>
+<li>Add finished doc file names to the <em>Table of Contents</em> (TOC) which is located in <code>Index.rst</code>.</li>
+</ul>
+<h3 id="add-work-products-to-git">Add work products to GIT</h3>
+<ul>
+<li>Create and configure a <code>.gitignore</code> as appropriate.</li>
+<li><code>git status</code></li>
+<li><code>git add &lt;file(s)&gt;</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
+</ul>
+<h3 id="process-your-docs-into-html">Process your docs into HTML</h3>
+<ul>
+<li>Generate html output by executing the command <code>make html</code> from within the Sphinx <code>_build</code> directory.<ul>
+<li>Finished docs are found in the <code>_build/html</code> directory.</li>
+<li>Images, css, javascript, etc., are found in <code>_build/html/_static</code></li>
+<li>Source RestructuredTEXT files are copied to <code>_build/html/_source</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="share-your-work">Share your work</h3>
+<ul>
+<li>When satisfied with HTML output, submit git pull requests to other members of the doc team.</li>
+<li>When doc team is satisfied with state of GitHub repository, a member of the doc team would clone the repository and generate the final HTML for display on the OI website.</li>
+</ul>
+<h2 id="references">References:</h2>
+<ul>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">http://www.sphinx-doc.org/en/stable/tutorial.html</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">https://github.com/VundleVim/Vundle.vim</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">https://github.com/Rykka/riv.vim</a></li>
+<li><a href="http://www.sphinx-doc.org/en/stable/tutorial.html">https://github.com/Rykka/InstantRst</a></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

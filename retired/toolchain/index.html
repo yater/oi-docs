@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.openindiana.org/handbook/common-tasks/">
+        <link rel="canonical" href="http://docs.openindiana.org/retired/toolchain/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Common Tasks - OpenIndiana Docs</title>
+        <title>Toolchain - OpenIndiana Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -79,32 +79,32 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handbook <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../getting-started/">Getting Started</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Common Tasks</a>
+    <a href="../../handbook/getting-started/">Getting Started</a>
 </li>
                                     
 <li >
-    <a href="../systems-administration/">Systems Administration</a>
+    <a href="../../handbook/common-tasks/">Common Tasks</a>
 </li>
                                     
 <li >
-    <a href="../network-communications/">Network Communications</a>
+    <a href="../../handbook/systems-administration/">Systems Administration</a>
 </li>
                                     
 <li >
-    <a href="../appendix/">Appendix</a>
+    <a href="../../handbook/network-communications/">Network Communications</a>
 </li>
                                     
 <li >
-    <a href="../community/">Community Contributed Tutorials</a>
+    <a href="../../handbook/appendix/">Appendix</a>
+</li>
+                                    
+<li >
+    <a href="../../handbook/community/">Community Contributed Tutorials</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -192,18 +192,8 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../getting-started/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../systems-administration/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                             <li>
-                                <a href="https://github.com/OpenIndiana/oi-docs.git/edit/master/docs/handbook/common-tasks.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/OpenIndiana/oi-docs.git/edit/master/docs/retired/toolchain.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -213,16 +203,14 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#hipster-handbook-common-tasks">Hipster Handbook - Common Tasks</a></li>
-            <li><a href="#basic-unix-commands">Basic UNIX commands</a></li>
-            <li><a href="#basic-system-administration">Basic system administration</a></li>
-            <li><a href="#desktop-applications">Desktop applications</a></li>
-            <li><a href="#multimedia-audio">Multimedia - Audio</a></li>
-            <li><a href="#multimedia-video">Multimedia - Video</a></li>
-            <li><a href="#printing">Printing</a></li>
-            <li><a href="#graphics-workstation">Graphics workstation</a></li>
-            <li><a href="#desktop-publishing-system-etc">Desktop Publishing system, Etc.</a></li>
-            <li><a href="#boot-loader-settings">Boot loader settings</a></li>
+        <li class="main active"><a href="#continuous-integration-content-management">Continuous Integration Content Management</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#docs-are-code">Docs are Code</a></li>
+            <li><a href="#general-writing-tips">General Writing Tips</a></li>
+            <li><a href="#what-is-asciidoctor">What is Asciidoctor?</a></li>
+            <li><a href="#why-a-text-markup-based-docs-framework">Why a Text Markup Based Docs Framework?</a></li>
+            <li><a href="#tips-for-working-with-asciidoctor">Tips for Working with Asciidoctor</a></li>
+            <li><a href="#asciidoctor-tools-and-informational-links">Asciidoctor Tools and Informational Links</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -230,9 +218,8 @@
 <!--
 
 The contents of this Documentation are subject to the Public Documentation License Version 1.01
- (the "License"); you may only use this Documentation if you comply with the terms of this License.
+(the "License"); you may only use this Documentation if you comply with the terms of this License.
 A copy of the License is available at http://illumos.org/license/PDL.
-
 
 The Original Documentation is _________________.
 
@@ -246,232 +233,171 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 
 -->
 
-<p><img src = "../../Openindiana.png"></p>
-<h1 id="hipster-handbook-common-tasks">Hipster Handbook - Common Tasks</h1>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-<p>This is a <b>DRAFT</b> document which may contain errors!</p>
-<p>Help us improve and expand this site.</p>
-<p>Please see the <b>Contrib</b> section for more details about joining the OpenIndiana Documentation Team.</p>
-</div></p>
-<p>&lt; place holder for introduction content &gt;</p>
-<h2 id="basic-unix-commands">Basic UNIX commands</h2>
-<p>In addition to native command line system administration tools, OpenIndiana also includes the GNU core utilities suite.
-When working with basic UNIX commands, most likely you will be using the GNU core utilities.
-For learning to navigate the OpenIndiana command line environment, Linux command line books are very helpful.</p>
-<p>One of the best books currently available is <a href="http://linuxcommand.org/tlcl.php">The Linux Command Line</a> by William Shotts.
-If you want to quickly become a command line guru, this is the book to read.
-Best of all, it was released under a Creative Commons license and can be downloaded for free.
-Print versions are also available.</p>
-<h2 id="basic-system-administration">Basic system administration</h2>
-<h3 id="commands-to-be-able-to-use-administration-commands">Commands to be able to use administration commands</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>su</code></td>
-<td><a href="https://illumos.org/man/1M/su">su(1M)</a></td>
-<td>Switch user. Without any parameters, root implied</td>
-</tr>
-<tr>
-<td><code>sudo</code></td>
-<td>sudo(1M)</td>
-<td>Perform the command following with root privilages</td>
-</tr>
-<tr>
-<td><code>pfexec</code></td>
-<td><a href="https://illumos.org/man/1/pfexec">pfexec(1)</a></td>
-<td>Similar to <code>sudo</code> but not prompted for a password and limited privilages</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<h3 id="basic-system-information">Basic system information</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>prstat</code></td>
-<td><a href="https://illumos.org/man/1M/prstat">prstat(1M)</a></td>
-<td>Statistics on system processes</td>
-</tr>
-<tr>
-<td><code>df</code></td>
-<td><a href="https://illumos.org/man/1m/df">df(1M)</a></td>
-<td>Disk usage by partition</td>
-</tr>
-<tr>
-<td><code>du</code></td>
-<td><a href="https://illumos.org/man/1/du">du(1)</a></td>
-<td>Disk usage by file</td>
-</tr>
-<tr>
-<td><code>pkg list</code></td>
-<td>pkg(1)</td>
-<td>List software packages installed on the system</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<h3 id="system-shutdown-reboot">System shutdown, reboot…</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>shutdown</code></td>
-<td><a href="https://illumos.org/man/1M/shutdown">shutdown(1M)</a></td>
-<td>Shutdown the system</td>
-</tr>
-</tbody>
-</table>
-<p>Examples:</p>
-<pre><code>shutdown -i5 -g0 -y # Turn off the machine immediately
-shutdown -i6 -g0 -y # Reboot the machine immediately
-shutdown -i6 -g120 -y # Reboot the machine in 2 minutes (120 seconds)
-</code></pre>
-
-<h3 id="user-management">User management</h3>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Further details</th>
-<th>Brief summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>listusers</code></td>
-<td><a href="https://illumos.org/man/1/listusers">listusers(1)</a></td>
-<td>List users accounts</td>
-</tr>
-<tr>
-<td><code>who</code></td>
-<td><a href="https://illumos.org/man/1/who">who(1)</a></td>
-<td>List users logged onto the system</td>
-</tr>
-<tr>
-<td><code>useradd</code></td>
-<td><a href="https://illumos.org/man/1M/useradd">useradd(1M)</a></td>
-<td>Create a new user</td>
-</tr>
-<tr>
-<td><code>usermod</code></td>
-<td><a href="https://illumos.org/man/1M/usermod">usermod(1M)</a></td>
-<td>Modify a user (group memberships, roles, login shell…)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="desktop-applications">Desktop applications</h2>
-<p>&lt; place holder &gt;</p>
-<h3 id="how-can-the-desktop-be-modified">How can the desktop be modified?</h3>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
+<h1 id="continuous-integration-content-management">Continuous Integration Content Management</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This document is a whiteboard for the development of ideas to begin the transition to a continuous integration toolchain for documentation.
+The ideal model would be where all informational content (docs, blog posts, news, etc.) lives in github.
+This way, working with informational content is simply a matter of working with familiar tools and concepts.</p>
+<p>The continuous integration content management process might go something like this:</p>
 <ul>
-<li>Gnome or (MATE) walkthrough</li>
-<li>Appearance applet<ul>
-<li>Enabling Compiz</li>
-<li>Configuring font anti-aliasing</li>
-<li>Desktop backgrounds</li>
+<li>Clone the repository.</li>
+<li>Add or edit some content.</li>
+<li>Commit your changes.</li>
+<li>Send a pull request so your changes can be reviewed for inclusion into the master repository.</li>
+<li>Upon commit to the master repository, a repo hook kicks off a build and deploy of the updated content.</li>
+</ul>
+<p>This process can be as big or small as you like;
+You may wish to keep things limited to systems documentation, or the concept can be expanded to include the project's entire web presence.</p>
+<p>For the later, static website <em>baking</em> frameworks such as <a href="http://awestruct.org/">Awestruct</a> or <a href="https://jekyllrb.com/">Jekyll</a> along with dynamic <em>mobile first</em> CSS frameworks such as <a href="http://getbootstrap.com/">Bootstrap</a> or <a href="http://foundation.zurb.com/">Foundation</a>, the entire OpenIndiana website, and all it's content, can be continuously integrated in a fully automated fashion.</p>
+<h3 id="no-mess-no-fuss">No Mess, No Fuss.</h3>
+<ul>
+<li>No more databases to maintain.</li>
+<li>No more patching security holes in CMS systems.</li>
+<li>No more backups (remember the whole website lives on github, and everyone has their cloned copy of it).</li>
+<li>Everything is version controlled.</li>
+</ul>
+<p>For a working example of what this might look like in production, have a look at the newly updated <a href="https://jenkins.io/index.html">Jenkins website</a>.</p>
+<h2 id="docs-are-code">Docs are Code</h2>
+<p>The most important thing to keep in mind is that docs are code.
+So, we treat the docs (and all other content) just as we would treat code (and use the very same tools to manage it all).</p>
+<ul>
+<li>Write 1 sentence per line.</li>
+<li>Use comments in your code.</li>
+<li>Use version control - fork and fix (just as you would anything else).</li>
+<li>Use TODO's.</li>
+</ul>
+<h2 id="general-writing-tips">General Writing Tips</h2>
+<ul>
+<li>Write your docs by asking a question and then answering it.<ul>
+<li>Later turn the questions into sectional headings, etc.</li>
 </ul>
 </li>
+<li>Use a thesaurus - e.g. <a href="https://www.powerthesaurus.org/">https://www.powerthesaurus.org/</a></li>
+<li>Couch read - via a phone or tablet, proof read what you previously wrote. - (puts you into the reader's shoes)</li>
 </ul>
-<p>In regards to the default terminal emulator, see: <a href="https://www.illumos.org/issues/7525">https://www.illumos.org/issues/7525</a></p>
+<h2 id="what-is-asciidoctor">What is Asciidoctor?</h2>
+<p>Asciidoc is a text markdown language using a Python based interpreter.
+Asciidoctor is a more modern and more powerful Ruby based implementation of Asciidoc.
+Asciidoctor also includes some of features found in documentation frameworks such as Sphinx (which is used by the Python and PC-BSD projects).
+The Asciidoctor framework can be used for docs as well as for the production of other types of content (news stories, blog posts, etc.).</p>
+<h3 id="system-characteristics">System Characteristics</h3>
 <ul>
-<li>we introduce mediator x-terminal-emulator for link /usr/bin/x-terminal-emulator with possible implementations gnome-terminal, mate-terminal and xterm;</li>
-<li>mate-terminal implementation has the highest priority (if it is installed, by default it wins);</li>
-<li>glib is modified to use link /usr/bin/x-terminal-emulator if it's found for running applications with Terminal=true.
-</div></li>
+<li>Easy to use (even easier than Sphinx)</li>
+<li>TOC is easy to navigate (but not quite as clean as Sphinx)</li>
+<li>Like Sphinx, produces a very professional looking end product.</li>
+<li>Does not yet support chunked html, but can export to docbook and use docbook tools to perform this task.</li>
+<li>Supports the pulling together of several small documents using the concept of "includes".</li>
+<li>More flexible than Sphinx in that it can be used as part of a larger web content framework.</li>
 </ul>
-<h2 id="multimedia-audio">Multimedia - Audio</h2>
-<p>&lt; Place Holder for future content &gt;</p>
-<h2 id="multimedia-video">Multimedia - Video</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
+<h3 id="asciidoctor-compared-to-sphinx">Asciidoctor compared to Sphinx</h3>
+<p>Both systems have their relative merits with advantages and disadvantages.
+For example if all you want to do is write and publish some docs, then Sphinx is a good choice.
+However, if you want to do a little more (like the Jenkins project is doing), then Asciidoctor is likely the better choice.</p>
+<h2 id="why-a-text-markup-based-docs-framework">Why a Text Markup Based Docs Framework?</h2>
+<p>The primary advantage of using a text markup language is readability and flexibility.
+The raw code for your content is simply text.
+This is something you can make sense of without special tools (e.g. Docbook based WYSIWYG XML editors, etc.).</p>
+<h2 id="tips-for-working-with-asciidoctor">Tips for Working with Asciidoctor</h2>
 <ul>
-<li>How to get OI to play a DVD</li>
-<li>How to get flash player installed and working.</li>
-<li>How to get VLC installed and working.</li>
-<li>Totem (video player)</li>
+<li>Use "Attributes" and name space them - e.g. <code>:uri-project: &lt;url&gt;</code> -(place these attributes at top of document)<ul>
+<li>Call your attributes in your docs like this: <code>{uri-project} [Project name]</code></li>
 </ul>
-</div>
-
-<h3 id="using-openindiana-as-a-media-server-htpc-etc">Using OpenIndiana as a media server, HTPC, etc.</h3>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li><a href="http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2">http://forum.kodi.tv/showthread.php?tid=44315&amp;page=2</a></li>
-<li><a href="http://lightsandshapes.com/plex-on-smartos.html">http://lightsandshapes.com/plex-on-smartos.html</a></li>
-</ul>
-</div>
-
-<h2 id="printing">Printing</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>OI uses CUPS as the primary print system.</li>
-<li>GNOME print manager (<code>system-config-printer</code>)</li>
-</ul>
-<p>See the additional information about printing in contrib/topics.md
-Also see the deprecation comments in the OSOL printing guide.</p>
-</div>
-
-<h2 id="graphics-workstation">Graphics workstation</h2>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
-<div class="well">
-ITEMS TO WRITE ABOUT:</p>
-<ul>
-<li>GIMP</li>
-</ul>
-</div>
-
-<h2 id="desktop-publishing-system-etc">Desktop Publishing system, Etc.</h2>
-<p>&lt; Place holder for content &gt;</p>
-<h2 id="boot-loader-settings">Boot loader settings</h2>
-<p>OpenIndiana Hipster uses the 'BootForth' boot loader (GRUB is not used any
-more, disregard older manusls/wiki pages that mention grub).</p>
-<p>Boot configuration items should be stored in <code>/boot/conf.d</code>.</p>
-<ul>
-<li>
-<p>To change the console from the standard monitor to serial console
-    (e.g. <code>COM1</code> / <code>ttyS0</code> on other OSes), use the following command:</p>
-<pre><code># echo console=ttya &gt; /boot/conf.d/console
-</code></pre>
-<p>(Alternatively, use <code>eeprom console=ttya</code>).</p>
 </li>
-<li>
-<p>To change the boot-loader's default timeout, run:</p>
-<pre><code># echo autoboot_delay=2 &gt; /boot/conf.d/autoboot
-</code></pre>
-</li>
+<li>Use "Includes" - e.g. <code>include:: {uri-macros}/doc_to_import.asciidoc[]</code> - (allows you to pull in other docs into your docs)</li>
 </ul>
-<p>NOTE:
-Any filename can be used under <code>/boot/conf.d/</code> - the filename does not
-matter (only its content matters).</p>
-<p>See <a href="https://wiki.illumos.org/display/illumos/Current+status+for+loader">current status for loader</a>
-for more technical details (and other boot options).</p></div>
+<h2 id="asciidoctor-tools-and-informational-links">Asciidoctor Tools and Informational Links</h2>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.methods.co.nz/asciidoc/">http://www.methods.co.nz/asciidoc/</a></td>
+<td>Asciidoc Language (the syntax)</td>
+</tr>
+<tr>
+<td><a href="http://asciidoctor.org/">http://asciidoctor.org/</a></td>
+<td>Ruby based parser and tools</td>
+</tr>
+<tr>
+<td><a href="http://discuss.asciidoctor.org/">http://discuss.asciidoctor.org/</a></td>
+<td>Asciidoctor support forum</td>
+</tr>
+<tr>
+<td><a href="http://www.asciibinder.org/index.html">http://www.asciibinder.org/index.html</a></td>
+<td>Asciibinder - (allows the construction of documents using <em>includes</em>)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/asciidoctor/asciidoctor-pdf">https://github.com/asciidoctor/asciidoctor-pdf</a></td>
+<td>New Asciidoctor PDF generator (Alpha software)</td>
+</tr>
+<tr>
+<td><a href="http://asciidocfx.com/">http://asciidocfx.com/</a></td>
+<td>Java based Asciidoc IDE</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dagwieers/asciidoc-vim">https://github.com/dagwieers/asciidoc-vim</a></td>
+<td>Asciidoc Syntax highlighting for VIM</td>
+</tr>
+<tr>
+<td><a href="https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia">https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia</a></td>
+<td>Asciidoctor.js Live Preview plugin for Google Chrome Web Browser</td>
+</tr>
+<tr>
+<td><a href="https://addons.mozilla.org/en-US/firefox/addon/asciidoctorjs-live-preview/">https://addons.mozilla.org/en-US/firefox/addon/asciidoctorjs-live-preview/</a></td>
+<td>Asciidoctor.js Live Preview plugin for Firefox Web Browser</td>
+</tr>
+<tr>
+<td><a href="https://github.com/asciidoctor/asciidoctor-confluence">https://github.com/asciidoctor/asciidoctor-confluence</a></td>
+<td>Confluence plugin for Asciidoctor - (uploads to Confluence site)</td>
+</tr>
+<tr>
+<td><a href="http://gist.asciidoctor.org/">http://gist.asciidoctor.org/</a></td>
+<td>Asciidoctor page renderer for GitHub Gist URL's</td>
+</tr>
+<tr>
+<td><a href="https://travis-ci.org/">https://travis-ci.org/</a></td>
+<td>Continuous Integration (similar to Jenkins, etc.)</td>
+</tr>
+<tr>
+<td><a href="https://pages.github.com/">https://pages.github.com/</a></td>
+<td>Publish from your github repo</td>
+</tr>
+<tr>
+<td><a href="http://hubpress.io/">http://hubpress.io/</a></td>
+<td>Blog from your github repo - built in Asciidoctor support</td>
+</tr>
+</tbody>
+</table>
+<h4 id="note">NOTE:</h4>
+<p>In order to use the Asciidoctor Chrome extension with local files, you must enable the plugin option "Allow access to file URLs".</p>
+<p>The Travis-CI build engine can even post the results of the build to IRC (as shown below from the Asciidoctor IRC channel).</p>
+<pre><code>&lt;travis-ci&gt; asciidoctor/asciidoctor#2068 (master - cbf2ab0 : Dan Allen): The build passed.
+&lt;travis-ci&gt; Change view : https://github.com/asciidoctor/asciidoctor/compare/6e41bee5dc42...cbf2ab0a9b78
+&lt;travis-ci&gt; Build details : https://travis-ci.org/asciidoctor/asciidoctor/builds/114132261
+</code></pre>
+<h3 id="videos">Videos</h3>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=kyGJEVEjfAs">https://www.youtube.com/watch?v=kyGJEVEjfAs</a></td>
+<td>Write in AsciiDoc, Publish Everywhere!</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/watch?v=r6RXRi5pBXg">https://www.youtube.com/watch?v=r6RXRi5pBXg</a></td>
+<td>7 Ways to Hack Your Brain to Write Fluently</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">
