@@ -312,6 +312,8 @@ After GIT is installed, be sure to configure your name and email address.</p>
 <p>Fear not though, only basic git commands are required for working with OI-DOCS.
 </div></p>
 <h4 id="install-python-pip">Install python-pip</h4>
+<p>If your OS doesn't provide pre-packaged mkdocs, you'll need to install python-pip.
+This is not necessary on OpenIndiana.</p>
 <table>
 <thead>
 <tr>
@@ -338,11 +340,13 @@ After GIT is installed, be sure to configure your name and email address.</p>
 </tr>
 <tr>
 <td>OpenIndiana</td>
-<td>N/A - (Use MkDocs IPS package)</td>
+<td>Not needed - (Use MkDocs IPS package)</td>
 </tr>
 </tbody>
 </table>
 <h4 id="install-rubygems">Install rubygems</h4>
+<p>If your OS doesn't provide pre-packaged mdl, you'll need to install Ruby Gems.
+This is not necessary on OpenIndiana.</p>
 <table>
 <thead>
 <tr>
@@ -369,7 +373,7 @@ After GIT is installed, be sure to configure your name and email address.</p>
 </tr>
 <tr>
 <td>OpenIndiana</td>
-<td><code>pkg install ruby</code></td>
+<td>Not needed - (Use mdl IPS package)</td>
 </tr>
 </tbody>
 </table>
@@ -389,26 +393,14 @@ If you experience difficulties installing mkdocs, try using the python 3 version
 </div></li>
 </ul>
 <h4 id="install-markdown-lint-mdl">Install Markdown Lint (mdl)</h4>
+<p>On OpenIndiana you can install mdl using standard package management tools:</p>
+<ul>
+<li><code>pkg install developer/documentation-tool/mdl</code></li>
+</ul>
 <p>For most operating systems:</p>
 <ul>
 <li><code>gem install mdl</code></li>
 </ul>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well"></p>
-<p>For OpenIndiana, you will need to add the Ruby Gem directory path to your $PATH variable.
-To do so, add the following to your <code>.bashrc</code> (or similar file if you use a
-different shell):</p>
-<pre><code>PATH=$PATH:/usr/ruby/2.3/bin/
-export PATH
-</code></pre>
-
-<p>To immediately effect this change, source your <code>.bashrc</code> as follows:</p>
-<pre><code class="bash">source ~/.bashrc
-</code></pre>
-
-<p>To verify <code>mdl</code> is now accessible, test using the command: <code>which mdl</code> or alternately: <code>mdl --version</code>.</p>
-</div>
-
 <h4 id="install-markdown-plugin-for-vim-or-emacsoptional">Install Markdown plugin for VIM or Emacs(optional)</h4>
 <ul>
 <li><a href="https://github.com/plasticboy/vim-markdown/">https://github.com/plasticboy/vim-markdown/</a></li>
@@ -687,7 +679,7 @@ If no corrections are required, your changes will be accepted and merged into th
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
+                shortcuts = {"search": 83, "previous": 80, "help": 191, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
