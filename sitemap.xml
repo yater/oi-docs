@@ -61,6 +61,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://docs.openindiana.org/dev/distribution-constructor/</loc>
+     <lastmod>2019-05-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://docs.openindiana.org/books/about/</loc>
      <lastmod>2019-05-16</lastmod>
      <changefreq>daily</changefreq>
