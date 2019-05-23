@@ -61,6 +61,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://docs.openindiana.org/dev/legacy-consolidations/</loc>
+     <lastmod>2019-05-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://docs.openindiana.org/dev/pdf/ips-dev-guide.pdf</loc>
      <lastmod>2019-05-23</lastmod>
      <changefreq>daily</changefreq>
