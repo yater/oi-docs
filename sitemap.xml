@@ -56,6 +56,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://docs.openindiana.org/dev/building-openindiana/</loc>
+     <lastmod>2019-05-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://docs.openindiana.org/dev/userland/</loc>
      <lastmod>2019-05-24</lastmod>
      <changefreq>daily</changefreq>

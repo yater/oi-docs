@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.openindiana.org/contrib/style/">
+        <link rel="canonical" href="http://docs.openindiana.org/dev/building-openindiana/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Contributor Style Guide - OpenIndiana Docs</title>
+        <title>Building OpenIndiana - OpenIndiana Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -79,7 +79,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handbook <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -111,24 +111,24 @@
     <a href="#">Developer's Corner</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../dev/building-openindiana/">Building OpenIndiana</a>
+<li class="active">
+    <a href="./">Building OpenIndiana</a>
 </li>
             
 <li >
-    <a href="../../dev/userland/">Building with oi-userland</a>
+    <a href="../userland/">Building with oi-userland</a>
 </li>
             
 <li >
-    <a href="../../dev/legacy-consolidations/">Building legacy consolidations</a>
+    <a href="../legacy-consolidations/">Building legacy consolidations</a>
 </li>
             
 <li >
-    <a href="../../dev/pdf/ips-dev-guide.pdf">Packaging and Delivering Software with IPS</a>
+    <a href="../pdf/ips-dev-guide.pdf">Packaging and Delivering Software with IPS</a>
 </li>
             
 <li >
-    <a href="../../dev/distribution-constructor/">Using distribution constructor</a>
+    <a href="../distribution-constructor/">Using distribution constructor</a>
 </li>
     </ul>
   </li>
@@ -163,40 +163,40 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contrib <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../content/">Content Creation</a>
+    <a href="../../contrib/content/">Content Creation</a>
 </li>
                                     
 <li >
-    <a href="../getting-started/">Getting Started</a>
+    <a href="../../contrib/getting-started/">Getting Started</a>
 </li>
                                     
 <li >
-    <a href="../tools/">Contributor Tools</a>
+    <a href="../../contrib/tools/">Contributor Tools</a>
 </li>
                                     
 <li >
-    <a href="../roles/">Contributor Roles</a>
+    <a href="../../contrib/roles/">Contributor Roles</a>
 </li>
                                     
 <li >
-    <a href="../topics/">Contributor Topics</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Contributor Style Guide</a>
+    <a href="../../contrib/topics/">Contributor Topics</a>
 </li>
                                     
 <li >
-    <a href="../markdown/">Markdown Syntax Guide</a>
+    <a href="../../contrib/style/">Contributor Style Guide</a>
 </li>
                                     
 <li >
-    <a href="../git/">Git Usage Guide</a>
+    <a href="../../contrib/markdown/">Markdown Syntax Guide</a>
+</li>
+                                    
+<li >
+    <a href="../../contrib/git/">Git Usage Guide</a>
 </li>
                                 </ul>
                             </li>
@@ -209,17 +209,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../topics/">
+                                <a rel="next" href="../../handbook/community/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../markdown/">
+                                <a rel="prev" href="../userland/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/contrib/style.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/dev/building-openindiana.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -229,8 +229,9 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#contributor-style-guide">Contributor Style Guide</a></li>
-            <li><a href="#style-recommendations">Style recommendations</a></li>
+        <li class="main active"><a href="#building-openindiana">Building OpenIndiana</a></li>
+            <li><a href="#source-repositories">Source repositories</a></li>
+            <li><a href="#build-process">Build process</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -243,10 +244,12 @@ A copy of the License is available at http://illumos.org/license/PDL.
 
 The Original Documentation is _________________.
 
-The Initial Writer of the Original Documentation is ___________ Copyright (C)_________[Insert year(s)].
+The Initial Writer of the Original Documentation is  Aurelien Larcher Copyright (C) 2017.
 All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
 
-Contributor(s): ______________________________________.
+Contributor(s): Alexander Pyhalov
+
+Portions created by Alexander Pyhalov are Copyright (C) 2019.
 
 Portions created by ______ are Copyright (C)_________[Insert year(s)].
 All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
@@ -254,24 +257,103 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 -->
 
 <p><img src = "../../Openindiana.png"></p>
-<h1 id="contributor-style-guide">Contributor Style Guide</h1>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-This document is a work in progress.
-Help us make it grow.</p>
-<p>Until then, you may find the following resource helpful:</p>
-<ul>
-<li><a href="https://web.archive.org/web/20081207155129/http://opensolaris.org/os/community/documentation/files/OSOLDOCSG.pdf">Documentation Style Guide for OpenSolaris</a> - Internet Archive - PDF (270 pages)
-</div></li>
-</ul>
-<h2 id="style-recommendations">Style recommendations</h2>
-<ul>
-<li>Document titles - First letter of each word capitalized.</li>
-<li>Sectional titles - First letter of first word capitalized.</li>
-<li>One (1) space between sectional titles and beginning of text.</li>
-<li>Two spaces after last line of text and beginning of next sectional title.</li>
-<li>One sentence per line (the only exception to this is where you need multiple sentences to fit into a single table cell).</li>
-</ul></div>
+<h1 id="building-openindiana">Building OpenIndiana</h1>
+<h2 id="source-repositories">Source repositories</h2>
+<p>OpenIndiana is built from several source repositories which are available on <a href="https://github.com/OpenIndiana">Github</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>Description</th>
+<th>Build instructions</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/OpenIndiana/oi-userland">oi-userland</a></td>
+<td>Unified build system for OpenIndiana</td>
+<td><a href="../userland/">Building oi-userland</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/illumos/illumos-gate">illumos-gate</a></td>
+<td>Kernel and core userland components</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/illumos-gate">openindiana/illumos-gate</a> component</td>
+<td>When preparing change for integration use official <a href="https://illumos.org/docs/developers/build/">Building illumos</a> instructions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/pkg5">pkg5</a></td>
+<td>Image Packaging System package manager</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/pkg">openindiana/pkg</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/slim_source">slim_source</a></td>
+<td>Installers and Distribution Constructor</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/slim_source">openindiana/slim_source</a> component</td>
+<td>Also known as Caiman</td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/time-slider">time-slider</a></td>
+<td>Graphical ZFS snapshot manager</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/time-slider">openindiana/time-slider</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/nwam-manager">nwam-manager</a></td>
+<td>Network auto-magic GUI</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/nwam-manager">openindiana/nwam-manager</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/nimbus">nimbus</a></td>
+<td>Nimbus GTK theme</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/desktop/nimbus">desktop/nimbus</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/openindiana-completions">openindina-completions</a></td>
+<td>OpenIndiana bash completions</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/shell/bash-completion">shell/bash-completion</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/openindiana-welcome">openindina-welcome</a></td>
+<td>openindiana-about tool</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/openindiana-welcome">openindiana/openindiana-welcome</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/openindiana-backgrounds">openindina-backgrounds</a></td>
+<td>OpenIndiana desktop backgrounds</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/openindiana-backgrounds">openindiana/openindiana-backgrounds</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/sysding">sysding</a></td>
+<td>Sysding initial configuration system</td>
+<td>Use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/sysding">openindiana/sysding</a> component</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/OpenIndiana/oi-docs">oi-docs</a></td>
+<td>User documentation site</td>
+<td><a href="../../contrib/getting-started/">Getting Started with OpenIndiana Docs</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-process">Build process</h2>
+<p>OpenIndiana Hipster build process is rather simple.</p>
+<p>Once a pull request has been merged to <a href="https://github.com/OpenIndiana/oi-userland">oi-userland</a>, <a href="https://hipster.openindiana.org/jenkins/">Jenkins</a> starts incremental oi-userland build.
+For components coming from other source repositories manual intervention can be necessary to start the build.
+<a href="https://github.com/illumos/illumos-gate">illumos-gate</a> is rebuilt daily in separate <a href="https://hipster.openindiana.org/jenkins/job/illumos-gate/">Jenkins job</a>.</p>
+<p>If packages are built succesfully, they are published to the <a href="http://pkg.openindiana.org/hipster/">main Openindiana package repository</a> or <a href="http://pkg.openindiana.org/hipster-encumbered/">package repository for patent-encumbered software</a>.</p>
+<p>Note, that main OpenIndiana package repository also contains packages, inherited from now discontinued OpenIndiana /dev distribution.
+Such packages are available only in binary form and can be identified by <code>2013.0.0.0</code> branch number.</p>
+<p>Twice per year OpenIndiana developers create ISO images based on this repository using <a href="../distribution-constructor/">Distribution Constructor</a>.</p>
+<p>If you want to build customized ISO image, you can publish necessary additional packages to your own repository and use <a href="../distribution-constructor/">Distribution Constructor</a> to create images with additional publishers and/or packages.</p></div>
         </div>
 
         <footer class="col-md-12">
