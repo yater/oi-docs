@@ -264,6 +264,72 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 <h1 id="legacy-consolidations">Legacy Consolidations</h1>
 <p>Initial OpenIndiana versions were based on the same release process as OpenSolaris, assembled from a set of software consolidations.
 This complex Release Engineering has been deprecated in favour of the unified build system oi-userland: the list of consolidation and corresponding build instructions are left here as reference.</p>
+<table>
+<thead>
+<tr>
+<th>Consolidation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onnv-gate</td>
+<td>Operating System/Networking Nevada consolidation provided OpenSolars kernel and core userland components</td>
+</tr>
+<tr>
+<td>illumos-gate</td>
+<td>illumos-gate provides kernel and core userland components</td>
+</tr>
+<tr>
+<td>oi-build</td>
+<td>oi-build provided some userland components and was a oi-userland predecessor</td>
+</tr>
+<tr>
+<td>IPS/pkg</td>
+<td>Image Packaging System provides package management software and some zone brands definitions</td>
+</tr>
+<tr>
+<td>SFW</td>
+<td>Solaris Freeware consolidation provided open source software bundled with operating system</td>
+</tr>
+<tr>
+<td>XNV</td>
+<td>X11 Nevada consolidation provided Xorg server and related software</td>
+</tr>
+<tr>
+<td>JDS</td>
+<td>Java Desktop System consolidation provided Gnome2 and other desktop software</td>
+</tr>
+<tr>
+<td>Caiman (slim_source)</td>
+<td>slim_source provides operating system installers and Distribution Constructor</td>
+</tr>
+<tr>
+<td>vpanels</td>
+<td>Visual Panels provided server management GUI</td>
+</tr>
+<tr>
+<td>sunpro/devpro</td>
+<td>Sunpro consolidation provided Sun Studio compilers and some related libraries</td>
+</tr>
+<tr>
+<td>xvm</td>
+<td>Contained Sun xVM virtualization software based on Xen</td>
+</tr>
+<tr>
+<td>g11n</td>
+<td>Globalization consolidation contained internationalisation software</td>
+</tr>
+<tr>
+<td>solaris_re</td>
+<td>Contained software related to Solaris engineering</td>
+</tr>
+<tr>
+<td>cde</td>
+<td>Provided Common Desktop Environment</td>
+</tr>
+</tbody>
+</table>
 <h2 id="primary-software-consolidations">Primary software consolidations</h2>
 <table>
 <thead>
@@ -277,6 +343,14 @@ This complex Release Engineering has been deprecated in favour of the unified bu
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>onnv-gate</td>
+<td>N/A (closed source)</td>
+<td>N/A</td>
+<td>Replaced by illumos-gate</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
 <tr>
 <td>illumos-gate</td>
 <td>N/A</td>
@@ -311,7 +385,7 @@ This complex Release Engineering has been deprecated in favour of the unified bu
 </tr>
 <tr>
 <td>XNV</td>
-<td><a href="https://github.com/Oracle/solaris-xorg/">https://github.com/Oracle/solaris-xorg/</a> (merged into <a href="https://github.com/oracle/solaris-userland/tree/master/components/x11">solaris-userland</>)</td>
+<td><a href="https://github.com/Oracle/solaris-xorg/">https://github.com/Oracle/solaris-xorg/</a> (merged into <a href="https://github.com/oracle/solaris-userland/tree/master/components/x11">solaris-userland</a>)</td>
 <td><a href="https://hg.openindiana.org/sustaining/oi_151a/xnv/">https://hg.openindiana.org/sustaining/oi_151a/xnv/</a></td>
 <td>Merged into <a href="https://github.com/OpenIndiana/oi-userland/">oi-userland</a></td>
 <td>N/A</td>
@@ -884,7 +958,7 @@ echo 'export SPRO_ROOT=/opt/sunstudio12.1' &gt;&gt; developer.sh
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "help": 191, "search": 83, "next": 78};
+                shortcuts = {"next": 78, "previous": 80, "search": 83, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
