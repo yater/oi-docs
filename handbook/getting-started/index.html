@@ -292,6 +292,7 @@
             <li><a href="#installing-openindiana">Installing OpenIndiana</a></li>
             <li><a href="#troubleshooting-installations">Troubleshooting Installations</a></li>
             <li><a href="#post-installation-steps">Post Installation Steps</a></li>
+            <li><a href="#updating-openindiana-dev-to-hipster">Updating OpenIndiana /dev to /hipster</a></li>
             <li><a href="#image-package-system-ips">Image Package System (IPS)</a></li>
             <li><a href="#managing-boot-environments">Managing Boot Environments</a></li>
             <li><a href="#the-x-window-system">The X-Window System</a></li>
@@ -1729,6 +1730,133 @@ The image above illustrates what this looks like on a system with several boot e
 <li>Once changed you can exit the su session</li>
 <li>You should be able to login/authenticate as root now.</li>
 </ul>
+<h2 id="updating-openindiana-dev-to-hipster">Updating OpenIndiana /dev to /hipster</h2>
+<p>This section describes how to update your existing OpenIndiana /dev installation to OpenIndiana /hipster.</p>
+<p>Note, that although direct updating from /dev to /hipster can be possible, it's not exhaustively tested.</p>
+<p>There are several techniques which you can use to update your systems, including root pool installation from OpenIndiana ISO.
+Complete reinstall also can be a decent option.</p>
+<p>Further it's considered that you were warned and decided to do more-or-less direct update from /dev to /hipster.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Only server installation update was tested.
+If you do GUI installation update, you are on your own.
+Of course, you are welcome to ask questions in <a href="https://openindiana.org/mailman/listinfo/oi-dev">oi-dev</a> mailing list, but prepare that nobody will guide you through update.
+</div></p>
+<ul>
+<li>
+<p>Do backup.
+  <br/>Seriously.
+  The next steps can make your system unbootable.</p>
+</li>
+<li>
+<p>Read release notes.
+  <br/>Read release notes for ALL OpenIndiana Hipster snapshots.
+  They contain information on system changes and possible troubles which can appear.
+  Read <a href="https://www.openindiana.org/2016/09/28/loader-integration/">Loader Integration</a></p>
+</li>
+<li>
+<p>Test your actions in non-production environment.
+  <br/>Consider that last significant OpenIndiana /dev update was many years ago.
+  You are going to update your applications perhaps via several major releases.
+  Prepare for the changes.</p>
+</li>
+<li>
+<p>You'll need console access to the server.
+  <br/>Without console access and ability to boot fresh OpenIndiana Hipster ISO image, you'll not be able to activate new boot environment: old tools can't work with new facilities, new tools will not work with old kernel.</p>
+</li>
+<li>
+<p>Update to the latest OpenIndiana /dev version.</p>
+</li>
+</ul>
+<pre><code># pkg update -v
+</code></pre>
+
+<ul>
+<li>Create new boot environment, which you'll update to /hipster, and mount it to <code>/mnt</code> (the default empty temporary mountpoint directory).</li>
+</ul>
+<pre><code class="bash"># beadm create oi-hipster
+# beadm mount oi-hipster /mnt
+</code></pre>
+
+<ul>
+<li>Uninstall all packages coming from opensolaris.org, sfe or sfe-encumbered publishers.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt list pkg://sfe/* pkg://sfe-encumbered/* pkg://opensolaris.org/*
+# pkg -R /mnt uninstall &lt;list of matched packages&gt;
+</code></pre>
+
+<ul>
+<li>Unset sfe, sfe-encumbered, opensolaris.org publishers in new BE if they were used.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt unset-publisher opensolaris.org
+...
+</code></pre>
+
+<ul>
+<li>Change publisher to <a href="http://pkg.openindiana.org/hipster">http://pkg.openindiana.org/hipster</a>.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt set-publisher -g http://pkg.openindiana.org/hipster -G http://pkg.openindiana.org/dev openindiana.org
+</code></pre>
+
+<ul>
+<li>Refresh IPS catalog.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt refresh --full
+</code></pre>
+
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+Two following steps are actually better to run under <code>screen(1)</code> or <code>tmux(1)</code>
+</div></p>
+<ul>
+<li>Look what IPS is going to do.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt update -nv 2&gt;&amp;1 | tee /root/testing_update
+# less /root/testing_update
+</code></pre>
+
+<ul>
+<li>If you are satisfied with what you've seen, run actual update and review <code>pkg(1)</code> output.</li>
+</ul>
+<pre><code class="bash"># pkg -R /mnt update -v 2&gt;&amp;1 | tee /root/update
+# less /root/update
+</code></pre>
+
+<ul>
+<li>Now you have updated boot environment, but have no means to activate it, so you'll have to boot from recent OpenIndiana minimal ISO.
+  <br/>After booting from ISO run shell, import pool, update boot archive, install boot loader, activate new boot environment and reboot.
+  <code>c2t0d0s0</code> disk name is used in example, you should look at <code>zpool status</code> output and use corresponding device.
+  You'd better use cpio boot archive format due to existing issue in compressed ufs boot archive support.</li>
+</ul>
+<pre><code class="bash"># zpool import -R /tmp rpool
+# beadm mount oi-hipster /mnt
+# bootadm update-archive -R /mnt/tmp -vf -F cpio
+# installboot -mvF  /mnt/tmp/boot/pmbr /mnt/tmp/boot/gptzfsboot /dev/rdsk/c2t0d0s0
+# beadm activate oi-hipster
+# init 6
+</code></pre>
+
+<ul>
+<li>When your new boot environment is booting, look at possible error messages.
+  <br/>You can see warnings about inability to import some manifests.
+  After logging in you'll be able to import them manually with svccfg import.
+  Also you'll have to remove metainit service, which has gone with SVM support.</li>
+</ul>
+<pre><code class="bash"># svccfg -s metainit delete default
+</code></pre>
+
+<ul>
+<li>Look if there are any failed services and examine their log files.</li>
+</ul>
+<pre><code class="bash"># svcs -xv
+</code></pre>
+
+<ul>
+<li>Ensure that you have latest osnet-incorporation and userland-incorporation installed.</li>
+</ul>
+<pre><code class="bash"># pkg info osnet-incorporation userland-incorporation
+</code></pre>
+
 <h2 id="image-package-system-ips">Image Package System (IPS)</h2>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
@@ -2562,7 +2690,7 @@ Write about:</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"previous": 80, "next": 78, "help": 191, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
