@@ -1487,7 +1487,8 @@ Navigation within the installer is performed by pressing specifically designated
 
 </div>
 
-<p><img alt="Welcome Screen" src="../images/text_install/text_install_01.png" /></p>
+<p><a name="welcome-screen"></a>
+<img alt="Welcome Screen" src="../images/text_install/text_install_01.png" /></p>
 <p>The text based installation process begins with the welcome screen, which provides the following information:</p>
 <ul>
 <li>Location of the installation log file</li>
@@ -1497,7 +1498,9 @@ Navigation within the installer is performed by pressing specifically designated
 <div class="well">
 At any time during the installation process you may press the <code>F6</code> key for context specific help.
 </div></p>
-<p>When ready to begin, press the <code>F2</code> key to continue.</p>
+<p>Text installer allows you to do either usual installation or installation to existing ZFS pool.</p>
+<p>If you are doing clean installation, when ready to begin, press the <code>F2</code> key to continue.</p>
+<p>If you intend to install OpenIndiana to existing ZFS pool, see <a href="#install-openindiana-to-existing-zfs-pool">Install OpenIndiana to existing ZFS pool</a>.</p>
 <p><img alt="Select_Disks" src="../images/text_install/text_install_02.png" /></p>
 <p>On this screen the installer displays the disks which have been discovered and are available for installation.</p>
 <ul>
@@ -1700,6 +1703,31 @@ When booting from the text based installer, you are presented with the following
 <li>Spawn a shell to be used as a rescue disk.</li>
 </ul>
 <p>The procedure for installing from the text based installer follows the same process as the previously described <a href="./#install-openindiana-using-the-text-installer">Install OpenIndiana using the Text Installer</a></p>
+<h3 id="install-openindiana-to-existing-zfs-pool">Install OpenIndiana to existing ZFS pool</h3>
+<p>Starting from OpenIndiana 2017.10, the text installer allows you to perform installation to existing ZFS pool.
+It will create new boot environment in the pool and install OpenIndiana there.</p>
+<p>This option can be useful when you want to do some customizations to root ZFS pool (for example, enable compression) or install
+OpenIndiana to pool where another operating system is already installed (for example, prior version of OpenIndiana or even FreeBSD).
+It is recommended to use minimal or server installation images to perform such installations.</p>
+<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
+<div class="well">
+This feature is intended for advanced users.
+It's assumed you know what you are doing.
+Multi-booting of another operating system and OpenIndiana on the same root pool can be possible, but such configuration is out of scope of this tutorial and is not supported.
+</div></p>
+<p>To start installation to existing ZFS pool, press <code>F5</code> key when <a href="#welcome-screen">Welcome Screen</a> is presented.</p>
+<p>Installer will present you a 'Pools' screen.</p>
+<p><img alt="Pools Screen" src="../images/text_install/text_install_pools_screen.png" /></p>
+<p>On this screen installer will allow you to select the root pool for your new installation and boot environment name (which should be unique).</p>
+<p>By default installer will install OpenIndiana boot loader and activate created boot environment.
+If you don't want installer to touch any boot-related options, uncheck <code>Overwrite pool's boot configuration</code> checkbox.
+This can be useful when you install OpenIndiana to ZFS pool where another operating system is already installed and you want to configure boot loader manually.</p>
+<p>If you don't see your pool in the list of available pools, check <code>/tmp/install_log</code>.
+The most frequent issue is that there's not enough free space in the pool.</p>
+<p>The next steps for <a href="#install-openindiana-using-the-text-installer">usual installation</a> and installation to existing ZFS pool are the same.</p>
+<p>As there's possibly already another OS instance installed to the selected ZFS pool, no additional users or filesystems (like <code>rpool/export</code>) are created during installation.
+Swap and dump ZFS volumes also are not created and should be added manually after installation.
+Only root user will be available in created boot environment.</p>
 <h2 id="troubleshooting-installations">Troubleshooting Installations</h2>
 <ul>
 <li>If you do not see a menu after booting your computer with the DVD or USB device, and instead see some text and a <code>grub&gt;</code> prompt, there may be an error in your copy of the installer, or it was created incorrectly.</li>
@@ -2690,7 +2718,7 @@ Write about:</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "next": 78, "help": 191, "search": 83};
+                shortcuts = {"next": 78, "search": 83, "previous": 80, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
