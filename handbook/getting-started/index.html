@@ -1198,12 +1198,6 @@ For some guidance writing this section:</p>
 <li>Installation videos: <a href="https://www.youtube.com/watch?v#VVWP_5oAy3w">web link</a>
 </div></li>
 </ul>
-<p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
-<div class="well">
-If your intention is to multi-boot OpenIndiana on a system that is already running a UNIX like operating system (for example Linux), be sure to save a copy of the <code>menu.lst</code> file prior to beginning the installation.
-The contents of the GRUB <code>menu.lst</code> file dictate the booting parameters for each entry displayed in the GRUB boot menu.
-The information provided by the <code>menu.lst</code> will be required for updating the GRUB menu after the installation.
-</div></p>
 <p><i class="fa fa-exclamation-triangle fa-lg" aria-hidden="true"></i> <strong>CAUTION:</strong>
 <div class="well">
 Please be advised of the following important considerations:</p>
@@ -1442,15 +1436,17 @@ You have completed the installation of the OpenIndiana Hipster operating system.
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
 To prevent the Live Media from starting again after the reboot, eject the Live Media as the next boot begins.
-Or alternately, when presented with the Live Media installer options menu, select the <em><strong>Boot from Hard Disk</strong></em> option.
+Or alternately, when presented with the Live Media installer options menu, select the <em><strong>ChainLoad diskN</strong></em> option.
 </div></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>NOTE:</strong>
 <div class="well">
-After you have installed OpenIndiana, if you have another operating system on your system, you might need to update the GRUB menu.
-The GRUB menu displays a list of operating systems that can be booted.
-Solaris and Windows operating systems are displayed automatically on the GRUB menu.
-The contents of the GRUB <code>menu.lst</code> file define what is displayed in the GRUB menu when you boot the system.
-If you have an additional OpenIndiana or a Linux OS that is not displayed on the menu, you may need to edit the GRUB <code>menu.lst</code> file.
+After you have installed OpenIndiana, if you have another operating system installed, you might need to update loader configuration.
+Usually you can achieve desired effect by chainloading partitions with other operating systems.
+To configure illumos loader to show additional entry for chainloading another loader, create file in /boot/conf.d directory,
+containing string
+<code>set chain_disk="disk0:"</code>,
+where disk0 is the name of disk or partition to boot from.
+You can get the list of available disks from loader prompt using <code>lsdev</code> command.
 </div></p>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
@@ -1730,7 +1726,7 @@ Swap and dump ZFS volumes also are not created and should be added manually afte
 Only root user will be available in created boot environment.</p>
 <h2 id="troubleshooting-installations">Troubleshooting Installations</h2>
 <ul>
-<li>If you do not see a menu after booting your computer with the DVD or USB device, and instead see some text and a <code>grub&gt;</code> prompt, there may be an error in your copy of the installer, or it was created incorrectly.</li>
+<li>If you do not see a menu after booting your computer with the DVD or USB device, and instead see some text and a <code>boot:</code> prompt, there may be an error in your copy of the installer, or it was created incorrectly.</li>
 <li>If you see a <code>login:</code> prompt after selecting your keyboard and language and no desktop appears after several seconds, there may be a problem with the drivers for your graphics hardware.<ul>
 <li>Please let us know via IRC or the mailing list if this happens.</li>
 <li>When you contact us, please include any error messages you see on the console, as well as the output of the <code>svcs -xv</code> command.</li>
@@ -2489,8 +2485,8 @@ If needed, you have the option of booting a backup boot environment.</p>
 The packages are updated in the clone rather than in the original boot environment.
 After successfully completing the updates, the new clone is activated.
 Then, the clone will become the new default boot environment on the next reboot.
-The original boot environment remains on the GRUB menu as an alternate selection.
-You can use the <code>beadm list</code> command to see a list of all the boot environments on the system, including the backup boot environment that still has its original, unchanged software.
+You can boot the original boot environment explicitly selecting it from loader menu.
+<code>beadm list</code> command can be used to see a list of all boot environments on the system, including the backup boot environment that still has its original, unchanged software.
 If you are not satisfied with the updates made to the environment, you can use the <code>beadm activate</code> command to specify that the backup will become the default boot environment on the next reboot.</p>
 </li>
 <li>
@@ -2541,8 +2537,8 @@ For example, when the <code>beadm</code> utility clones a boot environment that 
 These tasks can be performed without upgrading your system.</p>
 </li>
 <li>
-<p>The <code>beadm</code> utility automatically manages and updates the GRUB menu.
-For example, when you use the <code>beadm</code> utility to create a new boot environment, that environment is automatically added to the GRUB menu.</p>
+<p>The <code>beadm</code> utility manages and updates the <code>&lt;root pool&gt;/boot/menu.lst</code> file used by loader to list boot environments.
+When you use the <code>beadm</code> utility to create a new boot environment, that environment is automatically added to this file.</p>
 </li>
 </ul>
 <p>The <code>beadm</code> utility enables you to perform the following tasks:</p>
@@ -2551,7 +2547,6 @@ For example, when you use the <code>beadm</code> utility to create a new boot en
 <li>Create a new boot environment based on an inactive boot environment</li>
 <li>Create a snapshot of an existing boot environment</li>
 <li>Create a new boot environment based on an existing snapshot</li>
-<li>Create a new boot environment and add a custom title to the GRUB menu.</li>
 <li>Activate an existing, inactive boot environment</li>
 <li>Mount a boot environment</li>
 <li>Unmount a boot environment</li>
@@ -2718,7 +2713,7 @@ Write about:</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "search": 83, "previous": 80, "help": 191};
+                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
