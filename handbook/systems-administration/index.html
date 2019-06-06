@@ -1064,34 +1064,211 @@ IF you cannot ping an external IP (e.g. google.com) run this command and try aga
 
 <p>credit for this section of docs go to <a href="https://www.reddit.com/user/127b">/u/127b</a></p>
 <h3 id="automatic-configuration-nwam">Automatic Configuration (NWAM)</h3>
-<ul>
-<li>How to use NWAM (network auto magic)</li>
-</ul>
+<p>Network Auto-Magic (NWAM) is a new approach to managing network interfaces that was introduced with OpenSolaris.
+NWAM introduced network profiles to be able to change network settings on the fly.
+One important reason to redesign networking was the increasing importance of wireless networking and the need to cope with its dynamic nature.</p>
+<p>While usually server and desktop installations tend to use default network configurations, laptop users can leverage nwam network configuations.</p>
+<h4 id="using-nwam-configuration-tools">Using NWAM configuration tools</h4>
+<p>Usually NWAM configuration is done via GUI <code>nwam-manager</code> applet and <code>nwam-manager-properties</code> program.</p>
+<p>From CLI all configuration can be done using two tools, <code>nwamcfg</code> to configure network profiles and <code>nwamadm</code> to manage them.</p>
+<p>On its backend, NWAM relies on <code>nwamd</code>, the NWAM policy engine daemon and <code>netcfgd</code>, the NWAM repository daemon.</p>
+<p>Access to the command line and GUI tools is controlled via security profiles 'Network Autoconf Admin' and 'Network Autoconf user'.</p>
+<p>To create NWAM profile use <code>nwamcfg</code> tool.</p>
+<pre><code># nwamcfg
+nwamcfg&gt; create ncp Abroad
+nwamcfg:ncp:Abroad&gt; end
+</code></pre>
+
+<p>Now you can see a new profile in the list of NCPs:</p>
+<pre><code>nwamcfg&gt; list
+NCPs:
+Abroad
+Automatic
+Locations:
+Automatic
+NoNet
+User
+nwamcfg&gt;
+</code></pre>
+
+<p>The network interface to be managed under the new profile can be set and configured with <code>create ncu</code> command:</p>
+<pre><code># nwamcfg
+nwamcfg&gt; select ncp Abroad
+nwamcfg:ncp:Abroad&gt; create ncu phys e1000g0
+Created ncu 'e1000g0'. Walking properties ...
+activation-mode (manual) [manual|prioritized]&gt; prioritized
+enabled (true) [true|false]&gt;
+priority-group&gt; 0
+priority-mode [exclusive|shared|all]&gt; exclusive
+link-mac-addr&gt;
+link-autopush&gt;
+link-mtu&gt;
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt;
+</code></pre>
+
+<p>Most important here is the <code>activation-mode</code>, which states if the profile is to be automatically set based on certain policies or if it is to be manually set using nwamadm.
+The latter should be most likely the case in a server environment.
+The <code>priority-group</code> and <code>priority-mode</code> here are set to (0 / exclusive).
+This says that the profile is for wired access and will always be the only active one at a time.</p>
+<p>If after listing the changes you are satisfied with the configuration, permanently store it using <code>commit</code> command:</p>
+<pre><code>nwamcfg:ncp:Abroad:ncu:e1000g0&gt; list
+ncu:e1000g0
+ type link
+ class phys
+ parent &quot;Abroad&quot;
+ activation-mode prioritized
+ enabled true
+ priority-group 0
+ priority-mode exclusive
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt; commit
+Committed changes
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt; end
+</code></pre>
+
+<p>After an interface has been assigned to the profile, its IP configuration has to be defined:</p>
+<pre><code>nwamcfg:ncp:Abroad&gt; create ncu ip e1000g0
+Created ncu 'e1000g0'. Walking properties ...
+enabled (true) [true|false]&gt;
+ip-version (ipv4,ipv6) [ipv4|ipv6]&gt; ipv4
+ipv4-addrsrc (dhcp) [dhcp|static]&gt; static
+ipv4-addr&gt; 192.168.100.100
+ipv4-default-route&gt; 192.168.100.1
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt; list
+ncu:e1000g0
+ type interface
+ class ip
+ parent &quot;Abroad&quot;
+ enabled true
+ ip-version ipv4
+ ipv4-addrsrc static
+ ipv4-addr &quot;192.168.100.100&quot;
+ ipv4-default-route &quot;192.168.100.1&quot;
+ ipv6-addrsrc dhcp,autoconf
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt;
+</code></pre>
+
+<p>As you can see, the profile uses a static IP address and, for simplicity reasons, only provides IPv4 networking.
+Again, if you're happy with the results, commit them.</p>
+<pre><code>nwamcfg:ncp:Abroad:ncu:e1000g0&gt; commit
+Committed changes
+nwamcfg:ncp:Abroad:ncu:e1000g0&gt;
+</code></pre>
+
+<p>As it stands, now you have defined a pysical and ip layer attached to a network profile:</p>
+<pre><code>nwamcfg:ncp:Abroad:ncu:e1000g0&gt; end
+nwamcfg:ncp:Abroad&gt; list
+NCUs:
+ phys e1000g0
+ ip e1000g0
+nwamcfg:ncp:Abroad&gt;exit
+</code></pre>
+
+<p>To activate the profile, you use nwamadm.
+First of all, check for the current situation:</p>
+<pre><code># nwamadm list
+TYPE     PROFILE    STATE
+ncp      Abroad     disabled
+ncp      Automatic  online
+ncu:phys e1000g0    online
+ncu:ip   e1000g0    online
+loc      Automatic  online
+loc      NoNet      offline
+loc      User       disabled
+</code></pre>
+
+<p>As you can see, Automatic is the active profile while Abroad is currently disabled.
+We can change that easily, but be aware that you might lock yourself out if you are connected via SSH when changing the profile!</p>
+<pre><code># nwamadm enable -p ncp Abroad
+Enabling ncp 'Abroad'
+</code></pre>
+
+<p>To check if the change has worked, you can use nwam again, and also ifconfig should show that interface is up:</p>
+<pre><code># nwamadm list
+TYPE PROFILE STATE
+ncp Abroad online
+ncu:phys e1000g0 online
+ncu:ip e1000g0 online
+ncp Automatic disabled
+loc Automatic online
+loc NoNet offline
+loc User disabled
+</code></pre>
+
+<pre><code># ifconfig e1000g0
+e1000g0: flags=1000843&lt;UP,BROADCAST,RUNNING,MULTICAST,IPv4&gt; mtu 1500 index 8
+inet 192.168.100.100 netmask ffffff00 broadcast 192.168.100.255
+ether 0:c:29:56:46:73
+</code></pre>
+
+<p>If you want to revert to default <code>Automatic</code> ncp, use the following command:</p>
+<pre><code># nwamadm enable -p ncp Automatic
+</code></pre>
+
+<p>Although it is possible to directly modify profiles using an editor, it is not advisable and will be hardly necessary, anyway.
+One of the coolest features of NWAM tools is that they can be completely scripted.
+All steps above could also be put in one line:</p>
+<pre><code># nwamcfg &quot;create ncp Abroad;create ncu phys e1000g0;set activation-mode=manual;set enabled=true;set priority-group=0;set priority-mode=exclusive;end;create ncu ip e1000g0;set enabled=true;set ip-version=ipv4;set ipv4-addrsrc=static;set ipv4-addr=192.168.100.100;set ipv4-default-route=192.168.100.1;commit&quot;
+</code></pre>
+
+<p>Or, more nicely formatted, commented and stored in a file:</p>
+<pre><code>#
+# Profile for use on the road
+#
+# Created on 13/01/2013 by S. Mueller-Wilken
+#
+create ncp Abroad
+
+# Create physical interface definition for 1st network card
+create ncu phys e1000g0
+set activation-mode=manual
+set enabled=true
+set priority-group=0
+set priority-mode=exclusive
+end
+
+# Create IP configuration for first network card
+create ncu ip e1000g0
+set enabled=true
+set ip-version=ipv4
+set ipv4-addrsrc=static
+set ipv4-addr=192.168.100.100
+set ipv4-default-route=192.168.100.1
+
+# Commit the settings
+commit
+</code></pre>
+
+<p>This file can then be read by nwamcfg:</p>
+<pre><code># nwamcfg -f abroad.cfg
+Configuration read.
+</code></pre>
+
+<p>While there is no longer a need to fiddle around in /etc/nwam, the configuration is still completely there, as can be easily verified:</p>
+<pre><code># ls /etc/nwam
+loc loc.conf ncp-Abroad.conf ncp-Automatic.conf
+</code></pre>
+
+<p>All configuration is placed in readable ASCII files so that configuration from a global zone is possible:</p>
+<pre><code># cat /etc/nwam/ncp-Abroad.conf
+link:e1000g0 type=uint64,0;class=uint64,0;parent=string,Abroad;enabled=boolean,true;activation-mode=uint64,4;priority-group=uint64,0;priority-mode=uint64,0;
+interface:e1000g0 type=uint64,1;class=uint64,1;parent=string,Abroad;enabled=boolean,true;ipv6-addrsrc=uint64,0,1;ip-version=uint64,4;ipv4-addrsrc=uint64,2;ipv4-default-route=string,192.168.100.1;ipv4-addr=string,192.168.100.100;
+</code></pre>
+
 <h4 id="network-automagic-online-help">Network automagic online help</h4>
 <p>Comprehensive and fully illustrated online help for using NWAM is available by right clicking the NWAM tray icon and selecting <em>Help</em>.
-This opens the online help browser.</p>
+This opens help browser.</p>
 <h4 id="troubleshooting-nwam">Troubleshooting NWAM</h4>
 <p>If NWAM is already configured and fails to connect to a wireless network try restarting the service.</p>
 <p>For example:</p>
 <pre><code class="bash"># svcadm restart nwam
 </code></pre>
 
-<p>Sometimes the location gets set to <em>NoNet</em> and it's nessessary to manually change the location.</p>
+<p>Sometimes the location gets set to <em>NoNet</em> and it's nessessary to manually change the location to <em>Automatic</em>.</p>
 <p>When the location setting is configured to <em>Switch Locations Automatically</em>, it's not possible to change the location.
 This is resolved by reconfiguring the location to allow manual switching.
 To perform this task, do the following:</p>
 <p>Right click the NWAM tray icon and select <strong><em>Location</em> &gt; <em>Switch Locations Manually</em></strong>.
 Right click the NWAM tray icon and select <strong><em>Location</em> &gt; <em>Automatic</em></strong>.</p>
-<h3 id="desktop-gui">Desktop GUI</h3>
-<p>&lt; Place Holder &gt;</p>
-<h4 id="manual-configuration">Manual Configuration</h4>
-<p>&lt; Place Holder &gt;</p>
-<h4 id="automatic-configuration">Automatic Configuration</h4>
-<p>&lt; Place Holder &gt;</p>
-<h4 id="troubleshooting_1">Troubleshooting</h4>
-<ul>
-<li>Make sure the network auto magic 'Location' setting is configured as 'Automatic' and not 'NoNet'</li>
-</ul>
 <h2 id="clustering-with-open-ha-cluster">Clustering with Open HA Cluster</h2>
 <p><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> <strong>DOC TEAM NOTE:</strong>
 <div class="well">
@@ -1114,7 +1291,7 @@ ITEMS TO WRITE ABOUT:</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "next": 78, "help": 191, "search": 83};
+                shortcuts = {"previous": 80, "search": 83, "help": 191, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
