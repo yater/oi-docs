@@ -307,7 +307,7 @@ Portions created by Alexander Pyhalov are Copyright (C) 2019.
 <h1 id="using-distribution-constructor">Using distribution constructor</h1>
 <p>Distribution constructor allows you to build OpenIndiana installation images (iso and usb).</p>
 <p>Creating images is straight forward.
-To create image, install distribution-constructor, then create distribution constructor mainfest based on existing one.</p>
+To create an image install the distribution-constructor. Then create a distribution constructor manifest based on an existing one.</p>
 <pre><code class="bash">mkdir distro-const
 cd distro-const
 pfexec pkg install install/distribution-constructor
@@ -315,11 +315,11 @@ cp /usr/share/distro_const/slim_cd/slim_cd_x86.xml .
 pfexec distro_const build slim_cd_x86.xml
 </code></pre>
 
-<p>Distribution constructor will create image with packages, specified in <code>&lt;packages&gt;</code> attribute, using <code>&lt;build_area&gt;</code> for storing files.
-Final images will be located in <code>media</code> directory under <code>&lt;build_area&gt;</code>.
-Distribution constructor logs will be available in <code>logs</code> directory.</p>
-<p>OpenIndiana ships three variant of images: image for desktops with Mate-based GUI, image with set of packages for typical server with text installer and image with minimal set of packages with text installer.
-Each image is described by it's own distribution constructor manifest.</p>
+<p>The distribution constructor will create an image with the packages specified in the <code>&lt;packages&gt;</code> attribute using <code>&lt;build_area&gt;</code> for storing files.
+Final images will be located in the <code>media</code> directory under <code>&lt;build_area&gt;</code>.
+Distribution constructor logs will be available in the <code>logs</code> directory.</p>
+<p>OpenIndiana ships three variants of images: an image for desktops with Mate-based GUI, an image with a set of packages for a typical server with the text installer and an image with a minimal set of packages with the text installer.
+Each image is described by its own distribution constructor manifest.</p>
 <table>
 <thead>
 <tr>
@@ -342,9 +342,9 @@ Each image is described by it's own distribution constructor manifest.</p>
 </tr>
 </tbody>
 </table>
-<p>Images with text installer and GUI live image differ by set of installed packages, preparation steps required to build the image and final post install steps made by installer to prepare system.
-Installer behavior is controlled by distribution constructor manifest.</p>
-<p>If you want to add packages from your own publisher to the image, uncomment <code>&lt;post_install_repo_addl_authority&gt;</code> and <code>&lt;pkg_repo_addl_authority&gt;</code> sections and add your publisher there, for example:</p>
+<p>Images with the text installer and the GUI live image differ by the sets of installed packages, preparation steps required to build the image and final post install steps made by installer to prepare a system.
+The installer behavior is controlled by a distribution constructor manifest.</p>
+<p>If you want to add packages from your own publisher to the image uncomment <code>&lt;post_install_repo_addl_authority&gt;</code> and <code>&lt;pkg_repo_addl_authority&gt;</code> sections and add your publisher there. For example:</p>
 <pre><code class="xml">
 &lt;pkg_repo_addl_authority&gt;
         &lt;main
@@ -359,8 +359,8 @@ Installer behavior is controlled by distribution constructor manifest.</p>
 &lt;/post_install_repo_addl_authority&gt;
 </code></pre>
 
-<p>Repository, specified as <code>&lt;pkg_repo_addl_authority&gt;</code>, will be used as additional repository while constructing image, the repository, specified as <code>&lt;post_install_repo_addl_authority&gt;</code>, will be set as additional repository on installed system.</p>
-<p>To actually use packages from your package repository, you should add full FMRIs of necessary packages to <code>&lt;packages&gt;</code> section.</p></div>
+<p>A repository specified as <code>&lt;pkg_repo_addl_authority&gt;</code> will be used as an additional repository while constructing an image. A repository specified as <code>&lt;post_install_repo_addl_authority&gt;</code> will be set as an additional repository on the installed system.</p>
+<p>To actually use packages from your package repository you should add full FMRIs of necessary packages to the <code>&lt;packages&gt;</code> section.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -370,7 +370,7 @@ Installer behavior is controlled by distribution constructor manifest.</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
+                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

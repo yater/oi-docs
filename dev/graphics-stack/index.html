@@ -359,13 +359,13 @@ the <a href="https://www.freedesktop.org/">freedesktop.org</a> community.</p>
 <p>The upstream Solaris code is located at:</p>
 <p><a href="https://github.com/oracle/solaris-userland/tree/master/components/x11">https://github.com/oracle/solaris-userland/tree/master/components/x11</a></p>
 <h2 id="mesa">Mesa</h2>
-<p>To build Mesa use <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/x11/mesa">x11/mesa</a> component.</p>
+<p>To build Mesa use the <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/x11/mesa">x11/mesa</a> component.</p>
 <h2 id="fonts">Fonts</h2>
-<p>Font components in oi-userland are located in <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/fonts">components/fonts</a> directory.</p>
+<p>Font components in oi-userland are located in the <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/fonts">components/fonts</a> directory.</p>
 <h2 id="nvidia">Nvidia</h2>
 <p>Nvidia provides Solaris x86-64/x86 packages of their proprietary driver for different families of graphic adapters.</p>
-<p>Nvidia driver shipped with OpenIndiana is built using <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/nvidia">openindiana/nvidia</a> component.</p>
-<p>The list of currently supported and legacy drivers is updated on the  <a href="https://www.nvidia.com/object/unix.html">Unix Drivers</a> page.</p>
+<p>The Nvidia driver shipped with OpenIndiana is built using <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/components/openindiana/nvidia">openindiana/nvidia</a> component.</p>
+<p>The list of currently supported and legacy drivers is updated on the <a href="https://www.nvidia.com/object/unix.html">Unix Drivers</a> page.</p>
 <table>
 <thead>
 <tr>
@@ -408,7 +408,7 @@ the <a href="https://www.freedesktop.org/">freedesktop.org</a> community.</p>
 </tr>
 </tbody>
 </table>
-<p>Drivers series 340.xx is currently part of oi-userland, others may be installed manually following Nvidia's instructions.</p>
+<p>The drivers series 340.xx is currently part of oi-userland, others may be installed manually following Nvidia's instructions.</p>
 <p>Note on new driver installations:</p>
 <pre><code># beadm create oi-nvidia
 # beadm mount oi-nvidia /mnt
@@ -466,10 +466,10 @@ the <a href="https://www.freedesktop.org/">freedesktop.org</a> community.</p>
 </ul>
 <p>Open source kernel driver(s) by Oracle:</p>
 <p><a href="https://github.com/oracle/solaris-userland/tree/master/components/x11/kernel/sun-src">https://github.com/oracle/solaris-userland/tree/master/components/x11/kernel/sun-src</a></p>
-<p>Relevant kernel code is located in drm and i915 subfolders.</p>
-<p>illumos port of Oracle code is available here:</p>
+<p>The relevant kernel code is located in drm and i915 subfolders.</p>
+<p>An illumos port of Oracle code is available here:</p>
 <p><a href="https://github.com/illumos/gfx-drm">https://github.com/illumos/gfx-drm</a></p>
-<p>Martin Bochnig, creator of OpenSXCE, initially backported the S12 driver to illumos, available in oi-userland until December 20. 2016.</p>
+<p>Martin Bochnig, creator of OpenSXCE, initially backported the S12 driver to illumos available in oi-userland until December 20, 2016.</p>
 <p>It was then superseeded by the new gate providing improvements to the gfx_private interface and agpgart driver, as well as containing userland libraries used by graphics, like libdrm.</p>
 <h4 id="references">References</h4>
 <p>Alan Coopersmith pointed to the following documents regarding DRI/KMS:</p>
@@ -490,12 +490,12 @@ the <a href="https://www.freedesktop.org/">freedesktop.org</a> community.</p>
 </ul>
 <h4 id="known-issues">Known Issues</h4>
 <h5 id="sna">SNA</h5>
-<p>May causes segmentation fault if enabled. If so, just disable SNA and you can copy attached 20-intel-uxa.conf to /etc/X11/xorg.conf.d/.</p>
-<p>For now, UXA mode is set by default.</p>
+<p>SNA may cause segmentation faults if enabled. If so, just disable SNA and you can copy the attached 20-intel-uxa.conf to /etc/X11/xorg.conf.d/.</p>
+<p>For now UXA mode is set by default.</p>
 <h4 id="sandy-bridge-gt1">Sandy Bridge GT1</h4>
-<p>A hardware bug requires implementing a workaround in the Intel ringbuffer implementation, occasional 1-2 second hangs may occur.</p>
+<p>A hardware bug required implementing a workaround in the Intel ringbuffer implementation, occasional 1-2 second hangs may occur.</p>
 <h4 id="gen-8">Gen &gt;= 8</h4>
-<p>Generation 8 (and later) devies are not supported at all.
+<p>Generation 8 (and later) devices are not supported at all.
 They require Intel ringbuffer support, which is not implemented.</p>
 <h3 id="hardware-matrix">Hardware Matrix</h3>
 <p>Reference:</p>
@@ -2383,7 +2383,7 @@ $ git pull --depth=1 origin drm-intel-fixes
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
+                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
