@@ -323,6 +323,22 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 </thead>
 <tbody>
 <tr>
+<td>2019-07-25</td>
+<td>VLC was updated to 3.0.7.1.<ul><li>If you see warnings like <code>main libvlc error: stale plugins cache</code>, refresh <code>svc:/application/vlc-cache-gen:default</code> service.</li><li>VLC was patched to prefer xcb_xv (XVideo) plugin if it's available. If you want to check performance of OpenGL plugin, set <code>vout</code> parameter to <code>gl</code> in <code>~/.config/vlc/vlcrc</code>.</li></ul></td>
+</tr>
+<tr>
+<td>2019-07-25</td>
+<td>FFmpeg was updated to 3.2.14. This is ABI-incompatible update. All dependent applications should be rebuilt.</td>
+</tr>
+<tr>
+<td>2019-07-25</td>
+<td>x265 3.1.1 library was added</td>
+</tr>
+<tr>
+<td>2019-07-25</td>
+<td>x264 library was updated to latest 20190721 snashot. This is ABI-incompatible update. All dependent applications should be rebuilt.</td>
+</tr>
+<tr>
 <td>2019-07-18</td>
 <td>Device Driver Utility (DDU) was updated. Major changes include replacement of binaries for which we have no source, regeneration of OpenIndiana drivers database and migration to Python 3.5.</td>
 </tr>
@@ -1265,7 +1281,7 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"help": 191, "previous": 80, "search": 83, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
