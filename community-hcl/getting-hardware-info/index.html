@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.openindiana.org/books/basic/">
+        <link rel="canonical" href="http://docs.openindiana.org/community-hcl/getting-hardware-info/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Basic Administration - OpenIndiana Docs</title>
+        <title>Getting information about hardware - OpenIndiana Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -125,7 +125,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Handbook <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -157,16 +157,16 @@
     <a href="#">Community Hardware Compatibility List</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../community-hcl/getting-hardware-info/">Getting information about hardware</a>
+<li class="active">
+    <a href="./">Getting information about hardware</a>
 </li>
             
 <li >
-    <a href="../../community-hcl/components/">Components</a>
+    <a href="../components/">Components</a>
 </li>
             
 <li >
-    <a href="../../community-hcl/systems/">Systems</a>
+    <a href="../systems/">Systems</a>
 </li>
     </ul>
   </li>
@@ -206,32 +206,32 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">OpenSolaris Books <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../about/">About OpenSolaris Books</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Basic Administration</a>
+    <a href="../../books/about/">About OpenSolaris Books</a>
 </li>
                                     
 <li >
-    <a href="../advanced/">Advanced Administration</a>
+    <a href="../../books/basic/">Basic Administration</a>
 </li>
                                     
 <li >
-    <a href="../express/">Solaris Express Administration</a>
+    <a href="../../books/advanced/">Advanced Administration</a>
 </li>
                                     
 <li >
-    <a href="../trusted/">Trusted Extensions Administration</a>
+    <a href="../../books/express/">Solaris Express Administration</a>
 </li>
                                     
 <li >
-    <a href="../develop/">Development Titles</a>
+    <a href="../../books/trusted/">Trusted Extensions Administration</a>
+</li>
+                                    
+<li >
+    <a href="../../books/develop/">Development Titles</a>
 </li>
                                 </ul>
                             </li>
@@ -281,17 +281,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../about/">
+                                <a rel="next" href="../../handbook/community/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../advanced/">
+                                <a rel="prev" href="../components/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/books/basic.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/community-hcl/getting-hardware-info.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -301,9 +301,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#basic-systems-administration">Basic Systems Administration</a></li>
-            <li><a href="#getting-started-with-opensolaris">Getting Started with OpenSolaris</a></li>
-            <li><a href="#system-administration-guide-basic-administration">System Administration Guide: Basic Administration</a></li>
+        <li class="main active"><a href="#getting-information-about-hardware">Getting information about hardware</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -316,10 +314,15 @@ A copy of the License is available at http://illumos.org/license/PDL.
 
 The Original Documentation is _________________.
 
-The Initial Writer of the Original Documentation is ___________ Copyright (C)_________[Insert year(s)].
+The Initial Writer of the Original Documentation is Matt Wilby Copyright (C) 2011.
 All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
 
-Contributor(s): ______________________________________.
+Contributor(s):  Alexander Pyhalov, Aurelien Larcher, Deano Calver, Nikola M.
+
+Portions created by Deano Calver are Copyright (C) 2011.
+Portions created by Aurelien Larcher are Copyright (C) 2017.
+Portions created by Nikola M. are Copyright (C) 2017.
+Portions created by Alexander Pyhalov are Copyright (C) 2019.
 
 Portions created by ______ are Copyright (C)_________[Insert year(s)].
 All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
@@ -327,69 +330,11 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 -->
 
 <p><img src = "../../Openindiana.png"></p>
-<h1 id="basic-systems-administration">Basic Systems Administration</h1>
-<h2 id="getting-started-with-opensolaris">Getting Started with OpenSolaris</h2>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Document Link</td>
-<td><a href="http://dlc.openindiana.org/docs/osol/20090715/getstart/html/solarisinstall.html" target="_blank">Getting Started With OpenSolaris</a></td>
-</tr>
-<tr>
-<td>Topics</td>
-<td>The guide provides an introduction to the OpenSolaris™ operating system, as well as instructions for installing the current OpenSolaris release on your system. This guide is intended to help you install and set up the free binary distribution of the OpenSolaris software and make your initial experience with it a successful one.</td>
-</tr>
-<tr>
-<td>Relevancy to OpenIndiana Hipster</td>
-<td>To be determined</td>
-</tr>
-<tr>
-<td>Target Audience</td>
-<td>This book is intended for anyone interested in installing and exploring the OpenSolaris operating system.</td>
-</tr>
-<tr>
-<td>Requirements</td>
-<td>Experience using the Solaris Operating System (OS) or another UNIX® version is recommended.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="system-administration-guide-basic-administration">System Administration Guide: Basic Administration</h2>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Document Link</td>
-<td><a href="http://dlc.openindiana.org/docs/osol/20090715/SYSADV1/html/sysadv1.html" target="_blank">System Administration Guide: Basic Administration</a></td>
-</tr>
-<tr>
-<td>Topics</td>
-<td><ul><li>User accounts and groups</li><li>Server and client support</li><li>Shutting down and booting a system</li><li>Managing services</li><li>Managing software (packages and patches)</li></ul></td>
-</tr>
-<tr>
-<td>Relevancy to OpenIndiana Hipster</td>
-<td>To be determined</td>
-</tr>
-<tr>
-<td>Target Audience</td>
-<td>This book is intended for anyone responsible for administering one or more systems running the Solaris release.</td>
-</tr>
-<tr>
-<td>Requirements</td>
-<td>This book assumes you have installed the Solaris Express Operating System and set up all the networking software that you plan to use. To use this book, you should have 1-2 years of UNIX® system administration experience. Attending UNIX system administration training courses might be helpful.</td>
-</tr>
-</tbody>
-</table></div>
+<h1 id="getting-information-about-hardware">Getting information about hardware</h1>
+<p>If your are running the standard MATE install of Openindiana, then Device Driver Utility (ddu), provided by <code>diagnostic/ddu</code> package, is your friend (it is located by default under Applications-&gt;System Tools).</p>
+<p>When run, it will provide a list of hardware sorted by category and the driver (if used).</p>
+<p>The device line can be copied into the relevant HCL table, along with which driver is being used.
+If for any reason you don't want (or can't) enter it yourself into the HCL, feel free to email the details (Device, driver, OI hipster 'osnet-incorporation' and 'userland-incorporation' versions and status) to hcl-feedback@openindiana.org and the oi-dev mailing-list.</p></div>
         </div>
 
         <footer class="col-md-12">
