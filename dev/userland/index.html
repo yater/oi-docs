@@ -667,19 +667,20 @@ make it reproducible.</p>
 </code></pre>
 
 <p>to generate a manifest from the list of installed files.</p>
-<p>Copy the file <code>build/manifest-generated.p5m</code> to <code>$(COMPONENT_NAME).p5m</code> and edit it:</p>
+<p>Copy the file <code>manifests/sample-manifest.p5m</code> to <code>$(COMPONENT_NAME).p5m</code> and edit it:</p>
 <ul>
 <li>Add your name as a contributor</li>
 <li>Remove unused entries from the manifest:<ul>
 <li>directories: <code>:%g/^dir/d</code> (Vim)</li>
 <li>static libs: <code>:%g/.a$/d</code> (Vim)</li>
-<li>libtool files:: <code>:%g/.la$/d</code> (Vim)</li>
+<li>libtool files: <code>:%g/.la$/d</code> (Vim)</li>
 <li>Python *.pyc: <code>:%g/.pyc$/d</code> (Vim)</li>
 </ul>
 </li>
 </ul>
 <p>For some components, specific rules need to be applied: they can be implemented with <em>transforms</em>.
-Some example can be found in the directory with the same name at the root directory of oi-userland.</p>
+Some Makefile targets defined in <code>make-rules/ips.mk</code> apply transforms from files in the <code>transforms</code> directory at the root of oi-userland.
+These transforms can be used as examples if you need custom transforms for your component.</p>
 <h3 id="publishing-packages">Publishing packages</h3>
 <p>After creating a p5m file run <code>gmake REQUIRED_PACKAGES</code> to automatically generate a list of run-time dependencies of the package (REQUIRED_PACKAGES section of the Makefile).</p>
 <p>Add necessary build time dependencies on the top of the generated section.</p>
