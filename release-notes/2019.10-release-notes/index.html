@@ -552,7 +552,7 @@ cuYxZQalebJS
 <li>FreeBSD's pluggable congestion control framework was ported, enabling <a href="https://en.wikipedia.org/wiki/CUBIC_TCP">CUBIC</a> and <a href="https://tools.ietf.org/html/rfc6582">NewReno</a> algorithms, which have higher performance than "sunreno" in some circumstances.</li>
 <li>The default algorithm for new passwords is SHA512</li>
 <li>crontab(1) now supports "/step", e.g.: <code>*/2 * * * * echo "run every two minutes"</code></li>
-<li>UEFI boot improvements: <code>bootadm update-archive</code> now populates/maintains the ESP (i.e. UEFI boot after kernel update is possible).</li>
+<li>UEFI boot improvements: <code>bootadm install-bootloader</code> (or <code>installboot</code> if run directly) now populates/maintains the ESP.</li>
 <li>Bug in our keyboard driver, which prevented SPICE display mechanism of the Linux KVM to work properly, was fixed.</li>
 </ul>
 <h2 id="other-activities">Other activities</h2>
@@ -568,7 +568,7 @@ cuYxZQalebJS
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
+                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
