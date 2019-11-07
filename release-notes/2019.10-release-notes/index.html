@@ -506,47 +506,55 @@ cuYxZQalebJS
 <p>A lot of other bug fixes and minor software updates are included.</p>
 <h2 id="illumos">illumos</h2>
 <p>As always, we are proud to ship the latest illumos-gate bits (<a href="https://github.com/illumos/illumos-gate/commit/87d7b64204c06f7d85b6dfec442ff0aba82efe9a">87d7b64</a>).</p>
-<p>Some of the more interesting changes include:
-<em> illumos is now build with GCC 7 by default. GCC 4.4 is kept as a shadow compiler and for SPARC (not delivered by the OpenIndiana project)
-</em> <code>PAGER</code> variable is no longer being set. It used to be set to <code>/usr/bin/less -ins</code>, which caused problems for some users. <code>man(1)</code> still does paging via <code>/usr/bin/less -ins</code> when <code>PAGER</code> is not set.
-<em> <code>cxgbe</code> firmware and Intel microcode were updated
-</em> Various improvements and fixes were ported from the ZFS on Linux project:
-    - native data and metadata encryption
-    - sorted scans
-    - zpool ashift property is now tunable
-    - support UNMAP/TRIM for SSD (disabled by default)
-    - Log Spacemap
-<em> Old DRM and AGP code was removed, the <a href="https://github.com/illumos/gfx-drm/">GFX DRM gate</a> is the sole source of DRM code.
-</em> Security:
-    - The L1TF mitigation (CVE-2018-3646) was integrated.
-    - Multi-architectural data sampling mitigations (various CVEs) were implemented.
-    - Hyper-threading can be disabled.
-    - Kernel is built with retpolines.
-<em> A lot of SMB 3 features were merged:
-    - continuously available shares,
-    - persistent handles
-    - signing, encryption
-    - ACLs
-    - named pipes
-    - extended attributes
-    - file level locking
-</em> A lot of old SPARC code (deprecated platforms and device drivers) was removed.
-<em> <code>zoneadm list</code>'s <code>-n</code> option lists non-global zones only.
-</em> <code>netstat</code> got the <code>-u</code> option to list PIDs associated with sockets
-<em> NVMe improvements (e.g. drive firmware updates).
-</em> mandoc was updated to 1.14.5.
-<em> Code of Conduct was adopted.
-</em> Rust got MDB symbol demangling support.
-<em> XHCI polled mode is supported for USB keyboards.
-</em> <code>nawk</code> was updated to NAWK upstream circa 2018 code.
-<em> The <code>NULL</code> macro is casted to type <code>void *</code> (a requirement POSIX.1-2008).
-</em> The C.UTF-8 locale is provided.
-<em> Added <code>reallocf(3C)</code> function.
-</em> FreeBSD's pluggable congestion control framework was ported, enabling <a href="https://en.wikipedia.org/wiki/CUBIC_TCP">CUBIC</a> and <a href="https://tools.ietf.org/html/rfc6582">NewReno</a> algorithms, which have higher performance than "sunreno" in some circumstances.
-<em> The default algorithm for new passwords is SHA512
-</em> crontab(1) now supports "/step", e.g.: <code>*/2 * * * * echo "run every two minutes"</code>
-<em> UEFI boot improvements: <code>bootadm update-archive</code> now populates/maintains the ESP (i.e. UEFI boot after kernel update is possible).
-</em> Bug in our keyboard driver, which prevented SPICE display mechanism of the Linux KVM to work properly, was fixed.</p>
+<p>Some of the more interesting changes include:</p>
+<ul>
+<li>illumos is now build with GCC 7 by default. GCC 4.4 is kept as a shadow compiler and for SPARC (not delivered by the OpenIndiana project)</li>
+<li><code>PAGER</code> variable is no longer being set. It used to be set to <code>/usr/bin/less -ins</code>, which caused problems for some users. <code>man(1)</code> still does paging via <code>/usr/bin/less -ins</code> when <code>PAGER</code> is not set.</li>
+<li><code>cxgbe</code> firmware and Intel microcode were updated</li>
+<li>Various improvements and fixes were ported from the ZFS on Linux project:<ul>
+<li>native data and metadata encryption</li>
+<li>sorted scans</li>
+<li>zpool ashift property is now tunable</li>
+<li>support UNMAP/TRIM for SSD (disabled by default)</li>
+<li>Log Spacemap</li>
+</ul>
+</li>
+<li>Old DRM and AGP code was removed, the <a href="https://github.com/illumos/gfx-drm/">GFX DRM gate</a> is the sole source of DRM code.</li>
+<li>Security:<ul>
+<li>The L1TF mitigation (CVE-2018-3646) was integrated.</li>
+<li>Multi-architectural data sampling mitigations (various CVEs) were implemented.</li>
+<li>Hyper-threading can be disabled.</li>
+<li>Kernel is built with retpolines.</li>
+</ul>
+</li>
+<li>A lot of SMB 3 features were merged:<ul>
+<li>continuously available shares,</li>
+<li>persistent handles</li>
+<li>signing, encryption</li>
+<li>ACLs</li>
+<li>named pipes</li>
+<li>extended attributes</li>
+<li>file level locking</li>
+</ul>
+</li>
+<li>A lot of old SPARC code (deprecated platforms and device drivers) was removed.</li>
+<li><code>zoneadm list</code>'s <code>-n</code> option lists non-global zones only.</li>
+<li><code>netstat</code> got the <code>-u</code> option to list PIDs associated with sockets</li>
+<li>NVMe improvements (e.g. drive firmware updates).</li>
+<li>mandoc was updated to 1.14.5.</li>
+<li>Code of Conduct was adopted.</li>
+<li>Rust got MDB symbol demangling support.</li>
+<li>XHCI polled mode is supported for USB keyboards.</li>
+<li><code>nawk</code> was updated to NAWK upstream circa 2018 code.</li>
+<li>The <code>NULL</code> macro is casted to type <code>void *</code> (a requirement POSIX.1-2008).</li>
+<li>The C.UTF-8 locale is provided.</li>
+<li>Added <code>reallocf(3C)</code> function.</li>
+<li>FreeBSD's pluggable congestion control framework was ported, enabling <a href="https://en.wikipedia.org/wiki/CUBIC_TCP">CUBIC</a> and <a href="https://tools.ietf.org/html/rfc6582">NewReno</a> algorithms, which have higher performance than "sunreno" in some circumstances.</li>
+<li>The default algorithm for new passwords is SHA512</li>
+<li>crontab(1) now supports "/step", e.g.: <code>*/2 * * * * echo "run every two minutes"</code></li>
+<li>UEFI boot improvements: <code>bootadm update-archive</code> now populates/maintains the ESP (i.e. UEFI boot after kernel update is possible).</li>
+<li>Bug in our keyboard driver, which prevented SPICE display mechanism of the Linux KVM to work properly, was fixed.</li>
+</ul>
 <h2 id="other-activities">Other activities</h2>
 <p>A lot of work was done to update documentation from <a href="https://wiki.openindiana.org">outdated wiki</a> and move it to new <a href="https://docs.openinidana.org">docs site</a> and <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/doc">oi-userland docs</a>.</p>
 <h2 id="contributors">Contributors</h2>
@@ -560,7 +568,7 @@ cuYxZQalebJS
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "previous": 80, "search": 83, "help": 191};
+                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
