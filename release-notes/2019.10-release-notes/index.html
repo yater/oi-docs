@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.openindiana.org/release-notes/2015.10-release-notes/">
+        <link rel="canonical" href="http://docs.openindiana.org/release-notes/2019.10-release-notes/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>2015.10 Release Notes - OpenIndiana Docs</title>
+        <title>2019.10 Release Notes - OpenIndiana Docs</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -86,8 +86,8 @@
     <a href="../latest-changes/">Latest changes</a>
 </li>
             
-<li >
-    <a href="../2019.10-release-notes/">2019.10 Release Notes</a>
+<li class="active">
+    <a href="./">2019.10 Release Notes</a>
 </li>
             
 <li >
@@ -118,8 +118,8 @@
     <a href="../2016.04-release-notes/">2016.04 Release Notes</a>
 </li>
             
-<li class="active">
-    <a href="./">2015.10 Release Notes</a>
+<li >
+    <a href="../2015.10-release-notes/">2015.10 Release Notes</a>
 </li>
             
 <li >
@@ -285,17 +285,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../2016.04-release-notes/">
+                                <a rel="next" href="../latest-changes/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../2015.03-release-notes/">
+                                <a rel="prev" href="../2019.04-release-notes/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/release-notes/2015.10-release-notes.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/OpenIndiana/oi-docs/edit/master/docs/release-notes/2019.10-release-notes.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -305,12 +305,16 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#201510-release-notes">2015.10 Release notes</a></li>
+        <li class="main active"><a href="#201910-release-notes">2019.10 Release notes</a></li>
+            <li><a href="#security">Security</a></li>
             <li><a href="#general-system-changes">General system changes</a></li>
             <li><a href="#desktop-software-and-libraries">Desktop software and libraries</a></li>
+            <li><a href="#common-tools-and-libraries">Common tools and libraries</a></li>
             <li><a href="#development-tools-and-libraries">Development tools and libraries</a></li>
             <li><a href="#server-software">Server software</a></li>
-            <li><a href="#other-tools">Other tools</a></li>
+            <li><a href="#illumos">illumos</a></li>
+            <li><a href="#other-activities">Other activities</a></li>
+            <li><a href="#contributors">Contributors</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -323,12 +327,13 @@ A copy of the License is available at http://illumos.org/license/PDL.
 
 The Original Documentation is _________________.
 
-The Initial Writer of the Original Documentation is Alexander Pyhalov Copyright (C) 2015.
+The Initial Writer of the Original Documentation is Alexander Pyhalov Copyright (C) 2019.
 All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
 
-Contributor(s):   Aurelien Larcher
+Contributor(s):   Andreas Wacknitz, Michal Nowak
 
-Portions created by Aurelien Larcher are Copyright (C) 2017.
+Portions created by Andreas Wacknitz are Copyright (C) 2019.
+Portions created by Michal Nowak are Copyright (C) 2019.
 
 Portions created by ______ are Copyright (C)_________[Insert year(s)].
 All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
@@ -336,138 +341,216 @@ All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/a
 -->
 
 <p><img src = "../../Openindiana.png"></p>
-<h1 id="201510-release-notes">2015.10 Release notes</h1>
-<p>So, after half a year we have new ISO:</p>
+<h1 id="201910-release-notes">2019.10 Release notes</h1>
+<p>We are glad to announce that Hipster 2019.10 snapshot is available.</p>
 <table>
 <thead>
 <tr>
 <th>Image</th>
 <th>Checksum</th>
+<th>GPG signature</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-gui-20151003.iso">OI-hipster-gui-20151003.iso</a></td>
-<td>[<a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-gui-20151003.iso.sha256sum">SHA256</a>]</td>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.iso">OI-hipster-gui-20191106.iso</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.iso.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.iso.sig">SIG</a>]</td>
 </tr>
 <tr>
-<td><a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-gui-20151003.usb">OI-hipster-gui-20151003.usb</a></td>
-<td>[<a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-gui-20151003.usb.sha256sum">SHA256</a>]</td>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.usb">OI-hipster-gui-20191106.usb</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.usb.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-gui-20191106.usb.sig">SIG</a>]</td>
 </tr>
 <tr>
-<td><a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-text-20151003.iso">OI-hipster-text-20151003.iso</a></td>
-<td>[<a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-text-20151003.iso.sha256sum">SHA256</a>]</td>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.iso">OI-hipster-text-20191106.iso</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.iso.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.iso.sig">SIG</a>]</td>
 </tr>
 <tr>
-<td><a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-text-20151003.usb">OI-hipster-text-20151003.usb</a></td>
-<td>[<a href="http://dlc.openindiana.org/isos/hipster/20151003/OI-hipster-text-20151003.usb.sha256sum">SHA256</a>]</td>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.usb">OI-hipster-text-20191106.usb</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.usb.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-text-20191106.usb.sig">SIG</a>]</td>
+</tr>
+<tr>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.iso">OI-hipster-minimal-20191106.iso</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.iso.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.iso.sig">SIG</a>]</td>
+</tr>
+<tr>
+<td><a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.usb">OI-hipster-minimal-20191106.usb</a></td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.usb.sha256sum">SHA256</a>]</td>
+<td>[<a href="http://dlc.openindiana.org/isos/hipster/20191106/OI-hipster-minimal-20191106.usb.sig">SIG</a>]</td>
 </tr>
 </tbody>
 </table>
 <p><a href="../../handbook/openindiana-download-mirrors/">List of mirrors</a></p>
-<p>There were a lot of changes since last snapshot.
-<em>Note, we don't speak about release and prefer "snapshot" term.</em></p>
+<h2 id="security">Security</h2>
+<p>This release is signed and verifiable by GPG. The OpenIndiana Release Engineering key has key id <a href="https://sks-keyservers.net/pks/lookup?op=get&amp;search=0x3A021AFADBE31887">0x3a021afadbe31887</a>.</p>
+<p>The public key:</p>
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+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
+cuYxZQalebJS
+=fC+/
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+<p>How to verify:</p>
+<ul>
+<li>Download <code>&lt;ISO&gt;.sig</code> file from mirror</li>
+<li>Run: <code>gpg2 --verify &lt;ISO&gt;.sig &lt;ISO&gt;</code>. You should see the following output:</li>
+</ul>
+<pre><code>    gpg: Signature made November  5, 2019 at 05:40:09 PM UTC
+    gpg:                using RSA key F5E984E5ADD29578D45CC1FE3A021AFADBE31887
+    gpg: Good signature from &quot;OpenIndiana Release Engineering&quot; [ultimate]
+</code></pre>
+
+<p>Even if the output includes:</p>
+<pre><code>    gpg: WARNING: This key is not certified with a trusted signature!
+    gpg: There is no indication that the signature belongs to the owner.
+</code></pre>
+
+<p>The signature is still correct.</p>
 <h2 id="general-system-changes">General system changes</h2>
-<p>We synced IPS with Everycity version, which includes Oracle updates and fixes necessary for IPS to work on illumos.
-Two major changes from previous IPS shipped with OpenIndiana Hipster - now we have Python 2.7 IPS version (in addition to Python 2.6 one) and linked image is default zone type now.
-IPS knows about zones and enforces some restrictions - for example, now GZ's publisher list should be subset of NGS's publisher list.</p>
-<p>Also distribution constructor was updated to use Python 2.7.
-Other changes include some preparations to support non-grub boot loaders.
-Text installer now creates separate FS for /var file system.  We included text installer in GUI ISO images.
-The main issue with GUI installer is that it is written in C and there's no one supporting it.
-Text installer, written in python, is easier to maintain, so it gets more attention.
-So, GUI installer can be dropped in the next snapshot if we don't find people interested in syncing it with upstream and supporting it.
-GUI ISO images will be provided in any case.</p>
-<p>Base Perl version was changed to 5.22.
-Support for 5.16 is retained.
-Perl 5.10 was completely removed, so you have to set <code>PERL_VERSION="5.22"</code> and <code>PERL_PKGVERS="-522"</code> in your illumos.sh to build illumos-gate.</p>
-<p>Sun JDK/JRE were completely removed and replaced with OpenJDK. OpenJDK was updated  to 1.7.76.</p>
+<p>During this development cycle we've worked on updating IPS, migrating remaining OpenIndiana-specific applications to Python 3, rewriting some DDU closed binary blobs.</p>
 <h2 id="desktop-software-and-libraries">Desktop software and libraries</h2>
 <ul>
-<li>Xorg-related software is updated</li>
-<li>Xorg is updated to 1.14.7. Updating to later version (1.17.2) requires additional work on <code>radeon(7)</code> driver, as our current driver doesn't work with updated Xorg and later versions require KMS support.</li>
-<li>libXft is updated to 2.3.2</li>
-<li>libX11 is updated to 1.6.3</li>
-<li>libXext is updated to 1.3.3</li>
-<li>freetype is updated to 2.5.5</li>
-<li>nvidia proprietary driver is updated to 340.93</li>
-<li>xauth is updated to 1.0.7</li>
-<li>libdrm is updated to 2.4.65</li>
-<li>libICE is updated to 1.0.9</li>
-<li>xfs is updated to 1.1.4</li>
-<li>Upstream Pulseaudio version (1.1) is integrated, gnome-volume-applet is removed. To use pulseaudio with gstreamer, launch gstreamer-properties and ensure that default output is set to "Autodetect" or "PulseAudio Sound Server". On audio output <code>pactl list sinks</code> should show /dev/dsp sink as <code>RUNNING</code>.</li>
-<li>Thunderbird is updated to 31.8.0</li>
-<li>Lcms2 is integrated. All software dependent on lcms was switched to lcms2.</li>
-<li>GIMP is updated to 2.8.14</li>
-<li>Inkscape 0.48.5 is integrated</li>
-<li>Synergy is updated to 1.7.4</li>
-<li>Compiz is updated to 0.8.10</li>
-<li>Ntfsprogs are updated to 2015.3.14</li>
-<li>Dbus is updated to 1.8.16</li>
-<li>Mesa is updated to 10.5.9</li>
-<li>Qt is updated to 4.8.7</li>
+<li>VirtualBox was updated to 6.0.14</li>
+<li>Xorg fonts, tools and libraries were updated.</li>
+<li>FreeType was updated to 2.10.1</li>
+<li>GTK 3 was updated to 3.24.12</li>
+<li>LightDM was updated to 1.30</li>
+<li>mpg123, x265, and mpack packages were added, x264 was updated</li>
+<li>Powerline, the nice status line, was added and integrated with Bash, tmux, and Vim</li>
+<li>Supplementary x11-init service was added to create necessary directories with root permissions prior to X11 applications startup</li>
 </ul>
-<p>Also note that now we provide separate <a href="http://pkg.openindiana.org/hipster-encumbered/">/hipster-encumbered</a> repository with multimedia software, which includes necessary gstreamer codecs and ffmpeg.</p>
+<h2 id="common-tools-and-libraries">Common tools and libraries</h2>
+<ul>
+<li>IPS was synced to the latest OmniOS CE version. Now it ships only Python 3.5 tools and libraries.<ul>
+<li>to build oi-userland after removing Python 2 pkg module you need to update the userland <a href="https://github.com/OpenIndiana/oi-userland/commit/fb10babbcfd65ff74cf439bc77a2186fd79ee2a7">build environment too</a>;</li>
+<li>to build gfx-drm you need latest <code>developer/build/onbld package</code>;</li>
+<li>to build illumos-gate you have to add <code>export BUILDPY2TOOLS="#"</code> to your illumos.sh.</li>
+</ul>
+</li>
+<li>DDU binaries, for which we missed sources, were rewritten, DDU was converted to Python 3.5</li>
+<li>Bash was updated</li>
+<li>top and htop now both report ARC and compressed ARC statistics</li>
+<li>Vim was updated to 8.1.1721, Nano was updated to 4.5</li>
+<li>Sudo was updated to 1.8.29</li>
+</ul>
 <h2 id="development-tools-and-libraries">Development tools and libraries</h2>
 <ul>
-<li>GCC is updated to 4.8.5</li>
-<li>Python 2.7 is updated to 2.7.10</li>
-<li>Ruby-22 is updated to 2.2.3</li>
-<li>PHP is updated to 5.5.29, 5.4.45</li>
-<li>Lua is updated to 5.2.4</li>
-<li>Cmake is updated to 2.8.12.2</li>
-<li>Nasm is updated to 2.11.8</li>
-<li>Yasm is updated to 1.3.0</li>
-<li>GNU binutils are updated to 2.25.1</li>
-<li>Nodejs is updated to 0.12.7</li>
-<li>Git is updated to 1.9.4. We still don't ship git 2, as it is incompatible with git 1.</li>
-<li>Mercurial is updated to 3.4.2</li>
-<li>Subversion is updated to 1.7.20</li>
-<li>GNU Patch is updated to 2.7.5</li>
-<li>ICU is updated to 55.1</li>
-<li>Boost is updated to 1.58.0</li>
+<li>GCC compilers were updated to 7.4.0, 8.3.0, GCC 9.2 was added (note, GCC 6.5 is still the default oi-userland compiler)</li>
+<li>Clang 8.0 was added. Clang 4.0 was removed.</li>
+<li>Git was updated to 2.23.0.</li>
+<li>CMake was updated to 3.15.1.</li>
+<li>Rust was updated to 1.32.0.</li>
+<li>Python modules were updated.</li>
+<li>Golang 1.13 was added</li>
 </ul>
 <h2 id="server-software">Server software</h2>
 <ul>
-<li>Tomcat 6 is updated to 6.0.44, Tomcat 8.0.24 is added</li>
-<li>Apache 2.4 is updated to 2.4.16, Apache 2.2 - to 2.2.31</li>
-<li>mod_jk is updated to 1.2.41</li>
-<li>mod_perl is updated to 2.0.9</li>
-<li>Apache 1.3 is removed</li>
-<li>Nginx is updated to 1.8.0</li>
-<li>Lighttpd is updated to 1.4.36</li>
-<li>Mariadb is updated to 5.5.44, percona-server - to 5.5.36.34.2, 5.6.16.64.2</li>
-<li>MySQL 5.1 is removed</li>
-<li>OpenLDAP is updated to 2.4.42</li>
-<li>Samba 4.1.19 is added, Samba 3.6 is preserved as service/network/samba/samba36</li>
-<li>ISC Bind is updated to 9.9.7-P3</li>
-<li>ISC DHCPD is updated to 4.2.8</li>
-<li>KVM is updated to 20150903 Joyent version</li>
+<li>MongoDB 4.0 was updated.</li>
+<li>Nginx was updated to 1.16.1.</li>
+<li>Samba was updated to 4.11.</li>
+<li>Node.js was updated to 12.13.0, 10.17.0, and 8.16.2</li>
+<li>BIND was updated to 9.14</li>
+<li>OpenLDAP was updated to 2.4.48</li>
+<li>tor was updated to 0.4.1.6</li>
 </ul>
-<h2 id="other-tools">Other tools</h2>
-<ul>
-<li>tcpdump is updated to 4.7.4</li>
-<li>mc is updated to 4.8.14</li>
-<li>OpenVPN is updated to 2.3.8</li>
-<li>bash is updated to 4.2.53</li>
-<li>logrotate is updated to 3.9.1 (but we encourage you to use logadm)</li>
-<li>mozilla-nss is updated to 3.19.2, mozilla-nspr - to 4.10.8</li>
-</ul>
-<p>As for other news, I'd like to mention that SFE repository for OpenIndiana Hipster is available - <a href="http://sfe.opencsw.org/localhostoih/">http://sfe.opencsw.org/localhostoih/</a>.
-Thanks to SFE team for their efforts.</p>
-<p>As always, we are proud to deliver to you latest illumos-gate bits.
-We integrated several changes from OpenIndiana /dev illumos-gate version to upstream illumos-gate.
-Note, that in OI Hipster useradd ZFS create/destroy features are enabled by default (as in OI /dev), this is controlled by <code>/etc/default/useradd</code> file.</p>
-<p>There's also a lot of security fixes and small bug fixes.</p>
-<p>As for missing things, I'd like to mention that we still don't deliver PHP 5.6.
-As PHP 5.4 is EOLed, we are going to remove it and add PHP 5.6.
-OpenOffice is still broken, but LibreOffice can be installed from SFE /localhostoih repository.
-It would be nice to port current radeon driver to Xorg 1.17.2.
-Mesa update to 11.x version is on the roadmap.
-And main issue which bugs me is ancient Firefox version.
-Unfortunately, I couldn't make plugins work in firefox 31, so we still ship FF 24.8.1.</p>
-<p>Also I'd like to mention that we progressed in moving build receipts from legacy build systems to oi-userland.
-We miss only ~40 components from JDS (solaris-desktop~spec-files) and got about 100 packages from XNV (x-s12-clone) (about half is missing).</p></div>
+<p>A lot of other bug fixes and minor software updates are included.</p>
+<h2 id="illumos">illumos</h2>
+<p>As always, we are proud to ship the latest illumos-gate bits (<a href="https://github.com/illumos/illumos-gate/commit/87d7b64204c06f7d85b6dfec442ff0aba82efe9a">87d7b64</a>).</p>
+<p>Some of the more interesting changes include:
+<em> illumos is now build with GCC 7 by default. GCC 4.4 is kept as a shadow compiler and for SPARC (not delivered by the OpenIndiana project)
+</em> <code>PAGER</code> variable is no longer being set. It used to be set to <code>/usr/bin/less -ins</code>, which caused problems for some users. <code>man(1)</code> still does paging via <code>/usr/bin/less -ins</code> when <code>PAGER</code> is not set.
+<em> <code>cxgbe</code> firmware and Intel microcode were updated
+</em> Various improvements and fixes were ported from the ZFS on Linux project:
+    - native data and metadata encryption
+    - sorted scans
+    - zpool ashift property is now tunable
+    - support UNMAP/TRIM for SSD (disabled by default)
+    - Log Spacemap
+<em> Old DRM and AGP code was removed, the <a href="https://github.com/illumos/gfx-drm/">GFX DRM gate</a> is the sole source of DRM code.
+</em> Security:
+    - The L1TF mitigation (CVE-2018-3646) was integrated.
+    - Multi-architectural data sampling mitigations (various CVEs) were implemented.
+    - Hyper-threading can be disabled.
+    - Kernel is built with retpolines.
+<em> A lot of SMB 3 features were merged:
+    - continuously available shares,
+    - persistent handles
+    - signing, encryption
+    - ACLs
+    - named pipes
+    - extended attributes
+    - file level locking
+</em> A lot of old SPARC code (deprecated platforms and device drivers) was removed.
+<em> <code>zoneadm list</code>'s <code>-n</code> option lists non-global zones only.
+</em> <code>netstat</code> got the <code>-u</code> option to list PIDs associated with sockets
+<em> NVMe improvements (e.g. drive firmware updates).
+</em> mandoc was updated to 1.14.5.
+<em> Code of Conduct was adopted.
+</em> Rust got MDB symbol demangling support.
+<em> XHCI polled mode is supported for USB keyboards.
+</em> <code>nawk</code> was updated to NAWK upstream circa 2018 code.
+<em> The <code>NULL</code> macro is casted to type <code>void *</code> (a requirement POSIX.1-2008).
+</em> The C.UTF-8 locale is provided.
+<em> Added <code>reallocf(3C)</code> function.
+</em> FreeBSD's pluggable congestion control framework was ported, enabling <a href="https://en.wikipedia.org/wiki/CUBIC_TCP">CUBIC</a> and <a href="https://tools.ietf.org/html/rfc6582">NewReno</a> algorithms, which have higher performance than "sunreno" in some circumstances.
+<em> The default algorithm for new passwords is SHA512
+</em> crontab(1) now supports "/step", e.g.: <code>*/2 * * * * echo "run every two minutes"</code>
+<em> UEFI boot improvements: <code>bootadm update-archive</code> now populates/maintains the ESP (i.e. UEFI boot after kernel update is possible).
+</em> Bug in our keyboard driver, which prevented SPICE display mechanism of the Linux KVM to work properly, was fixed.</p>
+<h2 id="other-activities">Other activities</h2>
+<p>A lot of work was done to update documentation from <a href="https://wiki.openindiana.org">outdated wiki</a> and move it to new <a href="https://docs.openinidana.org">docs site</a> and <a href="https://github.com/OpenIndiana/oi-userland/tree/oi/hipster/doc">oi-userland docs</a>.</p>
+<h2 id="contributors">Contributors</h2>
+<p>Following developers contributed to the 2019.10 snapshot with more than 600 commits. We very much appreciate their contributions: Adam Števko, Alexander Pyhalov, Andreas Grueninger, Andreas Wacknitz, Aurélien Larcher, Gary Mills, Henry Liebel, Jim Klimov, Michal Nowak, Nona Hansel, Rich Lowe, Rouven Weiler, Spencer Berger, Sven Schmeling, Till Wegmüller, Tim Mooney, and Toomas Soome.</p></div>
         </div>
 
         <footer class="col-md-12">
